@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("contactsharequeue")
 [XmlRoot("results")]
 public class ContactShareQueueList : BaseApiBean {
@@ -29,40 +25,18 @@ public class ContactShareQueueList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("contactsharequeue")
   [XmlRoot("results")]
-  public class ContactShareQueueListList : BaseApiListBean<ContactShareQueueList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<ContactShareQueueList>? GetItems() => items;
+  public class ContactShareQueueListList : BaseApiListBean<ContactShareQueueList> {    public override List<ContactShareQueueList>? GetItems() => items;
 
     public override void SetItems(List<ContactShareQueueList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<ContactShareQueueList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

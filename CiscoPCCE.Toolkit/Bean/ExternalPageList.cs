@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("externalpage")
 [XmlRoot("results")]
 public class ExternalPageList : BaseApiBean {
@@ -29,40 +25,18 @@ public class ExternalPageList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("externalpage")
   [XmlRoot("results")]
-  public class ExternalPageListList : BaseApiListBean<ExternalPageList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<ExternalPageList>? GetItems() => items;
+  public class ExternalPageListList : BaseApiListBean<ExternalPageList> {    public override List<ExternalPageList>? GetItems() => items;
 
     public override void SetItems(List<ExternalPageList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<ExternalPageList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

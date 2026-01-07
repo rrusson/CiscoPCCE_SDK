@@ -5,10 +5,6 @@ using System;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("bulkjob")
 [XmlRoot("bulkJob")]
 public class BulkJob : BaseApiBean {
@@ -23,8 +19,8 @@ public class BulkJob : BaseApiBean {
   private string? fileContent;
   private string? idFromRefUrl;
   private string? jobHostName;
-  private Short jobState;
-  private Short jobType;
+  private short? jobState;
+  private short? jobType;
   private FileRef logFile;
   private string? refURL;
   private DateTime? startDateTime;
@@ -35,20 +31,10 @@ public class BulkJob : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public string? CorrelationId
@@ -57,20 +43,10 @@ public class BulkJob : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public DateTime? CreateDateTime
   {
       get => createDateTime;
       set => createDateTime = value;
-  }
-
-
-  public void setCreateDateTime(Date createDateTime) {
-     this.createDateTime = createDateTime;
   }
 
   public FileRef CsvFile
@@ -79,20 +55,10 @@ public class BulkJob : BaseApiBean {
       set => csvFile = value;
   }
 
-
-  public void setCsvFile(FileRef csvFile) {
-     this.csvFile = csvFile;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? Description
@@ -101,20 +67,10 @@ public class BulkJob : BaseApiBean {
       set => description = value;
   }
 
-
-  public void setDescription(String description) {
-     this.description = description;
-  }
-
   public DateTime? EndDateTime
   {
       get => endDateTime;
       set => endDateTime = value;
-  }
-
-
-  public void setEndDateTime(Date endDateTime) {
-     this.endDateTime = endDateTime;
   }
 
   public string? FileContent
@@ -123,20 +79,10 @@ public class BulkJob : BaseApiBean {
       set => fileContent = value;
   }
 
-
-  public void setFileContent(String fileContent) {
-     this.fileContent = fileContent;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public string? JobHostName
@@ -145,31 +91,16 @@ public class BulkJob : BaseApiBean {
       set => jobHostName = value;
   }
 
-
-  public void setJobHostName(String jobHostName) {
-     this.jobHostName = jobHostName;
-  }
-
-  public Short JobState
+  public short? JobState
   {
       get => jobState;
       set => jobState = value;
   }
 
-
-  public void setJobState(Short jobState) {
-     this.jobState = jobState;
-  }
-
-  public Short JobType
+  public short? JobType
   {
       get => jobType;
       set => jobType = value;
-  }
-
-
-  public void setJobType(Short jobType) {
-     this.jobType = jobType;
   }
 
   public FileRef LogFile
@@ -178,20 +109,10 @@ public class BulkJob : BaseApiBean {
       set => logFile = value;
   }
 
-
-  public void setLogFile(FileRef logFile) {
-     this.logFile = logFile;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
   }
 
   public DateTime? StartDateTime
@@ -200,29 +121,12 @@ public class BulkJob : BaseApiBean {
       set => startDateTime = value;
   }
 
-
-  public void setStartDateTime(Date startDateTime) {
-     this.startDateTime = startDateTime;
-  }
-
-
   // Path("bulkjob")
   [XmlRoot("results")]
-  public class BulkJobList : BaseApiListBean<BulkJob> {
-    [XmlElement("bulkJobs")]
-    [XmlElement("bulkJob")]
-   
-    public override List<BulkJob>? GetItems() => items;
+  public class BulkJobList : BaseApiListBean<BulkJob> {    public override List<BulkJob>? GetItems() => items;
 
     public override void SetItems(List<BulkJob>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<BulkJob>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

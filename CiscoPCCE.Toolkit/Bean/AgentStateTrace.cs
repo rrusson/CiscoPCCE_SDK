@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("agentstatetrace")
 [XmlRoot("agentstatetrace")]
 public class AgentStateTrace : BaseApiBean {
@@ -28,20 +24,10 @@ public class AgentStateTrace : BaseApiBean {
       set => agentList = value;
   }
 
-
-  public void setAgentList(List<AgentBase> agentList) {
-     this.agentList = agentList;
-  }
-
   public string? BaseUrlfromRefUrl
   {
       get => baseUrlfromRefUrl;
       set => baseUrlfromRefUrl = value;
-  }
-
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
   }
 
   public int? ChangeStamp
@@ -50,20 +36,10 @@ public class AgentStateTrace : BaseApiBean {
       set => changeStamp = value;
   }
 
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Department
@@ -72,20 +48,10 @@ public class AgentStateTrace : BaseApiBean {
       set => department = value;
   }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public PermissionInfo PermissionInfo
@@ -94,40 +60,18 @@ public class AgentStateTrace : BaseApiBean {
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
-
   // Path("agentstatetrace")
   [XmlRoot("results")]
-  public class AgentStateTraceList : BaseApiListBean<AgentStateTrace> {
-    [XmlElement("agentstatetraces")]
-    [XmlElement("agentstatetrace")]
-   
-    public override List<AgentStateTrace>? GetItems() => items;
+  public class AgentStateTraceList : BaseApiListBean<AgentStateTrace> {    public override List<AgentStateTrace>? GetItems() => items;
 
     public override void SetItems(List<AgentStateTrace>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<AgentStateTrace>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

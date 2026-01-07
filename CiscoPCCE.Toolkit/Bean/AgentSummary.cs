@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("agent")
 [XmlRoot("agentSummary")]
 public class AgentSummary : BaseApiBean {
@@ -44,22 +40,12 @@ public class AgentSummary : BaseApiBean {
       set => agentId = value;
   }
 
-
-  public void setAgentId(String agentId) {
-     this.agentId = agentId;
-  }
-
   [XmlElement("agentServicesEnabled")]
   [XmlElement("agentService")]
   public List<AgentServiceEnabled>? AgentServicesEnabled
   {
       get => agentServicesEnabled;
       set => agentServicesEnabled = value;
-  }
-
-
-  public void setAgentServicesEnabled(List<AgentServiceEnabled> agentServicesEnabled) {
-     this.agentServicesEnabled = agentServicesEnabled;
   }
 
   [XmlElement("agentServicesToDisable")]
@@ -70,11 +56,6 @@ public class AgentSummary : BaseApiBean {
       set => agentServicesToDisable = value;
   }
 
-
-  public void setAgentServicesToDisable(List<AgentServiceEnabled> agentServicesToDisable) {
-     this.agentServicesToDisable = agentServicesToDisable;
-  }
-
   [XmlElement("agentServicesToEnable")]
   [XmlElement("agentService")]
   public List<AgentServiceEnabled>? AgentServicesToEnable
@@ -83,20 +64,10 @@ public class AgentSummary : BaseApiBean {
       set => agentServicesToEnable = value;
   }
 
-
-  public void setAgentServicesToEnable(List<AgentServiceEnabled> agentServicesToEnable) {
-     this.agentServicesToEnable = agentServicesToEnable;
-  }
-
   public bool? AgentStateTrace
   {
       get => agentStateTrace;
       set => agentStateTrace = value;
-  }
-
-
-  public void setAgentStateTrace(Boolean agentStateTrace) {
-     this.agentStateTrace = agentStateTrace;
   }
 
   public ReferenceBean AgentTeam
@@ -105,20 +76,10 @@ public class AgentSummary : BaseApiBean {
       set => agentTeam = value;
   }
 
-
-  public void setAgentTeam(ReferenceBean agentTeam) {
-     this.agentTeam = agentTeam;
-  }
-
   public string? AttributeValue
   {
       get => attributeValue;
       set => attributeValue = value;
-  }
-
-
-  public void setAttributeValue(String attributeValue) {
-     this.attributeValue = attributeValue;
   }
 
   public string? BaseUrlfromRefUrl
@@ -127,20 +88,10 @@ public class AgentSummary : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public bool? CanRemove
   {
       get => canRemove;
       set => canRemove = value;
-  }
-
-
-  public void setCanRemove(Boolean canRemove) {
-     this.canRemove = canRemove;
   }
 
   public int? ChangeStamp
@@ -149,20 +100,10 @@ public class AgentSummary : BaseApiBean {
       set => changeStamp = value;
   }
 
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
-
   public string? ConfigParam
   {
       get => configParam;
       set => configParam = value;
-  }
-
-
-  public void setConfigParam(String configParam) {
-     this.configParam = configParam;
   }
 
   public string? CorrelationId
@@ -171,20 +112,10 @@ public class AgentSummary : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Datacenter
   {
       get => datacenter;
       set => datacenter = value;
-  }
-
-
-  public void setDatacenter(ReferenceBean datacenter) {
-     this.datacenter = datacenter;
   }
 
   public ReferenceBean Department
@@ -193,20 +124,10 @@ public class AgentSummary : BaseApiBean {
       set => department = value;
   }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
   public string? Description
   {
       get => description;
       set => description = value;
-  }
-
-
-  public void setDescription(String description) {
-     this.description = description;
   }
 
   public string? IdFromRefUrl
@@ -215,20 +136,10 @@ public class AgentSummary : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public bool? MarkDeletable
   {
       get => markDeletable;
       set => markDeletable = value;
-  }
-
-
-  public void setMarkDeletable(Boolean markDeletable) {
-     this.markDeletable = markDeletable;
   }
 
   public string? Name
@@ -237,31 +148,16 @@ public class AgentSummary : BaseApiBean {
       set => name = value;
   }
 
-
-  public void setName(String name) {
-     this.name = name;
-  }
-
   public PeripheralRef Peripheral
   {
       get => peripheral;
       set => peripheral = value;
   }
 
-
-  public void setPeripheral(PeripheralRef peripheral) {
-     this.peripheral = peripheral;
-  }
-
   public string? PeripheralName
   {
       get => peripheralName;
       set => peripheralName = value;
-  }
-
-
-  public void setPeripheralName(String peripheralName) {
-     this.peripheralName = peripheralName;
   }
 
   [XmlElement("peripheralSet")]
@@ -271,20 +167,10 @@ public class AgentSummary : BaseApiBean {
       set => peripheralSet = value;
   }
 
-
-  public void setPeripheralSet(ReferenceBean peripheralSet) {
-     this.peripheralSet = peripheralSet;
-  }
-
   public Person Person
   {
       get => person;
       set => person = value;
-  }
-
-
-  public void setPerson(Person person) {
-     this.person = person;
   }
 
   public string? RefURL
@@ -293,20 +179,10 @@ public class AgentSummary : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
   public bool? SelectedAttribute
   {
       get => selectedAttribute;
       set => selectedAttribute = value;
-  }
-
-
-  public void setSelectedAttribute(Boolean selectedAttribute) {
-     this.selectedAttribute = selectedAttribute;
   }
 
   public bool? SelectedSkillGroup
@@ -315,40 +191,18 @@ public class AgentSummary : BaseApiBean {
       set => selectedSkillGroup = value;
   }
 
-
-  public void setSelectedSkillGroup(Boolean selectedSkillGroup) {
-     this.selectedSkillGroup = selectedSkillGroup;
-  }
-
   public bool? Supervisor
   {
       get => supervisor;
       set => supervisor = value;
   }
 
-
-  public void setSupervisor(Boolean supervisor) {
-     this.supervisor = supervisor;
-  }
-
-
   // Path("agent")
   [XmlRoot("results")]
-  public class AgentSummaryList : BaseApiListBean<AgentSummary> {
-    [XmlElement("agentSummarys")]
-    [XmlElement("agentSummary")]
-   
-    public override List<AgentSummary>? GetItems() => items;
+  public class AgentSummaryList : BaseApiListBean<AgentSummary> {    public override List<AgentSummary>? GetItems() => items;
 
     public override void SetItems(List<AgentSummary>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<AgentSummary>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("status")
 [XmlRoot("results")]
 public class StatusResults : BaseApiBean {
@@ -21,29 +17,12 @@ public class StatusResults : BaseApiBean {
       set => statuses = value;
   }
 
-
-  public void setStatuses(List<Status> statuses) {
-     this.statuses = statuses;
-  }
-
-
   // Path("status")
   [XmlRoot("results")]
-  public class StatusResultsList : BaseApiListBean<StatusResults> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<StatusResults>? GetItems() => items;
+  public class StatusResultsList : BaseApiListBean<StatusResults> {    public override List<StatusResults>? GetItems() => items;
 
     public override void SetItems(List<StatusResults>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<StatusResults>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

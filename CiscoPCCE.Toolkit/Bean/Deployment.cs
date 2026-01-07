@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("deployment")
 [XmlRoot("deployment")]
 public class Deployment : BaseApiBean {
@@ -25,20 +21,10 @@ public class Deployment : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public string? CorrelationId
@@ -47,20 +33,10 @@ public class Deployment : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public int? DeploymentType
@@ -69,20 +45,10 @@ public class Deployment : BaseApiBean {
       set => deploymentType = value;
   }
 
-
-  public void setDeploymentType(int? deploymentType) {
-     this.deploymentType = deploymentType;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public bool? SupervisorLoginAllowed
@@ -91,29 +57,12 @@ public class Deployment : BaseApiBean {
       set => supervisorLoginAllowed = value;
   }
 
-
-  public void setSupervisorLoginAllowed(Boolean supervisorLoginAllowed) {
-     this.supervisorLoginAllowed = supervisorLoginAllowed;
-  }
-
-
   // Path("deployment")
   [XmlRoot("results")]
-  public class DeploymentList : BaseApiListBean<Deployment> {
-    [XmlElement("deployments")]
-    [XmlElement("deployment")]
-   
-    public override List<Deployment>? GetItems() => items;
+  public class DeploymentList : BaseApiListBean<Deployment> {    public override List<Deployment>? GetItems() => items;
 
     public override void SetItems(List<Deployment>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<Deployment>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

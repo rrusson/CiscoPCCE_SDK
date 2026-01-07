@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("routingtype")
 [XmlRoot("routingType")]
 public class RoutingTypeBean : BaseApiBean {
@@ -21,20 +17,10 @@ public class RoutingTypeBean : BaseApiBean {
       set => machineType = value;
   }
 
-
-  public void setMachineType(String machineType) {
-     this.machineType = machineType;
-  }
-
   public State State
   {
       get => state;
       set => state = value;
-  }
-
-
-  public void setState(State state) {
-     this.state = state;
   }
 
   public int? Type
@@ -43,29 +29,12 @@ public class RoutingTypeBean : BaseApiBean {
       set => type = value;
   }
 
-
-  public void setType(int? type) {
-     this.type = type;
-  }
-
-
   // Path("routingtype")
   [XmlRoot("results")]
-  public class RoutingTypeBeanList : BaseApiListBean<RoutingTypeBean> {
-    [XmlElement("routingTypes")]
-    [XmlElement("routingType")]
-   
-    public override List<RoutingTypeBean>? GetItems() => items;
+  public class RoutingTypeBeanList : BaseApiListBean<RoutingTypeBean> {    public override List<RoutingTypeBean>? GetItems() => items;
 
     public override void SetItems(List<RoutingTypeBean>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<RoutingTypeBean>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("businesstimezone")
 [XmlRoot("businesstimezone")]
 public class BusinessTimeZone : BaseApiBean {
@@ -26,21 +22,11 @@ public class BusinessTimeZone : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   [XmlElement("businesstimezone")]
-  public string? BusinessTimeZone
+  public string? BusinessTimeZoneName
   {
       get => businessTimeZone;
       set => businessTimeZone = value;
-  }
-
-
-  public void setBusinessTimeZone(String businessTimeZone) {
-     this.businessTimeZone = businessTimeZone;
   }
 
   public int? ChangeStamp
@@ -49,20 +35,10 @@ public class BusinessTimeZone : BaseApiBean {
       set => changeStamp = value;
   }
 
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Department
@@ -71,20 +47,10 @@ public class BusinessTimeZone : BaseApiBean {
       set => department = value;
   }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
   public int? Id
   {
       get => id;
       set => id = value;
-  }
-
-
-  public void setId(int? id) {
-     this.id = id;
   }
 
   public string? IdFromRefUrl
@@ -93,40 +59,18 @@ public class BusinessTimeZone : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
-
   // Path("businesstimezone")
   [XmlRoot("results")]
-  public class BusinessTimeZoneList : BaseApiListBean<BusinessTimeZone> {
-    [XmlElement("businesstimezones")]
-    [XmlElement("businesstimezone")]
-   
-    public override List<BusinessTimeZone>? GetItems() => items;
+  public class BusinessTimeZoneList : BaseApiListBean<BusinessTimeZone> {    public override List<BusinessTimeZone>? GetItems() => items;
 
     public override void SetItems(List<BusinessTimeZone>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<BusinessTimeZone>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

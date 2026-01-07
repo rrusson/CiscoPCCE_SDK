@@ -4,44 +4,14 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 public class RoutingTypeBeanList : BaseApiBean {
-  private List<RoutingTypeBean>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
-
+      
   [XmlElement("routingType")]
-  public List<RoutingTypeBean>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+  public List<RoutingTypeBean>? Items { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+  public PageInfo PageInfo { get; set; }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
+  public PermissionInfo PermissionInfo { get; set; }
 
 }
 

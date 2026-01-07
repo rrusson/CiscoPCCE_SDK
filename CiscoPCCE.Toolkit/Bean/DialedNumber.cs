@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("dialednumber")
 [XmlRoot("dialedNumber")]
 public class DialedNumber : BaseApiBean {
@@ -36,20 +32,10 @@ public class DialedNumber : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public ReferenceBean CallType
   {
       get => callType;
       set => callType = value;
-  }
-
-
-  public void setCallType(ReferenceBean callType) {
-     this.callType = callType;
   }
 
   public int? ChangeStamp
@@ -58,20 +44,10 @@ public class DialedNumber : BaseApiBean {
       set => changeStamp = value;
   }
 
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Datacenter
@@ -80,31 +56,16 @@ public class DialedNumber : BaseApiBean {
       set => datacenter = value;
   }
 
-
-  public void setDatacenter(ReferenceBean datacenter) {
-     this.datacenter = datacenter;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
   }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
   public string? Description
   {
       get => description;
       set => description = value;
-  }
-
-
-  public void setDescription(String description) {
-     this.description = description;
   }
 
   [XmlElement("dialedNumberRecords")]
@@ -115,20 +76,10 @@ public class DialedNumber : BaseApiBean {
       set => dialedNumberRecords = value;
   }
 
-
-  public void setDialedNumberRecords(List<DialedNumberRecord> dialedNumberRecords) {
-     this.dialedNumberRecords = dialedNumberRecords;
-  }
-
   public string? DialedNumberString
   {
       get => dialedNumberString;
       set => dialedNumberString = value;
-  }
-
-
-  public void setDialedNumberString(String dialedNumberString) {
-     this.dialedNumberString = dialedNumberString;
   }
 
   public string? IdFromRefUrl
@@ -137,20 +88,10 @@ public class DialedNumber : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public bool? MarkDeletable
   {
       get => markDeletable;
       set => markDeletable = value;
-  }
-
-
-  public void setMarkDeletable(Boolean markDeletable) {
-     this.markDeletable = markDeletable;
   }
 
   public ReferenceBean MediaRoutingDomain
@@ -159,31 +100,16 @@ public class DialedNumber : BaseApiBean {
       set => mediaRoutingDomain = value;
   }
 
-
-  public void setMediaRoutingDomain(ReferenceBean mediaRoutingDomain) {
-     this.mediaRoutingDomain = mediaRoutingDomain;
-  }
-
   public string? Name
   {
       get => name;
       set => name = value;
   }
 
-
-  public void setName(String name) {
-     this.name = name;
-  }
-
   public string? PcsEnabledDialedNumberPattern
   {
       get => pcsEnabledDialedNumberPattern;
       set => pcsEnabledDialedNumberPattern = value;
-  }
-
-
-  public void setPcsEnabledDialedNumberPattern(String pcsEnabledDialedNumberPattern) {
-     this.pcsEnabledDialedNumberPattern = pcsEnabledDialedNumberPattern;
   }
 
   [XmlElement("peripheralSet")]
@@ -193,20 +119,10 @@ public class DialedNumber : BaseApiBean {
       set => peripheralSet = value;
   }
 
-
-  public void setPeripheralSet(ReferenceBean peripheralSet) {
-     this.peripheralSet = peripheralSet;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
   }
 
   public string? RingtoneName
@@ -215,40 +131,18 @@ public class DialedNumber : BaseApiBean {
       set => ringtoneName = value;
   }
 
-
-  public void setRingtoneName(String ringtoneName) {
-     this.ringtoneName = ringtoneName;
-  }
-
   public int? RoutingType
   {
       get => routingType;
       set => routingType = value;
   }
 
-
-  public void setRoutingType(int? routingType) {
-     this.routingType = routingType;
-  }
-
-
   // Path("dialednumber")
   [XmlRoot("results")]
-  public class DialedNumberList : BaseApiListBean<DialedNumber> {
-    [XmlElement("dialedNumbers")]
-    [XmlElement("dialedNumber")]
-   
-    public override List<DialedNumber>? GetItems() => items;
+  public class DialedNumberList : BaseApiListBean<DialedNumber> {    public override List<DialedNumber>? GetItems() => items;
 
     public override void SetItems(List<DialedNumber>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<DialedNumber>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("/agentteam")
 [XmlRoot("agentTeam")]
 public class AgentTeam : BaseApiBean {
@@ -36,11 +32,6 @@ public class AgentTeam : BaseApiBean {
       set => agentCount = value;
   }
 
-
-  public void setAgentCount(int? agentCount) {
-     this.agentCount = agentCount;
-  }
-
   [XmlElement("agents")]
   [XmlElement("agent")]
   public List<ReferenceBean>? Agents
@@ -49,20 +40,10 @@ public class AgentTeam : BaseApiBean {
       set => agents = value;
   }
 
-
-  public void setAgents(List<ReferenceBean> agents) {
-     this.agents = agents;
-  }
-
   public string? BaseUrlfromRefUrl
   {
       get => baseUrlfromRefUrl;
       set => baseUrlfromRefUrl = value;
-  }
-
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
   }
 
   public int? ChangeStamp
@@ -71,20 +52,10 @@ public class AgentTeam : BaseApiBean {
       set => changeStamp = value;
   }
 
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Datacenter
@@ -93,20 +64,10 @@ public class AgentTeam : BaseApiBean {
       set => datacenter = value;
   }
 
-
-  public void setDatacenter(ReferenceBean datacenter) {
-     this.datacenter = datacenter;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? Description
@@ -115,20 +76,10 @@ public class AgentTeam : BaseApiBean {
       set => description = value;
   }
 
-
-  public void setDescription(String description) {
-     this.description = description;
-  }
-
   public ReferenceBean DialedNumber
   {
       get => dialedNumber;
       set => dialedNumber = value;
-  }
-
-
-  public void setDialedNumber(ReferenceBean dialedNumber) {
-     this.dialedNumber = dialedNumber;
   }
 
   public string? IdFromRefUrl
@@ -137,20 +88,10 @@ public class AgentTeam : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public string? Name
   {
       get => name;
       set => name = value;
-  }
-
-
-  public void setName(String name) {
-     this.name = name;
   }
 
   public PeripheralRef Peripheral
@@ -159,20 +100,10 @@ public class AgentTeam : BaseApiBean {
       set => peripheral = value;
   }
 
-
-  public void setPeripheral(PeripheralRef peripheral) {
-     this.peripheral = peripheral;
-  }
-
   public int? PeripheralId
   {
       get => peripheralId;
       set => peripheralId = value;
-  }
-
-
-  public void setPeripheralId(int? peripheralId) {
-     this.peripheralId = peripheralId;
   }
 
   [XmlElement("peripheralSet")]
@@ -182,20 +113,10 @@ public class AgentTeam : BaseApiBean {
       set => peripheralSet = value;
   }
 
-
-  public void setPeripheralSet(ReferenceBean peripheralSet) {
-     this.peripheralSet = peripheralSet;
-  }
-
   public ReferenceBean PrimarySupervisor
   {
       get => primarySupervisor;
       set => primarySupervisor = value;
-  }
-
-
-  public void setPrimarySupervisor(ReferenceBean primarySupervisor) {
-     this.primarySupervisor = primarySupervisor;
   }
 
   public string? RefURL
@@ -204,20 +125,10 @@ public class AgentTeam : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
   public int? SupervisorCount
   {
       get => supervisorCount;
       set => supervisorCount = value;
-  }
-
-
-  public void setSupervisorCount(int? supervisorCount) {
-     this.supervisorCount = supervisorCount;
   }
 
   [XmlElement("supervisors")]
@@ -228,29 +139,12 @@ public class AgentTeam : BaseApiBean {
       set => supervisors = value;
   }
 
-
-  public void setSupervisors(List<ReferenceBean> supervisors) {
-     this.supervisors = supervisors;
-  }
-
-
   // Path("/agentteam")
   [XmlRoot("results")]
-  public class AgentTeamList : BaseApiListBean<AgentTeam> {
-    [XmlElement("agentTeams")]
-    [XmlElement("agentTeam")]
-   
-    public override List<AgentTeam>? GetItems() => items;
+  public class AgentTeamList : BaseApiListBean<AgentTeam> {    public override List<AgentTeam>? GetItems() => items;
 
     public override void SetItems(List<AgentTeam>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<AgentTeam>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

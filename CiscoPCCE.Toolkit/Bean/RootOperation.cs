@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("operation")
 [XmlRoot("operation")]
 public class RootOperation : BaseApiBean {
@@ -21,20 +17,10 @@ public class RootOperation : BaseApiBean {
       set => changeSet = value;
   }
 
-
-  public void setChangeSet(ChangeSet changeSet) {
-     this.changeSet = changeSet;
-  }
-
   public OperationType OperationType
   {
       get => operationType;
       set => operationType = value;
-  }
-
-
-  public void setOperationType(OperationType operationType) {
-     this.operationType = operationType;
   }
 
   [XmlElement("refURLs")]
@@ -45,29 +31,12 @@ public class RootOperation : BaseApiBean {
       set => refUrls = value;
   }
 
-
-  public void setRefUrls(List<String> refUrls) {
-     this.refUrls = refUrls;
-  }
-
-
   // Path("operation")
   [XmlRoot("results")]
-  public class RootOperationList : BaseApiListBean<RootOperation> {
-    [XmlElement("operations")]
-    [XmlElement("operation")]
-   
-    public override List<RootOperation>? GetItems() => items;
+  public class RootOperationList : BaseApiListBean<RootOperation> {    public override List<RootOperation>? GetItems() => items;
 
     public override void SetItems(List<RootOperation>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<RootOperation>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

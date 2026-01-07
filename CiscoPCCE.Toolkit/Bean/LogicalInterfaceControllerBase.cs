@@ -3,157 +3,32 @@ using System.Xml.Serialization;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("globalsetting")
 public class LogicalInterfaceControllerBase : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private Short clientType;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private Short logicalControllerType;
-  private bool? markDeletable;
-  private string? name;
-  private string? primaryCtiAddress;
-  private string? refURL;
-  private string? secondaryCtiAddress;
+                        
+  public string? BaseUrlfromRefUrl { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+  public int? ChangeStamp { get; set; }
 
+  public short? ClientType { get; set; }
 
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
+  public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+  public ReferenceBean Department { get; set; }
 
+  public string? IdFromRefUrl { get; set; }
 
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
+  public short? LogicalControllerType { get; set; }
 
-  public Short ClientType
-  {
-      get => clientType;
-      set => clientType = value;
-  }
+  public bool? MarkDeletable { get; set; }
 
+  public string? Name { get; set; }
 
-  public void setClientType(Short clientType) {
-     this.clientType = clientType;
-  }
+  public string? PrimaryCtiAddress { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+  public string? RefURL { get; set; }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
-  public Short LogicalControllerType
-  {
-      get => logicalControllerType;
-      set => logicalControllerType = value;
-  }
-
-
-  public void setLogicalControllerType(Short logicalControllerType) {
-     this.logicalControllerType = logicalControllerType;
-  }
-
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
-
-
-  public void setMarkDeletable(Boolean markDeletable) {
-     this.markDeletable = markDeletable;
-  }
-
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
-
-
-  public void setName(String name) {
-     this.name = name;
-  }
-
-  public string? PrimaryCtiAddress
-  {
-      get => primaryCtiAddress;
-      set => primaryCtiAddress = value;
-  }
-
-
-  public void setPrimaryCtiAddress(String primaryCtiAddress) {
-     this.primaryCtiAddress = primaryCtiAddress;
-  }
-
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
-  public string? SecondaryCtiAddress
-  {
-      get => secondaryCtiAddress;
-      set => secondaryCtiAddress = value;
-  }
-
-
-  public void setSecondaryCtiAddress(String secondaryCtiAddress) {
-     this.secondaryCtiAddress = secondaryCtiAddress;
-  }
-
+  public string? SecondaryCtiAddress { get; set; }
 
 }
 

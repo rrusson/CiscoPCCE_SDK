@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("businesshourstatusreason")
 [XmlRoot("businessHourStatusReasons")]
 public class BusinessHourStatusReasons : BaseApiBean {
@@ -19,29 +15,12 @@ public class BusinessHourStatusReasons : BaseApiBean {
       set => businessHourStatusReason = value;
   }
 
-
-  public void setBusinessHourStatusReason(List<BusinessHourStatusReason> businessHourStatusReason) {
-     this.businessHourStatusReason = businessHourStatusReason;
-  }
-
-
   // Path("businesshourstatusreason")
   [XmlRoot("results")]
-  public class BusinessHourStatusReasonsList : BaseApiListBean<BusinessHourStatusReasons> {
-    [XmlElement("businessHourStatusReasonss")]
-    [XmlElement("businessHourStatusReasons")]
-   
-    public override List<BusinessHourStatusReasons>? GetItems() => items;
+  public class BusinessHourStatusReasonsList : BaseApiListBean<BusinessHourStatusReasons> {    public override List<BusinessHourStatusReasons>? GetItems() => items;
 
     public override void SetItems(List<BusinessHourStatusReasons>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<BusinessHourStatusReasons>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

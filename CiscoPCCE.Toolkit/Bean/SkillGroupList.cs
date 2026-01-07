@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("skillgroup")
 [XmlRoot("results")]
 public class SkillGroupList : BaseApiBean {
@@ -29,40 +25,18 @@ public class SkillGroupList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("skillgroup")
   [XmlRoot("results")]
-  public class SkillGroupListList : BaseApiListBean<SkillGroupList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<SkillGroupList>? GetItems() => items;
+  public class SkillGroupListList : BaseApiListBean<SkillGroupList> {    public override List<SkillGroupList>? GetItems() => items;
 
     public override void SetItems(List<SkillGroupList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<SkillGroupList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

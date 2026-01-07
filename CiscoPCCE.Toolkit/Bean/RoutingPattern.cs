@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("routingpattern")
 [XmlRoot("routingPattern")]
 public class RoutingPattern : BaseApiBean {
@@ -32,20 +28,10 @@ public class RoutingPattern : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public string? ConfigParam
@@ -54,20 +40,10 @@ public class RoutingPattern : BaseApiBean {
       set => configParam = value;
   }
 
-
-  public void setConfigParam(String configParam) {
-     this.configParam = configParam;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Datacenter
@@ -76,20 +52,10 @@ public class RoutingPattern : BaseApiBean {
       set => datacenter = value;
   }
 
-
-  public void setDatacenter(ReferenceBean datacenter) {
-     this.datacenter = datacenter;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? Description
@@ -98,20 +64,10 @@ public class RoutingPattern : BaseApiBean {
       set => description = value;
   }
 
-
-  public void setDescription(String description) {
-     this.description = description;
-  }
-
   public string? Destination
   {
       get => destination;
       set => destination = value;
-  }
-
-
-  public void setDestination(String destination) {
-     this.destination = destination;
   }
 
   public string? IdFromRefUrl
@@ -120,20 +76,10 @@ public class RoutingPattern : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public string? Pattern
   {
       get => pattern;
       set => pattern = value;
-  }
-
-
-  public void setPattern(String pattern) {
-     this.pattern = pattern;
   }
 
   public int? PatternType
@@ -142,20 +88,10 @@ public class RoutingPattern : BaseApiBean {
       set => patternType = value;
   }
 
-
-  public void setPatternType(int? patternType) {
-     this.patternType = patternType;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
   }
 
   public int? RnaTimeout
@@ -164,40 +100,18 @@ public class RoutingPattern : BaseApiBean {
       set => rnaTimeout = value;
   }
 
-
-  public void setRnaTimeout(int? rnaTimeout) {
-     this.rnaTimeout = rnaTimeout;
-  }
-
   public bool? SendToOriginator
   {
       get => sendToOriginator;
       set => sendToOriginator = value;
   }
 
-
-  public void setSendToOriginator(Boolean sendToOriginator) {
-     this.sendToOriginator = sendToOriginator;
-  }
-
-
   // Path("routingpattern")
   [XmlRoot("results")]
-  public class RoutingPatternList : BaseApiListBean<RoutingPattern> {
-    [XmlElement("routingPatterns")]
-    [XmlElement("routingPattern")]
-   
-    public override List<RoutingPattern>? GetItems() => items;
+  public class RoutingPatternList : BaseApiListBean<RoutingPattern> {    public override List<RoutingPattern>? GetItems() => items;
 
     public override void SetItems(List<RoutingPattern>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<RoutingPattern>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

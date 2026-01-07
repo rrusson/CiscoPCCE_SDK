@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("systemmgmt")
 [XmlRoot("inventoryautodiscovery")]
 public class InventoryAutoDiscovery : BaseApiBean {
@@ -19,29 +15,12 @@ public class InventoryAutoDiscovery : BaseApiBean {
       set => disabled = value;
   }
 
-
-  public void setDisabled(bool? disabled) {
-     this.disabled = disabled;
-  }
-
-
   // Path("systemmgmt")
   [XmlRoot("results")]
-  public class InventoryAutoDiscoveryList : BaseApiListBean<InventoryAutoDiscovery> {
-    [XmlElement("inventoryautodiscoverys")]
-    [XmlElement("inventoryautodiscovery")]
-   
-    public override List<InventoryAutoDiscovery>? GetItems() => items;
+  public class InventoryAutoDiscoveryList : BaseApiListBean<InventoryAutoDiscovery> {    public override List<InventoryAutoDiscovery>? GetItems() => items;
 
     public override void SetItems(List<InventoryAutoDiscovery>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<InventoryAutoDiscovery>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

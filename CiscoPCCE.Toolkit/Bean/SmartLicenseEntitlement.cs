@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("smartlicense")
 [XmlRoot("smartlicenseentitlement")]
 public class SmartLicenseEntitlement : BaseApiBean {
@@ -36,20 +32,10 @@ public class SmartLicenseEntitlement : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public string? CorrelationId
@@ -58,20 +44,10 @@ public class SmartLicenseEntitlement : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? DeploymentType
@@ -80,20 +56,10 @@ public class SmartLicenseEntitlement : BaseApiBean {
       set => deploymentType = value;
   }
 
-
-  public void setDeploymentType(String deploymentType) {
-     this.deploymentType = deploymentType;
-  }
-
   public string? EnforceMode
   {
       get => enforceMode;
       set => enforceMode = value;
-  }
-
-
-  public void setEnforceMode(String enforceMode) {
-     this.enforceMode = enforceMode;
   }
 
   public string? EntitlementDescription
@@ -102,20 +68,10 @@ public class SmartLicenseEntitlement : BaseApiBean {
       set => entitlementDescription = value;
   }
 
-
-  public void setEntitlementDescription(String entitlementDescription) {
-     this.entitlementDescription = entitlementDescription;
-  }
-
   public string? EntitlementDisplayname
   {
       get => entitlementDisplayname;
       set => entitlementDisplayname = value;
-  }
-
-
-  public void setEntitlementDisplayname(String entitlementDisplayname) {
-     this.entitlementDisplayname = entitlementDisplayname;
   }
 
   public string? EntitlementTag
@@ -124,20 +80,10 @@ public class SmartLicenseEntitlement : BaseApiBean {
       set => entitlementTag = value;
   }
 
-
-  public void setEntitlementTag(String entitlementTag) {
-     this.entitlementTag = entitlementTag;
-  }
-
   public string? EntitlementVersion
   {
       get => entitlementVersion;
       set => entitlementVersion = value;
-  }
-
-
-  public void setEntitlementVersion(String entitlementVersion) {
-     this.entitlementVersion = entitlementVersion;
   }
 
   public string? IdFromRefUrl
@@ -146,20 +92,10 @@ public class SmartLicenseEntitlement : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public int? LicenseType
   {
       get => licenseType;
       set => licenseType = value;
-  }
-
-
-  public void setLicenseType(int? licenseType) {
-     this.licenseType = licenseType;
   }
 
   public int? LockUsage
@@ -168,20 +104,10 @@ public class SmartLicenseEntitlement : BaseApiBean {
       set => lockUsage = value;
   }
 
-
-  public void setLockUsage(int? lockUsage) {
-     this.lockUsage = lockUsage;
-  }
-
   public int? OutOfCompliance
   {
       get => outOfCompliance;
       set => outOfCompliance = value;
-  }
-
-
-  public void setOutOfCompliance(int? outOfCompliance) {
-     this.outOfCompliance = outOfCompliance;
   }
 
   public int? OutOfComplianceCount
@@ -190,20 +116,10 @@ public class SmartLicenseEntitlement : BaseApiBean {
       set => outOfComplianceCount = value;
   }
 
-
-  public void setOutOfComplianceCount(int? outOfComplianceCount) {
-     this.outOfComplianceCount = outOfComplianceCount;
-  }
-
   public int? PeakUsage
   {
       get => peakUsage;
       set => peakUsage = value;
-  }
-
-
-  public void setPeakUsage(int? peakUsage) {
-     this.peakUsage = peakUsage;
   }
 
   public string? RefURL
@@ -212,40 +128,18 @@ public class SmartLicenseEntitlement : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
   public int? SmartLicenseEntitlementsTagID
   {
       get => smartLicenseEntitlementsTagID;
       set => smartLicenseEntitlementsTagID = value;
   }
 
-
-  public void setSmartLicenseEntitlementsTagID(int? smartLicenseEntitlementsTagID) {
-     this.smartLicenseEntitlementsTagID = smartLicenseEntitlementsTagID;
-  }
-
-
   // Path("smartlicense")
   [XmlRoot("results")]
-  public class SmartLicenseEntitlementList : BaseApiListBean<SmartLicenseEntitlement> {
-    [XmlElement("smartlicenseentitlements")]
-    [XmlElement("smartlicenseentitlement")]
-   
-    public override List<SmartLicenseEntitlement>? GetItems() => items;
+  public class SmartLicenseEntitlementList : BaseApiListBean<SmartLicenseEntitlement> {    public override List<SmartLicenseEntitlement>? GetItems() => items;
 
     public override void SetItems(List<SmartLicenseEntitlement>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<SmartLicenseEntitlement>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

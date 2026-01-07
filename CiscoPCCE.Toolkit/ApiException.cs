@@ -11,10 +11,6 @@ namespace CiscoPCCE.Toolkit
     {
         private readonly ApiErrors? errors;
 
-        public ApiException()
-        {
-        }
-
         public ApiException(string message) : base(message)
         {
         }

@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("skillgroup")
 [XmlRoot("skillGroupSummary")]
 public class SkillGroupSummary : BaseApiBean {
@@ -33,20 +29,10 @@ public class SkillGroupSummary : BaseApiBean {
       set => agentCount = value;
   }
 
-
-  public void setAgentCount(int? agentCount) {
-     this.agentCount = agentCount;
-  }
-
   public string? BaseUrlfromRefUrl
   {
       get => baseUrlfromRefUrl;
       set => baseUrlfromRefUrl = value;
-  }
-
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
   }
 
   public int? ChangeStamp
@@ -55,20 +41,10 @@ public class SkillGroupSummary : BaseApiBean {
       set => changeStamp = value;
   }
 
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Datacenter
@@ -77,20 +53,10 @@ public class SkillGroupSummary : BaseApiBean {
       set => datacenter = value;
   }
 
-
-  public void setDatacenter(ReferenceBean datacenter) {
-     this.datacenter = datacenter;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? Description
@@ -99,20 +65,10 @@ public class SkillGroupSummary : BaseApiBean {
       set => description = value;
   }
 
-
-  public void setDescription(String description) {
-     this.description = description;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public bool? MarkDeletable
@@ -121,20 +77,10 @@ public class SkillGroupSummary : BaseApiBean {
       set => markDeletable = value;
   }
 
-
-  public void setMarkDeletable(Boolean markDeletable) {
-     this.markDeletable = markDeletable;
-  }
-
   public string? Name
   {
       get => name;
       set => name = value;
-  }
-
-
-  public void setName(String name) {
-     this.name = name;
   }
 
   public PeripheralRef Peripheral
@@ -143,20 +89,10 @@ public class SkillGroupSummary : BaseApiBean {
       set => peripheral = value;
   }
 
-
-  public void setPeripheral(PeripheralRef peripheral) {
-     this.peripheral = peripheral;
-  }
-
   public int? PeripheralNumber
   {
       get => peripheralNumber;
       set => peripheralNumber = value;
-  }
-
-
-  public void setPeripheralNumber(int? peripheralNumber) {
-     this.peripheralNumber = peripheralNumber;
   }
 
   [XmlElement("peripheralSet")]
@@ -166,20 +102,10 @@ public class SkillGroupSummary : BaseApiBean {
       set => peripheralSet = value;
   }
 
-
-  public void setPeripheralSet(ReferenceBean peripheralSet) {
-     this.peripheralSet = peripheralSet;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
   }
 
   public int? SelectedAgentCount
@@ -188,29 +114,12 @@ public class SkillGroupSummary : BaseApiBean {
       set => selectedAgentCount = value;
   }
 
-
-  public void setSelectedAgentCount(int? selectedAgentCount) {
-     this.selectedAgentCount = selectedAgentCount;
-  }
-
-
   // Path("skillgroup")
   [XmlRoot("results")]
-  public class SkillGroupSummaryList : BaseApiListBean<SkillGroupSummary> {
-    [XmlElement("skillGroupSummarys")]
-    [XmlElement("skillGroupSummary")]
-   
-    public override List<SkillGroupSummary>? GetItems() => items;
+  public class SkillGroupSummaryList : BaseApiListBean<SkillGroupSummary> {    public override List<SkillGroupSummary>? GetItems() => items;
 
     public override void SetItems(List<SkillGroupSummary>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<SkillGroupSummary>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

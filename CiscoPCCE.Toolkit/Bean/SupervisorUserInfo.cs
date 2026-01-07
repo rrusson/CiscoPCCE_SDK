@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("agent")
 [XmlRoot("supervisorUserInfo")]
 public class SupervisorUserInfo : BaseApiBean {
@@ -27,20 +23,10 @@ public class SupervisorUserInfo : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public string? CorrelationId
@@ -49,20 +35,10 @@ public class SupervisorUserInfo : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? DomainName
@@ -71,20 +47,10 @@ public class SupervisorUserInfo : BaseApiBean {
       set => domainName = value;
   }
 
-
-  public void setDomainName(String domainName) {
-     this.domainName = domainName;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public bool? SsoEnabled
@@ -93,20 +59,10 @@ public class SupervisorUserInfo : BaseApiBean {
       set => ssoEnabled = value;
   }
 
-
-  public void setSsoEnabled(bool? ssoEnabled) {
-     this.ssoEnabled = ssoEnabled;
-  }
-
   public bool? Supervisor
   {
       get => supervisor;
       set => supervisor = value;
-  }
-
-
-  public void setSupervisor(bool? supervisor) {
-     this.supervisor = supervisor;
   }
 
   public string? UserName
@@ -115,29 +71,12 @@ public class SupervisorUserInfo : BaseApiBean {
       set => userName = value;
   }
 
-
-  public void setUserName(String userName) {
-     this.userName = userName;
-  }
-
-
   // Path("agent")
   [XmlRoot("results")]
-  public class SupervisorUserInfoList : BaseApiListBean<SupervisorUserInfo> {
-    [XmlElement("supervisorUserInfos")]
-    [XmlElement("supervisorUserInfo")]
-   
-    public override List<SupervisorUserInfo>? GetItems() => items;
+  public class SupervisorUserInfoList : BaseApiListBean<SupervisorUserInfo> {    public override List<SupervisorUserInfo>? GetItems() => items;
 
     public override void SetItems(List<SupervisorUserInfo>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<SupervisorUserInfo>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

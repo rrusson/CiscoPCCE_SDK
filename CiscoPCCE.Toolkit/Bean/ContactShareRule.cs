@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("contactsharerule")
 [XmlRoot("contactShareRule")]
 public class ContactShareRule : BaseApiBean {
@@ -27,20 +23,10 @@ public class ContactShareRule : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public string? CorrelationId
@@ -49,20 +35,10 @@ public class ContactShareRule : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? Description
@@ -71,20 +47,10 @@ public class ContactShareRule : BaseApiBean {
       set => description = value;
   }
 
-
-  public void setDescription(String description) {
-     this.description = description;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public string? Name
@@ -93,20 +59,10 @@ public class ContactShareRule : BaseApiBean {
       set => name = value;
   }
 
-
-  public void setName(String name) {
-     this.name = name;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
   }
 
   public string? RuleExpression
@@ -115,29 +71,12 @@ public class ContactShareRule : BaseApiBean {
       set => ruleExpression = value;
   }
 
-
-  public void setRuleExpression(String ruleExpression) {
-     this.ruleExpression = ruleExpression;
-  }
-
-
   // Path("contactsharerule")
   [XmlRoot("results")]
-  public class ContactShareRuleList : BaseApiListBean<ContactShareRule> {
-    [XmlElement("contactShareRules")]
-    [XmlElement("contactShareRule")]
-   
-    public override List<ContactShareRule>? GetItems() => items;
+  public class ContactShareRuleList : BaseApiListBean<ContactShareRule> {    public override List<ContactShareRule>? GetItems() => items;
 
     public override void SetItems(List<ContactShareRule>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<ContactShareRule>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

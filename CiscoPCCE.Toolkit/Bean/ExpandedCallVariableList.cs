@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("expandedcallvariable")
 [XmlRoot("results")]
 public class ExpandedCallVariableList : BaseApiBean {
@@ -20,11 +16,6 @@ public class ExpandedCallVariableList : BaseApiBean {
   {
       get => globalInfo;
       set => globalInfo = value;
-  }
-
-
-  public void setGlobalInfo(ExpandedCallVariableGlobalInfo globalInfo) {
-     this.globalInfo = globalInfo;
   }
 
   [XmlElement("expandedCallVariables")]
@@ -41,40 +32,18 @@ public class ExpandedCallVariableList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("expandedcallvariable")
   [XmlRoot("results")]
-  public class ExpandedCallVariableListList : BaseApiListBean<ExpandedCallVariableList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<ExpandedCallVariableList>? GetItems() => items;
+  public class ExpandedCallVariableListList : BaseApiListBean<ExpandedCallVariableList> {    public override List<ExpandedCallVariableList>? GetItems() => items;
 
     public override void SetItems(List<ExpandedCallVariableList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<ExpandedCallVariableList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

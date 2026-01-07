@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("agentdistribution")
 [XmlRoot("agentDistribution")]
 public class AgentDistribution : BaseApiBean {
@@ -28,20 +24,10 @@ public class AgentDistribution : BaseApiBean {
       set => agentHistoricalData = value;
   }
 
-
-  public void setAgentHistoricalData(Boolean agentHistoricalData) {
-     this.agentHistoricalData = agentHistoricalData;
-  }
-
   public bool? AgentRealTimeData
   {
       get => agentRealTimeData;
       set => agentRealTimeData = value;
-  }
-
-
-  public void setAgentRealTimeData(Boolean agentRealTimeData) {
-     this.agentRealTimeData = agentRealTimeData;
   }
 
   public string? BaseUrlfromRefUrl
@@ -50,20 +36,10 @@ public class AgentDistribution : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public string? CorrelationId
@@ -72,20 +48,10 @@ public class AgentDistribution : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? IdFromRefUrl
@@ -94,20 +60,10 @@ public class AgentDistribution : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public string? Name
   {
       get => name;
       set => name = value;
-  }
-
-
-  public void setName(String name) {
-     this.name = name;
   }
 
   public int? PeripheralId
@@ -116,40 +72,18 @@ public class AgentDistribution : BaseApiBean {
       set => peripheralId = value;
   }
 
-
-  public void setPeripheralId(int? peripheralId) {
-     this.peripheralId = peripheralId;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
-
   // Path("agentdistribution")
   [XmlRoot("results")]
-  public class AgentDistributionList : BaseApiListBean<AgentDistribution> {
-    [XmlElement("agentDistributions")]
-    [XmlElement("agentDistribution")]
-   
-    public override List<AgentDistribution>? GetItems() => items;
+  public class AgentDistributionList : BaseApiListBean<AgentDistribution> {    public override List<AgentDistribution>? GetItems() => items;
 
     public override void SetItems(List<AgentDistribution>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<AgentDistribution>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

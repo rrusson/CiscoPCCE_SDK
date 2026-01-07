@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("smartlicense")
 [XmlRoot("results")]
 public class SmartLicenseInfoList : BaseApiBean {
@@ -29,40 +25,18 @@ public class SmartLicenseInfoList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("smartlicense")
   [XmlRoot("results")]
-  public class SmartLicenseInfoListList : BaseApiListBean<SmartLicenseInfoList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<SmartLicenseInfoList>? GetItems() => items;
+  public class SmartLicenseInfoListList : BaseApiListBean<SmartLicenseInfoList> {    public override List<SmartLicenseInfoList>? GetItems() => items;
 
     public override void SetItems(List<SmartLicenseInfoList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<SmartLicenseInfoList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

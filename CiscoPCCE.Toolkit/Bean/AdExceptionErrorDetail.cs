@@ -3,49 +3,14 @@ using System.Xml.Serialization;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 [XmlRoot("errorDetail")]
 public class AdExceptionErrorDetail : BaseApiBean {
-  private int code;
-  private string? key;
-  private string? value;
+      
+  public int Code { get; set; }
 
-  public int Code
-  {
-      get => code;
-      set => code = value;
-  }
+  public string? Key { get; set; }
 
-
-  public void setCode(int code) {
-     this.code = code;
-  }
-
-  public string? Key
-  {
-      get => key;
-      set => key = value;
-  }
-
-
-  public void setKey(String key) {
-     this.key = key;
-  }
-
-  public string? Value
-  {
-      get => value;
-      set => value = value;
-  }
-
-
-  public void setValue(String value) {
-     this.value = value;
-  }
-
+  public string? Value { get; set; }
 
 }
 

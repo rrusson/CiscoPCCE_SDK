@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("initialize")
 [XmlRoot("results")]
 public class InitializationStatusResults : BaseApiBean {
@@ -21,11 +17,6 @@ public class InitializationStatusResults : BaseApiBean {
       set => state = value;
   }
 
-
-  public void setState(StateEnum state) {
-     this.state = state;
-  }
-
   [XmlElement("initializationStatuses")]
   [XmlElement("initializationStatus")]
   public List<InitializationStatus>? StatusList
@@ -34,29 +25,12 @@ public class InitializationStatusResults : BaseApiBean {
       set => statusList = value;
   }
 
-
-  public void setStatusList(List<InitializationStatus> statusList) {
-     this.statusList = statusList;
-  }
-
-
   // Path("initialize")
   [XmlRoot("results")]
-  public class InitializationStatusResultsList : BaseApiListBean<InitializationStatusResults> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<InitializationStatusResults>? GetItems() => items;
+  public class InitializationStatusResultsList : BaseApiListBean<InitializationStatusResults> {    public override List<InitializationStatusResults>? GetItems() => items;
 
     public override void SetItems(List<InitializationStatusResults>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<InitializationStatusResults>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

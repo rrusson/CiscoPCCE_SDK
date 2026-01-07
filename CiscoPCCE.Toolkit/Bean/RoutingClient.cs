@@ -4,37 +4,28 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("secondaryaddress")
 [XmlRoot("routingClient")]
 public class RoutingClient : BaseApiBean {
   private string? baseUrlfromRefUrl;
   private int? changeStamp;
-  private Short clientType;
+  private short? clientType;
   private string? correlationId;
   private ReferenceBean department;
   private string? idFromRefUrl;
-  private Short lateThreshold;
+  private short? lateThreshold;
   private ReferenceBean logicalController;
   private bool? markDeletable;
   private string? name;
   private PeripheralRef peripheral;
   private string? refURL;
-  private Short timeoutLimit;
-  private Short timeoutThreshold;
+  private short? timeoutLimit;
+  private short? timeoutThreshold;
 
   public string? BaseUrlfromRefUrl
   {
       get => baseUrlfromRefUrl;
       set => baseUrlfromRefUrl = value;
-  }
-
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
   }
 
   public int? ChangeStamp
@@ -43,20 +34,10 @@ public class RoutingClient : BaseApiBean {
       set => changeStamp = value;
   }
 
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
-
-  public Short ClientType
+  public short? ClientType
   {
       get => clientType;
       set => clientType = value;
-  }
-
-
-  public void setClientType(Short clientType) {
-     this.clientType = clientType;
   }
 
   public string? CorrelationId
@@ -65,20 +46,10 @@ public class RoutingClient : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? IdFromRefUrl
@@ -87,20 +58,10 @@ public class RoutingClient : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
-  public Short LateThreshold
+  public short? LateThreshold
   {
       get => lateThreshold;
       set => lateThreshold = value;
-  }
-
-
-  public void setLateThreshold(Short lateThreshold) {
-     this.lateThreshold = lateThreshold;
   }
 
   public ReferenceBean LogicalController
@@ -109,20 +70,10 @@ public class RoutingClient : BaseApiBean {
       set => logicalController = value;
   }
 
-
-  public void setLogicalController(ReferenceBean logicalController) {
-     this.logicalController = logicalController;
-  }
-
   public bool? MarkDeletable
   {
       get => markDeletable;
       set => markDeletable = value;
-  }
-
-
-  public void setMarkDeletable(Boolean markDeletable) {
-     this.markDeletable = markDeletable;
   }
 
   public string? Name
@@ -131,20 +82,10 @@ public class RoutingClient : BaseApiBean {
       set => name = value;
   }
 
-
-  public void setName(String name) {
-     this.name = name;
-  }
-
   public PeripheralRef Peripheral
   {
       get => peripheral;
       set => peripheral = value;
-  }
-
-
-  public void setPeripheral(PeripheralRef peripheral) {
-     this.peripheral = peripheral;
   }
 
   public string? RefURL
@@ -153,51 +94,24 @@ public class RoutingClient : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
-  public Short TimeoutLimit
+  public short? TimeoutLimit
   {
       get => timeoutLimit;
       set => timeoutLimit = value;
   }
 
-
-  public void setTimeoutLimit(Short timeoutLimit) {
-     this.timeoutLimit = timeoutLimit;
-  }
-
-  public Short TimeoutThreshold
+  public short? TimeoutThreshold
   {
       get => timeoutThreshold;
       set => timeoutThreshold = value;
   }
 
-
-  public void setTimeoutThreshold(Short timeoutThreshold) {
-     this.timeoutThreshold = timeoutThreshold;
-  }
-
-
   // Path("secondaryaddress")
   [XmlRoot("results")]
-  public class RoutingClientList : BaseApiListBean<RoutingClient> {
-    [XmlElement("routingClients")]
-    [XmlElement("routingClient")]
-   
-    public override List<RoutingClient>? GetItems() => items;
+  public class RoutingClientList : BaseApiListBean<RoutingClient> {    public override List<RoutingClient>? GetItems() => items;
 
     public override void SetItems(List<RoutingClient>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<RoutingClient>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

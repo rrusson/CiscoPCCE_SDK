@@ -3,91 +3,26 @@ using System.Xml.Serialization;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 [XmlRoot("ucceVersion")]
 public class UcceVersion : BaseApiBean {
-  private int buildVersion;
-  private int esVersion;
-  private int maintenanceVersion;
-  private int majorVersion;
-  private int minorVersion;
-  private int srVersion;
-
+            
   [XmlElement("buildVersion")]
-  public int BuildVersion
-  {
-      get => buildVersion;
-      set => buildVersion = value;
-  }
-
-
-  public void setBuildVersion(int buildVersion) {
-     this.buildVersion = buildVersion;
-  }
+  public int BuildVersion { get; set; }
 
   [XmlElement("esVersion")]
-  public int EsVersion
-  {
-      get => esVersion;
-      set => esVersion = value;
-  }
-
-
-  public void setEsVersion(int esVersion) {
-     this.esVersion = esVersion;
-  }
+  public int EsVersion { get; set; }
 
   [XmlElement("maintenanceVersion")]
-  public int MaintenanceVersion
-  {
-      get => maintenanceVersion;
-      set => maintenanceVersion = value;
-  }
-
-
-  public void setMaintenanceVersion(int maintenanceVersion) {
-     this.maintenanceVersion = maintenanceVersion;
-  }
+  public int MaintenanceVersion { get; set; }
 
   [XmlElement("majorVersion")]
-  public int MajorVersion
-  {
-      get => majorVersion;
-      set => majorVersion = value;
-  }
-
-
-  public void setMajorVersion(int majorVersion) {
-     this.majorVersion = majorVersion;
-  }
+  public int MajorVersion { get; set; }
 
   [XmlElement("minorVersion")]
-  public int MinorVersion
-  {
-      get => minorVersion;
-      set => minorVersion = value;
-  }
-
-
-  public void setMinorVersion(int minorVersion) {
-     this.minorVersion = minorVersion;
-  }
+  public int MinorVersion { get; set; }
 
   [XmlElement("srVersion")]
-  public int SrVersion
-  {
-      get => srVersion;
-      set => srVersion = value;
-  }
-
-
-  public void setSrVersion(int srVersion) {
-     this.srVersion = srVersion;
-  }
-
+  public int SrVersion { get; set; }
 
 }
 

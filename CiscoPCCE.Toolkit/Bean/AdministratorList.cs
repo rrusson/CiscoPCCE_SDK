@@ -4,16 +4,10 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("administrator")
 [XmlRoot("results")]
 public class AdministratorList : BaseApiBean {
   private List<Administrator>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
 
   [XmlElement("administrators")]
   [XmlElement("administrator")]
@@ -23,46 +17,16 @@ public class AdministratorList : BaseApiBean {
       set => items = value;
   }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+  public PageInfo PageInfo { get; set; }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
+  public PermissionInfo PermissionInfo { get; set; }
 
   // Path("administrator")
   [XmlRoot("results")]
-  public class AdministratorListList : BaseApiListBean<AdministratorList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<AdministratorList>? GetItems() => items;
+  public class AdministratorListList : BaseApiListBean<AdministratorList> {    public override List<AdministratorList>? GetItems() => items;
 
     public override void SetItems(List<AdministratorList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<AdministratorList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

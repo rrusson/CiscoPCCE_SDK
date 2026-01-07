@@ -3,72 +3,17 @@ using System.Xml.Serialization;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 public class PermissionInfo : BaseApiBean {
-  private bool? canCreate;
-  private bool? canDelete;
-  private bool? canUpdate;
-  private bool? departmentAdmin;
-  private string? role;
+          
+  public bool? CanCreate { get; set; }
 
-  public bool? CanCreate
-  {
-      get => canCreate;
-      set => canCreate = value;
-  }
+  public bool? CanDelete { get; set; }
 
+  public bool? CanUpdate { get; set; }
 
-  public void setCanCreate(Boolean canCreate) {
-     this.canCreate = canCreate;
-  }
+  public bool? DepartmentAdmin { get; set; }
 
-  public bool? CanDelete
-  {
-      get => canDelete;
-      set => canDelete = value;
-  }
-
-
-  public void setCanDelete(Boolean canDelete) {
-     this.canDelete = canDelete;
-  }
-
-  public bool? CanUpdate
-  {
-      get => canUpdate;
-      set => canUpdate = value;
-  }
-
-
-  public void setCanUpdate(Boolean canUpdate) {
-     this.canUpdate = canUpdate;
-  }
-
-  public bool? DepartmentAdmin
-  {
-      get => departmentAdmin;
-      set => departmentAdmin = value;
-  }
-
-
-  public void setDepartmentAdmin(Boolean departmentAdmin) {
-     this.departmentAdmin = departmentAdmin;
-  }
-
-  public string? Role
-  {
-      get => role;
-      set => role = value;
-  }
-
-
-  public void setRole(String role) {
-     this.role = role;
-  }
-
+  public string? Role { get; set; }
 
 }
 

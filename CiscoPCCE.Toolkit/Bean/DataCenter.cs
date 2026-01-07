@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("datacenter")
 [XmlRoot("datacenter")]
 public class DataCenter : BaseApiBean {
@@ -32,20 +28,10 @@ public class DataCenter : BaseApiBean {
       set => agentPG = value;
   }
 
-
-  public void setAgentPG(AgentPG agentPG) {
-     this.agentPG = agentPG;
-  }
-
   public string? BaseUrlfromRefUrl
   {
       get => baseUrlfromRefUrl;
       set => baseUrlfromRefUrl = value;
-  }
-
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
   }
 
   public bool? CMPublisherAssociationRequired
@@ -54,20 +40,10 @@ public class DataCenter : BaseApiBean {
       set => cMPublisherAssociationRequired = value;
   }
 
-
-  public void setCMPublisherAssociationRequired(bool? cMPublisherAssociationRequired) {
-     this.cMPublisherAssociationRequired = cMPublisherAssociationRequired;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public string? CorrelationId
@@ -76,20 +52,10 @@ public class DataCenter : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public bool? EceConfigured
@@ -98,20 +64,10 @@ public class DataCenter : BaseApiBean {
       set => eceConfigured = value;
   }
 
-
-  public void setEceConfigured(Boolean eceConfigured) {
-     this.eceConfigured = eceConfigured;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public MultiChannelPG MultiChannelPG
@@ -120,20 +76,10 @@ public class DataCenter : BaseApiBean {
       set => multiChannelPG = value;
   }
 
-
-  public void setMultiChannelPG(MultiChannelPG multiChannelPG) {
-     this.multiChannelPG = multiChannelPG;
-  }
-
   public string? Name
   {
       get => name;
       set => name = value;
-  }
-
-
-  public void setName(String name) {
-     this.name = name;
   }
 
   public string? RefURL
@@ -142,20 +88,10 @@ public class DataCenter : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
   public string? SideAPGAddress
   {
       get => sideAPGAddress;
       set => sideAPGAddress = value;
-  }
-
-
-  public void setSideAPGAddress(String sideAPGAddress) {
-     this.sideAPGAddress = sideAPGAddress;
   }
 
   public string? SideBPGAddress
@@ -164,40 +100,18 @@ public class DataCenter : BaseApiBean {
       set => sideBPGAddress = value;
   }
 
-
-  public void setSideBPGAddress(String sideBPGAddress) {
-     this.sideBPGAddress = sideBPGAddress;
-  }
-
   public VruPG VruPG
   {
       get => vruPG;
       set => vruPG = value;
   }
 
-
-  public void setVruPG(VruPG vruPG) {
-     this.vruPG = vruPG;
-  }
-
-
   // Path("datacenter")
   [XmlRoot("results")]
-  public class DataCenterList : BaseApiListBean<DataCenter> {
-    [XmlElement("datacenters")]
-    [XmlElement("datacenter")]
-   
-    public override List<DataCenter>? GetItems() => items;
+  public class DataCenterList : BaseApiListBean<DataCenter> {    public override List<DataCenter>? GetItems() => items;
 
     public override void SetItems(List<DataCenter>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<DataCenter>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

@@ -5,10 +5,6 @@ using System;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("machineinventory")
 [XmlRoot("versionInfo")]
 public class MachineVersion : BaseApiBean {
@@ -27,21 +23,11 @@ public class MachineVersion : BaseApiBean {
       set => buildDate = value;
   }
 
-
-  public void setBuildDate(Date buildDate) {
-     this.buildDate = buildDate;
-  }
-
   [XmlElement("buildNumber")]
   public string? BuildNumber
   {
       get => buildNumber;
       set => buildNumber = value;
-  }
-
-
-  public void setBuildNumber(String buildNumber) {
-     this.buildNumber = buildNumber;
   }
 
   [XmlElement("dropNumber")]
@@ -51,21 +37,11 @@ public class MachineVersion : BaseApiBean {
       set => dropNumber = value;
   }
 
-
-  public void setDropNumber(String dropNumber) {
-     this.dropNumber = dropNumber;
-  }
-
   [XmlElement("esNumber")]
   public string? EsNumber
   {
       get => esNumber;
       set => esNumber = value;
-  }
-
-
-  public void setEsNumber(String esNumber) {
-     this.esNumber = esNumber;
   }
 
   [XmlElement("patchVersion")]
@@ -75,21 +51,11 @@ public class MachineVersion : BaseApiBean {
       set => patchVersion = value;
   }
 
-
-  public void setPatchVersion(String patchVersion) {
-     this.patchVersion = patchVersion;
-  }
-
   [XmlElement("srNumber")]
   public string? SrNumber
   {
       get => srNumber;
       set => srNumber = value;
-  }
-
-
-  public void setSrNumber(String srNumber) {
-     this.srNumber = srNumber;
   }
 
   [XmlElement("version")]
@@ -99,29 +65,12 @@ public class MachineVersion : BaseApiBean {
       set => version = value;
   }
 
-
-  public void setVersion(String version) {
-     this.version = version;
-  }
-
-
   // Path("machineinventory")
   [XmlRoot("results")]
-  public class MachineVersionList : BaseApiListBean<MachineVersion> {
-    [XmlElement("versionInfos")]
-    [XmlElement("versionInfo")]
-   
-    public override List<MachineVersion>? GetItems() => items;
+  public class MachineVersionList : BaseApiListBean<MachineVersion> {    public override List<MachineVersion>? GetItems() => items;
 
     public override void SetItems(List<MachineVersion>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<MachineVersion>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

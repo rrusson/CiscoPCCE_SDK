@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("locationproperties")
 [XmlRoot("CVP")]
 public class CVPLocationProperties : BaseApiBean {
@@ -25,20 +21,10 @@ public class CVPLocationProperties : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Department
@@ -47,20 +33,10 @@ public class CVPLocationProperties : BaseApiBean {
       set => department = value;
   }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
   public int? Id
   {
       get => id;
       set => id = value;
-  }
-
-
-  public void setId(int? id) {
-     this.id = id;
   }
 
   public string? IdFromRefUrl
@@ -69,20 +45,10 @@ public class CVPLocationProperties : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public LocationProperties LocationProperties
   {
       get => locationProperties;
       set => locationProperties = value;
-  }
-
-
-  public void setLocationProperties(LocationProperties locationProperties) {
-     this.locationProperties = locationProperties;
   }
 
   public string? RefURL
@@ -91,29 +57,12 @@ public class CVPLocationProperties : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
-
   // Path("locationproperties")
   [XmlRoot("results")]
-  public class CVPLocationPropertiesList : BaseApiListBean<CVPLocationProperties> {
-    [XmlElement("CVPs")]
-    [XmlElement("CVP")]
-   
-    public override List<CVPLocationProperties>? GetItems() => items;
+  public class CVPLocationPropertiesList : BaseApiListBean<CVPLocationProperties> {    public override List<CVPLocationProperties>? GetItems() => items;
 
     public override void SetItems(List<CVPLocationProperties>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<CVPLocationProperties>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

@@ -212,7 +212,7 @@ namespace CiscoPCCE.Toolkit
         /// </summary>
         public async Task<string?> CreateAndGetAsync<T>(T bean, string? path) where T : BaseApiBean
         {
-            var response = string.IsNullOrBlank(path) ? await CreateAsync(bean) : await CreateAsync(bean, path);
+            var response = string.IsNullOrWhiteSpace(path) ? await CreateAsync(bean) : await CreateAsync(bean, path);
             return GetLocationFromResponse(response);
         }
 

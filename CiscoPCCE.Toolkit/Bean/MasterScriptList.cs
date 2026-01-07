@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("masterscript")
 [XmlRoot("results")]
 public class MasterScriptList : BaseApiBean {
@@ -29,40 +25,18 @@ public class MasterScriptList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("masterscript")
   [XmlRoot("results")]
-  public class MasterScriptListList : BaseApiListBean<MasterScriptList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<MasterScriptList>? GetItems() => items;
+  public class MasterScriptListList : BaseApiListBean<MasterScriptList> {    public override List<MasterScriptList>? GetItems() => items;
 
     public override void SetItems(List<MasterScriptList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<MasterScriptList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

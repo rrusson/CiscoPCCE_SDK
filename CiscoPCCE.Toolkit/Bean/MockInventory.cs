@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("machineinventory")
 [XmlRoot("mockInventory")]
 public class MockInventory : BaseApiBean {
@@ -20,11 +16,6 @@ public class MockInventory : BaseApiBean {
       set => enableMockMode = value;
   }
 
-
-  public void setEnableMockMode(bool? enableMockMode) {
-     this.enableMockMode = enableMockMode;
-  }
-
   [XmlElement("machines")]
   [XmlElement("machine")]
   public List<VMData>? VmDataList
@@ -33,29 +24,12 @@ public class MockInventory : BaseApiBean {
       set => vmDataList = value;
   }
 
-
-  public void setVmDataList(List<VMData> vmDataList) {
-     this.vmDataList = vmDataList;
-  }
-
-
   // Path("machineinventory")
   [XmlRoot("results")]
-  public class MockInventoryList : BaseApiListBean<MockInventory> {
-    [XmlElement("mockInventorys")]
-    [XmlElement("mockInventory")]
-   
-    public override List<MockInventory>? GetItems() => items;
+  public class MockInventoryList : BaseApiListBean<MockInventory> {    public override List<MockInventory>? GetItems() => items;
 
     public override void SetItems(List<MockInventory>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<MockInventory>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

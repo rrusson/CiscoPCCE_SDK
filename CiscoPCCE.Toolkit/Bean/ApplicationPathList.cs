@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("applicationpath")
 [XmlRoot("results")]
 public class ApplicationPathList : BaseApiBean {
@@ -29,40 +25,18 @@ public class ApplicationPathList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("applicationpath")
   [XmlRoot("results")]
-  public class ApplicationPathListList : BaseApiListBean<ApplicationPathList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<ApplicationPathList>? GetItems() => items;
+  public class ApplicationPathListList : BaseApiListBean<ApplicationPathList> {    public override List<ApplicationPathList>? GetItems() => items;
 
     public override void SetItems(List<ApplicationPathList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<ApplicationPathList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

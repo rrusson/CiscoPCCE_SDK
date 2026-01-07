@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("awstatus")
 [XmlRoot("awStatus")]
 public class AwStatus : BaseApiBean {
@@ -20,29 +16,12 @@ public class AwStatus : BaseApiBean {
       set => lastRetrievalKey = value;
   }
 
-
-  public void setLastRetrievalKey(double? lastRetrievalKey) {
-     this.lastRetrievalKey = lastRetrievalKey;
-  }
-
-
   // Path("awstatus")
   [XmlRoot("results")]
-  public class AwStatusList : BaseApiListBean<AwStatus> {
-    [XmlElement("awStatuss")]
-    [XmlElement("awStatus")]
-   
-    public override List<AwStatus>? GetItems() => items;
+  public class AwStatusList : BaseApiListBean<AwStatus> {    public override List<AwStatus>? GetItems() => items;
 
     public override void SetItems(List<AwStatus>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<AwStatus>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

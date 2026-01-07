@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("networkvruscript")
 [XmlRoot("results")]
 public class NetworkVruScriptList : BaseApiBean {
@@ -29,40 +25,18 @@ public class NetworkVruScriptList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("networkvruscript")
   [XmlRoot("results")]
-  public class NetworkVruScriptListList : BaseApiListBean<NetworkVruScriptList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<NetworkVruScriptList>? GetItems() => items;
+  public class NetworkVruScriptListList : BaseApiListBean<NetworkVruScriptList> {    public override List<NetworkVruScriptList>? GetItems() => items;
 
     public override void SetItems(List<NetworkVruScriptList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<NetworkVruScriptList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("peripheral")
 [XmlRoot("results")]
 public class PeripheralList : BaseApiBean {
@@ -29,40 +25,18 @@ public class PeripheralList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("peripheral")
   [XmlRoot("results")]
-  public class PeripheralListList : BaseApiListBean<PeripheralList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<PeripheralList>? GetItems() => items;
+  public class PeripheralListList : BaseApiListBean<PeripheralList> {    public override List<PeripheralList>? GetItems() => items;
 
     public override void SetItems(List<PeripheralList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<PeripheralList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

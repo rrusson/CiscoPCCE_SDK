@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("sipservergroupproperties")
 [XmlRoot("CVP")]
 public class CVPSIPServerGroupProperties : BaseApiBean {
@@ -25,20 +21,10 @@ public class CVPSIPServerGroupProperties : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Department
@@ -47,20 +33,10 @@ public class CVPSIPServerGroupProperties : BaseApiBean {
       set => department = value;
   }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
   public int? Id
   {
       get => id;
       set => id = value;
-  }
-
-
-  public void setId(int? id) {
-     this.id = id;
   }
 
   public string? IdFromRefUrl
@@ -69,20 +45,10 @@ public class CVPSIPServerGroupProperties : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
   }
 
   public SIPServerGroupProperties SipServerGroupProperties
@@ -91,29 +57,12 @@ public class CVPSIPServerGroupProperties : BaseApiBean {
       set => sipServerGroupProperties = value;
   }
 
-
-  public void setSipServerGroupProperties(SIPServerGroupProperties sipServerGroupProperties) {
-     this.sipServerGroupProperties = sipServerGroupProperties;
-  }
-
-
   // Path("sipservergroupproperties")
   [XmlRoot("results")]
-  public class CVPSIPServerGroupPropertiesList : BaseApiListBean<CVPSIPServerGroupProperties> {
-    [XmlElement("CVPs")]
-    [XmlElement("CVP")]
-   
-    public override List<CVPSIPServerGroupProperties>? GetItems() => items;
+  public class CVPSIPServerGroupPropertiesList : BaseApiListBean<CVPSIPServerGroupProperties> {    public override List<CVPSIPServerGroupProperties>? GetItems() => items;
 
     public override void SetItems(List<CVPSIPServerGroupProperties>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<CVPSIPServerGroupProperties>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("instance")
 [XmlRoot("instance")]
 public class WebsetupInstance : BaseApiBean {
@@ -21,20 +17,10 @@ public class WebsetupInstance : BaseApiBean {
       set => facilityName = value;
   }
 
-
-  public void setFacilityName(String facilityName) {
-     this.facilityName = facilityName;
-  }
-
   public string? InstanceName
   {
       get => instanceName;
       set => instanceName = value;
-  }
-
-
-  public void setInstanceName(String instanceName) {
-     this.instanceName = instanceName;
   }
 
   public string? RefURL
@@ -43,29 +29,12 @@ public class WebsetupInstance : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
-
   // Path("instance")
   [XmlRoot("results")]
-  public class WebsetupInstanceList : BaseApiListBean<WebsetupInstance> {
-    [XmlElement("instances")]
-    [XmlElement("instance")]
-   
-    public override List<WebsetupInstance>? GetItems() => items;
+  public class WebsetupInstanceList : BaseApiListBean<WebsetupInstance> {    public override List<WebsetupInstance>? GetItems() => items;
 
     public override void SetItems(List<WebsetupInstance>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<WebsetupInstance>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("enterpriseroute")
 [XmlRoot("enterpriseRoute")]
 public class EnterpriseRoute : BaseApiBean {
@@ -26,20 +22,10 @@ public class EnterpriseRoute : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public string? CorrelationId
@@ -48,20 +34,10 @@ public class EnterpriseRoute : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public int EntityID
@@ -70,20 +46,10 @@ public class EnterpriseRoute : BaseApiBean {
       set => entityID = value;
   }
 
-
-  public void setEntityID(int entityID) {
-     this.entityID = entityID;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public string? Name
@@ -92,40 +58,18 @@ public class EnterpriseRoute : BaseApiBean {
       set => name = value;
   }
 
-
-  public void setName(String name) {
-     this.name = name;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
-
   // Path("enterpriseroute")
   [XmlRoot("results")]
-  public class EnterpriseRouteList : BaseApiListBean<EnterpriseRoute> {
-    [XmlElement("enterpriseRoutes")]
-    [XmlElement("enterpriseRoute")]
-   
-    public override List<EnterpriseRoute>? GetItems() => items;
+  public class EnterpriseRouteList : BaseApiListBean<EnterpriseRoute> {    public override List<EnterpriseRoute>? GetItems() => items;
 
     public override void SetItems(List<EnterpriseRoute>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<EnterpriseRoute>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

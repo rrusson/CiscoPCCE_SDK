@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("machineinventory")
 [XmlRoot("results")]
 public class MachineHostList : BaseApiBean {
@@ -29,40 +25,18 @@ public class MachineHostList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("machineinventory")
   [XmlRoot("results")]
-  public class MachineHostListList : BaseApiListBean<MachineHostList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<MachineHostList>? GetItems() => items;
+  public class MachineHostListList : BaseApiListBean<MachineHostList> {    public override List<MachineHostList>? GetItems() => items;
 
     public override void SetItems(List<MachineHostList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<MachineHostList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

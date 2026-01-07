@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("applicationgatewayglobalsetting")
 [XmlRoot("results")]
 public class ApplicationGatewayGlobalsList : BaseApiBean {
@@ -28,29 +24,12 @@ public class ApplicationGatewayGlobalsList : BaseApiBean {
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("applicationgatewayglobalsetting")
   [XmlRoot("results")]
-  public class ApplicationGatewayGlobalsListList : BaseApiListBean<ApplicationGatewayGlobalsList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<ApplicationGatewayGlobalsList>? GetItems() => items;
+  public class ApplicationGatewayGlobalsListList : BaseApiListBean<ApplicationGatewayGlobalsList> {    public override List<ApplicationGatewayGlobalsList>? GetItems() => items;
 
     public override void SetItems(List<ApplicationGatewayGlobalsList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<ApplicationGatewayGlobalsList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

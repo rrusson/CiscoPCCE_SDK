@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("externalpage")
 [XmlRoot("externalpage")]
 public class ExternalPage : BaseApiBean {
@@ -35,20 +31,10 @@ public class ExternalPage : BaseApiBean {
       set => baseData = value;
   }
 
-
-  public void setBaseData(String baseData) {
-     this.baseData = baseData;
-  }
-
   public string? BaseUrlfromRefUrl
   {
       get => baseUrlfromRefUrl;
       set => baseUrlfromRefUrl = value;
-  }
-
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
   }
 
   public ReferenceBean Card
@@ -57,20 +43,10 @@ public class ExternalPage : BaseApiBean {
       set => card = value;
   }
 
-
-  public void setCard(ReferenceBean card) {
-     this.card = card;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Department
@@ -79,20 +55,10 @@ public class ExternalPage : BaseApiBean {
       set => department = value;
   }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
   public string? Description
   {
       get => description;
       set => description = value;
-  }
-
-
-  public void setDescription(String description) {
-     this.description = description;
   }
 
   public string? DynamicData
@@ -101,20 +67,10 @@ public class ExternalPage : BaseApiBean {
       set => dynamicData = value;
   }
 
-
-  public void setDynamicData(String dynamicData) {
-     this.dynamicData = dynamicData;
-  }
-
   public int? FeatureId
   {
       get => featureId;
       set => featureId = value;
-  }
-
-
-  public void setFeatureId(int? featureId) {
-     this.featureId = featureId;
   }
 
   public bool? Gadget
@@ -123,20 +79,10 @@ public class ExternalPage : BaseApiBean {
       set => gadget = value;
   }
 
-
-  public void setGadget(Boolean gadget) {
-     this.gadget = gadget;
-  }
-
   public int? Id
   {
       get => id;
       set => id = value;
-  }
-
-
-  public void setId(int? id) {
-     this.id = id;
   }
 
   public string? IdFromRefUrl
@@ -145,20 +91,10 @@ public class ExternalPage : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public string? IpAddress
   {
       get => ipAddress;
       set => ipAddress = value;
-  }
-
-
-  public void setIpAddress(String ipAddress) {
-     this.ipAddress = ipAddress;
   }
 
   public ReferenceBean Menu
@@ -167,20 +103,10 @@ public class ExternalPage : BaseApiBean {
       set => menu = value;
   }
 
-
-  public void setMenu(ReferenceBean menu) {
-     this.menu = menu;
-  }
-
   public string? Name
   {
       get => name;
       set => name = value;
-  }
-
-
-  public void setName(String name) {
-     this.name = name;
   }
 
   public string? RefURL
@@ -189,20 +115,10 @@ public class ExternalPage : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
   public int? TabPosition
   {
       get => tabPosition;
       set => tabPosition = value;
-  }
-
-
-  public void setTabPosition(int? tabPosition) {
-     this.tabPosition = tabPosition;
   }
 
   public string? Url
@@ -211,29 +127,12 @@ public class ExternalPage : BaseApiBean {
       set => url = value;
   }
 
-
-  public void setUrl(String url) {
-     this.url = url;
-  }
-
-
   // Path("externalpage")
   [XmlRoot("results")]
-  public class ExternalPageList : BaseApiListBean<ExternalPage> {
-    [XmlElement("externalpages")]
-    [XmlElement("externalpage")]
-   
-    public override List<ExternalPage>? GetItems() => items;
+  public class ExternalPageList : BaseApiListBean<ExternalPage> {    public override List<ExternalPage>? GetItems() => items;
 
     public override void SetItems(List<ExternalPage>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<ExternalPage>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("contactsharegroup")
 [XmlRoot("contactShareGroupSummary")]
 public class ContactShareGroupSummary : BaseApiBean {
@@ -29,20 +25,10 @@ public class ContactShareGroupSummary : BaseApiBean {
       set => acceptQueueIf = value;
   }
 
-
-  public void setAcceptQueueIf(String acceptQueueIf) {
-     this.acceptQueueIf = acceptQueueIf;
-  }
-
   public string? BaseUrlfromRefUrl
   {
       get => baseUrlfromRefUrl;
       set => baseUrlfromRefUrl = value;
-  }
-
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
   }
 
   public int? ChangeStamp
@@ -51,20 +37,10 @@ public class ContactShareGroupSummary : BaseApiBean {
       set => changeStamp = value;
   }
 
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
-
   public ReferenceBean ContactShareRule
   {
       get => contactShareRule;
       set => contactShareRule = value;
-  }
-
-
-  public void setContactShareRule(ReferenceBean contactShareRule) {
-     this.contactShareRule = contactShareRule;
   }
 
   public string? CorrelationId
@@ -73,20 +49,10 @@ public class ContactShareGroupSummary : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? Description
@@ -95,20 +61,10 @@ public class ContactShareGroupSummary : BaseApiBean {
       set => description = value;
   }
 
-
-  public void setDescription(String description) {
-     this.description = description;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public string? Name
@@ -117,20 +73,10 @@ public class ContactShareGroupSummary : BaseApiBean {
       set => name = value;
   }
 
-
-  public void setName(String name) {
-     this.name = name;
-  }
-
   public int? QueueCount
   {
       get => queueCount;
       set => queueCount = value;
-  }
-
-
-  public void setQueueCount(int? queueCount) {
-     this.queueCount = queueCount;
   }
 
   public string? RefURL
@@ -139,29 +85,12 @@ public class ContactShareGroupSummary : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
-
   // Path("contactsharegroup")
   [XmlRoot("results")]
-  public class ContactShareGroupSummaryList : BaseApiListBean<ContactShareGroupSummary> {
-    [XmlElement("contactShareGroupSummarys")]
-    [XmlElement("contactShareGroupSummary")]
-   
-    public override List<ContactShareGroupSummary>? GetItems() => items;
+  public class ContactShareGroupSummaryList : BaseApiListBean<ContactShareGroupSummary> {    public override List<ContactShareGroupSummary>? GetItems() => items;
 
     public override void SetItems(List<ContactShareGroupSummary>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<ContactShareGroupSummary>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

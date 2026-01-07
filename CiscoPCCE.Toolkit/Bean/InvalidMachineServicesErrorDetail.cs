@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("machineinventory")
 [XmlRoot("errorDetail")]
 public class InvalidMachineServicesErrorDetail : BaseApiBean {
@@ -22,11 +18,6 @@ public class InvalidMachineServicesErrorDetail : BaseApiBean {
       set => servicesFound = value;
   }
 
-
-  public void setServicesFound(List<MachineService> servicesFound) {
-     this.servicesFound = servicesFound;
-  }
-
   [XmlElement("servicesRequired")]
   [XmlElement("service")]
   public List<MachineService>? ServicesRequired
@@ -35,29 +26,12 @@ public class InvalidMachineServicesErrorDetail : BaseApiBean {
       set => servicesRequired = value;
   }
 
-
-  public void setServicesRequired(List<MachineService> servicesRequired) {
-     this.servicesRequired = servicesRequired;
-  }
-
-
   // Path("machineinventory")
   [XmlRoot("results")]
-  public class InvalidMachineServicesErrorDetailList : BaseApiListBean<InvalidMachineServicesErrorDetail> {
-    [XmlElement("errorDetails")]
-    [XmlElement("errorDetail")]
-   
-    public override List<InvalidMachineServicesErrorDetail>? GetItems() => items;
+  public class InvalidMachineServicesErrorDetailList : BaseApiListBean<InvalidMachineServicesErrorDetail> {    public override List<InvalidMachineServicesErrorDetail>? GetItems() => items;
 
     public override void SetItems(List<InvalidMachineServicesErrorDetail>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<InvalidMachineServicesErrorDetail>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

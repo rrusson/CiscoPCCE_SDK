@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("cloudconnectsettings")
 [XmlRoot("dataSource")]
 public class DataSource : BaseApiBean {
@@ -26,20 +22,10 @@ public class DataSource : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Department
@@ -48,20 +34,10 @@ public class DataSource : BaseApiBean {
       set => department = value;
   }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
   public int? Id
   {
       get => id;
       set => id = value;
-  }
-
-
-  public void setId(int? id) {
-     this.id = id;
   }
 
   public string? IdFromRefUrl
@@ -70,20 +46,10 @@ public class DataSource : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
   }
 
   public DataSourceDetails SideA
@@ -92,40 +58,18 @@ public class DataSource : BaseApiBean {
       set => sideA = value;
   }
 
-
-  public void setSideA(DataSourceDetails sideA) {
-     this.sideA = sideA;
-  }
-
   public DataSourceDetails SideB
   {
       get => sideB;
       set => sideB = value;
   }
 
-
-  public void setSideB(DataSourceDetails sideB) {
-     this.sideB = sideB;
-  }
-
-
   // Path("cloudconnectsettings")
   [XmlRoot("results")]
-  public class DataSourceList : BaseApiListBean<DataSource> {
-    [XmlElement("dataSources")]
-    [XmlElement("dataSource")]
-   
-    public override List<DataSource>? GetItems() => items;
+  public class DataSourceList : BaseApiListBean<DataSource> {    public override List<DataSource>? GetItems() => items;
 
     public override void SetItems(List<DataSource>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<DataSource>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

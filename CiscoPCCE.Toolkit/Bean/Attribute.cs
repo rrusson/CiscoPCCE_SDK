@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("attribute")
 [XmlRoot("attribute")]
 public class Attribute : BaseApiBean {
@@ -36,22 +32,12 @@ public class Attribute : BaseApiBean {
       set => agentAttributes = value;
   }
 
-
-  public void setAgentAttributes(List<AttributeValueWithAgent> agentAttributes) {
-     this.agentAttributes = agentAttributes;
-  }
-
   [XmlElement("agentAttributesAdded")]
   [XmlElement("agentAttribute")]
   public List<AttributeValueWithAgent>? AgentAttributesAdded
   {
       get => agentAttributesAdded;
       set => agentAttributesAdded = value;
-  }
-
-
-  public void setAgentAttributesAdded(List<AttributeValueWithAgent> agentAttributesAdded) {
-     this.agentAttributesAdded = agentAttributesAdded;
   }
 
   [XmlElement("agentAttributesRemoved")]
@@ -62,20 +48,10 @@ public class Attribute : BaseApiBean {
       set => agentAttributesRemoved = value;
   }
 
-
-  public void setAgentAttributesRemoved(List<AttributeValueWithAgent> agentAttributesRemoved) {
-     this.agentAttributesRemoved = agentAttributesRemoved;
-  }
-
   public int? AgentCount
   {
       get => agentCount;
       set => agentCount = value;
-  }
-
-
-  public void setAgentCount(int? agentCount) {
-     this.agentCount = agentCount;
   }
 
   public string? BaseUrlfromRefUrl
@@ -84,20 +60,10 @@ public class Attribute : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public string? CorrelationId
@@ -106,20 +72,10 @@ public class Attribute : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public int? DataType
   {
       get => dataType;
       set => dataType = value;
-  }
-
-
-  public void setDataType(int? dataType) {
-     this.dataType = dataType;
   }
 
   public string? DefaultValue
@@ -128,20 +84,10 @@ public class Attribute : BaseApiBean {
       set => defaultValue = value;
   }
 
-
-  public void setDefaultValue(String defaultValue) {
-     this.defaultValue = defaultValue;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? Description
@@ -150,20 +96,10 @@ public class Attribute : BaseApiBean {
       set => description = value;
   }
 
-
-  public void setDescription(String description) {
-     this.description = description;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public bool? MarkDeletable
@@ -172,20 +108,10 @@ public class Attribute : BaseApiBean {
       set => markDeletable = value;
   }
 
-
-  public void setMarkDeletable(Boolean markDeletable) {
-     this.markDeletable = markDeletable;
-  }
-
   public string? Name
   {
       get => name;
       set => name = value;
-  }
-
-
-  public void setName(String name) {
-     this.name = name;
   }
 
   public string? RefURL
@@ -194,40 +120,18 @@ public class Attribute : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
   public int? SelectedAgentCount
   {
       get => selectedAgentCount;
       set => selectedAgentCount = value;
   }
 
-
-  public void setSelectedAgentCount(int? selectedAgentCount) {
-     this.selectedAgentCount = selectedAgentCount;
-  }
-
-
   // Path("attribute")
   [XmlRoot("results")]
-  public class AttributeList : BaseApiListBean<Attribute> {
-    [XmlElement("attributes")]
-    [XmlElement("attribute")]
-   
-    public override List<Attribute>? GetItems() => items;
+  public class AttributeList : BaseApiListBean<Attribute> {    public override List<Attribute>? GetItems() => items;
 
     public override void SetItems(List<Attribute>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<Attribute>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

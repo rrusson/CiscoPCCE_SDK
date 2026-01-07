@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("sipservergroup")
 [XmlRoot("sipServerGroup")]
 public class SipServerGroup : BaseApiBean {
@@ -31,20 +27,10 @@ public class SipServerGroup : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public string? CorrelationId
@@ -53,20 +39,10 @@ public class SipServerGroup : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Datacenter
   {
       get => datacenter;
       set => datacenter = value;
-  }
-
-
-  public void setDatacenter(ReferenceBean datacenter) {
-     this.datacenter = datacenter;
   }
 
   public bool? DefaultGroup
@@ -75,31 +51,16 @@ public class SipServerGroup : BaseApiBean {
       set => defaultGroup = value;
   }
 
-
-  public void setDefaultGroup(Boolean defaultGroup) {
-     this.defaultGroup = defaultGroup;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
   }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
   public string? Description
   {
       get => description;
       set => description = value;
-  }
-
-
-  public void setDescription(String description) {
-     this.description = description;
   }
 
   [XmlElement("elements")]
@@ -110,20 +71,10 @@ public class SipServerGroup : BaseApiBean {
       set => elements = value;
   }
 
-
-  public void setElements(List<SipServerElement> elements) {
-     this.elements = elements;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public string? Name
@@ -132,20 +83,10 @@ public class SipServerGroup : BaseApiBean {
       set => name = value;
   }
 
-
-  public void setName(String name) {
-     this.name = name;
-  }
-
   public int? NoOfElements
   {
       get => noOfElements;
       set => noOfElements = value;
-  }
-
-
-  public void setNoOfElements(int? noOfElements) {
-     this.noOfElements = noOfElements;
   }
 
   public string? RefURL
@@ -154,40 +95,18 @@ public class SipServerGroup : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
   public SipServerType Type
   {
       get => type;
       set => type = value;
   }
 
-
-  public void setType(SipServerType type) {
-     this.type = type;
-  }
-
-
   // Path("sipservergroup")
   [XmlRoot("results")]
-  public class SipServerGroupList : BaseApiListBean<SipServerGroup> {
-    [XmlElement("sipServerGroups")]
-    [XmlElement("sipServerGroup")]
-   
-    public override List<SipServerGroup>? GetItems() => items;
+  public class SipServerGroupList : BaseApiListBean<SipServerGroup> {    public override List<SipServerGroup>? GetItems() => items;
 
     public override void SetItems(List<SipServerGroup>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<SipServerGroup>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

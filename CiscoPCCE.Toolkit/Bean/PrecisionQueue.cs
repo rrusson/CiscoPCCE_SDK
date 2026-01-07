@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("precisionqueue")
 [XmlRoot("precisionQueue")]
 public class PrecisionQueue : BaseApiBean {
@@ -42,20 +38,10 @@ public class PrecisionQueue : BaseApiBean {
       set => agentCount = value;
   }
 
-
-  public void setAgentCount(int? agentCount) {
-     this.agentCount = agentCount;
-  }
-
   public int? AgentOrdering
   {
       get => agentOrdering;
       set => agentOrdering = value;
-  }
-
-
-  public void setAgentOrdering(int? agentOrdering) {
-     this.agentOrdering = agentOrdering;
   }
 
   public string? Attribute1
@@ -64,20 +50,10 @@ public class PrecisionQueue : BaseApiBean {
       set => attribute1 = value;
   }
 
-
-  public void setAttribute1(String attribute1) {
-     this.attribute1 = attribute1;
-  }
-
   public string? Attribute2
   {
       get => attribute2;
       set => attribute2 = value;
-  }
-
-
-  public void setAttribute2(String attribute2) {
-     this.attribute2 = attribute2;
   }
 
   public string? Attribute3
@@ -86,20 +62,10 @@ public class PrecisionQueue : BaseApiBean {
       set => attribute3 = value;
   }
 
-
-  public void setAttribute3(String attribute3) {
-     this.attribute3 = attribute3;
-  }
-
   public string? Attribute4
   {
       get => attribute4;
       set => attribute4 = value;
-  }
-
-
-  public void setAttribute4(String attribute4) {
-     this.attribute4 = attribute4;
   }
 
   public string? Attribute5
@@ -108,20 +74,10 @@ public class PrecisionQueue : BaseApiBean {
       set => attribute5 = value;
   }
 
-
-  public void setAttribute5(String attribute5) {
-     this.attribute5 = attribute5;
-  }
-
   public string? BaseUrlfromRefUrl
   {
       get => baseUrlfromRefUrl;
       set => baseUrlfromRefUrl = value;
-  }
-
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
   }
 
   public ReferenceBean BucketInterval
@@ -130,20 +86,10 @@ public class PrecisionQueue : BaseApiBean {
       set => bucketInterval = value;
   }
 
-
-  public void setBucketInterval(ReferenceBean bucketInterval) {
-     this.bucketInterval = bucketInterval;
-  }
-
   public int? CallOrdering
   {
       get => callOrdering;
       set => callOrdering = value;
-  }
-
-
-  public void setCallOrdering(int? callOrdering) {
-     this.callOrdering = callOrdering;
   }
 
   public int? ChangeStamp
@@ -152,20 +98,10 @@ public class PrecisionQueue : BaseApiBean {
       set => changeStamp = value;
   }
 
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Department
@@ -174,20 +110,10 @@ public class PrecisionQueue : BaseApiBean {
       set => department = value;
   }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
   public string? Description
   {
       get => description;
       set => description = value;
-  }
-
-
-  public void setDescription(String description) {
-     this.description = description;
   }
 
   public string? IdFromRefUrl
@@ -196,20 +122,10 @@ public class PrecisionQueue : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public bool? MarkDeletable
   {
       get => markDeletable;
       set => markDeletable = value;
-  }
-
-
-  public void setMarkDeletable(Boolean markDeletable) {
-     this.markDeletable = markDeletable;
   }
 
   public ReferenceBean MediaRoutingDomain
@@ -218,20 +134,10 @@ public class PrecisionQueue : BaseApiBean {
       set => mediaRoutingDomain = value;
   }
 
-
-  public void setMediaRoutingDomain(ReferenceBean mediaRoutingDomain) {
-     this.mediaRoutingDomain = mediaRoutingDomain;
-  }
-
   public string? Name
   {
       get => name;
       set => name = value;
-  }
-
-
-  public void setName(String name) {
-     this.name = name;
   }
 
   [XmlElement("id")]
@@ -241,20 +147,10 @@ public class PrecisionQueue : BaseApiBean {
       set => precisionQueueId = value;
   }
 
-
-  public void setPrecisionQueueId(int? precisionQueueId) {
-     this.precisionQueueId = precisionQueueId;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
   }
 
   public int? ServiceLevelThreshold
@@ -263,20 +159,10 @@ public class PrecisionQueue : BaseApiBean {
       set => serviceLevelThreshold = value;
   }
 
-
-  public void setServiceLevelThreshold(int? serviceLevelThreshold) {
-     this.serviceLevelThreshold = serviceLevelThreshold;
-  }
-
   public int? ServiceLevelType
   {
       get => serviceLevelType;
       set => serviceLevelType = value;
-  }
-
-
-  public void setServiceLevelType(int? serviceLevelType) {
-     this.serviceLevelType = serviceLevelType;
   }
 
   [XmlElement("skillGroups")]
@@ -287,11 +173,6 @@ public class PrecisionQueue : BaseApiBean {
       set => skillGroups = value;
   }
 
-
-  public void setSkillGroups(List<SkillGroupWithPqId> skillGroups) {
-     this.skillGroups = skillGroups;
-  }
-
   [XmlElement("steps")]
   [XmlElement("step")]
   public List<Step>? Steps
@@ -300,29 +181,12 @@ public class PrecisionQueue : BaseApiBean {
       set => steps = value;
   }
 
-
-  public void setSteps(List<Step> steps) {
-     this.steps = steps;
-  }
-
-
   // Path("precisionqueue")
   [XmlRoot("results")]
-  public class PrecisionQueueList : BaseApiListBean<PrecisionQueue> {
-    [XmlElement("precisionQueues")]
-    [XmlElement("precisionQueue")]
-   
-    public override List<PrecisionQueue>? GetItems() => items;
+  public class PrecisionQueueList : BaseApiListBean<PrecisionQueue> {    public override List<PrecisionQueue>? GetItems() => items;
 
     public override void SetItems(List<PrecisionQueue>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<PrecisionQueue>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

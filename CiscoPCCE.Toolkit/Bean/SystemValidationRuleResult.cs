@@ -3,91 +3,26 @@ using System.Xml.Serialization;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 [XmlRoot("validationRule")]
 public class SystemValidationRuleResult : BaseApiBean {
-  private string? actual;
-  private string? expected;
-  private bool? isValid;
-  private int? max;
-  private int? min;
-  private string? name;
-
+            
   [XmlElement("actual")]
-  public string? Actual
-  {
-      get => actual;
-      set => actual = value;
-  }
-
-
-  public void setActual(String actual) {
-     this.actual = actual;
-  }
+  public string? Actual { get; set; }
 
   [XmlElement("expected")]
-  public string? Expected
-  {
-      get => expected;
-      set => expected = value;
-  }
-
-
-  public void setExpected(String expected) {
-     this.expected = expected;
-  }
+  public string? Expected { get; set; }
 
   [XmlElement("isValid")]
-  public bool? IsValid
-  {
-      get => isValid;
-      set => isValid = value;
-  }
-
-
-  public void setIsValid(Boolean isValid) {
-     this.isValid = isValid;
-  }
+  public bool? IsValid { get; set; }
 
   [XmlElement("max")]
-  public int? Max
-  {
-      get => max;
-      set => max = value;
-  }
-
-
-  public void setMax(int? max) {
-     this.max = max;
-  }
+  public int? Max { get; set; }
 
   [XmlElement("min")]
-  public int? Min
-  {
-      get => min;
-      set => min = value;
-  }
-
-
-  public void setMin(int? min) {
-     this.min = min;
-  }
+  public int? Min { get; set; }
 
   [XmlElement("name")]
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
-
-
-  public void setName(String name) {
-     this.name = name;
-  }
-
+  public string? Name { get; set; }
 
 }
 

@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("registry")
 [XmlRoot("registry")]
 public class Registry : BaseApiBean {
@@ -36,20 +32,10 @@ public class Registry : BaseApiBean {
       set => appGwEnabled = value;
   }
 
-
-  public void setAppGwEnabled(int? appGwEnabled) {
-     this.appGwEnabled = appGwEnabled;
-  }
-
   public string? CgListenPort
   {
       get => cgListenPort;
       set => cgListenPort = value;
-  }
-
-
-  public void setCgListenPort(String cgListenPort) {
-     this.cgListenPort = cgListenPort;
   }
 
   public int? ConapiEnabled
@@ -58,20 +44,10 @@ public class Registry : BaseApiBean {
       set => conapiEnabled = value;
   }
 
-
-  public void setConapiEnabled(int? conapiEnabled) {
-     this.conapiEnabled = conapiEnabled;
-  }
-
   public int? HdsType
   {
       get => hdsType;
       set => hdsType = value;
-  }
-
-
-  public void setHdsType(int? hdsType) {
-     this.hdsType = hdsType;
   }
 
   public bool? InstanceCreated
@@ -80,20 +56,10 @@ public class Registry : BaseApiBean {
       set => instanceCreated = value;
   }
 
-
-  public void setInstanceCreated(Boolean instanceCreated) {
-     this.instanceCreated = instanceCreated;
-  }
-
   public string? InstanceName
   {
       get => instanceName;
       set => instanceName = value;
-  }
-
-
-  public void setInstanceName(String instanceName) {
-     this.instanceName = instanceName;
   }
 
   public string? JtapiCUCMSubAddress
@@ -102,20 +68,10 @@ public class Registry : BaseApiBean {
       set => jtapiCUCMSubAddress = value;
   }
 
-
-  public void setJtapiCUCMSubAddress(String jtapiCUCMSubAddress) {
-     this.jtapiCUCMSubAddress = jtapiCUCMSubAddress;
-  }
-
   public string? JtapiClientVersion
   {
       get => jtapiClientVersion;
       set => jtapiClientVersion = value;
-  }
-
-
-  public void setJtapiClientVersion(String jtapiClientVersion) {
-     this.jtapiClientVersion = jtapiClientVersion;
   }
 
   public string? JtapiUser
@@ -124,20 +80,10 @@ public class Registry : BaseApiBean {
       set => jtapiUser = value;
   }
 
-
-  public void setJtapiUser(String jtapiUser) {
-     this.jtapiUser = jtapiUser;
-  }
-
   public string? Locale
   {
       get => locale;
       set => locale = value;
-  }
-
-
-  public void setLocale(String locale) {
-     this.locale = locale;
   }
 
   [XmlElement("mediaRoutingPeripherals")]
@@ -148,31 +94,16 @@ public class Registry : BaseApiBean {
       set => mediaRoutingPeripherals = value;
   }
 
-
-  public void setMediaRoutingPeripherals(List<PeripheralWithRoutingClient> mediaRoutingPeripherals) {
-     this.mediaRoutingPeripherals = mediaRoutingPeripherals;
-  }
-
   public string? MrPG
   {
       get => mrPG;
       set => mrPG = value;
   }
 
-
-  public void setMrPG(String mrPG) {
-     this.mrPG = mrPG;
-  }
-
   public int? OutboundEnabled
   {
       get => outboundEnabled;
       set => outboundEnabled = value;
-  }
-
-
-  public void setOutboundEnabled(int? outboundEnabled) {
-     this.outboundEnabled = outboundEnabled;
   }
 
   [XmlElement("peripheralGatewaysRegistries")]
@@ -183,20 +114,10 @@ public class Registry : BaseApiBean {
       set => peripheralGatewaysRegistries = value;
   }
 
-
-  public void setPeripheralGatewaysRegistries(List<PeripheralGatewaysRegistry> peripheralGatewaysRegistries) {
-     this.peripheralGatewaysRegistries = peripheralGatewaysRegistries;
-  }
-
   public string? UcmPG
   {
       get => ucmPG;
       set => ucmPG = value;
-  }
-
-
-  public void setUcmPG(String ucmPG) {
-     this.ucmPG = ucmPG;
   }
 
   public string? UcmPGTIPPort
@@ -205,20 +126,10 @@ public class Registry : BaseApiBean {
       set => ucmPGTIPPort = value;
   }
 
-
-  public void setUcmPGTIPPort(String ucmPGTIPPort) {
-     this.ucmPGTIPPort = ucmPGTIPPort;
-  }
-
   public string? UcmPGTOSPort
   {
       get => ucmPGTOSPort;
       set => ucmPGTOSPort = value;
-  }
-
-
-  public void setUcmPGTOSPort(String ucmPGTOSPort) {
-     this.ucmPGTOSPort = ucmPGTOSPort;
   }
 
   public string? VruPG
@@ -227,29 +138,12 @@ public class Registry : BaseApiBean {
       set => vruPG = value;
   }
 
-
-  public void setVruPG(String vruPG) {
-     this.vruPG = vruPG;
-  }
-
-
   // Path("registry")
   [XmlRoot("results")]
-  public class RegistryList : BaseApiListBean<Registry> {
-    [XmlElement("registrys")]
-    [XmlElement("registry")]
-   
-    public override List<Registry>? GetItems() => items;
+  public class RegistryList : BaseApiListBean<Registry> {    public override List<Registry>? GetItems() => items;
 
     public override void SetItems(List<Registry>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<Registry>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

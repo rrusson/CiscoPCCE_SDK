@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("expandedcallvariable")
 [XmlRoot("expandedCallVariable")]
 public class ExpandedCallVariable : BaseApiBean {
@@ -35,20 +31,10 @@ public class ExpandedCallVariable : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public int? BytesRequired
   {
       get => bytesRequired;
       set => bytesRequired = value;
-  }
-
-
-  public void setBytesRequired(int? bytesRequired) {
-     this.bytesRequired = bytesRequired;
   }
 
   public int? BytesRequiredInCtiServer
@@ -57,20 +43,10 @@ public class ExpandedCallVariable : BaseApiBean {
       set => bytesRequiredInCtiServer = value;
   }
 
-
-  public void setBytesRequiredInCtiServer(int? bytesRequiredInCtiServer) {
-     this.bytesRequiredInCtiServer = bytesRequiredInCtiServer;
-  }
-
   public int? ChangeStamp
   {
       get => changeStamp;
       set => changeStamp = value;
-  }
-
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
   }
 
   public bool? CiscoProvided
@@ -79,20 +55,10 @@ public class ExpandedCallVariable : BaseApiBean {
       set => ciscoProvided = value;
   }
 
-
-  public void setCiscoProvided(Boolean ciscoProvided) {
-     this.ciscoProvided = ciscoProvided;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Department
@@ -101,20 +67,10 @@ public class ExpandedCallVariable : BaseApiBean {
       set => department = value;
   }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
   public string? Description
   {
       get => description;
       set => description = value;
-  }
-
-
-  public void setDescription(String description) {
-     this.description = description;
   }
 
   public bool? EccArray
@@ -123,20 +79,10 @@ public class ExpandedCallVariable : BaseApiBean {
       set => eccArray = value;
   }
 
-
-  public void setEccArray(Boolean eccArray) {
-     this.eccArray = eccArray;
-  }
-
   public bool? Enabled
   {
       get => enabled;
       set => enabled = value;
-  }
-
-
-  public void setEnabled(Boolean enabled) {
-     this.enabled = enabled;
   }
 
   public string? IdFromRefUrl
@@ -145,20 +91,10 @@ public class ExpandedCallVariable : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public bool? MarkDeletable
   {
       get => markDeletable;
       set => markDeletable = value;
-  }
-
-
-  public void setMarkDeletable(Boolean markDeletable) {
-     this.markDeletable = markDeletable;
   }
 
   public int? MaximumArraySize
@@ -167,20 +103,10 @@ public class ExpandedCallVariable : BaseApiBean {
       set => maximumArraySize = value;
   }
 
-
-  public void setMaximumArraySize(int? maximumArraySize) {
-     this.maximumArraySize = maximumArraySize;
-  }
-
   public int? MaximumLength
   {
       get => maximumLength;
       set => maximumLength = value;
-  }
-
-
-  public void setMaximumLength(int? maximumLength) {
-     this.maximumLength = maximumLength;
   }
 
   public string? Name
@@ -189,20 +115,10 @@ public class ExpandedCallVariable : BaseApiBean {
       set => name = value;
   }
 
-
-  public void setName(String name) {
-     this.name = name;
-  }
-
   public bool? Persistent
   {
       get => persistent;
       set => persistent = value;
-  }
-
-
-  public void setPersistent(Boolean persistent) {
-     this.persistent = persistent;
   }
 
   public string? RefURL
@@ -211,29 +127,12 @@ public class ExpandedCallVariable : BaseApiBean {
       set => refURL = value;
   }
 
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
-
   // Path("expandedcallvariable")
   [XmlRoot("results")]
-  public class ExpandedCallVariableList : BaseApiListBean<ExpandedCallVariable> {
-    [XmlElement("expandedCallVariables")]
-    [XmlElement("expandedCallVariable")]
-   
-    public override List<ExpandedCallVariable>? GetItems() => items;
+  public class ExpandedCallVariableList : BaseApiListBean<ExpandedCallVariable> {    public override List<ExpandedCallVariable>? GetItems() => items;
 
     public override void SetItems(List<ExpandedCallVariable>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<ExpandedCallVariable>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

@@ -3,146 +3,31 @@ using System.Xml.Serialization;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 [XmlRoot("importContactSummary")]
 public class ImportContactSummary : BaseApiBean {
-  private string? accountNumber;
-  private string? baseUrlfromRefUrl;
-  private int callResultOverall;
-  private CallStatusEnum callStatusEnum;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? firstName;
-  private int? id;
-  private string? idFromRefUrl;
-  private string? lastName;
-  private string? refURL;
+                      
+  public string? AccountNumber { get; set; }
 
-  public string? AccountNumber
-  {
-      get => accountNumber;
-      set => accountNumber = value;
-  }
+  public string? BaseUrlfromRefUrl { get; set; }
 
-
-  public void setAccountNumber(String accountNumber) {
-     this.accountNumber = accountNumber;
-  }
-
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
-
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
-  public int CallResultOverall
-  {
-      get => callResultOverall;
-      set => callResultOverall = value;
-  }
-
-
-  public void setCallResultOverall(int callResultOverall) {
-     this.callResultOverall = callResultOverall;
-  }
+  public int CallResultOverall { get; set; }
 
   [XmlElement("callStatus")]
-  public CallStatusEnum CallStatusEnum
-  {
-      get => callStatusEnum;
-      set => callStatusEnum = value;
-  }
+  public CallStatusEnum CallStatusEnum { get; set; }
 
+  public string? CorrelationId { get; set; }
 
-  public void setCallStatusEnum(CallStatusEnum callStatusEnum) {
-     this.callStatusEnum = callStatusEnum;
-  }
+  public ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+  public string? FirstName { get; set; }
 
+  public int? Id { get; set; }
 
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
+  public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+  public string? LastName { get; set; }
 
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
-  }
-
-  public string? FirstName
-  {
-      get => firstName;
-      set => firstName = value;
-  }
-
-
-  public void setFirstName(String firstName) {
-     this.firstName = firstName;
-  }
-
-  public int? Id
-  {
-      get => id;
-      set => id = value;
-  }
-
-
-  public void setId(int? id) {
-     this.id = id;
-  }
-
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
-  public string? LastName
-  {
-      get => lastName;
-      set => lastName = value;
-  }
-
-
-  public void setLastName(String lastName) {
-     this.lastName = lastName;
-  }
-
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
-  }
-
+  public string? RefURL { get; set; }
 
 }
 

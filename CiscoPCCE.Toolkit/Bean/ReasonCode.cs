@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("reasoncode")
 [XmlRoot("reasonCode")]
 public class ReasonCode : BaseApiBean {
@@ -31,20 +27,10 @@ public class ReasonCode : BaseApiBean {
       set => baseUrlfromRefUrl = value;
   }
 
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
-  }
-
   public string? Category
   {
       get => category;
       set => category = value;
-  }
-
-
-  public void setCategory(String category) {
-     this.category = category;
   }
 
   public int? ChangeStamp
@@ -53,20 +39,10 @@ public class ReasonCode : BaseApiBean {
       set => changeStamp = value;
   }
 
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
-
   public int? Code
   {
       get => code;
       set => code = value;
-  }
-
-
-  public void setCode(int? code) {
-     this.code = code;
   }
 
   public string? CorrelationId
@@ -75,20 +51,10 @@ public class ReasonCode : BaseApiBean {
       set => correlationId = value;
   }
 
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? Description
@@ -97,20 +63,10 @@ public class ReasonCode : BaseApiBean {
       set => description = value;
   }
 
-
-  public void setDescription(String description) {
-     this.description = description;
-  }
-
   public string? IdFromRefUrl
   {
       get => idFromRefUrl;
       set => idFromRefUrl = value;
-  }
-
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
   }
 
   public bool? IsGlobal
@@ -119,20 +75,10 @@ public class ReasonCode : BaseApiBean {
       set => isGlobal = value;
   }
 
-
-  public void setIsGlobal(Boolean isGlobal) {
-     this.isGlobal = isGlobal;
-  }
-
   public bool? MarkDeletable
   {
       get => markDeletable;
       set => markDeletable = value;
-  }
-
-
-  public void setMarkDeletable(Boolean markDeletable) {
-     this.markDeletable = markDeletable;
   }
 
   public ReasonTypeEnum ReasonType
@@ -141,20 +87,10 @@ public class ReasonCode : BaseApiBean {
       set => reasonType = value;
   }
 
-
-  public void setReasonType(ReasonTypeEnum reasonType) {
-     this.reasonType = reasonType;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
   }
 
   public string? Text
@@ -163,29 +99,12 @@ public class ReasonCode : BaseApiBean {
       set => text = value;
   }
 
-
-  public void setText(String text) {
-     this.text = text;
-  }
-
-
   // Path("reasoncode")
   [XmlRoot("results")]
-  public class ReasonCodeList : BaseApiListBean<ReasonCode> {
-    [XmlElement("reasonCodes")]
-    [XmlElement("reasonCode")]
-   
-    public override List<ReasonCode>? GetItems() => items;
+  public class ReasonCodeList : BaseApiListBean<ReasonCode> {    public override List<ReasonCode>? GetItems() => items;
 
     public override void SetItems(List<ReasonCode>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<ReasonCode>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

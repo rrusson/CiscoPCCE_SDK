@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("reasoncode")
 [XmlRoot("results")]
 public class ReasonCodeList : BaseApiBean {
@@ -29,40 +25,18 @@ public class ReasonCodeList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("reasoncode")
   [XmlRoot("results")]
-  public class ReasonCodeListList : BaseApiListBean<ReasonCodeList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<ReasonCodeList>? GetItems() => items;
+  public class ReasonCodeListList : BaseApiListBean<ReasonCodeList> {    public override List<ReasonCodeList>? GetItems() => items;
 
     public override void SetItems(List<ReasonCodeList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<ReasonCodeList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

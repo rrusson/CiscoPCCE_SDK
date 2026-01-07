@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("mediaroutingdomain")
 [XmlRoot("results")]
 public class MediaRoutingDomainList : BaseApiBean {
@@ -29,40 +25,18 @@ public class MediaRoutingDomainList : BaseApiBean {
       set => pageInfo = value;
   }
 
-
-  public void setPageInfo(PageInfo pageInfo) {
-     this.pageInfo = pageInfo;
-  }
-
   public PermissionInfo PermissionInfo
   {
       get => permissionInfo;
       set => permissionInfo = value;
   }
 
-
-  public void setPermissionInfo(PermissionInfo permissionInfo) {
-     this.permissionInfo = permissionInfo;
-  }
-
-
   // Path("mediaroutingdomain")
   [XmlRoot("results")]
-  public class MediaRoutingDomainListList : BaseApiListBean<MediaRoutingDomainList> {
-    [XmlElement("resultss")]
-    [XmlElement("results")]
-   
-    public override List<MediaRoutingDomainList>? GetItems() => items;
+  public class MediaRoutingDomainListList : BaseApiListBean<MediaRoutingDomainList> {    public override List<MediaRoutingDomainList>? GetItems() => items;
 
     public override void SetItems(List<MediaRoutingDomainList>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<MediaRoutingDomainList>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

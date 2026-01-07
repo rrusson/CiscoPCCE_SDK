@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("/agentteam")
 [XmlRoot("agentTeamSummary")]
 public class AgentTeamSummary : BaseApiBean {
@@ -33,20 +29,10 @@ public class AgentTeamSummary : BaseApiBean {
       set => agentCount = value;
   }
 
-
-  public void setAgentCount(int? agentCount) {
-     this.agentCount = agentCount;
-  }
-
   public string? BaseUrlfromRefUrl
   {
       get => baseUrlfromRefUrl;
       set => baseUrlfromRefUrl = value;
-  }
-
-
-  public void setBaseUrlfromRefUrl(String baseUrlfromRefUrl) {
-     this.baseUrlfromRefUrl = baseUrlfromRefUrl;
   }
 
   public int? ChangeStamp
@@ -55,20 +41,10 @@ public class AgentTeamSummary : BaseApiBean {
       set => changeStamp = value;
   }
 
-
-  public void setChangeStamp(int? changeStamp) {
-     this.changeStamp = changeStamp;
-  }
-
   public string? CorrelationId
   {
       get => correlationId;
       set => correlationId = value;
-  }
-
-
-  public void setCorrelationId(String correlationId) {
-     this.correlationId = correlationId;
   }
 
   public ReferenceBean Datacenter
@@ -77,20 +53,10 @@ public class AgentTeamSummary : BaseApiBean {
       set => datacenter = value;
   }
 
-
-  public void setDatacenter(ReferenceBean datacenter) {
-     this.datacenter = datacenter;
-  }
-
   public ReferenceBean Department
   {
       get => department;
       set => department = value;
-  }
-
-
-  public void setDepartment(ReferenceBean department) {
-     this.department = department;
   }
 
   public string? Description
@@ -99,20 +65,10 @@ public class AgentTeamSummary : BaseApiBean {
       set => description = value;
   }
 
-
-  public void setDescription(String description) {
-     this.description = description;
-  }
-
   public ReferenceBean DialedNumber
   {
       get => dialedNumber;
       set => dialedNumber = value;
-  }
-
-
-  public void setDialedNumber(ReferenceBean dialedNumber) {
-     this.dialedNumber = dialedNumber;
   }
 
   public string? IdFromRefUrl
@@ -121,20 +77,10 @@ public class AgentTeamSummary : BaseApiBean {
       set => idFromRefUrl = value;
   }
 
-
-  public void setIdFromRefUrl(String idFromRefUrl) {
-     this.idFromRefUrl = idFromRefUrl;
-  }
-
   public string? Name
   {
       get => name;
       set => name = value;
-  }
-
-
-  public void setName(String name) {
-     this.name = name;
   }
 
   public PeripheralRef Peripheral
@@ -143,20 +89,10 @@ public class AgentTeamSummary : BaseApiBean {
       set => peripheral = value;
   }
 
-
-  public void setPeripheral(PeripheralRef peripheral) {
-     this.peripheral = peripheral;
-  }
-
   public int? PeripheralId
   {
       get => peripheralId;
       set => peripheralId = value;
-  }
-
-
-  public void setPeripheralId(int? peripheralId) {
-     this.peripheralId = peripheralId;
   }
 
   [XmlElement("peripheralSet")]
@@ -166,20 +102,10 @@ public class AgentTeamSummary : BaseApiBean {
       set => peripheralSet = value;
   }
 
-
-  public void setPeripheralSet(ReferenceBean peripheralSet) {
-     this.peripheralSet = peripheralSet;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
   }
 
   public int? SupervisorCount
@@ -188,29 +114,12 @@ public class AgentTeamSummary : BaseApiBean {
       set => supervisorCount = value;
   }
 
-
-  public void setSupervisorCount(int? supervisorCount) {
-     this.supervisorCount = supervisorCount;
-  }
-
-
   // Path("/agentteam")
   [XmlRoot("results")]
-  public class AgentTeamSummaryList : BaseApiListBean<AgentTeamSummary> {
-    [XmlElement("agentTeamSummarys")]
-    [XmlElement("agentTeamSummary")]
-   
-    public override List<AgentTeamSummary>? GetItems() => items;
+  public class AgentTeamSummaryList : BaseApiListBean<AgentTeamSummary> {    public override List<AgentTeamSummary>? GetItems() => items;
 
     public override void SetItems(List<AgentTeamSummary>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<AgentTeamSummary>? items)
-    {
-        this.items = items;
-    }
   }
 }
 

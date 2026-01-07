@@ -4,10 +4,6 @@ using System.Collections.Generic;
 namespace CiscoPCCE.Toolkit.Bean
 {
 
-
-
-
-
 // Path("sso")
 [XmlRoot("ssoComponentStatus")]
 public class SsoComponentStatus : BaseApiBean {
@@ -26,20 +22,10 @@ public class SsoComponentStatus : BaseApiBean {
       set => apiErrors = value;
   }
 
-
-  public void setApiErrors(List<ApiError> apiErrors) {
-     this.apiErrors = apiErrors;
-  }
-
   public SsoOperationState ModeState
   {
       get => modeState;
       set => modeState = value;
-  }
-
-
-  public void setModeState(SsoOperationState modeState) {
-     this.modeState = modeState;
   }
 
   public string? Name
@@ -48,20 +34,10 @@ public class SsoComponentStatus : BaseApiBean {
       set => name = value;
   }
 
-
-  public void setName(String name) {
-     this.name = name;
-  }
-
   public string? RefURL
   {
       get => refURL;
       set => refURL = value;
-  }
-
-
-  public void setRefURL(String refURL) {
-     this.refURL = refURL;
   }
 
   public SsoOperationState RegistrationState
@@ -70,40 +46,18 @@ public class SsoComponentStatus : BaseApiBean {
       set => registrationState = value;
   }
 
-
-  public void setRegistrationState(SsoOperationState registrationState) {
-     this.registrationState = registrationState;
-  }
-
   public string? SsoTestPath
   {
       get => ssoTestPath;
       set => ssoTestPath = value;
   }
 
-
-  public void setSsoTestPath(String ssoTestPath) {
-     this.ssoTestPath = ssoTestPath;
-  }
-
-
   // Path("sso")
   [XmlRoot("results")]
-  public class SsoComponentStatusList : BaseApiListBean<SsoComponentStatus> {
-    [XmlElement("ssoComponentStatuss")]
-    [XmlElement("ssoComponentStatus")]
-   
-    public override List<SsoComponentStatus>? GetItems() => items;
+  public class SsoComponentStatusList : BaseApiListBean<SsoComponentStatus> {    public override List<SsoComponentStatus>? GetItems() => items;
 
     public override void SetItems(List<SsoComponentStatus>? value) => items = value;
-    {
-        return items;
-    }
 
-    public override void SetItems(List<SsoComponentStatus>? items)
-    {
-        this.items = items;
-    }
   }
 }
 
