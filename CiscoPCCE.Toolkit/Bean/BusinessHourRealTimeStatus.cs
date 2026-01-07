@@ -1,69 +1,32 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("businesshour")
+    [XmlRoot("realTimeStatus")]
+    public class BusinessHourRealTimeStatus : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("businesshour")
-[XmlRoot("realTimeStatus")]
-public class BusinessHourRealTimeStatus : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private string? refURL;
-  private int? status;
-  private ReferenceBean statusReason;
+        public string? CorrelationId { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public int? Status { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public required ReferenceBean StatusReason { get; set; }
 
-  public int? Status
-  {
-      get => status;
-      set => status = value;
-  }
+        // Path("businesshour")
+        [XmlRoot("results")]
+        public class BusinessHourRealTimeStatusList : BaseApiListBean<BusinessHourRealTimeStatus>
+        {
+            public override List<BusinessHourRealTimeStatus>? GetItems() => Items;
 
-  public ReferenceBean StatusReason
-  {
-      get => statusReason;
-      set => statusReason = value;
-  }
-
-  // Path("businesshour")
-  [XmlRoot("results")]
-  public class BusinessHourRealTimeStatusList : BaseApiListBean<BusinessHourRealTimeStatus> {    public override List<BusinessHourRealTimeStatus>? GetItems() => items;
-
-    public override void SetItems(List<BusinessHourRealTimeStatus>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<BusinessHourRealTimeStatus>? value) => Items = value;
+        }
+    }
 }

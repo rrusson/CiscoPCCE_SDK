@@ -1,90 +1,38 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("agentdistribution")
+    [XmlRoot("agentDistribution")]
+    public class AgentDistribution : BaseApiBean
+    {
+        public bool? AgentHistoricalData { get; set; }
 
-// Path("agentdistribution")
-[XmlRoot("agentDistribution")]
-public class AgentDistribution : BaseApiBean {
-  private bool? agentHistoricalData;
-  private bool? agentRealTimeData;
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private string? name;
-  private int? peripheralId;
-  private string? refURL;
+        public bool? AgentRealTimeData { get; set; }
 
-  public bool? AgentHistoricalData
-  {
-      get => agentHistoricalData;
-      set => agentHistoricalData = value;
-  }
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public bool? AgentRealTimeData
-  {
-      get => agentRealTimeData;
-      set => agentRealTimeData = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? Name { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public int? PeripheralId { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public int? PeripheralId
-  {
-      get => peripheralId;
-      set => peripheralId = value;
-  }
+        // Path("agentdistribution")
+        [XmlRoot("results")]
+        public class AgentDistributionList : BaseApiListBean<AgentDistribution>
+        {
+            public override List<AgentDistribution>? GetItems() => Items;
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-  // Path("agentdistribution")
-  [XmlRoot("results")]
-  public class AgentDistributionList : BaseApiListBean<AgentDistribution> {    public override List<AgentDistribution>? GetItems() => items;
-
-    public override void SetItems(List<AgentDistribution>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<AgentDistribution>? value) => Items = value;
+        }
+    }
 }

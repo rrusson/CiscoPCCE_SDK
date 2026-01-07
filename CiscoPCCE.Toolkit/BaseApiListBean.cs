@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace CiscoPCCE.Toolkit
 {
     /// <summary>
@@ -10,7 +8,7 @@ namespace CiscoPCCE.Toolkit
         /// <summary>
         /// List of items of the implementing type
         /// </summary>
-        protected List<T>? items;
+        protected List<T>? Items;
 
         /// <summary>
         /// Override and add the appropriate XML attributes in derived classes.

@@ -8,7 +8,9 @@ namespace CiscoPCCE.Toolkit
         public override bool Equals(object? obj)
         {
             if (obj == null || GetType() != obj.GetType())
+            {
                 return false;
+            }
 
             return this.Equals(obj);
         }
@@ -20,9 +22,9 @@ namespace CiscoPCCE.Toolkit
 
         public override string ToString()
         {
-            return System.Text.Json.JsonSerializer.Serialize(this, new System.Text.Json.JsonSerializerOptions 
-            { 
-                WriteIndented = true 
+            return System.Text.Json.JsonSerializer.Serialize(this, new System.Text.Json.JsonSerializerOptions
+            {
+                WriteIndented = true
             });
         }
     }

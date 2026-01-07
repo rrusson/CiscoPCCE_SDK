@@ -1,97 +1,40 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("cloudconnectsettings")
+    [XmlRoot("CloudConnectSettings")]
+    public class CloudConnector : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("cloudconnectsettings")
-[XmlRoot("CloudConnectSettings")]
-public class CloudConnector : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? deploymentID;
-  private string? deploymentName;
-  private int? id;
-  private string? idFromRefUrl;
-  private string? proxyAddress;
-  private string? refURL;
-  private string? registrationStatus;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? DeploymentID { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? DeploymentName { get; set; }
 
-  public string? DeploymentID
-  {
-      get => deploymentID;
-      set => deploymentID = value;
-  }
+        public int? Id { get; set; }
 
-  public string? DeploymentName
-  {
-      get => deploymentName;
-      set => deploymentName = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public int? Id
-  {
-      get => id;
-      set => id = value;
-  }
+        public string? ProxyAddress { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? ProxyAddress
-  {
-      get => proxyAddress;
-      set => proxyAddress = value;
-  }
+        public string? RegistrationStatus { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("cloudconnectsettings")
+        [XmlRoot("results")]
+        public class CloudConnectorList : BaseApiListBean<CloudConnector>
+        {
+            public override List<CloudConnector>? GetItems() => Items;
 
-  public string? RegistrationStatus
-  {
-      get => registrationStatus;
-      set => registrationStatus = value;
-  }
-
-  // Path("cloudconnectsettings")
-  [XmlRoot("results")]
-  public class CloudConnectorList : BaseApiListBean<CloudConnector> {    public override List<CloudConnector>? GetItems() => items;
-
-    public override void SetItems(List<CloudConnector>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<CloudConnector>? value) => Items = value;
+        }
+    }
 }

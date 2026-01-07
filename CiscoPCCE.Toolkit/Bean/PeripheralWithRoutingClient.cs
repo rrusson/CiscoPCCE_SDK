@@ -1,174 +1,62 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("secondaryaddress")
+    [XmlRoot("peripheral")]
+    public class PeripheralWithRoutingClient : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("secondaryaddress")
-[XmlRoot("peripheral")]
-public class PeripheralWithRoutingClient : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private short? clientType;
-  private string? correlationId;
-  private ReferenceBean defaultDeskSetting;
-  private ReferenceBean department;
-  private bool? hideRefURL;
-  private string? hostName1;
-  private string? hostName2;
-  private int? hostPort1;
-  private int? hostPort2;
-  private string? idFromRefUrl;
-  private bool? markDeletable;
-  private string? name;
-  private ReferenceBean networkTarget;
-  private ReferenceBean peripheralGateway;
-  private int? peripheralId;
-  private string? peripheralName;
-  private RoutingClient routingClient;
-  private int? routingClientId;
-  private int? routingType;
-  private string? routingTypeForMROnDC;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public short? ClientType { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public short? ClientType
-  {
-      get => clientType;
-      set => clientType = value;
-  }
+        public required ReferenceBean DefaultDeskSetting { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public ReferenceBean DefaultDeskSetting
-  {
-      get => defaultDeskSetting;
-      set => defaultDeskSetting = value;
-  }
+        public bool? HideRefURL { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? HostName1 { get; set; }
 
-  public bool? HideRefURL
-  {
-      get => hideRefURL;
-      set => hideRefURL = value;
-  }
+        public string? HostName2 { get; set; }
 
-  public string? HostName1
-  {
-      get => hostName1;
-      set => hostName1 = value;
-  }
+        public int? HostPort1 { get; set; }
 
-  public string? HostName2
-  {
-      get => hostName2;
-      set => hostName2 = value;
-  }
+        public int? HostPort2 { get; set; }
 
-  public int? HostPort1
-  {
-      get => hostPort1;
-      set => hostPort1 = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public int? HostPort2
-  {
-      get => hostPort2;
-      set => hostPort2 = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public string? Name { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        public required ReferenceBean NetworkTarget { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public required ReferenceBean PeripheralGateway { get; set; }
 
-  public ReferenceBean NetworkTarget
-  {
-      get => networkTarget;
-      set => networkTarget = value;
-  }
+        public int? PeripheralId { get; set; }
 
-  public ReferenceBean PeripheralGateway
-  {
-      get => peripheralGateway;
-      set => peripheralGateway = value;
-  }
+        public string? PeripheralName { get; set; }
 
-  public int? PeripheralId
-  {
-      get => peripheralId;
-      set => peripheralId = value;
-  }
+        public required RoutingClient RoutingClient { get; set; }
 
-  public string? PeripheralName
-  {
-      get => peripheralName;
-      set => peripheralName = value;
-  }
+        public int? RoutingClientId { get; set; }
 
-  public RoutingClient RoutingClient
-  {
-      get => routingClient;
-      set => routingClient = value;
-  }
+        public int? RoutingType { get; set; }
 
-  public int? RoutingClientId
-  {
-      get => routingClientId;
-      set => routingClientId = value;
-  }
+        public string? RoutingTypeForMROnDC { get; set; }
 
-  public int? RoutingType
-  {
-      get => routingType;
-      set => routingType = value;
-  }
+        // Path("secondaryaddress")
+        [XmlRoot("results")]
+        public class PeripheralWithRoutingClientList : BaseApiListBean<PeripheralWithRoutingClient>
+        {
+            public override List<PeripheralWithRoutingClient>? GetItems() => Items;
 
-  public string? RoutingTypeForMROnDC
-  {
-      get => routingTypeForMROnDC;
-      set => routingTypeForMROnDC = value;
-  }
-
-  // Path("secondaryaddress")
-  [XmlRoot("results")]
-  public class PeripheralWithRoutingClientList : BaseApiListBean<PeripheralWithRoutingClient> {    public override List<PeripheralWithRoutingClient>? GetItems() => items;
-
-    public override void SetItems(List<PeripheralWithRoutingClient>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<PeripheralWithRoutingClient>? value) => Items = value;
+        }
+    }
 }

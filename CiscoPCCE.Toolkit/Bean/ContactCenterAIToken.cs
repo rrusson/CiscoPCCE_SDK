@@ -1,55 +1,28 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("contactcenterai/token")
+    [XmlRoot("contactCenterAIToken")]
+    public class ContactCenterAIToken : BaseApiBean
+    {
+        public string? AccessToken { get; set; }
 
-// Path("contactcenterai/token")
-[XmlRoot("contactCenterAIToken")]
-public class ContactCenterAIToken : BaseApiBean {
-  private string? accessToken;
-  private string? cmsUrl;
-  private string? expiresIn;
-  private string? orgId;
-  private string? u2cHost;
+        public string? CmsUrl { get; set; }
 
-  public string? AccessToken
-  {
-      get => accessToken;
-      set => accessToken = value;
-  }
+        public string? ExpiresIn { get; set; }
 
-  public string? CmsUrl
-  {
-      get => cmsUrl;
-      set => cmsUrl = value;
-  }
+        public string? OrgId { get; set; }
 
-  public string? ExpiresIn
-  {
-      get => expiresIn;
-      set => expiresIn = value;
-  }
+        public string? U2cHost { get; set; }
 
-  public string? OrgId
-  {
-      get => orgId;
-      set => orgId = value;
-  }
+        // Path("contactcenterai/token")
+        [XmlRoot("results")]
+        public class ContactCenterAITokenList : BaseApiListBean<ContactCenterAIToken>
+        {
+            public override List<ContactCenterAIToken>? GetItems() => Items;
 
-  public string? U2cHost
-  {
-      get => u2cHost;
-      set => u2cHost = value;
-  }
-
-  // Path("contactcenterai/token")
-  [XmlRoot("results")]
-  public class ContactCenterAITokenList : BaseApiListBean<ContactCenterAIToken> {    public override List<ContactCenterAIToken>? GetItems() => items;
-
-    public override void SetItems(List<ContactCenterAIToken>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ContactCenterAIToken>? value) => Items = value;
+        }
+    }
 }

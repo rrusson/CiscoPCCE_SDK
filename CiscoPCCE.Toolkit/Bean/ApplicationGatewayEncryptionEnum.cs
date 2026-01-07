@@ -1,10 +1,9 @@
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-public enum ApplicationGatewayEncryptionEnum {
-  None,
-  Private,
-  TLS
-}
-
+    public enum ApplicationGatewayEncryptionEnum
+    {
+        None,
+        Private,
+        TLS
+    }
 }

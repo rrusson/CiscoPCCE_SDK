@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("precisionqueue")
+    [XmlRoot("results")]
+    public class PrecisionQueueList : BaseApiBean
+    {
+        [XmlElement("precisionQueues")]
+        [XmlElement("precisionQueue")]
+        public List<PrecisionQueue>? Items { get; set; }
 
-// Path("precisionqueue")
-[XmlRoot("results")]
-public class PrecisionQueueList : BaseApiBean {
-  private List<PrecisionQueue>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("precisionQueues")]
-  [XmlElement("precisionQueue")]
-  public List<PrecisionQueue>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("precisionqueue")
+        [XmlRoot("results")]
+        public class PrecisionQueueListList : BaseApiListBean<PrecisionQueueList>
+        {
+            public override List<PrecisionQueueList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("precisionqueue")
-  [XmlRoot("results")]
-  public class PrecisionQueueListList : BaseApiListBean<PrecisionQueueList> {    public override List<PrecisionQueueList>? GetItems() => items;
-
-    public override void SetItems(List<PrecisionQueueList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<PrecisionQueueList>? value) => Items = value;
+        }
+    }
 }

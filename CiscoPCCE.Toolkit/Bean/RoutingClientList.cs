@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("secondaryaddress")
+    [XmlRoot("results")]
+    public class RoutingClientList : BaseApiBean
+    {
+        [XmlElement("routingClients")]
+        [XmlElement("routingClient")]
+        public List<RoutingClient>? Items { get; set; }
 
-// Path("secondaryaddress")
-[XmlRoot("results")]
-public class RoutingClientList : BaseApiBean {
-  private List<RoutingClient>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("routingClients")]
-  [XmlElement("routingClient")]
-  public List<RoutingClient>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("secondaryaddress")
+        [XmlRoot("results")]
+        public class RoutingClientListList : BaseApiListBean<RoutingClientList>
+        {
+            public override List<RoutingClientList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("secondaryaddress")
-  [XmlRoot("results")]
-  public class RoutingClientListList : BaseApiListBean<RoutingClientList> {    public override List<RoutingClientList>? GetItems() => items;
-
-    public override void SetItems(List<RoutingClientList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<RoutingClientList>? value) => Items = value;
+        }
+    }
 }

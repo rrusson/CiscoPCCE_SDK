@@ -1,69 +1,32 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("deployment")
+    [XmlRoot("deployment")]
+    public class Deployment : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("deployment")
-[XmlRoot("deployment")]
-public class Deployment : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private int? deploymentType;
-  private string? idFromRefUrl;
-  private bool? supervisorLoginAllowed;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public int? DeploymentType { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public int? DeploymentType
-  {
-      get => deploymentType;
-      set => deploymentType = value;
-  }
+        public bool? SupervisorLoginAllowed { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        // Path("deployment")
+        [XmlRoot("results")]
+        public class DeploymentList : BaseApiListBean<Deployment>
+        {
+            public override List<Deployment>? GetItems() => Items;
 
-  public bool? SupervisorLoginAllowed
-  {
-      get => supervisorLoginAllowed;
-      set => supervisorLoginAllowed = value;
-  }
-
-  // Path("deployment")
-  [XmlRoot("results")]
-  public class DeploymentList : BaseApiListBean<Deployment> {    public override List<Deployment>? GetItems() => items;
-
-    public override void SetItems(List<Deployment>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<Deployment>? value) => Items = value;
+        }
+    }
 }

@@ -1,139 +1,52 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("expandedcallvariable")
+    [XmlRoot("expandedCallVariable")]
+    public class ExpandedCallVariable : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("expandedcallvariable")
-[XmlRoot("expandedCallVariable")]
-public class ExpandedCallVariable : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? bytesRequired;
-  private int? bytesRequiredInCtiServer;
-  private int? changeStamp;
-  private bool? ciscoProvided;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? description;
-  private bool? eccArray;
-  private bool? enabled;
-  private string? idFromRefUrl;
-  private bool? markDeletable;
-  private int? maximumArraySize;
-  private int? maximumLength;
-  private string? name;
-  private bool? persistent;
-  private string? refURL;
+        public int? BytesRequired { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public int? BytesRequiredInCtiServer { get; set; }
 
-  public int? BytesRequired
-  {
-      get => bytesRequired;
-      set => bytesRequired = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public int? BytesRequiredInCtiServer
-  {
-      get => bytesRequiredInCtiServer;
-      set => bytesRequiredInCtiServer = value;
-  }
+        public bool? CiscoProvided { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public bool? CiscoProvided
-  {
-      get => ciscoProvided;
-      set => ciscoProvided = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public bool? EccArray { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public bool? Enabled { get; set; }
 
-  public bool? EccArray
-  {
-      get => eccArray;
-      set => eccArray = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public bool? Enabled
-  {
-      get => enabled;
-      set => enabled = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public int? MaximumArraySize { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        public int? MaximumLength { get; set; }
 
-  public int? MaximumArraySize
-  {
-      get => maximumArraySize;
-      set => maximumArraySize = value;
-  }
+        public string? Name { get; set; }
 
-  public int? MaximumLength
-  {
-      get => maximumLength;
-      set => maximumLength = value;
-  }
+        public bool? Persistent { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public bool? Persistent
-  {
-      get => persistent;
-      set => persistent = value;
-  }
+        // Path("expandedcallvariable")
+        [XmlRoot("results")]
+        public class ExpandedCallVariableList : BaseApiListBean<ExpandedCallVariable>
+        {
+            public override List<ExpandedCallVariable>? GetItems() => Items;
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-  // Path("expandedcallvariable")
-  [XmlRoot("results")]
-  public class ExpandedCallVariableList : BaseApiListBean<ExpandedCallVariable> {    public override List<ExpandedCallVariable>? GetItems() => items;
-
-    public override void SetItems(List<ExpandedCallVariable>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ExpandedCallVariable>? value) => Items = value;
+        }
+    }
 }

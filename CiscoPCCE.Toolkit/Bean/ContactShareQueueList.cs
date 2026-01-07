@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("contactsharequeue")
+    [XmlRoot("results")]
+    public class ContactShareQueueList : BaseApiBean
+    {
+        [XmlElement("contactShareQueues")]
+        [XmlElement("contactShareQueue")]
+        public List<ContactShareQueue>? Items { get; set; }
 
-// Path("contactsharequeue")
-[XmlRoot("results")]
-public class ContactShareQueueList : BaseApiBean {
-  private List<ContactShareQueue>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("contactShareQueues")]
-  [XmlElement("contactShareQueue")]
-  public List<ContactShareQueue>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("contactsharequeue")
+        [XmlRoot("results")]
+        public class ContactShareQueueListList : BaseApiListBean<ContactShareQueueList>
+        {
+            public override List<ContactShareQueueList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("contactsharequeue")
-  [XmlRoot("results")]
-  public class ContactShareQueueListList : BaseApiListBean<ContactShareQueueList> {    public override List<ContactShareQueueList>? GetItems() => items;
-
-    public override void SetItems(List<ContactShareQueueList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ContactShareQueueList>? value) => Items = value;
+        }
+    }
 }

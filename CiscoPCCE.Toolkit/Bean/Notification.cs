@@ -1,34 +1,22 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("notifications")
+    [XmlRoot("##default")]
+    public class Notification : BaseApiBean
+    {
+        public Category Category { get; set; }
 
-// Path("notifications")
-[XmlRoot("##default")]
-public class Notification : BaseApiBean {
-  private Category category;
-  private int count;
+        public int Count { get; set; }
 
-  public Category Category
-  {
-      get => category;
-      set => category = value;
-  }
+        // Path("notifications")
+        [XmlRoot("results")]
+        public class NotificationList : BaseApiListBean<Notification>
+        {
+            public override List<Notification>? GetItems() => Items;
 
-  public int Count
-  {
-      get => count;
-      set => count = value;
-  }
-
-  // Path("notifications")
-  [XmlRoot("results")]
-  public class NotificationList : BaseApiListBean<Notification> {    public override List<Notification>? GetItems() => items;
-
-    public override void SetItems(List<Notification>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<Notification>? value) => Items = value;
+        }
+    }
 }

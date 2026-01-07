@@ -1,14 +1,9 @@
-using System.Xml.Serialization;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
+    public class User : BaseApiBean
+    {
+        public string? Id { get; set; }
 
-public class User : BaseApiBean {
-    
-  public string? Id { get; set; }
-
-  public string? Permission { get; set; }
-
-}
-
+        public string? Permission { get; set; }
+    }
 }

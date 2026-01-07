@@ -1,27 +1,20 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("reasoncode")
+    [XmlRoot("systemDefinedReasonCodes")]
+    public class SystemDefinedReasonCodeList : BaseApiBean
+    {
+        public List<ReasonCode>? ReasonCode { get; set; }
 
-// Path("reasoncode")
-[XmlRoot("systemDefinedReasonCodes")]
-public class SystemDefinedReasonCodeList : BaseApiBean {
-  private List<ReasonCode>? reasonCode;
+        // Path("reasoncode")
+        [XmlRoot("results")]
+        public class SystemDefinedReasonCodeListList : BaseApiListBean<SystemDefinedReasonCodeList>
+        {
+            public override List<SystemDefinedReasonCodeList>? GetItems() => Items;
 
-  public List<ReasonCode>? ReasonCode
-  {
-      get => reasonCode;
-      set => reasonCode = value;
-  }
-
-  // Path("reasoncode")
-  [XmlRoot("results")]
-  public class SystemDefinedReasonCodeListList : BaseApiListBean<SystemDefinedReasonCodeList> {    public override List<SystemDefinedReasonCodeList>? GetItems() => items;
-
-    public override void SetItems(List<SystemDefinedReasonCodeList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SystemDefinedReasonCodeList>? value) => Items = value;
+        }
+    }
 }

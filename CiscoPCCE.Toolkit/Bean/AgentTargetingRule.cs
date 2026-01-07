@@ -1,115 +1,48 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("agenttargetingrule")
+    [XmlRoot("agentTargetingRule")]
+    public class AgentTargetingRule : BaseApiBean
+    {
+        [XmlElement("ranges")]
+        [XmlElement("range")]
+        public List<AgentTargetingRuleRange>? AgentTargetingRuleRanges { get; set; }
 
-// Path("agenttargetingrule")
-[XmlRoot("agentTargetingRule")]
-public class AgentTargetingRule : BaseApiBean {
-  private List<AgentTargetingRuleRange>? agentTargetingRuleRanges;
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? description;
-  private string? expression;
-  private string? idFromRefUrl;
-  private string? name;
-  private PeripheralRef peripheral;
-  private string? refURL;
-  private List<ReferenceBean>? routingClients;
-  private short? ruleType;
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  [XmlElement("ranges")]
-  [XmlElement("range")]
-  public List<AgentTargetingRuleRange>? AgentTargetingRuleRanges
-  {
-      get => agentTargetingRuleRanges;
-      set => agentTargetingRuleRanges = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? Expression { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? Expression
-  {
-      get => expression;
-      set => expression = value;
-  }
+        public string? Name { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public required PeripheralRef Peripheral { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public PeripheralRef Peripheral
-  {
-      get => peripheral;
-      set => peripheral = value;
-  }
+        [XmlElement("routingClients")]
+        [XmlElement("routingClient")]
+        public List<ReferenceBean>? RoutingClients { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public short? RuleType { get; set; }
 
-  [XmlElement("routingClients")]
-  [XmlElement("routingClient")]
-  public List<ReferenceBean>? RoutingClients
-  {
-      get => routingClients;
-      set => routingClients = value;
-  }
+        // Path("agenttargetingrule")
+        [XmlRoot("results")]
+        public class AgentTargetingRuleList : BaseApiListBean<AgentTargetingRule>
+        {
+            public override List<AgentTargetingRule>? GetItems() => Items;
 
-  public short? RuleType
-  {
-      get => ruleType;
-      set => ruleType = value;
-  }
-
-  // Path("agenttargetingrule")
-  [XmlRoot("results")]
-  public class AgentTargetingRuleList : BaseApiListBean<AgentTargetingRule> {    public override List<AgentTargetingRule>? GetItems() => items;
-
-    public override void SetItems(List<AgentTargetingRule>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<AgentTargetingRule>? value) => Items = value;
+        }
+    }
 }

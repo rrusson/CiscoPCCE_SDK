@@ -1,188 +1,71 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("skillgroup")
+    [XmlRoot("skillGroup")]
+    public class SkillGroup : BaseApiBean
+    {
+        public int? AgentCount { get; set; }
 
-// Path("skillgroup")
-[XmlRoot("skillGroup")]
-public class SkillGroup : BaseApiBean {
-  private int? agentCount;
-  private List<ReferenceBean>? agents;
-  private List<ReferenceBean>? agentsAdded;
-  private List<ReferenceBean>? agentsRemoved;
-  private string? baseUrlfromRefUrl;
-  private ReferenceBean bucketInterval;
-  private ReferenceBean campaignRef;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean datacenter;
-  private ReferenceBean department;
-  private string? description;
-  private string? idFromRefUrl;
-  private bool? markDeletable;
-  private ReferenceBean mediaRoutingDomain;
-  private string? name;
-  private PeripheralRef peripheral;
-  private int? peripheralNumber;
-  private ReferenceBean peripheralSet;
-  private string? refURL;
-  private int? selectedAgentCount;
-  private int? serviceLevelThreshold;
-  private int? serviceLevelType;
+        [XmlElement("agents")]
+        [XmlElement("agent")]
+        public List<ReferenceBean>? Agents { get; set; }
 
-  public int? AgentCount
-  {
-      get => agentCount;
-      set => agentCount = value;
-  }
+        [XmlElement("agentsAdded")]
+        [XmlElement("agent")]
+        public List<ReferenceBean>? AgentsAdded { get; set; }
 
-  [XmlElement("agents")]
-  [XmlElement("agent")]
-  public List<ReferenceBean>? Agents
-  {
-      get => agents;
-      set => agents = value;
-  }
+        [XmlElement("agentsRemoved")]
+        [XmlElement("agent")]
+        public List<ReferenceBean>? AgentsRemoved { get; set; }
 
-  [XmlElement("agentsAdded")]
-  [XmlElement("agent")]
-  public List<ReferenceBean>? AgentsAdded
-  {
-      get => agentsAdded;
-      set => agentsAdded = value;
-  }
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  [XmlElement("agentsRemoved")]
-  [XmlElement("agent")]
-  public List<ReferenceBean>? AgentsRemoved
-  {
-      get => agentsRemoved;
-      set => agentsRemoved = value;
-  }
+        public required ReferenceBean BucketInterval { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public required ReferenceBean CampaignRef { get; set; }
 
-  public ReferenceBean BucketInterval
-  {
-      get => bucketInterval;
-      set => bucketInterval = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public ReferenceBean CampaignRef
-  {
-      get => campaignRef;
-      set => campaignRef = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Datacenter { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public ReferenceBean Datacenter
-  {
-      get => datacenter;
-      set => datacenter = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public required ReferenceBean MediaRoutingDomain { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        public string? Name { get; set; }
 
-  public ReferenceBean MediaRoutingDomain
-  {
-      get => mediaRoutingDomain;
-      set => mediaRoutingDomain = value;
-  }
+        public required PeripheralRef Peripheral { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public int? PeripheralNumber { get; set; }
 
-  public PeripheralRef Peripheral
-  {
-      get => peripheral;
-      set => peripheral = value;
-  }
+        [XmlElement("peripheralSet")]
+        public required ReferenceBean PeripheralSet { get; set; }
 
-  public int? PeripheralNumber
-  {
-      get => peripheralNumber;
-      set => peripheralNumber = value;
-  }
+        public new string? RefURL { get; set; }
 
-  [XmlElement("peripheralSet")]
-  public ReferenceBean PeripheralSet
-  {
-      get => peripheralSet;
-      set => peripheralSet = value;
-  }
+        public int? SelectedAgentCount { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public int? ServiceLevelThreshold { get; set; }
 
-  public int? SelectedAgentCount
-  {
-      get => selectedAgentCount;
-      set => selectedAgentCount = value;
-  }
+        public int? ServiceLevelType { get; set; }
 
-  public int? ServiceLevelThreshold
-  {
-      get => serviceLevelThreshold;
-      set => serviceLevelThreshold = value;
-  }
+        // Path("skillgroup")
+        [XmlRoot("results")]
+        public class SkillGroupList : BaseApiListBean<SkillGroup>
+        {
+            public override List<SkillGroup>? GetItems() => Items;
 
-  public int? ServiceLevelType
-  {
-      get => serviceLevelType;
-      set => serviceLevelType = value;
-  }
-
-  // Path("skillgroup")
-  [XmlRoot("results")]
-  public class SkillGroupList : BaseApiListBean<SkillGroup> {    public override List<SkillGroup>? GetItems() => items;
-
-    public override void SetItems(List<SkillGroup>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SkillGroup>? value) => Items = value;
+        }
+    }
 }

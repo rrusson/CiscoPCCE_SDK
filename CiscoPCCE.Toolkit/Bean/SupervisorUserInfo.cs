@@ -1,83 +1,36 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("agent")
+    [XmlRoot("supervisorUserInfo")]
+    public class SupervisorUserInfo : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("agent")
-[XmlRoot("supervisorUserInfo")]
-public class SupervisorUserInfo : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? domainName;
-  private string? idFromRefUrl;
-  private bool? ssoEnabled;
-  private bool? supervisor;
-  private string? userName;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? DomainName { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? DomainName
-  {
-      get => domainName;
-      set => domainName = value;
-  }
+        public bool? SsoEnabled { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public bool? Supervisor { get; set; }
 
-  public bool? SsoEnabled
-  {
-      get => ssoEnabled;
-      set => ssoEnabled = value;
-  }
+        public string? UserName { get; set; }
 
-  public bool? Supervisor
-  {
-      get => supervisor;
-      set => supervisor = value;
-  }
+        // Path("agent")
+        [XmlRoot("results")]
+        public class SupervisorUserInfoList : BaseApiListBean<SupervisorUserInfo>
+        {
+            public override List<SupervisorUserInfo>? GetItems() => Items;
 
-  public string? UserName
-  {
-      get => userName;
-      set => userName = value;
-  }
-
-  // Path("agent")
-  [XmlRoot("results")]
-  public class SupervisorUserInfoList : BaseApiListBean<SupervisorUserInfo> {    public override List<SupervisorUserInfo>? GetItems() => items;
-
-    public override void SetItems(List<SupervisorUserInfo>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SupervisorUserInfo>? value) => Items = value;
+        }
+    }
 }

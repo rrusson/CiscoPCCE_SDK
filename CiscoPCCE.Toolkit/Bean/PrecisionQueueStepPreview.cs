@@ -1,70 +1,33 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("/pqsteppreview")
+    [XmlRoot("pqStepPreview")]
+    public class PrecisionQueueStepPreview : BaseApiBean
+    {
+        [XmlElement("agentCount")]
+        public int? AgentCount { get; set; }
 
-// Path("/pqsteppreview")
-[XmlRoot("pqStepPreview")]
-public class PrecisionQueueStepPreview : BaseApiBean {
-  private int? agentCount;
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private Step step;
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  [XmlElement("agentCount")]
-  public int? AgentCount
-  {
-      get => agentCount;
-      set => agentCount = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public required Step Step { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        // Path("/pqsteppreview")
+        [XmlRoot("results")]
+        public class PrecisionQueueStepPreviewList : BaseApiListBean<PrecisionQueueStepPreview>
+        {
+            public override List<PrecisionQueueStepPreview>? GetItems() => Items;
 
-  public Step Step
-  {
-      get => step;
-      set => step = value;
-  }
-
-  // Path("/pqsteppreview")
-  [XmlRoot("results")]
-  public class PrecisionQueueStepPreviewList : BaseApiListBean<PrecisionQueueStepPreview> {    public override List<PrecisionQueueStepPreview>? GetItems() => items;
-
-    public override void SetItems(List<PrecisionQueueStepPreview>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<PrecisionQueueStepPreview>? value) => Items = value;
+        }
+    }
 }

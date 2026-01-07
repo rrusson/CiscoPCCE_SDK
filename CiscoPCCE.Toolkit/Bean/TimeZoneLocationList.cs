@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("timezone")
+    [XmlRoot("results")]
+    public class TimeZoneLocationList : BaseApiBean
+    {
+        [XmlElement("timeZones")]
+        [XmlElement("timeZone")]
+        public List<TimeZoneLocation>? Items { get; set; }
 
-// Path("timezone")
-[XmlRoot("results")]
-public class TimeZoneLocationList : BaseApiBean {
-  private List<TimeZoneLocation>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("timeZones")]
-  [XmlElement("timeZone")]
-  public List<TimeZoneLocation>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("timezone")
+        [XmlRoot("results")]
+        public class TimeZoneLocationListList : BaseApiListBean<TimeZoneLocationList>
+        {
+            public override List<TimeZoneLocationList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("timezone")
-  [XmlRoot("results")]
-  public class TimeZoneLocationListList : BaseApiListBean<TimeZoneLocationList> {    public override List<TimeZoneLocationList>? GetItems() => items;
-
-    public override void SetItems(List<TimeZoneLocationList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<TimeZoneLocationList>? value) => Items = value;
+        }
+    }
 }

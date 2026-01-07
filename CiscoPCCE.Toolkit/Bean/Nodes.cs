@@ -1,14 +1,10 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-[XmlRoot("nodes")]
-public class Nodes : BaseApiBean {
-  
-  public List<Node>? NodeList { get; set; }
-
-}
-
+    [XmlRoot("nodes")]
+    public class Nodes : BaseApiBean
+    {
+        public List<Node>? NodeList { get; set; }
+    }
 }

@@ -1,34 +1,22 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("activedirectorydomain")
+    [XmlRoot("activeDirectoryDomain")]
+    public class ActiveDirectoryDomain : BaseApiBean
+    {
+        public string? Name { get; set; }
 
-// Path("activedirectorydomain")
-[XmlRoot("activeDirectoryDomain")]
-public class ActiveDirectoryDomain : BaseApiBean {
-  private string? name;
-  private bool? systemDomain;
+        public bool? SystemDomain { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        // Path("activedirectorydomain")
+        [XmlRoot("results")]
+        public class ActiveDirectoryDomainList : BaseApiListBean<ActiveDirectoryDomain>
+        {
+            public override List<ActiveDirectoryDomain>? GetItems() => Items;
 
-  public bool? SystemDomain
-  {
-      get => systemDomain;
-      set => systemDomain = value;
-  }
-
-  // Path("activedirectorydomain")
-  [XmlRoot("results")]
-  public class ActiveDirectoryDomainList : BaseApiListBean<ActiveDirectoryDomain> {    public override List<ActiveDirectoryDomain>? GetItems() => items;
-
-    public override void SetItems(List<ActiveDirectoryDomain>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ActiveDirectoryDomain>? value) => Items = value;
+        }
+    }
 }

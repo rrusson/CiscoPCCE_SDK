@@ -1,111 +1,44 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("smartlicense")
+    [XmlRoot("smartlicenseproductinfo")]
+    public class SmartLicenseProductInfo : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("smartlicense")
-[XmlRoot("smartlicenseproductinfo")]
-public class SmartLicenseProductInfo : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private int? privacyEnabled;
-  private string? productDescription;
-  private string? productDisplayName;
-  private int? productEnvironment;
-  private string? productTag;
-  private string? productVersion;
-  private string? refURL;
-  private int? smartLicenseProductID;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public int? PrivacyEnabled { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public string? ProductDescription { get; set; }
 
-  public int? PrivacyEnabled
-  {
-      get => privacyEnabled;
-      set => privacyEnabled = value;
-  }
+        public string? ProductDisplayName { get; set; }
 
-  public string? ProductDescription
-  {
-      get => productDescription;
-      set => productDescription = value;
-  }
+        public int? ProductEnvironment { get; set; }
 
-  public string? ProductDisplayName
-  {
-      get => productDisplayName;
-      set => productDisplayName = value;
-  }
+        public string? ProductTag { get; set; }
 
-  public int? ProductEnvironment
-  {
-      get => productEnvironment;
-      set => productEnvironment = value;
-  }
+        public string? ProductVersion { get; set; }
 
-  public string? ProductTag
-  {
-      get => productTag;
-      set => productTag = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? ProductVersion
-  {
-      get => productVersion;
-      set => productVersion = value;
-  }
+        public int? SmartLicenseProductID { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("smartlicense")
+        [XmlRoot("results")]
+        public class SmartLicenseProductInfoList : BaseApiListBean<SmartLicenseProductInfo>
+        {
+            public override List<SmartLicenseProductInfo>? GetItems() => Items;
 
-  public int? SmartLicenseProductID
-  {
-      get => smartLicenseProductID;
-      set => smartLicenseProductID = value;
-  }
-
-  // Path("smartlicense")
-  [XmlRoot("results")]
-  public class SmartLicenseProductInfoList : BaseApiListBean<SmartLicenseProductInfo> {    public override List<SmartLicenseProductInfo>? GetItems() => items;
-
-    public override void SetItems(List<SmartLicenseProductInfo>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SmartLicenseProductInfo>? value) => Items = value;
+        }
+    }
 }

@@ -1,139 +1,52 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("externalpage")
+    [XmlRoot("externalpage")]
+    public class ExternalPage : BaseApiBean
+    {
+        public string? BaseData { get; set; }
 
-// Path("externalpage")
-[XmlRoot("externalpage")]
-public class ExternalPage : BaseApiBean {
-  private string? baseData;
-  private string? baseUrlfromRefUrl;
-  private ReferenceBean card;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? description;
-  private string? dynamicData;
-  private int? featureId;
-  private bool? gadget;
-  private int? id;
-  private string? idFromRefUrl;
-  private string? ipAddress;
-  private ReferenceBean menu;
-  private string? name;
-  private string? refURL;
-  private int? tabPosition;
-  private string? url;
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public string? BaseData
-  {
-      get => baseData;
-      set => baseData = value;
-  }
+        public required ReferenceBean Card { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public ReferenceBean Card
-  {
-      get => card;
-      set => card = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? DynamicData { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public int? FeatureId { get; set; }
 
-  public string? DynamicData
-  {
-      get => dynamicData;
-      set => dynamicData = value;
-  }
+        public bool? Gadget { get; set; }
 
-  public int? FeatureId
-  {
-      get => featureId;
-      set => featureId = value;
-  }
+        public int? Id { get; set; }
 
-  public bool? Gadget
-  {
-      get => gadget;
-      set => gadget = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public int? Id
-  {
-      get => id;
-      set => id = value;
-  }
+        public string? IpAddress { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public required ReferenceBean Menu { get; set; }
 
-  public string? IpAddress
-  {
-      get => ipAddress;
-      set => ipAddress = value;
-  }
+        public string? Name { get; set; }
 
-  public ReferenceBean Menu
-  {
-      get => menu;
-      set => menu = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public int? TabPosition { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public string? Url { get; set; }
 
-  public int? TabPosition
-  {
-      get => tabPosition;
-      set => tabPosition = value;
-  }
+        // Path("externalpage")
+        [XmlRoot("results")]
+        public class ExternalPageList : BaseApiListBean<ExternalPage>
+        {
+            public override List<ExternalPage>? GetItems() => Items;
 
-  public string? Url
-  {
-      get => url;
-      set => url = value;
-  }
-
-  // Path("externalpage")
-  [XmlRoot("results")]
-  public class ExternalPageList : BaseApiListBean<ExternalPage> {    public override List<ExternalPage>? GetItems() => items;
-
-    public override void SetItems(List<ExternalPage>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ExternalPage>? value) => Items = value;
+        }
+    }
 }

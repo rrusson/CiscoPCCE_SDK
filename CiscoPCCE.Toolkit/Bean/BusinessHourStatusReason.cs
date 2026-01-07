@@ -1,83 +1,36 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("businesshourstatusreason")
+    [XmlRoot("businessHourStatusReason")]
+    public class BusinessHourStatusReason : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("businesshourstatusreason")
-[XmlRoot("businessHourStatusReason")]
-public class BusinessHourStatusReason : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private string? category;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private int? reasonCode;
-  private string? reasonText;
-  private string? refURL;
+        public string? Category { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? Category
-  {
-      get => category;
-      set => category = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public int? ReasonCode { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public string? ReasonText { get; set; }
 
-  public int? ReasonCode
-  {
-      get => reasonCode;
-      set => reasonCode = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? ReasonText
-  {
-      get => reasonText;
-      set => reasonText = value;
-  }
+        // Path("businesshourstatusreason")
+        [XmlRoot("results")]
+        public class BusinessHourStatusReasonList : BaseApiListBean<BusinessHourStatusReason>
+        {
+            public override List<BusinessHourStatusReason>? GetItems() => Items;
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-  // Path("businesshourstatusreason")
-  [XmlRoot("results")]
-  public class BusinessHourStatusReasonList : BaseApiListBean<BusinessHourStatusReason> {    public override List<BusinessHourStatusReason>? GetItems() => items;
-
-    public override void SetItems(List<BusinessHourStatusReason>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<BusinessHourStatusReason>? value) => Items = value;
+        }
+    }
 }

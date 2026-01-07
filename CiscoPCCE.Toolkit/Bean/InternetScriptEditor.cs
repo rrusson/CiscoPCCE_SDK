@@ -1,34 +1,22 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("internetscripteditor")
+    [XmlRoot("##default")]
+    public class InternetScriptEditor : BaseApiBean
+    {
+        public string? DownloadLink { get; set; }
 
-// Path("internetscripteditor")
-[XmlRoot("##default")]
-public class InternetScriptEditor : BaseApiBean {
-  private string? downloadLink;
-  private bool? enabled;
+        public bool? Enabled { get; set; }
 
-  public string? DownloadLink
-  {
-      get => downloadLink;
-      set => downloadLink = value;
-  }
+        // Path("internetscripteditor")
+        [XmlRoot("results")]
+        public class InternetScriptEditorList : BaseApiListBean<InternetScriptEditor>
+        {
+            public override List<InternetScriptEditor>? GetItems() => Items;
 
-  public bool? Enabled
-  {
-      get => enabled;
-      set => enabled = value;
-  }
-
-  // Path("internetscripteditor")
-  [XmlRoot("results")]
-  public class InternetScriptEditorList : BaseApiListBean<InternetScriptEditor> {    public override List<InternetScriptEditor>? GetItems() => items;
-
-    public override void SetItems(List<InternetScriptEditor>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<InternetScriptEditor>? value) => Items = value;
+        }
+    }
 }

@@ -1,34 +1,22 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("machineinventory")
+    [XmlRoot("component")]
+    public class MachineComponent : BaseApiBean
+    {
+        public string? Name { get; set; }
 
-// Path("machineinventory")
-[XmlRoot("component")]
-public class MachineComponent : BaseApiBean {
-  private string? name;
-  private string? refURL;
+        public new string? RefURL { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        // Path("machineinventory")
+        [XmlRoot("results")]
+        public class MachineComponentList : BaseApiListBean<MachineComponent>
+        {
+            public override List<MachineComponent>? GetItems() => Items;
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-  // Path("machineinventory")
-  [XmlRoot("results")]
-  public class MachineComponentList : BaseApiListBean<MachineComponent> {    public override List<MachineComponent>? GetItems() => items;
-
-    public override void SetItems(List<MachineComponent>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<MachineComponent>? value) => Items = value;
+        }
+    }
 }

@@ -1,10 +1,6 @@
-using System.Xml.Serialization;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-public class ApiStats : BaseApiBean {
-
-}
-
+    public class ApiStats : BaseApiBean
+    {
+    }
 }

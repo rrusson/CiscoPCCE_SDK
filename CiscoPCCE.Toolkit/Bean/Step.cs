@@ -1,64 +1,32 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("precisionqueue")
+    [XmlRoot("step")]
+    public class Step : BaseApiBean
+    {
+        public int? AgentCount { get; set; }
 
-// Path("precisionqueue")
-[XmlRoot("step")]
-public class Step : BaseApiBean {
-  private int? agentCount;
-  private string? considerIf;
-  private string? description;
-  private string? refURL;
-  private List<Term>? terms;
-  private int? waitTime;
+        public string? ConsiderIf { get; set; }
 
-  public int? AgentCount
-  {
-      get => agentCount;
-      set => agentCount = value;
-  }
+        public string? Description { get; set; }
 
-  public string? ConsiderIf
-  {
-      get => considerIf;
-      set => considerIf = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        [XmlElement("terms")]
+        [XmlElement("term")]
+        public List<Term>? Terms { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public int? WaitTime { get; set; }
 
-  [XmlElement("terms")]
-  [XmlElement("term")]
-  public List<Term>? Terms
-  {
-      get => terms;
-      set => terms = value;
-  }
+        // Path("precisionqueue")
+        [XmlRoot("results")]
+        public class StepList : BaseApiListBean<Step>
+        {
+            public override List<Step>? GetItems() => Items;
 
-  public int? WaitTime
-  {
-      get => waitTime;
-      set => waitTime = value;
-  }
-
-  // Path("precisionqueue")
-  [XmlRoot("results")]
-  public class StepList : BaseApiListBean<Step> {    public override List<Step>? GetItems() => items;
-
-    public override void SetItems(List<Step>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<Step>? value) => Items = value;
+        }
+    }
 }

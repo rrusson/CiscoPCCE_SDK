@@ -1,41 +1,24 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("instance")
+    [XmlRoot("instance")]
+    public class WebsetupInstance : BaseApiBean
+    {
+        public string? FacilityName { get; set; }
 
-// Path("instance")
-[XmlRoot("instance")]
-public class WebsetupInstance : BaseApiBean {
-  private string? facilityName;
-  private string? instanceName;
-  private string? refURL;
+        public string? InstanceName { get; set; }
 
-  public string? FacilityName
-  {
-      get => facilityName;
-      set => facilityName = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? InstanceName
-  {
-      get => instanceName;
-      set => instanceName = value;
-  }
+        // Path("instance")
+        [XmlRoot("results")]
+        public class WebsetupInstanceList : BaseApiListBean<WebsetupInstance>
+        {
+            public override List<WebsetupInstance>? GetItems() => Items;
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-  // Path("instance")
-  [XmlRoot("results")]
-  public class WebsetupInstanceList : BaseApiListBean<WebsetupInstance> {    public override List<WebsetupInstance>? GetItems() => items;
-
-    public override void SetItems(List<WebsetupInstance>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<WebsetupInstance>? value) => Items = value;
+        }
+    }
 }

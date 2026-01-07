@@ -1,128 +1,51 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("calltype")
+    [XmlRoot("callType")]
+    public class CallType : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("calltype")
-[XmlRoot("callType")]
-public class CallType : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private ReferenceBean bucketInterval;
-  private int? callTypeId;
-  private string? ccaiConfigID;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? description;
-  private string? idFromRefUrl;
-  private bool? markDeletable;
-  private string? name;
-  private string? refURL;
-  private List<ScriptSchedule>? scriptSchedules;
-  private int? serviceLevelThreshold;
-  private int? serviceLevelType;
+        public required ReferenceBean BucketInterval { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        [XmlElement("id")]
+        public int? CallTypeId { get; set; }
 
-  public ReferenceBean BucketInterval
-  {
-      get => bucketInterval;
-      set => bucketInterval = value;
-  }
+        public string? CcaiConfigID { get; set; }
 
-  [XmlElement("id")]
-  public int? CallTypeId
-  {
-      get => callTypeId;
-      set => callTypeId = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? CcaiConfigID
-  {
-      get => ccaiConfigID;
-      set => ccaiConfigID = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public string? Name { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        [XmlElement("##default")]
+        [XmlElement("scriptSchedule")]
+        public List<ScriptSchedule>? ScriptSchedules { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public int? ServiceLevelThreshold { get; set; }
 
-  [XmlElement("##default")]
-  [XmlElement("scriptSchedule")]
-  public List<ScriptSchedule>? ScriptSchedules
-  {
-      get => scriptSchedules;
-      set => scriptSchedules = value;
-  }
+        public int? ServiceLevelType { get; set; }
 
-  public int? ServiceLevelThreshold
-  {
-      get => serviceLevelThreshold;
-      set => serviceLevelThreshold = value;
-  }
+        // Path("calltype")
+        [XmlRoot("results")]
+        public class CallTypeList : BaseApiListBean<CallType>
+        {
+            public override List<CallType>? GetItems() => Items;
 
-  public int? ServiceLevelType
-  {
-      get => serviceLevelType;
-      set => serviceLevelType = value;
-  }
-
-  // Path("calltype")
-  [XmlRoot("results")]
-  public class CallTypeList : BaseApiListBean<CallType> {    public override List<CallType>? GetItems() => items;
-
-    public override void SetItems(List<CallType>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<CallType>? value) => Items = value;
+        }
+    }
 }

@@ -1,10 +1,6 @@
-using System.Xml.Serialization;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-public class ApiErrors : BaseApiBean {
-
-}
-
+    public class ApiErrors : BaseApiBean
+    {
+    }
 }

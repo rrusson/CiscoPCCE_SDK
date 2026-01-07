@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("peripheral")
+    [XmlRoot("results")]
+    public class PeripheralList : BaseApiBean
+    {
+        [XmlElement("peripherals")]
+        [XmlElement("peripheral")]
+        public List<PeripheralWithRoutingClient>? Items { get; set; }
 
-// Path("peripheral")
-[XmlRoot("results")]
-public class PeripheralList : BaseApiBean {
-  private List<PeripheralWithRoutingClient>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("peripherals")]
-  [XmlElement("peripheral")]
-  public List<PeripheralWithRoutingClient>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("peripheral")
+        [XmlRoot("results")]
+        public class PeripheralListList : BaseApiListBean<PeripheralList>
+        {
+            public override List<PeripheralList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("peripheral")
-  [XmlRoot("results")]
-  public class PeripheralListList : BaseApiListBean<PeripheralList> {    public override List<PeripheralList>? GetItems() => items;
-
-    public override void SetItems(List<PeripheralList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<PeripheralList>? value) => Items = value;
+        }
+    }
 }

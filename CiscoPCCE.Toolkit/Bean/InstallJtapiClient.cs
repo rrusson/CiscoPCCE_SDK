@@ -1,34 +1,22 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("installjtapiclient")
+    [XmlRoot("installJtapiClient")]
+    public class InstallJtapiClient : BaseApiBean
+    {
+        public string? CallManagerPublisherAddress { get; set; }
 
-// Path("installjtapiclient")
-[XmlRoot("installJtapiClient")]
-public class InstallJtapiClient : BaseApiBean {
-  private string? callManagerPublisherAddress;
-  private string? callManagerPublisherVersion;
+        public string? CallManagerPublisherVersion { get; set; }
 
-  public string? CallManagerPublisherAddress
-  {
-      get => callManagerPublisherAddress;
-      set => callManagerPublisherAddress = value;
-  }
+        // Path("installjtapiclient")
+        [XmlRoot("results")]
+        public class InstallJtapiClientList : BaseApiListBean<InstallJtapiClient>
+        {
+            public override List<InstallJtapiClient>? GetItems() => Items;
 
-  public string? CallManagerPublisherVersion
-  {
-      get => callManagerPublisherVersion;
-      set => callManagerPublisherVersion = value;
-  }
-
-  // Path("installjtapiclient")
-  [XmlRoot("results")]
-  public class InstallJtapiClientList : BaseApiListBean<InstallJtapiClient> {    public override List<InstallJtapiClient>? GetItems() => items;
-
-    public override void SetItems(List<InstallJtapiClient>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<InstallJtapiClient>? value) => Items = value;
+        }
+    }
 }

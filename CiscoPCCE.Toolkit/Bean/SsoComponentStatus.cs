@@ -1,64 +1,32 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("sso")
+    [XmlRoot("ssoComponentStatus")]
+    public class SsoComponentStatus : BaseApiBean
+    {
+        [XmlElement("##default")]
+        [XmlElement("apiError")]
+        public List<ApiError>? ApiErrors { get; set; }
 
-// Path("sso")
-[XmlRoot("ssoComponentStatus")]
-public class SsoComponentStatus : BaseApiBean {
-  private List<ApiError>? apiErrors;
-  private SsoOperationState modeState;
-  private string? name;
-  private string? refURL;
-  private SsoOperationState registrationState;
-  private string? ssoTestPath;
+        public SsoOperationState ModeState { get; set; }
 
-  [XmlElement("##default")]
-  [XmlElement("apiError")]
-  public List<ApiError>? ApiErrors
-  {
-      get => apiErrors;
-      set => apiErrors = value;
-  }
+        public string? Name { get; set; }
 
-  public SsoOperationState ModeState
-  {
-      get => modeState;
-      set => modeState = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public SsoOperationState RegistrationState { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public string? SsoTestPath { get; set; }
 
-  public SsoOperationState RegistrationState
-  {
-      get => registrationState;
-      set => registrationState = value;
-  }
+        // Path("sso")
+        [XmlRoot("results")]
+        public class SsoComponentStatusList : BaseApiListBean<SsoComponentStatus>
+        {
+            public override List<SsoComponentStatus>? GetItems() => Items;
 
-  public string? SsoTestPath
-  {
-      get => ssoTestPath;
-      set => ssoTestPath = value;
-  }
-
-  // Path("sso")
-  [XmlRoot("results")]
-  public class SsoComponentStatusList : BaseApiListBean<SsoComponentStatus> {    public override List<SsoComponentStatus>? GetItems() => items;
-
-    public override void SetItems(List<SsoComponentStatus>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SsoComponentStatus>? value) => Items = value;
+        }
+    }
 }

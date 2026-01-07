@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("bucketinterval")
+    [XmlRoot("results")]
+    public class BucketIntervalList : BaseApiBean
+    {
+        [XmlElement("bucketIntervals")]
+        [XmlElement("bucketInterval")]
+        public List<BucketInterval>? Items { get; set; }
 
-// Path("bucketinterval")
-[XmlRoot("results")]
-public class BucketIntervalList : BaseApiBean {
-  private List<BucketInterval>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("bucketIntervals")]
-  [XmlElement("bucketInterval")]
-  public List<BucketInterval>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("bucketinterval")
+        [XmlRoot("results")]
+        public class BucketIntervalListList : BaseApiListBean<BucketIntervalList>
+        {
+            public override List<BucketIntervalList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("bucketinterval")
-  [XmlRoot("results")]
-  public class BucketIntervalListList : BaseApiListBean<BucketIntervalList> {    public override List<BucketIntervalList>? GetItems() => items;
-
-    public override void SetItems(List<BucketIntervalList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<BucketIntervalList>? value) => Items = value;
+        }
+    }
 }

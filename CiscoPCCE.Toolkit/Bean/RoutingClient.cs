@@ -1,118 +1,46 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("secondaryaddress")
+    [XmlRoot("routingClient")]
+    public class RoutingClient : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("secondaryaddress")
-[XmlRoot("routingClient")]
-public class RoutingClient : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private short? clientType;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private short? lateThreshold;
-  private ReferenceBean logicalController;
-  private bool? markDeletable;
-  private string? name;
-  private PeripheralRef peripheral;
-  private string? refURL;
-  private short? timeoutLimit;
-  private short? timeoutThreshold;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public short? ClientType { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public short? ClientType
-  {
-      get => clientType;
-      set => clientType = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public short? LateThreshold { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public required ReferenceBean LogicalController { get; set; }
 
-  public short? LateThreshold
-  {
-      get => lateThreshold;
-      set => lateThreshold = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public ReferenceBean LogicalController
-  {
-      get => logicalController;
-      set => logicalController = value;
-  }
+        public string? Name { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        public required PeripheralRef Peripheral { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public PeripheralRef Peripheral
-  {
-      get => peripheral;
-      set => peripheral = value;
-  }
+        public short? TimeoutLimit { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public short? TimeoutThreshold { get; set; }
 
-  public short? TimeoutLimit
-  {
-      get => timeoutLimit;
-      set => timeoutLimit = value;
-  }
+        // Path("secondaryaddress")
+        [XmlRoot("results")]
+        public class RoutingClientList : BaseApiListBean<RoutingClient>
+        {
+            public override List<RoutingClient>? GetItems() => Items;
 
-  public short? TimeoutThreshold
-  {
-      get => timeoutThreshold;
-      set => timeoutThreshold = value;
-  }
-
-  // Path("secondaryaddress")
-  [XmlRoot("results")]
-  public class RoutingClientList : BaseApiListBean<RoutingClient> {    public override List<RoutingClient>? GetItems() => items;
-
-    public override void SetItems(List<RoutingClient>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<RoutingClient>? value) => Items = value;
+        }
+    }
 }

@@ -1,5 +1,3 @@
-using System;
-
 namespace CiscoPCCE.Toolkit
 {
     /// <summary>
@@ -9,26 +7,24 @@ namespace CiscoPCCE.Toolkit
     /// </summary>
     public class ApiException : Exception
     {
-        private readonly ApiErrors? errors;
-
         public ApiException(string message) : base(message)
         {
         }
 
         public ApiException(ApiErrors errors)
         {
-            this.errors = errors;
+            Errors = errors;
         }
 
-        public ApiErrors? Errors => errors;
+        public ApiErrors? Errors { get; }
 
         public override string Message
         {
             get
             {
-                if (errors != null)
+                if (Errors != null)
                 {
-                    return System.Text.Json.JsonSerializer.Serialize(errors);
+                    return System.Text.Json.JsonSerializer.Serialize(Errors);
                 }
                 return base.Message;
             }

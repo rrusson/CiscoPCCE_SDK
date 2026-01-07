@@ -1,15 +1,11 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-[XmlRoot("dataSources")]
-public class CuicDataSources : BaseApiBean {
-  
-  [XmlElement("dataSource")]
-  public List<CuicDataSourceRef>? Items { get; set; }
-
-}
-
+    [XmlRoot("dataSources")]
+    public class CuicDataSources : BaseApiBean
+    {
+        [XmlElement("dataSource")]
+        public List<CuicDataSourceRef>? Items { get; set; }
+    }
 }

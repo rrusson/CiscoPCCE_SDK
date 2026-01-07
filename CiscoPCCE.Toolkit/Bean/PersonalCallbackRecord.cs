@@ -1,162 +1,59 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
-using System;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("personalcallback")
+    [XmlRoot("personalCallback")]
+    public class PersonalCallbackRecord : BaseApiBean
+    {
+        public string? AccountNumber { get; set; }
 
-// Path("personalcallback")
-[XmlRoot("personalCallback")]
-public class PersonalCallbackRecord : BaseApiBean {
-  private string? accountNumber;
-  private ReferenceBean agent;
-  private string? agentId;
-  private string? baseUrlfromRefUrl;
-  private short? callResult;
-  private CallStatusEnum callStatusEnum;
-  private DateTime? callbackDateTime;
-  private ReferenceBean campaign;
-  private string? campaignDn;
-  private int? campaignId;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? firstName;
-  private int? id;
-  private string? idFromRefUrl;
-  private string? lastName;
-  private int? maxAttempts;
-  private int? peripheralId;
-  private string? phone;
-  private string? refURL;
+        public required ReferenceBean Agent { get; set; }
 
-  public string? AccountNumber
-  {
-      get => accountNumber;
-      set => accountNumber = value;
-  }
+        public string? AgentId { get; set; }
 
-  public ReferenceBean Agent
-  {
-      get => agent;
-      set => agent = value;
-  }
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public string? AgentId
-  {
-      get => agentId;
-      set => agentId = value;
-  }
+        public short? CallResult { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        [XmlElement("callStatus")]
+        public CallStatusEnum CallStatusEnum { get; set; }
 
-  public short? CallResult
-  {
-      get => callResult;
-      set => callResult = value;
-  }
+        public DateTime? CallbackDateTime { get; set; }
 
-  [XmlElement("callStatus")]
-  public CallStatusEnum CallStatusEnum
-  {
-      get => callStatusEnum;
-      set => callStatusEnum = value;
-  }
+        public required ReferenceBean Campaign { get; set; }
 
-  public DateTime? CallbackDateTime
-  {
-      get => callbackDateTime;
-      set => callbackDateTime = value;
-  }
+        public string? CampaignDn { get; set; }
 
-  public ReferenceBean Campaign
-  {
-      get => campaign;
-      set => campaign = value;
-  }
+        public int? CampaignId { get; set; }
 
-  public string? CampaignDn
-  {
-      get => campaignDn;
-      set => campaignDn = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? CampaignId
-  {
-      get => campaignId;
-      set => campaignId = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? FirstName { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public int? Id { get; set; }
 
-  public string? FirstName
-  {
-      get => firstName;
-      set => firstName = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public int? Id
-  {
-      get => id;
-      set => id = value;
-  }
+        public string? LastName { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public int? MaxAttempts { get; set; }
 
-  public string? LastName
-  {
-      get => lastName;
-      set => lastName = value;
-  }
+        public int? PeripheralId { get; set; }
 
-  public int? MaxAttempts
-  {
-      get => maxAttempts;
-      set => maxAttempts = value;
-  }
+        public string? Phone { get; set; }
 
-  public int? PeripheralId
-  {
-      get => peripheralId;
-      set => peripheralId = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? Phone
-  {
-      get => phone;
-      set => phone = value;
-  }
+        // Path("personalcallback")
+        [XmlRoot("results")]
+        public class PersonalCallbackRecordList : BaseApiListBean<PersonalCallbackRecord>
+        {
+            public override List<PersonalCallbackRecord>? GetItems() => Items;
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-  // Path("personalcallback")
-  [XmlRoot("results")]
-  public class PersonalCallbackRecordList : BaseApiListBean<PersonalCallbackRecord> {    public override List<PersonalCallbackRecord>? GetItems() => items;
-
-    public override void SetItems(List<PersonalCallbackRecord>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<PersonalCallbackRecord>? value) => Items = value;
+        }
+    }
 }

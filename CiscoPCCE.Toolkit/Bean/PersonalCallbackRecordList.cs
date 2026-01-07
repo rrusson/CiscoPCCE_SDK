@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("personalcallback")
+    [XmlRoot("results")]
+    public class PersonalCallbackRecordList : BaseApiBean
+    {
+        [XmlElement("personalCallbacks")]
+        [XmlElement("personalCallback")]
+        public List<PersonalCallbackRecord>? Items { get; set; }
 
-// Path("personalcallback")
-[XmlRoot("results")]
-public class PersonalCallbackRecordList : BaseApiBean {
-  private List<PersonalCallbackRecord>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("personalCallbacks")]
-  [XmlElement("personalCallback")]
-  public List<PersonalCallbackRecord>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("personalcallback")
+        [XmlRoot("results")]
+        public class PersonalCallbackRecordListList : BaseApiListBean<PersonalCallbackRecordList>
+        {
+            public override List<PersonalCallbackRecordList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("personalcallback")
-  [XmlRoot("results")]
-  public class PersonalCallbackRecordListList : BaseApiListBean<PersonalCallbackRecordList> {    public override List<PersonalCallbackRecordList>? GetItems() => items;
-
-    public override void SetItems(List<PersonalCallbackRecordList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<PersonalCallbackRecordList>? value) => Items = value;
+        }
+    }
 }

@@ -1,113 +1,46 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("sipservergroup")
+    [XmlRoot("sipServerGroup")]
+    public class SipServerGroup : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("sipservergroup")
-[XmlRoot("sipServerGroup")]
-public class SipServerGroup : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean datacenter;
-  private bool? defaultGroup;
-  private ReferenceBean department;
-  private string? description;
-  private List<SipServerElement>? elements;
-  private string? idFromRefUrl;
-  private string? name;
-  private int? noOfElements;
-  private string? refURL;
-  private SipServerType type;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Datacenter { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public bool? DefaultGroup { get; set; }
 
-  public ReferenceBean Datacenter
-  {
-      get => datacenter;
-      set => datacenter = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public bool? DefaultGroup
-  {
-      get => defaultGroup;
-      set => defaultGroup = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        [XmlElement("elements")]
+        [XmlElement("element")]
+        public List<SipServerElement>? Elements { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  [XmlElement("elements")]
-  [XmlElement("element")]
-  public List<SipServerElement>? Elements
-  {
-      get => elements;
-      set => elements = value;
-  }
+        public string? Name { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public int? NoOfElements { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public int? NoOfElements
-  {
-      get => noOfElements;
-      set => noOfElements = value;
-  }
+        public SipServerType Type { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("sipservergroup")
+        [XmlRoot("results")]
+        public class SipServerGroupList : BaseApiListBean<SipServerGroup>
+        {
+            public override List<SipServerGroup>? GetItems() => Items;
 
-  public SipServerType Type
-  {
-      get => type;
-      set => type = value;
-  }
-
-  // Path("sipservergroup")
-  [XmlRoot("results")]
-  public class SipServerGroupList : BaseApiListBean<SipServerGroup> {    public override List<SipServerGroup>? GetItems() => items;
-
-    public override void SetItems(List<SipServerGroup>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SipServerGroup>? value) => Items = value;
+        }
+    }
 }

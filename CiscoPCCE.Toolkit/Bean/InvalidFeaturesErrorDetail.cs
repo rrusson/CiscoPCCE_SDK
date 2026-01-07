@@ -1,29 +1,22 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("role")
+    [XmlRoot("errorDetail")]
+    public class InvalidFeaturesErrorDetail : BaseApiBean
+    {
+        [XmlElement("invalidFeatures")]
+        [XmlElement("invalidFeature")]
+        public List<Feature>? InvalidFeatures { get; set; }
 
-// Path("role")
-[XmlRoot("errorDetail")]
-public class InvalidFeaturesErrorDetail : BaseApiBean {
-  private List<Feature>? invalidFeatures;
+        // Path("role")
+        [XmlRoot("results")]
+        public class InvalidFeaturesErrorDetailList : BaseApiListBean<InvalidFeaturesErrorDetail>
+        {
+            public override List<InvalidFeaturesErrorDetail>? GetItems() => Items;
 
-  [XmlElement("invalidFeatures")]
-  [XmlElement("invalidFeature")]
-  public List<Feature>? InvalidFeatures
-  {
-      get => invalidFeatures;
-      set => invalidFeatures = value;
-  }
-
-  // Path("role")
-  [XmlRoot("results")]
-  public class InvalidFeaturesErrorDetailList : BaseApiListBean<InvalidFeaturesErrorDetail> {    public override List<InvalidFeaturesErrorDetail>? GetItems() => items;
-
-    public override void SetItems(List<InvalidFeaturesErrorDetail>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<InvalidFeaturesErrorDetail>? value) => Items = value;
+        }
+    }
 }

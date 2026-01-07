@@ -1,146 +1,54 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("agent")
+    [XmlRoot("person")]
+    public class Person : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("agent")
-[XmlRoot("person")]
-public class Person : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? description;
-  private bool? digitalChannel;
-  private bool? ecePerson;
-  private string? emailAddress;
-  private string? firstName;
-  private string? idFromRefUrl;
-  private string? lastName;
-  private bool? loginEnabled;
-  private bool? markDeletable;
-  private string? password;
-  private string? refURL;
-  private string? screenName;
-  private bool? ssoEnabled;
-  private string? userName;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public bool? DigitalChannel { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public bool? EcePerson { get; set; }
 
-  public bool? DigitalChannel
-  {
-      get => digitalChannel;
-      set => digitalChannel = value;
-  }
+        public string? EmailAddress { get; set; }
 
-  public bool? EcePerson
-  {
-      get => ecePerson;
-      set => ecePerson = value;
-  }
+        public string? FirstName { get; set; }
 
-  public string? EmailAddress
-  {
-      get => emailAddress;
-      set => emailAddress = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? FirstName
-  {
-      get => firstName;
-      set => firstName = value;
-  }
+        public string? LastName { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public bool? LoginEnabled { get; set; }
 
-  public string? LastName
-  {
-      get => lastName;
-      set => lastName = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public bool? LoginEnabled
-  {
-      get => loginEnabled;
-      set => loginEnabled = value;
-  }
+        public string? Password { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? Password
-  {
-      get => password;
-      set => password = value;
-  }
+        public string? ScreenName { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public bool? SsoEnabled { get; set; }
 
-  public string? ScreenName
-  {
-      get => screenName;
-      set => screenName = value;
-  }
+        public string? UserName { get; set; }
 
-  public bool? SsoEnabled
-  {
-      get => ssoEnabled;
-      set => ssoEnabled = value;
-  }
+        // Path("agent")
+        [XmlRoot("results")]
+        public class PersonList : BaseApiListBean<Person>
+        {
+            public override List<Person>? GetItems() => Items;
 
-  public string? UserName
-  {
-      get => userName;
-      set => userName = value;
-  }
-
-  // Path("agent")
-  [XmlRoot("results")]
-  public class PersonList : BaseApiListBean<Person> {    public override List<Person>? GetItems() => items;
-
-    public override void SetItems(List<Person>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<Person>? value) => Items = value;
+        }
+    }
 }

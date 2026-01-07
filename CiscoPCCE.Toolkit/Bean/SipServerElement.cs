@@ -1,69 +1,32 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("sipservergroup")
+    [XmlRoot("element")]
+    public class SipServerElement : BaseApiBean
+    {
+        public string? Address { get; set; }
 
-// Path("sipservergroup")
-[XmlRoot("element")]
-public class SipServerElement : BaseApiBean {
-  private string? address;
-  private ReferenceBean dataCenter;
-  private string? port;
-  private string? priority;
-  private string? refURL;
-  private string? securePort;
-  private string? weight;
+        public required ReferenceBean DataCenter { get; set; }
 
-  public string? Address
-  {
-      get => address;
-      set => address = value;
-  }
+        public string? Port { get; set; }
 
-  public ReferenceBean DataCenter
-  {
-      get => dataCenter;
-      set => dataCenter = value;
-  }
+        public string? Priority { get; set; }
 
-  public string? Port
-  {
-      get => port;
-      set => port = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? Priority
-  {
-      get => priority;
-      set => priority = value;
-  }
+        public string? SecurePort { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public string? Weight { get; set; }
 
-  public string? SecurePort
-  {
-      get => securePort;
-      set => securePort = value;
-  }
+        // Path("sipservergroup")
+        [XmlRoot("results")]
+        public class SipServerElementList : BaseApiListBean<SipServerElement>
+        {
+            public override List<SipServerElement>? GetItems() => Items;
 
-  public string? Weight
-  {
-      get => weight;
-      set => weight = value;
-  }
-
-  // Path("sipservergroup")
-  [XmlRoot("results")]
-  public class SipServerElementList : BaseApiListBean<SipServerElement> {    public override List<SipServerElement>? GetItems() => items;
-
-    public override void SetItems(List<SipServerElement>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SipServerElement>? value) => Items = value;
+        }
+    }
 }

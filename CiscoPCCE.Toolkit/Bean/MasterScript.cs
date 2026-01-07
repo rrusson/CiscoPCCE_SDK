@@ -1,106 +1,44 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("masterscript")
+    [XmlRoot("masterScript")]
+    public class MasterScript : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("masterscript")
-[XmlRoot("masterScript")]
-public class MasterScript : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private int? currentVersion;
-  private ReferenceBean department;
-  private string? description;
-  private string? idFromRefUrl;
-  private string? name;
-  private string? refURL;
-  private ScriptVersion script;
-  private int? scriptType;
-  private List<ReferenceBean>? scriptVersions;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public int? CurrentVersion { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public int? CurrentVersion
-  {
-      get => currentVersion;
-      set => currentVersion = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public string? Name { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public required ScriptVersion Script { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public int? ScriptType { get; set; }
 
-  public ScriptVersion Script
-  {
-      get => script;
-      set => script = value;
-  }
+        [XmlElement("##default")]
+        [XmlElement("scriptVersion")]
+        public List<ReferenceBean>? ScriptVersions { get; set; }
 
-  public int? ScriptType
-  {
-      get => scriptType;
-      set => scriptType = value;
-  }
+        // Path("masterscript")
+        [XmlRoot("results")]
+        public class MasterScriptList : BaseApiListBean<MasterScript>
+        {
+            public override List<MasterScript>? GetItems() => Items;
 
-  [XmlElement("##default")]
-  [XmlElement("scriptVersion")]
-  public List<ReferenceBean>? ScriptVersions
-  {
-      get => scriptVersions;
-      set => scriptVersions = value;
-  }
-
-  // Path("masterscript")
-  [XmlRoot("results")]
-  public class MasterScriptList : BaseApiListBean<MasterScript> {    public override List<MasterScript>? GetItems() => items;
-
-    public override void SetItems(List<MasterScript>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<MasterScript>? value) => Items = value;
+        }
+    }
 }

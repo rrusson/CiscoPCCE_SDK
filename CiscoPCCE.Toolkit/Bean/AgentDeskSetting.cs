@@ -1,163 +1,60 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("agentdesksetting")
+    [XmlRoot("agentDeskSetting")]
+    public class AgentDeskSetting : BaseApiBean
+    {
+        public AgentStateAfterRONAEnum AgentStateAfterRONA { get; set; }
 
-// Path("agentdesksetting")
-[XmlRoot("agentDeskSetting")]
-public class AgentDeskSetting : BaseApiBean {
-  private AgentStateAfterRONAEnum agentStateAfterRONA;
-  private bool? autoAnswerEnabled;
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? description;
-  private int? emergencyCallMethod;
-  private string? idFromRefUrl;
-  private bool? idleReasonRequired;
-  private int? logoutNonActivityTime;
-  private bool? logoutReasonRequired;
-  private string? name;
-  private int? playZipTone;
-  private string? refURL;
-  private int? remoteAgentType;
-  private int? supervisorAssistCallMethod;
-  private int? workModeTimer;
-  private int? wrapupDataIncomingMode;
-  private int? wrapupDataOutgoingMode;
-  private int? acdSharedLineUsage;
+        public bool? AutoAnswerEnabled { get; set; }
 
-  public AgentStateAfterRONAEnum AgentStateAfterRONA
-  {
-      get => agentStateAfterRONA;
-      set => agentStateAfterRONA = value;
-  }
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public bool? AutoAnswerEnabled
-  {
-      get => autoAnswerEnabled;
-      set => autoAnswerEnabled = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public int? EmergencyCallMethod { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public int? EmergencyCallMethod
-  {
-      get => emergencyCallMethod;
-      set => emergencyCallMethod = value;
-  }
+        public bool? IdleReasonRequired { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public int? LogoutNonActivityTime { get; set; }
 
-  public bool? IdleReasonRequired
-  {
-      get => idleReasonRequired;
-      set => idleReasonRequired = value;
-  }
+        public bool? LogoutReasonRequired { get; set; }
 
-  public int? LogoutNonActivityTime
-  {
-      get => logoutNonActivityTime;
-      set => logoutNonActivityTime = value;
-  }
+        public string? Name { get; set; }
 
-  public bool? LogoutReasonRequired
-  {
-      get => logoutReasonRequired;
-      set => logoutReasonRequired = value;
-  }
+        public int? PlayZipTone { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public int? PlayZipTone
-  {
-      get => playZipTone;
-      set => playZipTone = value;
-  }
+        public int? RemoteAgentType { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public int? SupervisorAssistCallMethod { get; set; }
 
-  public int? RemoteAgentType
-  {
-      get => remoteAgentType;
-      set => remoteAgentType = value;
-  }
+        public int? WorkModeTimer { get; set; }
 
-  public int? SupervisorAssistCallMethod
-  {
-      get => supervisorAssistCallMethod;
-      set => supervisorAssistCallMethod = value;
-  }
+        public int? WrapupDataIncomingMode { get; set; }
 
-  public int? WorkModeTimer
-  {
-      get => workModeTimer;
-      set => workModeTimer = value;
-  }
+        public int? WrapupDataOutgoingMode { get; set; }
 
-  public int? WrapupDataIncomingMode
-  {
-      get => wrapupDataIncomingMode;
-      set => wrapupDataIncomingMode = value;
-  }
+        public int? AcdSharedLineUsage { get; set; }
 
-  public int? WrapupDataOutgoingMode
-  {
-      get => wrapupDataOutgoingMode;
-      set => wrapupDataOutgoingMode = value;
-  }
+        // Path("agentdesksetting")
+        [XmlRoot("results")]
+        public class AgentDeskSettingList : BaseApiListBean<AgentDeskSetting>
+        {
+            public override List<AgentDeskSetting>? GetItems() => Items;
 
-  public int? AcdSharedLineUsage { get; set; }
-
-  // Path("agentdesksetting")
-  [XmlRoot("results")]
-  public class AgentDeskSettingList : BaseApiListBean<AgentDeskSetting> {    public override List<AgentDeskSetting>? GetItems() => items;
-
-    public override void SetItems(List<AgentDeskSetting>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<AgentDeskSetting>? value) => Items = value;
+        }
+    }
 }

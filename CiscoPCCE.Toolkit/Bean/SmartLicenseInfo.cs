@@ -1,252 +1,84 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
-using System;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("smartlicense")
+    [XmlRoot("smartlicenseinfo")]
+    public class SmartLicenseInfo : BaseApiBean
+    {
+        public DateTime? AuthorizationExpires { get; set; }
 
-// Path("smartlicense")
-[XmlRoot("smartlicenseinfo")]
-public class SmartLicenseInfo : BaseApiBean {
-  private DateTime? authorizationExpires;
-  private string? authorizationFailedReason;
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private int? cssmAuthorizationStatus;
-  private int? cssmRegistrationStatus;
-  private int? daysLeftInEvaluationMode;
-  private int? daysLeftInOutOfCompliance;
-  private ReferenceBean department;
-  private DateTime? evaluationExpiredTime;
-  private bool? exportControlledAllow;
-  private DateTime? futureUseDateTime1;
-  private int? futureUseInt6;
-  private string? idFromRefUrl;
-  private bool? isAuthorizationFailed;
-  private bool? isRegistrationFailed;
-  private DateTime? lastAuthorizationAttempt;
-  private DateTime? lastRenewalAttempt;
-  private DateTime? nextAuthorizationAttempt;
-  private DateTime? nextRenewalAttempt;
-  private int? overageDays;
-  private DateTime? overageDaysUpdatedTime;
-  private string? productDisplayName;
-  private string? productInstance;
-  private string? refURL;
-  private DateTime? registrationExpires;
-  private string? registrationFailedReason;
-  private string? smartAccount;
-  private int? smartLicenseInfoID;
-  private int? smartLicenseServerId;
-  private string? timeZoneName;
-  private string? virtualAccount;
+        public string? AuthorizationFailedReason { get; set; }
 
-  public DateTime? AuthorizationExpires
-  {
-      get => authorizationExpires;
-      set => authorizationExpires = value;
-  }
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public string? AuthorizationFailedReason
-  {
-      get => authorizationFailedReason;
-      set => authorizationFailedReason = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public int? CssmAuthorizationStatus { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public int? CssmRegistrationStatus { get; set; }
 
-  public int? CssmAuthorizationStatus
-  {
-      get => cssmAuthorizationStatus;
-      set => cssmAuthorizationStatus = value;
-  }
+        public int? DaysLeftInEvaluationMode { get; set; }
 
-  public int? CssmRegistrationStatus
-  {
-      get => cssmRegistrationStatus;
-      set => cssmRegistrationStatus = value;
-  }
+        public int? DaysLeftInOutOfCompliance { get; set; }
 
-  public int? DaysLeftInEvaluationMode
-  {
-      get => daysLeftInEvaluationMode;
-      set => daysLeftInEvaluationMode = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public int? DaysLeftInOutOfCompliance
-  {
-      get => daysLeftInOutOfCompliance;
-      set => daysLeftInOutOfCompliance = value;
-  }
+        public DateTime? EvaluationExpiredTime { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public bool? ExportControlledAllow { get; set; }
 
-  public DateTime? EvaluationExpiredTime
-  {
-      get => evaluationExpiredTime;
-      set => evaluationExpiredTime = value;
-  }
+        public DateTime? FutureUseDateTime1 { get; set; }
 
-  public bool? ExportControlledAllow
-  {
-      get => exportControlledAllow;
-      set => exportControlledAllow = value;
-  }
+        public int? FutureUseInt6 { get; set; }
 
-  public DateTime? FutureUseDateTime1
-  {
-      get => futureUseDateTime1;
-      set => futureUseDateTime1 = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public int? FutureUseInt6
-  {
-      get => futureUseInt6;
-      set => futureUseInt6 = value;
-  }
+        public bool? IsAuthorizationFailed { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public bool? IsRegistrationFailed { get; set; }
 
-  public bool? IsAuthorizationFailed
-  {
-      get => isAuthorizationFailed;
-      set => isAuthorizationFailed = value;
-  }
+        public DateTime? LastAuthorizationAttempt { get; set; }
 
-  public bool? IsRegistrationFailed
-  {
-      get => isRegistrationFailed;
-      set => isRegistrationFailed = value;
-  }
+        public DateTime? LastRenewalAttempt { get; set; }
 
-  public DateTime? LastAuthorizationAttempt
-  {
-      get => lastAuthorizationAttempt;
-      set => lastAuthorizationAttempt = value;
-  }
+        public DateTime? NextAuthorizationAttempt { get; set; }
 
-  public DateTime? LastRenewalAttempt
-  {
-      get => lastRenewalAttempt;
-      set => lastRenewalAttempt = value;
-  }
+        public DateTime? NextRenewalAttempt { get; set; }
 
-  public DateTime? NextAuthorizationAttempt
-  {
-      get => nextAuthorizationAttempt;
-      set => nextAuthorizationAttempt = value;
-  }
+        public int? OverageDays { get; set; }
 
-  public DateTime? NextRenewalAttempt
-  {
-      get => nextRenewalAttempt;
-      set => nextRenewalAttempt = value;
-  }
+        public DateTime? OverageDaysUpdatedTime { get; set; }
 
-  public int? OverageDays
-  {
-      get => overageDays;
-      set => overageDays = value;
-  }
+        public string? ProductDisplayName { get; set; }
 
-  public DateTime? OverageDaysUpdatedTime
-  {
-      get => overageDaysUpdatedTime;
-      set => overageDaysUpdatedTime = value;
-  }
+        public string? ProductInstance { get; set; }
 
-  public string? ProductDisplayName
-  {
-      get => productDisplayName;
-      set => productDisplayName = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? ProductInstance
-  {
-      get => productInstance;
-      set => productInstance = value;
-  }
+        public DateTime? RegistrationExpires { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public string? RegistrationFailedReason { get; set; }
 
-  public DateTime? RegistrationExpires
-  {
-      get => registrationExpires;
-      set => registrationExpires = value;
-  }
+        public string? SmartAccount { get; set; }
 
-  public string? RegistrationFailedReason
-  {
-      get => registrationFailedReason;
-      set => registrationFailedReason = value;
-  }
+        public int? SmartLicenseInfoID { get; set; }
 
-  public string? SmartAccount
-  {
-      get => smartAccount;
-      set => smartAccount = value;
-  }
+        public int? SmartLicenseServerId { get; set; }
 
-  public int? SmartLicenseInfoID
-  {
-      get => smartLicenseInfoID;
-      set => smartLicenseInfoID = value;
-  }
+        public string? TimeZoneName { get; set; }
 
-  public int? SmartLicenseServerId
-  {
-      get => smartLicenseServerId;
-      set => smartLicenseServerId = value;
-  }
+        public string? VirtualAccount { get; set; }
 
-  public string? TimeZoneName
-  {
-      get => timeZoneName;
-      set => timeZoneName = value;
-  }
+        // Path("smartlicense")
+        [XmlRoot("results")]
+        public class SmartLicenseInfoList : BaseApiListBean<SmartLicenseInfo>
+        {
+            public override List<SmartLicenseInfo>? GetItems() => Items;
 
-  public string? VirtualAccount
-  {
-      get => virtualAccount;
-      set => virtualAccount = value;
-  }
-
-  // Path("smartlicense")
-  [XmlRoot("results")]
-  public class SmartLicenseInfoList : BaseApiListBean<SmartLicenseInfo> {    public override List<SmartLicenseInfo>? GetItems() => items;
-
-    public override void SetItems(List<SmartLicenseInfo>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SmartLicenseInfo>? value) => Items = value;
+        }
+    }
 }

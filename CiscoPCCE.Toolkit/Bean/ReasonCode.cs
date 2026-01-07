@@ -1,111 +1,44 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("reasoncode")
+    [XmlRoot("reasonCode")]
+    public class ReasonCode : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("reasoncode")
-[XmlRoot("reasonCode")]
-public class ReasonCode : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private string? category;
-  private int? changeStamp;
-  private int? code;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? description;
-  private string? idFromRefUrl;
-  private bool? isGlobal;
-  private bool? markDeletable;
-  private ReasonTypeEnum reasonType;
-  private string? refURL;
-  private string? text;
+        public string? Category { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? Category
-  {
-      get => category;
-      set => category = value;
-  }
+        public int? Code { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? Code
-  {
-      get => code;
-      set => code = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public bool? IsGlobal { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public bool? IsGlobal
-  {
-      get => isGlobal;
-      set => isGlobal = value;
-  }
+        public ReasonTypeEnum ReasonType { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public ReasonTypeEnum ReasonType
-  {
-      get => reasonType;
-      set => reasonType = value;
-  }
+        public string? Text { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("reasoncode")
+        [XmlRoot("results")]
+        public class ReasonCodeList : BaseApiListBean<ReasonCode>
+        {
+            public override List<ReasonCode>? GetItems() => Items;
 
-  public string? Text
-  {
-      get => text;
-      set => text = value;
-  }
-
-  // Path("reasoncode")
-  [XmlRoot("results")]
-  public class ReasonCodeList : BaseApiListBean<ReasonCode> {    public override List<ReasonCode>? GetItems() => items;
-
-    public override void SetItems(List<ReasonCode>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ReasonCode>? value) => Items = value;
+        }
+    }
 }

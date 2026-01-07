@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("sipservergroup")
+    [XmlRoot("results")]
+    public class SipServerGroupList : BaseApiBean
+    {
+        [XmlElement("sipServerGroups")]
+        [XmlElement("sipServerGroup")]
+        public List<SipServerGroup>? Items { get; set; }
 
-// Path("sipservergroup")
-[XmlRoot("results")]
-public class SipServerGroupList : BaseApiBean {
-  private List<SipServerGroup>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("sipServerGroups")]
-  [XmlElement("sipServerGroup")]
-  public List<SipServerGroup>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("sipservergroup")
+        [XmlRoot("results")]
+        public class SipServerGroupListList : BaseApiListBean<SipServerGroupList>
+        {
+            public override List<SipServerGroupList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("sipservergroup")
-  [XmlRoot("results")]
-  public class SipServerGroupListList : BaseApiListBean<SipServerGroupList> {    public override List<SipServerGroupList>? GetItems() => items;
-
-    public override void SetItems(List<SipServerGroupList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SipServerGroupList>? value) => Items = value;
+        }
+    }
 }

@@ -1,10 +1,9 @@
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-public enum MediaRoutingType {
-  voice,
-  legacyMultichannel,
-  multichannel
-}
-
+    public enum MediaRoutingType
+    {
+        voice,
+        legacyMultichannel,
+        multichannel
+    }
 }

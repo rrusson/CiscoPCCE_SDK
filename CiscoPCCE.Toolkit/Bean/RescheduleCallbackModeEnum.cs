@@ -1,10 +1,9 @@
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-public enum RescheduleCallbackModeEnum {
-  useCampaignDN,
-  sameTimeNextBusinessDay,
-  abandon
-}
-
+    public enum RescheduleCallbackModeEnum
+    {
+        useCampaignDN,
+        sameTimeNextBusinessDay,
+        abandon
+    }
 }

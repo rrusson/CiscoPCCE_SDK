@@ -5,28 +5,17 @@ namespace CiscoPCCE.Toolkit
     /// </summary>
     public class ReferenceBean : BaseBean
     {
-        private string? refURL;
-        private string? name;
-
         public ReferenceBean()
         {
         }
 
         public ReferenceBean(string refURL)
         {
-            this.refURL = refURL;
+            RefURL = refURL;
         }
 
-        public string? Name
-        {
-            get => name;
-            set => name = value;
-        }
+        public string? Name { get; set; }
 
-        public string? RefURL
-        {
-            get => refURL;
-            set => refURL = value;
-        }
+        public string? RefURL { get; set; }
     }
 }

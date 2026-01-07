@@ -1,9 +1,8 @@
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-public enum ApplicationGatewayPreferredSide {
-  A,
-  B
-}
-
+    public enum ApplicationGatewayPreferredSide
+    {
+        A,
+        B
+    }
 }

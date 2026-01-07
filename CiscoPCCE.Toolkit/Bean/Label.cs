@@ -1,76 +1,34 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("globalsetting")
+    [XmlRoot("label")]
+    public class Label : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("globalsetting")
-[XmlRoot("label")]
-public class Label : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean datacenter;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private ReferenceBean networkTarget;
-  private string? refURL;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Datacenter { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public ReferenceBean Datacenter
-  {
-      get => datacenter;
-      set => datacenter = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public required ReferenceBean NetworkTarget { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public ReferenceBean NetworkTarget
-  {
-      get => networkTarget;
-      set => networkTarget = value;
-  }
+        // Path("globalsetting")
+        [XmlRoot("results")]
+        public class LabelList : BaseApiListBean<Label>
+        {
+            public override List<Label>? GetItems() => Items;
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-  // Path("globalsetting")
-  [XmlRoot("results")]
-  public class LabelList : BaseApiListBean<Label> {    public override List<Label>? GetItems() => items;
-
-    public override void SetItems(List<Label>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<Label>? value) => Items = value;
+        }
+    }
 }

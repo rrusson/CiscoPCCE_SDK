@@ -1,72 +1,35 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("logcollection")
+    [XmlRoot("logCollection")]
+    public class LogCollection : BaseApiBean
+    {
+        [XmlElement("components")]
+        [XmlElement("component")]
+        public required Set Components { get; set; }
 
-// Path("logcollection")
-[XmlRoot("logCollection")]
-public class LogCollection : BaseApiBean {
-  private Set components;
-  private string? description;
-  private long? endDateTime;
-  private string? refURL;
-  private FileRefWithSize resultsFile;
-  private long? startDateTime;
-  private Status status;
+        public string? Description { get; set; }
 
-  [XmlElement("components")]
-  [XmlElement("component")]
-  public Set Components
-  {
-      get => components;
-      set => components = value;
-  }
+        public long? EndDateTime { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public long? EndDateTime
-  {
-      get => endDateTime;
-      set => endDateTime = value;
-  }
+        [XmlElement("##default")]
+        public required FileRefWithSize ResultsFile { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public long? StartDateTime { get; set; }
 
-  [XmlElement("##default")]
-  public FileRefWithSize ResultsFile
-  {
-      get => resultsFile;
-      set => resultsFile = value;
-  }
+        public required Status Status { get; set; }
 
-  public long? StartDateTime
-  {
-      get => startDateTime;
-      set => startDateTime = value;
-  }
+        // Path("logcollection")
+        [XmlRoot("results")]
+        public class LogCollectionList : BaseApiListBean<LogCollection>
+        {
+            public override List<LogCollection>? GetItems() => Items;
 
-  public Status Status
-  {
-      get => status;
-      set => status = value;
-  }
-
-  // Path("logcollection")
-  [XmlRoot("results")]
-  public class LogCollectionList : BaseApiListBean<LogCollection> {    public override List<LogCollection>? GetItems() => items;
-
-    public override void SetItems(List<LogCollection>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<LogCollection>? value) => Items = value;
+        }
+    }
 }

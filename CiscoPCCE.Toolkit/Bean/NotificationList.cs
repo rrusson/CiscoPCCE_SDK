@@ -1,27 +1,20 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("notifications")
+    [XmlRoot("results")]
+    public class NotificationList : BaseApiBean
+    {
+        public required PermissionInfo PermissionInfo { get; set; }
 
-// Path("notifications")
-[XmlRoot("results")]
-public class NotificationList : BaseApiBean {
-  private PermissionInfo permissionInfo;
+        // Path("notifications")
+        [XmlRoot("results")]
+        public class NotificationListList : BaseApiListBean<NotificationList>
+        {
+            public override List<NotificationList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("notifications")
-  [XmlRoot("results")]
-  public class NotificationListList : BaseApiListBean<NotificationList> {    public override List<NotificationList>? GetItems() => items;
-
-    public override void SetItems(List<NotificationList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<NotificationList>? value) => Items = value;
+        }
+    }
 }

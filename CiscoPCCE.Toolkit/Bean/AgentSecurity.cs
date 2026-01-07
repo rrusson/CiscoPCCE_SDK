@@ -1,83 +1,36 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("agentsecurity")
+    [XmlRoot("agentSecurity")]
+    public class AgentSecurity : BaseApiBean
+    {
+        public int? AgentsWithoutAdvancedHashing { get; set; }
 
-// Path("agentsecurity")
-[XmlRoot("agentSecurity")]
-public class AgentSecurity : BaseApiBean {
-  private int? agentsWithoutAdvancedHashing;
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private bool? enforceAdvancedHashing;
-  private string? idFromRefUrl;
-  private string? refURL;
-  private int? unsupportedPeripheralGateways;
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public int? AgentsWithoutAdvancedHashing
-  {
-      get => agentsWithoutAdvancedHashing;
-      set => agentsWithoutAdvancedHashing = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public bool? EnforceAdvancedHashing { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public bool? EnforceAdvancedHashing
-  {
-      get => enforceAdvancedHashing;
-      set => enforceAdvancedHashing = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public int? UnsupportedPeripheralGateways { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("agentsecurity")
+        [XmlRoot("results")]
+        public class AgentSecurityList : BaseApiListBean<AgentSecurity>
+        {
+            public override List<AgentSecurity>? GetItems() => Items;
 
-  public int? UnsupportedPeripheralGateways
-  {
-      get => unsupportedPeripheralGateways;
-      set => unsupportedPeripheralGateways = value;
-  }
-
-  // Path("agentsecurity")
-  [XmlRoot("results")]
-  public class AgentSecurityList : BaseApiListBean<AgentSecurity> {    public override List<AgentSecurity>? GetItems() => items;
-
-    public override void SetItems(List<AgentSecurity>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<AgentSecurity>? value) => Items = value;
+        }
+    }
 }

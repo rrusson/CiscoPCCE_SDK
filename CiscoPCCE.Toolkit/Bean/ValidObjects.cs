@@ -1,41 +1,24 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("validobjects")
+    [XmlRoot("validObjects")]
+    public class ValidObjects : BaseApiBean
+    {
+        public Access Access { get; set; }
 
-// Path("validobjects")
-[XmlRoot("validObjects")]
-public class ValidObjects : BaseApiBean {
-  private Access access;
-  private List<int?>? ids;
-  private string? type;
+        public List<int?>? Ids { get; set; }
 
-  public Access Access
-  {
-      get => access;
-      set => access = value;
-  }
+        public string? Type { get; set; }
 
-  public List<int?>? Ids
-  {
-      get => ids;
-      set => ids = value;
-  }
+        // Path("validobjects")
+        [XmlRoot("results")]
+        public class ValidObjectsList : BaseApiListBean<ValidObjects>
+        {
+            public override List<ValidObjects>? GetItems() => Items;
 
-  public string? Type
-  {
-      get => type;
-      set => type = value;
-  }
-
-  // Path("validobjects")
-  [XmlRoot("results")]
-  public class ValidObjectsList : BaseApiListBean<ValidObjects> {    public override List<ValidObjects>? GetItems() => items;
-
-    public override void SetItems(List<ValidObjects>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ValidObjects>? value) => Items = value;
+        }
+    }
 }

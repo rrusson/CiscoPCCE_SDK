@@ -1,113 +1,46 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("globalsetting")
+    [XmlRoot("globalSettings")]
+    public class GlobalSetting : BaseApiBean
+    {
+        public required AgentGlobalSetting Agent { get; set; }
 
-// Path("globalsetting")
-[XmlRoot("globalSettings")]
-public class GlobalSetting : BaseApiBean {
-  private AgentGlobalSetting agent;
-  private string? baseUrlfromRefUrl;
-  private CallGlobalSetting callReporting;
-  private int? changeStamp;
-  private string? correlationId;
-  private List<DataCenterSetting>? dataCenterSettingList;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private NetworkLabelGlobalSetting labels;
-  private PermissionInfo permissionInfo;
-  private string? refURL;
-  private ReportingGlobalSetting reporting;
-  private ScriptGlobalSetting script;
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public AgentGlobalSetting Agent
-  {
-      get => agent;
-      set => agent = value;
-  }
+        public required CallGlobalSetting CallReporting { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public CallGlobalSetting CallReporting
-  {
-      get => callReporting;
-      set => callReporting = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        [XmlElement("datacenterSettings")]
+        [XmlElement("datacenterSetting")]
+        public List<DataCenterSetting>? DataCenterSettingList { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  [XmlElement("datacenterSettings")]
-  [XmlElement("datacenterSetting")]
-  public List<DataCenterSetting>? DataCenterSettingList
-  {
-      get => dataCenterSettingList;
-      set => dataCenterSettingList = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public required NetworkLabelGlobalSetting Labels { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public NetworkLabelGlobalSetting Labels
-  {
-      get => labels;
-      set => labels = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
+        public required ReportingGlobalSetting Reporting { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public required ScriptGlobalSetting Script { get; set; }
 
-  public ReportingGlobalSetting Reporting
-  {
-      get => reporting;
-      set => reporting = value;
-  }
+        // Path("globalsetting")
+        [XmlRoot("results")]
+        public class GlobalSettingList : BaseApiListBean<GlobalSetting>
+        {
+            public override List<GlobalSetting>? GetItems() => Items;
 
-  public ScriptGlobalSetting Script
-  {
-      get => script;
-      set => script = value;
-  }
-
-  // Path("globalsetting")
-  [XmlRoot("results")]
-  public class GlobalSettingList : BaseApiListBean<GlobalSetting> {    public override List<GlobalSetting>? GetItems() => items;
-
-    public override void SetItems(List<GlobalSetting>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<GlobalSetting>? value) => Items = value;
+        }
+    }
 }

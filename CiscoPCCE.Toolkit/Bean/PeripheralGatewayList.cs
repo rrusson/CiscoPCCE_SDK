@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("secondaryaddress")
+    [XmlRoot("results")]
+    public class PeripheralGatewayList : BaseApiBean
+    {
+        [XmlElement("peripheralGateways")]
+        [XmlElement("peripheralGateway")]
+        public List<PeripheralGateway>? Items { get; set; }
 
-// Path("secondaryaddress")
-[XmlRoot("results")]
-public class PeripheralGatewayList : BaseApiBean {
-  private List<PeripheralGateway>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("peripheralGateways")]
-  [XmlElement("peripheralGateway")]
-  public List<PeripheralGateway>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("secondaryaddress")
+        [XmlRoot("results")]
+        public class PeripheralGatewayListList : BaseApiListBean<PeripheralGatewayList>
+        {
+            public override List<PeripheralGatewayList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("secondaryaddress")
-  [XmlRoot("results")]
-  public class PeripheralGatewayListList : BaseApiListBean<PeripheralGatewayList> {    public override List<PeripheralGatewayList>? GetItems() => items;
-
-    public override void SetItems(List<PeripheralGatewayList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<PeripheralGatewayList>? value) => Items = value;
+        }
+    }
 }

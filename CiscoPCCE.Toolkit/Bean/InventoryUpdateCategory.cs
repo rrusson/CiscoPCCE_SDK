@@ -1,10 +1,9 @@
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-public enum InventoryUpdateCategory {
-  CORE,
-  PERIPHERAL,
-  OPTIONAL
-}
-
+    public enum InventoryUpdateCategory
+    {
+        CORE,
+        PERIPHERAL,
+        OPTIONAL
+    }
 }

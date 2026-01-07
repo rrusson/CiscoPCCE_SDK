@@ -1,90 +1,38 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("sipservergroupproperties")
+    [XmlRoot("sipServerGroupProperties")]
+    public class SIPServerGroupProperties : BaseApiBean
+    {
+        public string? OptionsOverrideHost { get; set; }
 
-// Path("sipservergroupproperties")
-[XmlRoot("sipServerGroupProperties")]
-public class SIPServerGroupProperties : BaseApiBean {
-  private string? optionsOverrideHost;
-  private int? serverGroupDownInterval;
-  private int? serverGroupHBLocalListenPort;
-  private string? serverGroupHBMethod;
-  private int? serverGroupHBNumTries;
-  private int? serverGroupHBTimeout;
-  private string? serverGroupHBTransportType;
-  private bool? serverGroupHeartbeats;
-  private string? serverGroupOverloadedResponseCodes;
-  private int? serverGroupUpInterval;
+        public int? ServerGroupDownInterval { get; set; }
 
-  public string? OptionsOverrideHost
-  {
-      get => optionsOverrideHost;
-      set => optionsOverrideHost = value;
-  }
+        public int? ServerGroupHBLocalListenPort { get; set; }
 
-  public int? ServerGroupDownInterval
-  {
-      get => serverGroupDownInterval;
-      set => serverGroupDownInterval = value;
-  }
+        public string? ServerGroupHBMethod { get; set; }
 
-  public int? ServerGroupHBLocalListenPort
-  {
-      get => serverGroupHBLocalListenPort;
-      set => serverGroupHBLocalListenPort = value;
-  }
+        public int? ServerGroupHBNumTries { get; set; }
 
-  public string? ServerGroupHBMethod
-  {
-      get => serverGroupHBMethod;
-      set => serverGroupHBMethod = value;
-  }
+        public int? ServerGroupHBTimeout { get; set; }
 
-  public int? ServerGroupHBNumTries
-  {
-      get => serverGroupHBNumTries;
-      set => serverGroupHBNumTries = value;
-  }
+        public string? ServerGroupHBTransportType { get; set; }
 
-  public int? ServerGroupHBTimeout
-  {
-      get => serverGroupHBTimeout;
-      set => serverGroupHBTimeout = value;
-  }
+        public bool? ServerGroupHeartbeats { get; set; }
 
-  public string? ServerGroupHBTransportType
-  {
-      get => serverGroupHBTransportType;
-      set => serverGroupHBTransportType = value;
-  }
+        public string? ServerGroupOverloadedResponseCodes { get; set; }
 
-  public bool? ServerGroupHeartbeats
-  {
-      get => serverGroupHeartbeats;
-      set => serverGroupHeartbeats = value;
-  }
+        public int? ServerGroupUpInterval { get; set; }
 
-  public string? ServerGroupOverloadedResponseCodes
-  {
-      get => serverGroupOverloadedResponseCodes;
-      set => serverGroupOverloadedResponseCodes = value;
-  }
+        // Path("sipservergroupproperties")
+        [XmlRoot("results")]
+        public class SIPServerGroupPropertiesList : BaseApiListBean<SIPServerGroupProperties>
+        {
+            public override List<SIPServerGroupProperties>? GetItems() => Items;
 
-  public int? ServerGroupUpInterval
-  {
-      get => serverGroupUpInterval;
-      set => serverGroupUpInterval = value;
-  }
-
-  // Path("sipservergroupproperties")
-  [XmlRoot("results")]
-  public class SIPServerGroupPropertiesList : BaseApiListBean<SIPServerGroupProperties> {    public override List<SIPServerGroupProperties>? GetItems() => items;
-
-    public override void SetItems(List<SIPServerGroupProperties>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SIPServerGroupProperties>? value) => Items = value;
+        }
+    }
 }

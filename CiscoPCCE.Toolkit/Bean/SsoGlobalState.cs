@@ -1,76 +1,34 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("sso")
+    [XmlRoot("ssoState")]
+    public class SsoGlobalState : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("sso")
-[XmlRoot("ssoState")]
-public class SsoGlobalState : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private PermissionInfo permissionInfo;
-  private string? refURL;
-  private SsoGlobalEnabledState state;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
+        public SsoGlobalEnabledState State { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("sso")
+        [XmlRoot("results")]
+        public class SsoGlobalStateList : BaseApiListBean<SsoGlobalState>
+        {
+            public override List<SsoGlobalState>? GetItems() => Items;
 
-  public SsoGlobalEnabledState State
-  {
-      get => state;
-      set => state = value;
-  }
-
-  // Path("sso")
-  [XmlRoot("results")]
-  public class SsoGlobalStateList : BaseApiListBean<SsoGlobalState> {    public override List<SsoGlobalState>? GetItems() => items;
-
-    public override void SetItems(List<SsoGlobalState>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SsoGlobalState>? value) => Items = value;
+        }
+    }
 }

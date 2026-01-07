@@ -1,36 +1,24 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("machineinventory")
+    [XmlRoot("errorDetail")]
+    public class MachineTypeMustBeChangedErrorDetail : BaseApiBean
+    {
+        public MachineType Type { get; set; }
 
-// Path("machineinventory")
-[XmlRoot("errorDetail")]
-public class MachineTypeMustBeChangedErrorDetail : BaseApiBean {
-  private MachineType type;
-  private List<MachineType>? validMachineTypes;
+        [XmlElement("validMachineTypes")]
+        [XmlElement("type")]
+        public List<MachineType>? ValidMachineTypes { get; set; }
 
-  public MachineType Type
-  {
-      get => type;
-      set => type = value;
-  }
+        // Path("machineinventory")
+        [XmlRoot("results")]
+        public class MachineTypeMustBeChangedErrorDetailList : BaseApiListBean<MachineTypeMustBeChangedErrorDetail>
+        {
+            public override List<MachineTypeMustBeChangedErrorDetail>? GetItems() => Items;
 
-  [XmlElement("validMachineTypes")]
-  [XmlElement("type")]
-  public List<MachineType>? ValidMachineTypes
-  {
-      get => validMachineTypes;
-      set => validMachineTypes = value;
-  }
-
-  // Path("machineinventory")
-  [XmlRoot("results")]
-  public class MachineTypeMustBeChangedErrorDetailList : BaseApiListBean<MachineTypeMustBeChangedErrorDetail> {    public override List<MachineTypeMustBeChangedErrorDetail>? GetItems() => items;
-
-    public override void SetItems(List<MachineTypeMustBeChangedErrorDetail>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<MachineTypeMustBeChangedErrorDetail>? value) => Items = value;
+        }
+    }
 }

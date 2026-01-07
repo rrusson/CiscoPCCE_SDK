@@ -1,5 +1,3 @@
-using System.Xml.Serialization;
-
 namespace CiscoPCCE.Toolkit
 {
     /// <summary>
@@ -7,20 +5,9 @@ namespace CiscoPCCE.Toolkit
     /// </summary>
     public abstract class BaseApiBean : BaseBean
     {
-        private string? refURL;
-        private int? changeStamp;
+        public int? ChangeStamp { get; set; }
 
-        public int? ChangeStamp
-        {
-            get => changeStamp;
-            set => changeStamp = value;
-        }
-
-        public string? RefURL
-        {
-            get => refURL;
-            set => refURL = value;
-        }
+        public string? RefURL { get; set; }
 
         public void SetPath(string path)
         {

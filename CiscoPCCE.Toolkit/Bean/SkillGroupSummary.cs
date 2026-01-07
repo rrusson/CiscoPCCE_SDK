@@ -1,126 +1,49 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("skillgroup")
+    [XmlRoot("skillGroupSummary")]
+    public class SkillGroupSummary : BaseApiBean
+    {
+        public int? AgentCount { get; set; }
 
-// Path("skillgroup")
-[XmlRoot("skillGroupSummary")]
-public class SkillGroupSummary : BaseApiBean {
-  private int? agentCount;
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean datacenter;
-  private ReferenceBean department;
-  private string? description;
-  private string? idFromRefUrl;
-  private bool? markDeletable;
-  private string? name;
-  private PeripheralRef peripheral;
-  private int? peripheralNumber;
-  private ReferenceBean peripheralSet;
-  private string? refURL;
-  private int? selectedAgentCount;
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public int? AgentCount
-  {
-      get => agentCount;
-      set => agentCount = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Datacenter { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public ReferenceBean Datacenter
-  {
-      get => datacenter;
-      set => datacenter = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public string? Name { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        public required PeripheralRef Peripheral { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public int? PeripheralNumber { get; set; }
 
-  public PeripheralRef Peripheral
-  {
-      get => peripheral;
-      set => peripheral = value;
-  }
+        [XmlElement("peripheralSet")]
+        public required ReferenceBean PeripheralSet { get; set; }
 
-  public int? PeripheralNumber
-  {
-      get => peripheralNumber;
-      set => peripheralNumber = value;
-  }
+        public new string? RefURL { get; set; }
 
-  [XmlElement("peripheralSet")]
-  public ReferenceBean PeripheralSet
-  {
-      get => peripheralSet;
-      set => peripheralSet = value;
-  }
+        public int? SelectedAgentCount { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("skillgroup")
+        [XmlRoot("results")]
+        public class SkillGroupSummaryList : BaseApiListBean<SkillGroupSummary>
+        {
+            public override List<SkillGroupSummary>? GetItems() => Items;
 
-  public int? SelectedAgentCount
-  {
-      get => selectedAgentCount;
-      set => selectedAgentCount = value;
-  }
-
-  // Path("skillgroup")
-  [XmlRoot("results")]
-  public class SkillGroupSummaryList : BaseApiListBean<SkillGroupSummary> {    public override List<SkillGroupSummary>? GetItems() => items;
-
-    public override void SetItems(List<SkillGroupSummary>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<SkillGroupSummary>? value) => Items = value;
+        }
+    }
 }

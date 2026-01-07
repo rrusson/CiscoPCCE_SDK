@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("campaign")
+    [XmlRoot("results")]
+    public class CampaignList : BaseApiBean
+    {
+        [XmlElement("campaigns")]
+        [XmlElement("campaign")]
+        public List<Campaign>? Items { get; set; }
 
-// Path("campaign")
-[XmlRoot("results")]
-public class CampaignList : BaseApiBean {
-  private List<Campaign>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("campaigns")]
-  [XmlElement("campaign")]
-  public List<Campaign>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("campaign")
+        [XmlRoot("results")]
+        public class CampaignListList : BaseApiListBean<CampaignList>
+        {
+            public override List<CampaignList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("campaign")
-  [XmlRoot("results")]
-  public class CampaignListList : BaseApiListBean<CampaignList> {    public override List<CampaignList>? GetItems() => items;
-
-    public override void SetItems(List<CampaignList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<CampaignList>? value) => Items = value;
+        }
+    }
 }

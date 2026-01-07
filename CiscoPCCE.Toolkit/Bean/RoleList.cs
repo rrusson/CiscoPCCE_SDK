@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("role")
+    [XmlRoot("results")]
+    public class RoleList : BaseApiBean
+    {
+        [XmlElement("roles")]
+        [XmlElement("role")]
+        public List<Role>? Items { get; set; }
 
-// Path("role")
-[XmlRoot("results")]
-public class RoleList : BaseApiBean {
-  private List<Role>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("roles")]
-  [XmlElement("role")]
-  public List<Role>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("role")
+        [XmlRoot("results")]
+        public class RoleListList : BaseApiListBean<RoleList>
+        {
+            public override List<RoleList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("role")
-  [XmlRoot("results")]
-  public class RoleListList : BaseApiListBean<RoleList> {    public override List<RoleList>? GetItems() => items;
-
-    public override void SetItems(List<RoleList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<RoleList>? value) => Items = value;
+        }
+    }
 }

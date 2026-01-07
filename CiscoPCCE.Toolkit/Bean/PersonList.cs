@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("agent")
+    [XmlRoot("results")]
+    public class PersonList : BaseApiBean
+    {
+        [XmlElement("persons")]
+        [XmlElement("person")]
+        public List<Person>? Items { get; set; }
 
-// Path("agent")
-[XmlRoot("results")]
-public class PersonList : BaseApiBean {
-  private List<Person>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("persons")]
-  [XmlElement("person")]
-  public List<Person>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("agent")
+        [XmlRoot("results")]
+        public class PersonListList : BaseApiListBean<PersonList>
+        {
+            public override List<PersonList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("agent")
-  [XmlRoot("results")]
-  public class PersonListList : BaseApiListBean<PersonList> {    public override List<PersonList>? GetItems() => items;
-
-    public override void SetItems(List<PersonList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<PersonList>? value) => Items = value;
+        }
+    }
 }

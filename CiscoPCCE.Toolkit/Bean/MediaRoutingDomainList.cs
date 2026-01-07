@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("mediaroutingdomain")
+    [XmlRoot("results")]
+    public class MediaRoutingDomainList : BaseApiBean
+    {
+        [XmlElement("mediaRoutingDomains")]
+        [XmlElement("mediaRoutingDomain")]
+        public List<MediaRoutingDomain>? Items { get; set; }
 
-// Path("mediaroutingdomain")
-[XmlRoot("results")]
-public class MediaRoutingDomainList : BaseApiBean {
-  private List<MediaRoutingDomain>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("mediaRoutingDomains")]
-  [XmlElement("mediaRoutingDomain")]
-  public List<MediaRoutingDomain>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("mediaroutingdomain")
+        [XmlRoot("results")]
+        public class MediaRoutingDomainListList : BaseApiListBean<MediaRoutingDomainList>
+        {
+            public override List<MediaRoutingDomainList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("mediaroutingdomain")
-  [XmlRoot("results")]
-  public class MediaRoutingDomainListList : BaseApiListBean<MediaRoutingDomainList> {    public override List<MediaRoutingDomainList>? GetItems() => items;
-
-    public override void SetItems(List<MediaRoutingDomainList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<MediaRoutingDomainList>? value) => Items = value;
+        }
+    }
 }

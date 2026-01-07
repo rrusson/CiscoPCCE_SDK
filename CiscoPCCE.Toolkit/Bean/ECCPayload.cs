@@ -1,85 +1,38 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("/eccpayload")
+    [XmlRoot("eccpayload")]
+    public class ECCPayload : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("/eccpayload")
-[XmlRoot("eccpayload")]
-public class ECCPayload : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? description;
-  private string? idFromRefUrl;
-  private string? name;
-  private string? refURL;
-  private List<ReferenceBean>? variables;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public string? Name { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        [XmlElement("variables")]
+        [XmlElement("variable")]
+        public List<ReferenceBean>? Variables { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("/eccpayload")
+        [XmlRoot("results")]
+        public class ECCPayloadList : BaseApiListBean<ECCPayload>
+        {
+            public override List<ECCPayload>? GetItems() => Items;
 
-  [XmlElement("variables")]
-  [XmlElement("variable")]
-  public List<ReferenceBean>? Variables
-  {
-      get => variables;
-      set => variables = value;
-  }
-
-  // Path("/eccpayload")
-  [XmlRoot("results")]
-  public class ECCPayloadList : BaseApiListBean<ECCPayload> {    public override List<ECCPayload>? GetItems() => items;
-
-    public override void SetItems(List<ECCPayload>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ECCPayload>? value) => Items = value;
+        }
+    }
 }

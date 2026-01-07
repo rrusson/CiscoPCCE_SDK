@@ -1,37 +1,25 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("initialize")
+    [XmlRoot("results")]
+    public class InitializationStatusResults : BaseApiBean
+    {
+        [XmlElement("state")]
+        public StateEnum State { get; set; }
 
-// Path("initialize")
-[XmlRoot("results")]
-public class InitializationStatusResults : BaseApiBean {
-  private StateEnum state;
-  private List<InitializationStatus>? statusList;
+        [XmlElement("initializationStatuses")]
+        [XmlElement("initializationStatus")]
+        public List<InitializationStatus>? StatusList { get; set; }
 
-  [XmlElement("state")]
-  public StateEnum State
-  {
-      get => state;
-      set => state = value;
-  }
+        // Path("initialize")
+        [XmlRoot("results")]
+        public class InitializationStatusResultsList : BaseApiListBean<InitializationStatusResults>
+        {
+            public override List<InitializationStatusResults>? GetItems() => Items;
 
-  [XmlElement("initializationStatuses")]
-  [XmlElement("initializationStatus")]
-  public List<InitializationStatus>? StatusList
-  {
-      get => statusList;
-      set => statusList = value;
-  }
-
-  // Path("initialize")
-  [XmlRoot("results")]
-  public class InitializationStatusResultsList : BaseApiListBean<InitializationStatusResults> {    public override List<InitializationStatusResults>? GetItems() => items;
-
-    public override void SetItems(List<InitializationStatusResults>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<InitializationStatusResults>? value) => Items = value;
+        }
+    }
 }

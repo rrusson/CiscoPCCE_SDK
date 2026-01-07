@@ -1,209 +1,77 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("agent")
+    [XmlRoot("agentSummary")]
+    public class AgentSummary : BaseApiBean
+    {
+        public string? AgentId { get; set; }
 
-// Path("agent")
-[XmlRoot("agentSummary")]
-public class AgentSummary : BaseApiBean {
-  private string? agentId;
-  private List<AgentServiceEnabled>? agentServicesEnabled;
-  private List<AgentServiceEnabled>? agentServicesToDisable;
-  private List<AgentServiceEnabled>? agentServicesToEnable;
-  private bool? agentStateTrace;
-  private ReferenceBean agentTeam;
-  private string? attributeValue;
-  private string? baseUrlfromRefUrl;
-  private bool? canRemove;
-  private int? changeStamp;
-  private string? configParam;
-  private string? correlationId;
-  private ReferenceBean datacenter;
-  private ReferenceBean department;
-  private string? description;
-  private string? idFromRefUrl;
-  private bool? markDeletable;
-  private string? name;
-  private PeripheralRef peripheral;
-  private string? peripheralName;
-  private ReferenceBean peripheralSet;
-  private Person person;
-  private string? refURL;
-  private bool? selectedAttribute;
-  private bool? selectedSkillGroup;
-  private bool? supervisor;
+        [XmlElement("agentServicesEnabled")]
+        [XmlElement("agentService")]
+        public List<AgentServiceEnabled>? AgentServicesEnabled { get; set; }
 
-  public string? AgentId
-  {
-      get => agentId;
-      set => agentId = value;
-  }
+        [XmlElement("agentServicesToDisable")]
+        [XmlElement("agentService")]
+        public List<AgentServiceEnabled>? AgentServicesToDisable { get; set; }
 
-  [XmlElement("agentServicesEnabled")]
-  [XmlElement("agentService")]
-  public List<AgentServiceEnabled>? AgentServicesEnabled
-  {
-      get => agentServicesEnabled;
-      set => agentServicesEnabled = value;
-  }
+        [XmlElement("agentServicesToEnable")]
+        [XmlElement("agentService")]
+        public List<AgentServiceEnabled>? AgentServicesToEnable { get; set; }
 
-  [XmlElement("agentServicesToDisable")]
-  [XmlElement("agentService")]
-  public List<AgentServiceEnabled>? AgentServicesToDisable
-  {
-      get => agentServicesToDisable;
-      set => agentServicesToDisable = value;
-  }
+        public bool? AgentStateTrace { get; set; }
 
-  [XmlElement("agentServicesToEnable")]
-  [XmlElement("agentService")]
-  public List<AgentServiceEnabled>? AgentServicesToEnable
-  {
-      get => agentServicesToEnable;
-      set => agentServicesToEnable = value;
-  }
+        public required ReferenceBean AgentTeam { get; set; }
 
-  public bool? AgentStateTrace
-  {
-      get => agentStateTrace;
-      set => agentStateTrace = value;
-  }
+        public string? AttributeValue { get; set; }
 
-  public ReferenceBean AgentTeam
-  {
-      get => agentTeam;
-      set => agentTeam = value;
-  }
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public string? AttributeValue
-  {
-      get => attributeValue;
-      set => attributeValue = value;
-  }
+        public bool? CanRemove { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public bool? CanRemove
-  {
-      get => canRemove;
-      set => canRemove = value;
-  }
+        public string? ConfigParam { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public string? ConfigParam
-  {
-      get => configParam;
-      set => configParam = value;
-  }
+        public required ReferenceBean Datacenter { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public ReferenceBean Datacenter
-  {
-      get => datacenter;
-      set => datacenter = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public string? Name { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        public required PeripheralRef Peripheral { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public string? PeripheralName { get; set; }
 
-  public PeripheralRef Peripheral
-  {
-      get => peripheral;
-      set => peripheral = value;
-  }
+        [XmlElement("peripheralSet")]
+        public required ReferenceBean PeripheralSet { get; set; }
 
-  public string? PeripheralName
-  {
-      get => peripheralName;
-      set => peripheralName = value;
-  }
+        public required Person Person { get; set; }
 
-  [XmlElement("peripheralSet")]
-  public ReferenceBean PeripheralSet
-  {
-      get => peripheralSet;
-      set => peripheralSet = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public Person Person
-  {
-      get => person;
-      set => person = value;
-  }
+        public bool? SelectedAttribute { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public bool? SelectedSkillGroup { get; set; }
 
-  public bool? SelectedAttribute
-  {
-      get => selectedAttribute;
-      set => selectedAttribute = value;
-  }
+        public bool? Supervisor { get; set; }
 
-  public bool? SelectedSkillGroup
-  {
-      get => selectedSkillGroup;
-      set => selectedSkillGroup = value;
-  }
+        // Path("agent")
+        [XmlRoot("results")]
+        public class AgentSummaryList : BaseApiListBean<AgentSummary>
+        {
+            public override List<AgentSummary>? GetItems() => Items;
 
-  public bool? Supervisor
-  {
-      get => supervisor;
-      set => supervisor = value;
-  }
-
-  // Path("agent")
-  [XmlRoot("results")]
-  public class AgentSummaryList : BaseApiListBean<AgentSummary> {    public override List<AgentSummary>? GetItems() => items;
-
-    public override void SetItems(List<AgentSummary>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<AgentSummary>? value) => Items = value;
+        }
+    }
 }

@@ -1,118 +1,46 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("datacenter")
+    [XmlRoot("datacenter")]
+    public class DataCenter : BaseApiBean
+    {
+        public required AgentPG AgentPG { get; set; }
 
-// Path("datacenter")
-[XmlRoot("datacenter")]
-public class DataCenter : BaseApiBean {
-  private AgentPG agentPG;
-  private string? baseUrlfromRefUrl;
-  private bool? cMPublisherAssociationRequired;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private bool? eceConfigured;
-  private string? idFromRefUrl;
-  private MultiChannelPG multiChannelPG;
-  private string? name;
-  private string? refURL;
-  private string? sideAPGAddress;
-  private string? sideBPGAddress;
-  private VruPG vruPG;
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public AgentPG AgentPG
-  {
-      get => agentPG;
-      set => agentPG = value;
-  }
+        public bool? CMPublisherAssociationRequired { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public bool? CMPublisherAssociationRequired
-  {
-      get => cMPublisherAssociationRequired;
-      set => cMPublisherAssociationRequired = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public bool? EceConfigured { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public bool? EceConfigured
-  {
-      get => eceConfigured;
-      set => eceConfigured = value;
-  }
+        public required MultiChannelPG MultiChannelPG { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public string? Name { get; set; }
 
-  public MultiChannelPG MultiChannelPG
-  {
-      get => multiChannelPG;
-      set => multiChannelPG = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public string? SideAPGAddress { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public string? SideBPGAddress { get; set; }
 
-  public string? SideAPGAddress
-  {
-      get => sideAPGAddress;
-      set => sideAPGAddress = value;
-  }
+        public required VruPG VruPG { get; set; }
 
-  public string? SideBPGAddress
-  {
-      get => sideBPGAddress;
-      set => sideBPGAddress = value;
-  }
+        // Path("datacenter")
+        [XmlRoot("results")]
+        public class DataCenterList : BaseApiListBean<DataCenter>
+        {
+            public override List<DataCenter>? GetItems() => Items;
 
-  public VruPG VruPG
-  {
-      get => vruPG;
-      set => vruPG = value;
-  }
-
-  // Path("datacenter")
-  [XmlRoot("results")]
-  public class DataCenterList : BaseApiListBean<DataCenter> {    public override List<DataCenter>? GetItems() => items;
-
-    public override void SetItems(List<DataCenter>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<DataCenter>? value) => Items = value;
+        }
+    }
 }

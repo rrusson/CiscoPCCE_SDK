@@ -1,106 +1,44 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("applicationgateway")
+    [XmlRoot("applicationGateway")]
+    public class ApplicationGateway : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("applicationgateway")
-[XmlRoot("applicationGateway")]
-public class ApplicationGateway : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private List<ApplicationGatewayConnection>? connections;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? description;
-  private ApplicationGatewayEncryptionEnum encryption;
-  private ApplicationGatewayFaultTolerance faultTolerance;
-  private string? idFromRefUrl;
-  private string? name;
-  private ApplicationGatewayPreferredSide preferredSide;
-  private string? refURL;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        [XmlElement("connections")]
+        [XmlElement("connection")]
+        public List<ApplicationGatewayConnection>? Connections { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  [XmlElement("connections")]
-  [XmlElement("connection")]
-  public List<ApplicationGatewayConnection>? Connections
-  {
-      get => connections;
-      set => connections = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public ApplicationGatewayEncryptionEnum Encryption { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public ApplicationGatewayFaultTolerance FaultTolerance { get; set; }
 
-  public ApplicationGatewayEncryptionEnum Encryption
-  {
-      get => encryption;
-      set => encryption = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ApplicationGatewayFaultTolerance FaultTolerance
-  {
-      get => faultTolerance;
-      set => faultTolerance = value;
-  }
+        public string? Name { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public ApplicationGatewayPreferredSide PreferredSide { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public ApplicationGatewayPreferredSide PreferredSide
-  {
-      get => preferredSide;
-      set => preferredSide = value;
-  }
+        // Path("applicationgateway")
+        [XmlRoot("results")]
+        public class ApplicationGatewayList : BaseApiListBean<ApplicationGateway>
+        {
+            public override List<ApplicationGateway>? GetItems() => Items;
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-  // Path("applicationgateway")
-  [XmlRoot("results")]
-  public class ApplicationGatewayList : BaseApiListBean<ApplicationGateway> {    public override List<ApplicationGateway>? GetItems() => items;
-
-    public override void SetItems(List<ApplicationGateway>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ApplicationGateway>? value) => Items = value;
+        }
+    }
 }

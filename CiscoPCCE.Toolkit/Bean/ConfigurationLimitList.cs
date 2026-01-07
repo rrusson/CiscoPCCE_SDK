@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("configurationlimit")
+    [XmlRoot("results")]
+    public class ConfigurationLimitList : BaseApiBean
+    {
+        [XmlElement("configurationlimits")]
+        [XmlElement("configurationLimit")]
+        public List<ConfigurationLimit>? Items { get; set; }
 
-// Path("configurationlimit")
-[XmlRoot("results")]
-public class ConfigurationLimitList : BaseApiBean {
-  private List<ConfigurationLimit>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("configurationlimits")]
-  [XmlElement("configurationLimit")]
-  public List<ConfigurationLimit>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("configurationlimit")
+        [XmlRoot("results")]
+        public class ConfigurationLimitListList : BaseApiListBean<ConfigurationLimitList>
+        {
+            public override List<ConfigurationLimitList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("configurationlimit")
-  [XmlRoot("results")]
-  public class ConfigurationLimitListList : BaseApiListBean<ConfigurationLimitList> {    public override List<ConfigurationLimitList>? GetItems() => items;
-
-    public override void SetItems(List<ConfigurationLimitList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ConfigurationLimitList>? value) => Items = value;
+        }
+    }
 }

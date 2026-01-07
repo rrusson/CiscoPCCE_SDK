@@ -1,9 +1,8 @@
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-public enum CampaignPurposeTypeEnum {
-  agentCampaign,
-  ivrCampaign
-}
-
+    public enum CampaignPurposeTypeEnum
+    {
+        agentCampaign,
+        ivrCampaign
+    }
 }

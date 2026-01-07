@@ -1,138 +1,56 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("attribute")
+    [XmlRoot("attribute")]
+    public class Attribute : BaseApiBean
+    {
+        [XmlElement("agentAttributes")]
+        [XmlElement("agentAttribute")]
+        public List<AttributeValueWithAgent>? AgentAttributes { get; set; }
 
-// Path("attribute")
-[XmlRoot("attribute")]
-public class Attribute : BaseApiBean {
-  private List<AttributeValueWithAgent>? agentAttributes;
-  private List<AttributeValueWithAgent>? agentAttributesAdded;
-  private List<AttributeValueWithAgent>? agentAttributesRemoved;
-  private int? agentCount;
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private int? dataType;
-  private string? defaultValue;
-  private ReferenceBean department;
-  private string? description;
-  private string? idFromRefUrl;
-  private bool? markDeletable;
-  private string? name;
-  private string? refURL;
-  private int? selectedAgentCount;
+        [XmlElement("agentAttributesAdded")]
+        [XmlElement("agentAttribute")]
+        public List<AttributeValueWithAgent>? AgentAttributesAdded { get; set; }
 
-  [XmlElement("agentAttributes")]
-  [XmlElement("agentAttribute")]
-  public List<AttributeValueWithAgent>? AgentAttributes
-  {
-      get => agentAttributes;
-      set => agentAttributes = value;
-  }
+        [XmlElement("agentAttributesRemoved")]
+        [XmlElement("agentAttribute")]
+        public List<AttributeValueWithAgent>? AgentAttributesRemoved { get; set; }
 
-  [XmlElement("agentAttributesAdded")]
-  [XmlElement("agentAttribute")]
-  public List<AttributeValueWithAgent>? AgentAttributesAdded
-  {
-      get => agentAttributesAdded;
-      set => agentAttributesAdded = value;
-  }
+        public int? AgentCount { get; set; }
 
-  [XmlElement("agentAttributesRemoved")]
-  [XmlElement("agentAttribute")]
-  public List<AttributeValueWithAgent>? AgentAttributesRemoved
-  {
-      get => agentAttributesRemoved;
-      set => agentAttributesRemoved = value;
-  }
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public int? AgentCount
-  {
-      get => agentCount;
-      set => agentCount = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public int? DataType { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? DefaultValue { get; set; }
 
-  public int? DataType
-  {
-      get => dataType;
-      set => dataType = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? DefaultValue
-  {
-      get => defaultValue;
-      set => defaultValue = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public string? Name { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public int? SelectedAgentCount { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("attribute")
+        [XmlRoot("results")]
+        public class AttributeList : BaseApiListBean<Attribute>
+        {
+            public override List<Attribute>? GetItems() => Items;
 
-  public int? SelectedAgentCount
-  {
-      get => selectedAgentCount;
-      set => selectedAgentCount = value;
-  }
-
-  // Path("attribute")
-  [XmlRoot("results")]
-  public class AttributeList : BaseApiListBean<Attribute> {    public override List<Attribute>? GetItems() => items;
-
-    public override void SetItems(List<Attribute>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<Attribute>? value) => Items = value;
+        }
+    }
 }

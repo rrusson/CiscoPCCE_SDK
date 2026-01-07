@@ -1,150 +1,58 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("registry")
+    [XmlRoot("registry")]
+    public class Registry : BaseApiBean
+    {
+        public int? AppGwEnabled { get; set; }
 
-// Path("registry")
-[XmlRoot("registry")]
-public class Registry : BaseApiBean {
-  private int? appGwEnabled;
-  private string? cgListenPort;
-  private int? conapiEnabled;
-  private int? hdsType;
-  private bool? instanceCreated;
-  private string? instanceName;
-  private string? jtapiCUCMSubAddress;
-  private string? jtapiClientVersion;
-  private string? jtapiUser;
-  private string? locale;
-  private List<PeripheralWithRoutingClient>? mediaRoutingPeripherals;
-  private string? mrPG;
-  private int? outboundEnabled;
-  private List<PeripheralGatewaysRegistry>? peripheralGatewaysRegistries;
-  private string? ucmPG;
-  private string? ucmPGTIPPort;
-  private string? ucmPGTOSPort;
-  private string? vruPG;
+        public string? CgListenPort { get; set; }
 
-  public int? AppGwEnabled
-  {
-      get => appGwEnabled;
-      set => appGwEnabled = value;
-  }
+        public int? ConapiEnabled { get; set; }
 
-  public string? CgListenPort
-  {
-      get => cgListenPort;
-      set => cgListenPort = value;
-  }
+        public int? HdsType { get; set; }
 
-  public int? ConapiEnabled
-  {
-      get => conapiEnabled;
-      set => conapiEnabled = value;
-  }
+        public bool? InstanceCreated { get; set; }
 
-  public int? HdsType
-  {
-      get => hdsType;
-      set => hdsType = value;
-  }
+        public string? InstanceName { get; set; }
 
-  public bool? InstanceCreated
-  {
-      get => instanceCreated;
-      set => instanceCreated = value;
-  }
+        public string? JtapiCUCMSubAddress { get; set; }
 
-  public string? InstanceName
-  {
-      get => instanceName;
-      set => instanceName = value;
-  }
+        public string? JtapiClientVersion { get; set; }
 
-  public string? JtapiCUCMSubAddress
-  {
-      get => jtapiCUCMSubAddress;
-      set => jtapiCUCMSubAddress = value;
-  }
+        public string? JtapiUser { get; set; }
 
-  public string? JtapiClientVersion
-  {
-      get => jtapiClientVersion;
-      set => jtapiClientVersion = value;
-  }
+        public string? Locale { get; set; }
 
-  public string? JtapiUser
-  {
-      get => jtapiUser;
-      set => jtapiUser = value;
-  }
+        [XmlElement("mediaRoutingPeripherals")]
+        [XmlElement("mediaRoutingPeripheral")]
+        public List<PeripheralWithRoutingClient>? MediaRoutingPeripherals { get; set; }
 
-  public string? Locale
-  {
-      get => locale;
-      set => locale = value;
-  }
+        public string? MrPG { get; set; }
 
-  [XmlElement("mediaRoutingPeripherals")]
-  [XmlElement("mediaRoutingPeripheral")]
-  public List<PeripheralWithRoutingClient>? MediaRoutingPeripherals
-  {
-      get => mediaRoutingPeripherals;
-      set => mediaRoutingPeripherals = value;
-  }
+        public int? OutboundEnabled { get; set; }
 
-  public string? MrPG
-  {
-      get => mrPG;
-      set => mrPG = value;
-  }
+        [XmlElement("peripheralGatewaysRegistries")]
+        [XmlElement("peripheralGatewaysRegistry")]
+        public List<PeripheralGatewaysRegistry>? PeripheralGatewaysRegistries { get; set; }
 
-  public int? OutboundEnabled
-  {
-      get => outboundEnabled;
-      set => outboundEnabled = value;
-  }
+        public string? UcmPG { get; set; }
 
-  [XmlElement("peripheralGatewaysRegistries")]
-  [XmlElement("peripheralGatewaysRegistry")]
-  public List<PeripheralGatewaysRegistry>? PeripheralGatewaysRegistries
-  {
-      get => peripheralGatewaysRegistries;
-      set => peripheralGatewaysRegistries = value;
-  }
+        public string? UcmPGTIPPort { get; set; }
 
-  public string? UcmPG
-  {
-      get => ucmPG;
-      set => ucmPG = value;
-  }
+        public string? UcmPGTOSPort { get; set; }
 
-  public string? UcmPGTIPPort
-  {
-      get => ucmPGTIPPort;
-      set => ucmPGTIPPort = value;
-  }
+        public string? VruPG { get; set; }
 
-  public string? UcmPGTOSPort
-  {
-      get => ucmPGTOSPort;
-      set => ucmPGTOSPort = value;
-  }
+        // Path("registry")
+        [XmlRoot("results")]
+        public class RegistryList : BaseApiListBean<Registry>
+        {
+            public override List<Registry>? GetItems() => Items;
 
-  public string? VruPG
-  {
-      get => vruPG;
-      set => vruPG = value;
-  }
-
-  // Path("registry")
-  [XmlRoot("results")]
-  public class RegistryList : BaseApiListBean<Registry> {    public override List<Registry>? GetItems() => items;
-
-    public override void SetItems(List<Registry>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<Registry>? value) => Items = value;
+        }
+    }
 }

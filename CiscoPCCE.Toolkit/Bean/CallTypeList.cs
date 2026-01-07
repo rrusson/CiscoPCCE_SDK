@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("calltype")
+    [XmlRoot("results")]
+    public class CallTypeList : BaseApiBean
+    {
+        [XmlElement("callTypes")]
+        [XmlElement("callType")]
+        public List<CallType>? Items { get; set; }
 
-// Path("calltype")
-[XmlRoot("results")]
-public class CallTypeList : BaseApiBean {
-  private List<CallType>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("callTypes")]
-  [XmlElement("callType")]
-  public List<CallType>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("calltype")
+        [XmlRoot("results")]
+        public class CallTypeListList : BaseApiListBean<CallTypeList>
+        {
+            public override List<CallTypeList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("calltype")
-  [XmlRoot("results")]
-  public class CallTypeListList : BaseApiListBean<CallTypeList> {    public override List<CallTypeList>? GetItems() => items;
-
-    public override void SetItems(List<CallTypeList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<CallTypeList>? value) => Items = value;
+        }
+    }
 }

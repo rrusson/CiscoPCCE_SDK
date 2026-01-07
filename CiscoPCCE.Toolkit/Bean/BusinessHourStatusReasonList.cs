@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("businesshourstatusreason")
+    [XmlRoot("results")]
+    public class BusinessHourStatusReasonList : BaseApiBean
+    {
+        [XmlElement("businessHourStatusReasons")]
+        [XmlElement("businessHourStatusReason")]
+        public List<BusinessHourStatusReason>? Items { get; set; }
 
-// Path("businesshourstatusreason")
-[XmlRoot("results")]
-public class BusinessHourStatusReasonList : BaseApiBean {
-  private List<BusinessHourStatusReason>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("businessHourStatusReasons")]
-  [XmlElement("businessHourStatusReason")]
-  public List<BusinessHourStatusReason>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("businesshourstatusreason")
+        [XmlRoot("results")]
+        public class BusinessHourStatusReasonListList : BaseApiListBean<BusinessHourStatusReasonList>
+        {
+            public override List<BusinessHourStatusReasonList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("businesshourstatusreason")
-  [XmlRoot("results")]
-  public class BusinessHourStatusReasonListList : BaseApiListBean<BusinessHourStatusReasonList> {    public override List<BusinessHourStatusReasonList>? GetItems() => items;
-
-    public override void SetItems(List<BusinessHourStatusReasonList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<BusinessHourStatusReasonList>? value) => Items = value;
+        }
+    }
 }

@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("networkvru")
+    [XmlRoot("results")]
+    public class NetworkVruList : BaseApiBean
+    {
+        [XmlElement("networkVrus")]
+        [XmlElement("networkVru")]
+        public List<NetworkVru>? Items { get; set; }
 
-// Path("networkvru")
-[XmlRoot("results")]
-public class NetworkVruList : BaseApiBean {
-  private List<NetworkVru>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("networkVrus")]
-  [XmlElement("networkVru")]
-  public List<NetworkVru>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("networkvru")
+        [XmlRoot("results")]
+        public class NetworkVruListList : BaseApiListBean<NetworkVruList>
+        {
+            public override List<NetworkVruList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("networkvru")
-  [XmlRoot("results")]
-  public class NetworkVruListList : BaseApiListBean<NetworkVruList> {    public override List<NetworkVruList>? GetItems() => items;
-
-    public override void SetItems(List<NetworkVruList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<NetworkVruList>? value) => Items = value;
+        }
+    }
 }

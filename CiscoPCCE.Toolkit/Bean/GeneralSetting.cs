@@ -1,76 +1,34 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("generalsetting")
+    [XmlRoot("generalSettings")]
+    public class GeneralSetting : BaseApiBean
+    {
+        public bool? AgentEventDetailExtended { get; set; }
 
-// Path("generalsetting")
-[XmlRoot("generalSettings")]
-public class GeneralSetting : BaseApiBean {
-  private bool? agentEventDetailExtended;
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private LoginSession loginSession;
-  private string? refURL;
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public bool? AgentEventDetailExtended
-  {
-      get => agentEventDetailExtended;
-      set => agentEventDetailExtended = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public required LoginSession LoginSession { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public LoginSession LoginSession
-  {
-      get => loginSession;
-      set => loginSession = value;
-  }
+        // Path("generalsetting")
+        [XmlRoot("results")]
+        public class GeneralSettingList : BaseApiListBean<GeneralSetting>
+        {
+            public override List<GeneralSetting>? GetItems() => Items;
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-  // Path("generalsetting")
-  [XmlRoot("results")]
-  public class GeneralSettingList : BaseApiListBean<GeneralSetting> {    public override List<GeneralSetting>? GetItems() => items;
-
-    public override void SetItems(List<GeneralSetting>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<GeneralSetting>? value) => Items = value;
+        }
+    }
 }

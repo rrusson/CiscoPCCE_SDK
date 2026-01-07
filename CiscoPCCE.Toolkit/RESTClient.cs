@@ -1,11 +1,5 @@
-using System;
-using System.IO;
-using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Net.Security;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit
@@ -61,8 +55,8 @@ namespace CiscoPCCE.Toolkit
             try
             {
                 var response = await httpClient.GetAsync(refURL);
-                response.EnsureSuccessStatusCode();
-                
+                _ = response.EnsureSuccessStatusCode();
+
                 var content = await response.Content.ReadAsStringAsync();
                 return DeserializeXml<T>(content);
             }
@@ -90,7 +84,7 @@ namespace CiscoPCCE.Toolkit
             try
             {
                 var response = await httpClient.DeleteAsync(refURL);
-                response.EnsureSuccessStatusCode();
+                _ = response.EnsureSuccessStatusCode();
             }
             catch (HttpRequestException ex)
             {
@@ -145,7 +139,7 @@ namespace CiscoPCCE.Toolkit
                 }
 
                 var response = await httpClient.GetAsync(url);
-                response.EnsureSuccessStatusCode();
+                _ = response.EnsureSuccessStatusCode();
 
                 var content = await response.Content.ReadAsStringAsync();
                 return DeserializeXml<T>(content);
@@ -183,10 +177,10 @@ namespace CiscoPCCE.Toolkit
                 var content = new StringContent(xmlContent, Encoding.UTF8, "application/xml");
 
                 var response = await httpClient.PostAsync($"{BaseUrl}{path}", content);
-                
-                if (response.StatusCode != System.Net.HttpStatusCode.OK && 
-                    response.StatusCode != System.Net.HttpStatusCode.Created && 
-                    response.StatusCode != System.Net.HttpStatusCode.Accepted)
+
+                if (response.StatusCode is not System.Net.HttpStatusCode.OK and
+                    not System.Net.HttpStatusCode.Created and
+                    not System.Net.HttpStatusCode.Accepted)
                 {
                     await HandleErrorsAsync(response);
                 }
@@ -227,10 +221,10 @@ namespace CiscoPCCE.Toolkit
                 var content = new StringContent(xmlContent, Encoding.UTF8, "application/xml");
 
                 var response = await httpClient.PutAsync(bean.RefURL, content);
-                
-                if (response.StatusCode != System.Net.HttpStatusCode.OK && 
-                    response.StatusCode != System.Net.HttpStatusCode.Created && 
-                    response.StatusCode != System.Net.HttpStatusCode.Accepted)
+
+                if (response.StatusCode is not System.Net.HttpStatusCode.OK and
+                    not System.Net.HttpStatusCode.Created and
+                    not System.Net.HttpStatusCode.Accepted)
                 {
                     await HandleErrorsAsync(response);
                 }
@@ -248,7 +242,7 @@ namespace CiscoPCCE.Toolkit
         /// </summary>
         public async Task<T?> UpdateAndGetBeanAsync<T>(T bean) where T : BaseApiBean
         {
-            await UpdateAsync(bean);
+            _ = await UpdateAsync(bean);
             return await GetAsync<T>(bean.RefURL!);
         }
 

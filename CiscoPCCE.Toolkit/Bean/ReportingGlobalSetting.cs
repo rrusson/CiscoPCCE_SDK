@@ -1,27 +1,20 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("globalsetting")
+    [XmlRoot("reporting")]
+    public class ReportingGlobalSetting : BaseApiBean
+    {
+        public int? ReportingInterval { get; set; }
 
-// Path("globalsetting")
-[XmlRoot("reporting")]
-public class ReportingGlobalSetting : BaseApiBean {
-  private int? reportingInterval;
+        // Path("globalsetting")
+        [XmlRoot("results")]
+        public class ReportingGlobalSettingList : BaseApiListBean<ReportingGlobalSetting>
+        {
+            public override List<ReportingGlobalSetting>? GetItems() => Items;
 
-  public int? ReportingInterval
-  {
-      get => reportingInterval;
-      set => reportingInterval = value;
-  }
-
-  // Path("globalsetting")
-  [XmlRoot("results")]
-  public class ReportingGlobalSettingList : BaseApiListBean<ReportingGlobalSetting> {    public override List<ReportingGlobalSetting>? GetItems() => items;
-
-    public override void SetItems(List<ReportingGlobalSetting>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ReportingGlobalSetting>? value) => Items = value;
+        }
+    }
 }

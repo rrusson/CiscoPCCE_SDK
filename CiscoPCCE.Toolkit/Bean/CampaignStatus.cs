@@ -1,204 +1,71 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
-using System;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("campaign")
+    [XmlRoot("runtimeStatus")]
+    public class CampaignStatus : BaseApiBean
+    {
+        public int? AbandonDetectCount { get; set; }
 
-// Path("campaign")
-[XmlRoot("runtimeStatus")]
-public class CampaignStatus : BaseApiBean {
-  private int? abandonDetectCount;
-  private int? abandonToIVRCount;
-  private int? agentClosedCount;
-  private int? agentRejectedCount;
-  private int? answeringMachineCount;
-  private int? attemptedCount;
-  private int? busyCount;
-  private int? callBackCount;
-  private int? cancelledDetectCount;
-  private int? closedCount;
-  private int? customerAbandonDetectCount;
-  private int? customerNotHomeCount;
-  private DateTime? dateTime;
-  private int? faxDetectCount;
-  private int? networkAnsMachineCount;
-  private int? noAnswerDetectCount;
-  private int? noDialToneDetectCount;
-  private int? noRingBackDetectCount;
-  private int? personalCallbackCount;
-  private int? sitToneDetectCount;
-  private int? talkTimeCount;
-  private int? totalCount;
-  private int? totalVoiceCount;
-  private int? voiceCount;
-  private int? wrapupTimeCount;
-  private int? wrongNumberCount;
+        [XmlElement("abandonToIvrCount")]
+        public int? AbandonToIVRCount { get; set; }
 
-  public int? AbandonDetectCount
-  {
-      get => abandonDetectCount;
-      set => abandonDetectCount = value;
-  }
+        public int? AgentClosedCount { get; set; }
 
-  [XmlElement("abandonToIvrCount")]
-  public int? AbandonToIVRCount
-  {
-      get => abandonToIVRCount;
-      set => abandonToIVRCount = value;
-  }
+        public int? AgentRejectedCount { get; set; }
 
-  public int? AgentClosedCount
-  {
-      get => agentClosedCount;
-      set => agentClosedCount = value;
-  }
+        public int? AnsweringMachineCount { get; set; }
 
-  public int? AgentRejectedCount
-  {
-      get => agentRejectedCount;
-      set => agentRejectedCount = value;
-  }
+        public int? AttemptedCount { get; set; }
 
-  public int? AnsweringMachineCount
-  {
-      get => answeringMachineCount;
-      set => answeringMachineCount = value;
-  }
+        public int? BusyCount { get; set; }
 
-  public int? AttemptedCount
-  {
-      get => attemptedCount;
-      set => attemptedCount = value;
-  }
+        public int? CallBackCount { get; set; }
 
-  public int? BusyCount
-  {
-      get => busyCount;
-      set => busyCount = value;
-  }
+        public int? CancelledDetectCount { get; set; }
 
-  public int? CallBackCount
-  {
-      get => callBackCount;
-      set => callBackCount = value;
-  }
+        public int? ClosedCount { get; set; }
 
-  public int? CancelledDetectCount
-  {
-      get => cancelledDetectCount;
-      set => cancelledDetectCount = value;
-  }
+        public int? CustomerAbandonDetectCount { get; set; }
 
-  public int? ClosedCount
-  {
-      get => closedCount;
-      set => closedCount = value;
-  }
+        public int? CustomerNotHomeCount { get; set; }
 
-  public int? CustomerAbandonDetectCount
-  {
-      get => customerAbandonDetectCount;
-      set => customerAbandonDetectCount = value;
-  }
+        public DateTime? DateTime { get; set; }
 
-  public int? CustomerNotHomeCount
-  {
-      get => customerNotHomeCount;
-      set => customerNotHomeCount = value;
-  }
+        public int? FaxDetectCount { get; set; }
 
-  public DateTime? DateTime
-  {
-      get => dateTime;
-      set => dateTime = value;
-  }
+        public int? NetworkAnsMachineCount { get; set; }
 
-  public int? FaxDetectCount
-  {
-      get => faxDetectCount;
-      set => faxDetectCount = value;
-  }
+        public int? NoAnswerDetectCount { get; set; }
 
-  public int? NetworkAnsMachineCount
-  {
-      get => networkAnsMachineCount;
-      set => networkAnsMachineCount = value;
-  }
+        public int? NoDialToneDetectCount { get; set; }
 
-  public int? NoAnswerDetectCount
-  {
-      get => noAnswerDetectCount;
-      set => noAnswerDetectCount = value;
-  }
+        public int? NoRingBackDetectCount { get; set; }
 
-  public int? NoDialToneDetectCount
-  {
-      get => noDialToneDetectCount;
-      set => noDialToneDetectCount = value;
-  }
+        public int? PersonalCallbackCount { get; set; }
 
-  public int? NoRingBackDetectCount
-  {
-      get => noRingBackDetectCount;
-      set => noRingBackDetectCount = value;
-  }
+        public int? SitToneDetectCount { get; set; }
 
-  public int? PersonalCallbackCount
-  {
-      get => personalCallbackCount;
-      set => personalCallbackCount = value;
-  }
+        public int? TalkTimeCount { get; set; }
 
-  public int? SitToneDetectCount
-  {
-      get => sitToneDetectCount;
-      set => sitToneDetectCount = value;
-  }
+        public int? TotalCount { get; set; }
 
-  public int? TalkTimeCount
-  {
-      get => talkTimeCount;
-      set => talkTimeCount = value;
-  }
+        public int? TotalVoiceCount { get; set; }
 
-  public int? TotalCount
-  {
-      get => totalCount;
-      set => totalCount = value;
-  }
+        public int? VoiceCount { get; set; }
 
-  public int? TotalVoiceCount
-  {
-      get => totalVoiceCount;
-      set => totalVoiceCount = value;
-  }
+        public int? WrapupTimeCount { get; set; }
 
-  public int? VoiceCount
-  {
-      get => voiceCount;
-      set => voiceCount = value;
-  }
+        public int? WrongNumberCount { get; set; }
 
-  public int? WrapupTimeCount
-  {
-      get => wrapupTimeCount;
-      set => wrapupTimeCount = value;
-  }
+        // Path("campaign")
+        [XmlRoot("results")]
+        public class CampaignStatusList : BaseApiListBean<CampaignStatus>
+        {
+            public override List<CampaignStatus>? GetItems() => Items;
 
-  public int? WrongNumberCount
-  {
-      get => wrongNumberCount;
-      set => wrongNumberCount = value;
-  }
-
-  // Path("campaign")
-  [XmlRoot("results")]
-  public class CampaignStatusList : BaseApiListBean<CampaignStatus> {    public override List<CampaignStatus>? GetItems() => items;
-
-    public override void SetItems(List<CampaignStatus>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<CampaignStatus>? value) => Items = value;
+        }
+    }
 }

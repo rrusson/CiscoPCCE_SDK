@@ -1,193 +1,71 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("precisionqueue")
+    [XmlRoot("precisionQueue")]
+    public class PrecisionQueue : BaseApiBean
+    {
+        public int? AgentCount { get; set; }
 
-// Path("precisionqueue")
-[XmlRoot("precisionQueue")]
-public class PrecisionQueue : BaseApiBean {
-  private int? agentCount;
-  private int? agentOrdering;
-  private string? attribute1;
-  private string? attribute2;
-  private string? attribute3;
-  private string? attribute4;
-  private string? attribute5;
-  private string? baseUrlfromRefUrl;
-  private ReferenceBean bucketInterval;
-  private int? callOrdering;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? description;
-  private string? idFromRefUrl;
-  private bool? markDeletable;
-  private ReferenceBean mediaRoutingDomain;
-  private string? name;
-  private int? precisionQueueId;
-  private string? refURL;
-  private int? serviceLevelThreshold;
-  private int? serviceLevelType;
-  private List<SkillGroupWithPqId>? skillGroups;
-  private List<Step>? steps;
+        public int? AgentOrdering { get; set; }
 
-  public int? AgentCount
-  {
-      get => agentCount;
-      set => agentCount = value;
-  }
+        public string? Attribute1 { get; set; }
 
-  public int? AgentOrdering
-  {
-      get => agentOrdering;
-      set => agentOrdering = value;
-  }
+        public string? Attribute2 { get; set; }
 
-  public string? Attribute1
-  {
-      get => attribute1;
-      set => attribute1 = value;
-  }
+        public string? Attribute3 { get; set; }
 
-  public string? Attribute2
-  {
-      get => attribute2;
-      set => attribute2 = value;
-  }
+        public string? Attribute4 { get; set; }
 
-  public string? Attribute3
-  {
-      get => attribute3;
-      set => attribute3 = value;
-  }
+        public string? Attribute5 { get; set; }
 
-  public string? Attribute4
-  {
-      get => attribute4;
-      set => attribute4 = value;
-  }
+        public string? BaseUrlfromRefUrl { get; set; }
 
-  public string? Attribute5
-  {
-      get => attribute5;
-      set => attribute5 = value;
-  }
+        public required ReferenceBean BucketInterval { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public int? CallOrdering { get; set; }
 
-  public ReferenceBean BucketInterval
-  {
-      get => bucketInterval;
-      set => bucketInterval = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public int? CallOrdering
-  {
-      get => callOrdering;
-      set => callOrdering = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public required ReferenceBean MediaRoutingDomain { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        public string? Name { get; set; }
 
-  public ReferenceBean MediaRoutingDomain
-  {
-      get => mediaRoutingDomain;
-      set => mediaRoutingDomain = value;
-  }
+        [XmlElement("id")]
+        public int? PrecisionQueueId { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public new string? RefURL { get; set; }
 
-  [XmlElement("id")]
-  public int? PrecisionQueueId
-  {
-      get => precisionQueueId;
-      set => precisionQueueId = value;
-  }
+        public int? ServiceLevelThreshold { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public int? ServiceLevelType { get; set; }
 
-  public int? ServiceLevelThreshold
-  {
-      get => serviceLevelThreshold;
-      set => serviceLevelThreshold = value;
-  }
+        [XmlElement("skillGroups")]
+        [XmlElement("skillGroup")]
+        public List<SkillGroupWithPqId>? SkillGroups { get; set; }
 
-  public int? ServiceLevelType
-  {
-      get => serviceLevelType;
-      set => serviceLevelType = value;
-  }
+        [XmlElement("steps")]
+        [XmlElement("step")]
+        public List<Step>? Steps { get; set; }
 
-  [XmlElement("skillGroups")]
-  [XmlElement("skillGroup")]
-  public List<SkillGroupWithPqId>? SkillGroups
-  {
-      get => skillGroups;
-      set => skillGroups = value;
-  }
+        // Path("precisionqueue")
+        [XmlRoot("results")]
+        public class PrecisionQueueList : BaseApiListBean<PrecisionQueue>
+        {
+            public override List<PrecisionQueue>? GetItems() => Items;
 
-  [XmlElement("steps")]
-  [XmlElement("step")]
-  public List<Step>? Steps
-  {
-      get => steps;
-      set => steps = value;
-  }
-
-  // Path("precisionqueue")
-  [XmlRoot("results")]
-  public class PrecisionQueueList : BaseApiListBean<PrecisionQueue> {    public override List<PrecisionQueue>? GetItems() => items;
-
-    public override void SetItems(List<PrecisionQueue>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<PrecisionQueue>? value) => Items = value;
+        }
+    }
 }

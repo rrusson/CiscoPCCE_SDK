@@ -1,76 +1,39 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("timezone")
+    [XmlRoot("timeZone")]
+    public class TimeZone : BaseApiBean
+    {
+        [XmlElement("bias")]
+        public int? Bias { get; set; }
 
-// Path("timezone")
-[XmlRoot("timeZone")]
-public class TimeZone : BaseApiBean {
-  private int? bias;
-  private string? displayName;
-  private string? dstName;
-  private bool? dstObserved;
-  private string? name;
-  private string? refURL;
-  private string? stdName;
+        [XmlElement("displayName")]
+        public string? DisplayName { get; set; }
 
-  [XmlElement("bias")]
-  public int? Bias
-  {
-      get => bias;
-      set => bias = value;
-  }
+        [XmlElement("dstName")]
+        public string? DstName { get; set; }
 
-  [XmlElement("displayName")]
-  public string? DisplayName
-  {
-      get => displayName;
-      set => displayName = value;
-  }
+        [XmlElement("dstObserved")]
+        public bool? DstObserved { get; set; }
 
-  [XmlElement("dstName")]
-  public string? DstName
-  {
-      get => dstName;
-      set => dstName = value;
-  }
+        [XmlElement("name")]
+        public string? Name { get; set; }
 
-  [XmlElement("dstObserved")]
-  public bool? DstObserved
-  {
-      get => dstObserved;
-      set => dstObserved = value;
-  }
+        [XmlElement("refURL")]
+        public new string? RefURL { get; set; }
 
-  [XmlElement("name")]
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        [XmlElement("stdName")]
+        public string? StdName { get; set; }
 
-  [XmlElement("refURL")]
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("timezone")
+        [XmlRoot("results")]
+        public class TimeZoneList : BaseApiListBean<TimeZone>
+        {
+            public override List<TimeZone>? GetItems() => Items;
 
-  [XmlElement("stdName")]
-  public string? StdName
-  {
-      get => stdName;
-      set => stdName = value;
-  }
-
-  // Path("timezone")
-  [XmlRoot("results")]
-  public class TimeZoneList : BaseApiListBean<TimeZone> {    public override List<TimeZone>? GetItems() => items;
-
-    public override void SetItems(List<TimeZone>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<TimeZone>? value) => Items = value;
+        }
+    }
 }

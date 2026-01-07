@@ -1,41 +1,24 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("operation")
+    [XmlRoot("errorDetail")]
+    public class ResourceErrorDetail : BaseApiBean
+    {
+        public required ApiErrors ApiErrors { get; set; }
 
-// Path("operation")
-[XmlRoot("errorDetail")]
-public class ResourceErrorDetail : BaseApiBean {
-  private ApiErrors apiErrors;
-  private ChangeSetElement changeSetElement;
-  private string? refURL;
+        public required ChangeSetElement ChangeSetElement { get; set; }
 
-  public ApiErrors ApiErrors
-  {
-      get => apiErrors;
-      set => apiErrors = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public ChangeSetElement ChangeSetElement
-  {
-      get => changeSetElement;
-      set => changeSetElement = value;
-  }
+        // Path("operation")
+        [XmlRoot("results")]
+        public class ResourceErrorDetailList : BaseApiListBean<ResourceErrorDetail>
+        {
+            public override List<ResourceErrorDetail>? GetItems() => Items;
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
-
-  // Path("operation")
-  [XmlRoot("results")]
-  public class ResourceErrorDetailList : BaseApiListBean<ResourceErrorDetail> {    public override List<ResourceErrorDetail>? GetItems() => items;
-
-    public override void SetItems(List<ResourceErrorDetail>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ResourceErrorDetail>? value) => Items = value;
+        }
+    }
 }

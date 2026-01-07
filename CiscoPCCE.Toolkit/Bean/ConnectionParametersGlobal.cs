@@ -1,18 +1,13 @@
-using System.Xml.Serialization;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
+    public class ConnectionParametersGlobal : BaseApiBean
+    {
+        public required HeartBeat HeartBeat { get; set; }
 
-public class ConnectionParametersGlobal : BaseApiBean {
-        
-  public HeartBeat HeartBeat { get; set; }
+        public int? MaxErrors { get; set; }
 
-  public int? MaxErrors { get; set; }
+        public required Session Session { get; set; }
 
-  public Session Session { get; set; }
-
-  public Timeout Timeout { get; set; }
-
-}
-
+        public required Timeout Timeout { get; set; }
+    }
 }

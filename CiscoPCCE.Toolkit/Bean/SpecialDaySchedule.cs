@@ -2,39 +2,31 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    [XmlRoot("specialDaySchedule")]
+    public class SpecialDaySchedule : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-[XmlRoot("specialDaySchedule")]
-public class SpecialDaySchedule : BaseApiBean {
-  private string? date;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl { get; set; }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp { get; set; }
+        public string? Date { get; set; }
 
-  public string? CorrelationId { get; set; }
+        public required ReferenceBean Department { get; set; }
 
-  public string? Date
-  {
-      get => date;
-      set => date = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department { get; set; }
+        public string? EndTime { get; set; }
 
-  public string? Description { get; set; }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? EndTime { get; set; }
+        public new string? RefURL { get; set; }
 
-  public string? IdFromRefUrl { get; set; }
+        public string? StartTime { get; set; }
 
-  public string? RefURL { get; set; }
+        public int? Status { get; set; }
 
-  public string? StartTime { get; set; }
-
-  public int? Status { get; set; }
-
-  public ReferenceBean StatusReason { get; set; }
-
-}
-
+        public required ReferenceBean StatusReason { get; set; }
+    }
 }

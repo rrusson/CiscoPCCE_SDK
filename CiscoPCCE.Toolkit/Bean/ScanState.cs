@@ -1,9 +1,8 @@
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-public enum ScanState {
-  IDLE,
-  RUNNING
-}
-
+    public enum ScanState
+    {
+        IDLE,
+        RUNNING
+    }
 }

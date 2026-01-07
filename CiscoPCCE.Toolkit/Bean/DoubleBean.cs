@@ -1,5 +1,3 @@
-using System.Xml.Serialization;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
     // Renamed from "Double" to "DoubleBean" to avoid conflict with C# primitive type

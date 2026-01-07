@@ -1,127 +1,50 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("deploymenttypeinfo")
+    [XmlRoot("deploymentTypeInfo")]
+    public class DeploymentTypeInfo : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("deploymenttypeinfo")
-[XmlRoot("deploymentTypeInfo")]
-public class DeploymentTypeInfo : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private CapacityInfo capacityInfo;
-  private int? changeStamp;
-  private string? correlationId;
-  private ReferenceBean department;
-  private int? deploymentType;
-  private HardwareLayoutType hardwareLayoutType;
-  private string? idFromRefUrl;
-  private bool? inventoryConfigured;
-  private PermissionInfo permissionInfo;
-  private SystemValidationStatus systemValidationStatus;
-  private int? targetDeploymentType;
-  private List<VMHost>? vmHosts;
-  private string? vmLayoutType;
-  private string? vmValidationLogURL;
+        public required CapacityInfo CapacityInfo { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public new int? ChangeStamp { get; set; }
 
-  public CapacityInfo CapacityInfo
-  {
-      get => capacityInfo;
-      set => capacityInfo = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public int? DeploymentType { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public HardwareLayoutType HardwareLayoutType { get; set; }
 
-  public int? DeploymentType
-  {
-      get => deploymentType;
-      set => deploymentType = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public HardwareLayoutType HardwareLayoutType
-  {
-      get => hardwareLayoutType;
-      set => hardwareLayoutType = value;
-  }
+        public bool? InventoryConfigured { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public bool? InventoryConfigured
-  {
-      get => inventoryConfigured;
-      set => inventoryConfigured = value;
-  }
+        public required SystemValidationStatus SystemValidationStatus { get; set; }
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
+        public int? TargetDeploymentType { get; set; }
 
-  public SystemValidationStatus SystemValidationStatus
-  {
-      get => systemValidationStatus;
-      set => systemValidationStatus = value;
-  }
+        [XmlElement("vmHosts")]
+        [XmlElement("vmHost")]
+        public List<VMHost>? VmHosts { get; set; }
 
-  public int? TargetDeploymentType
-  {
-      get => targetDeploymentType;
-      set => targetDeploymentType = value;
-  }
+        public string? VmLayoutType { get; set; }
 
-  [XmlElement("vmHosts")]
-  [XmlElement("vmHost")]
-  public List<VMHost>? VmHosts
-  {
-      get => vmHosts;
-      set => vmHosts = value;
-  }
+        public string? VmValidationLogURL { get; set; }
 
-  public string? VmLayoutType
-  {
-      get => vmLayoutType;
-      set => vmLayoutType = value;
-  }
+        // Path("deploymenttypeinfo")
+        [XmlRoot("results")]
+        public class DeploymentTypeInfoList : BaseApiListBean<DeploymentTypeInfo>
+        {
+            public override List<DeploymentTypeInfo>? GetItems() => Items;
 
-  public string? VmValidationLogURL
-  {
-      get => vmValidationLogURL;
-      set => vmValidationLogURL = value;
-  }
-
-  // Path("deploymenttypeinfo")
-  [XmlRoot("results")]
-  public class DeploymentTypeInfoList : BaseApiListBean<DeploymentTypeInfo> {    public override List<DeploymentTypeInfo>? GetItems() => items;
-
-    public override void SetItems(List<DeploymentTypeInfo>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<DeploymentTypeInfo>? value) => Items = value;
+        }
+    }
 }

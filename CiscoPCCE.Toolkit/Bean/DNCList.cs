@@ -1,43 +1,26 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("dnc")
+    [XmlRoot("results")]
+    public class DNCList : BaseApiBean
+    {
+        [XmlElement("dncs")]
+        [XmlElement("dnc")]
+        public List<ImportRule>? Items { get; set; }
 
-// Path("dnc")
-[XmlRoot("results")]
-public class DNCList : BaseApiBean {
-  private List<ImportRule>? items;
-  private PageInfo pageInfo;
-  private PermissionInfo permissionInfo;
+        public required PageInfo PageInfo { get; set; }
 
-  [XmlElement("dncs")]
-  [XmlElement("dnc")]
-  public List<ImportRule>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  public PageInfo PageInfo
-  {
-      get => pageInfo;
-      set => pageInfo = value;
-  }
+        // Path("dnc")
+        [XmlRoot("results")]
+        public class DNCListList : BaseApiListBean<DNCList>
+        {
+            public override List<DNCList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("dnc")
-  [XmlRoot("results")]
-  public class DNCListList : BaseApiListBean<DNCList> {    public override List<DNCList>? GetItems() => items;
-
-    public override void SetItems(List<DNCList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<DNCList>? value) => Items = value;
+        }
+    }
 }

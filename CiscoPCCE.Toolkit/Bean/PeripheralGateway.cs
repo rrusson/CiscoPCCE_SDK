@@ -1,127 +1,50 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("secondaryaddress")
+    [XmlRoot("peripheralGateway")]
+    public class PeripheralGateway : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("secondaryaddress")
-[XmlRoot("peripheralGateway")]
-public class PeripheralGateway : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private short? clientType;
-  private string? correlationId;
-  private ReferenceBean datacenter;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private int? logicalControllerId;
-  private short? logicalControllerType;
-  private bool? markDeletable;
-  private string? name;
-  private List<PeripheralWithRoutingClient>? peripherals;
-  private string? primaryCtiAddress;
-  private string? refURL;
-  private string? secondaryCtiAddress;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public short? ClientType { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public short? ClientType
-  {
-      get => clientType;
-      set => clientType = value;
-  }
+        public required ReferenceBean Datacenter { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public ReferenceBean Datacenter
-  {
-      get => datacenter;
-      set => datacenter = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public int? LogicalControllerId { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public short? LogicalControllerType { get; set; }
 
-  public int? LogicalControllerId
-  {
-      get => logicalControllerId;
-      set => logicalControllerId = value;
-  }
+        public bool? MarkDeletable { get; set; }
 
-  public short? LogicalControllerType
-  {
-      get => logicalControllerType;
-      set => logicalControllerType = value;
-  }
+        public string? Name { get; set; }
 
-  public bool? MarkDeletable
-  {
-      get => markDeletable;
-      set => markDeletable = value;
-  }
+        [XmlElement("peripherals")]
+        [XmlElement("peripheral")]
+        public List<PeripheralWithRoutingClient>? Peripherals { get; set; }
 
-  public string? Name
-  {
-      get => name;
-      set => name = value;
-  }
+        public string? PrimaryCtiAddress { get; set; }
 
-  [XmlElement("peripherals")]
-  [XmlElement("peripheral")]
-  public List<PeripheralWithRoutingClient>? Peripherals
-  {
-      get => peripherals;
-      set => peripherals = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? PrimaryCtiAddress
-  {
-      get => primaryCtiAddress;
-      set => primaryCtiAddress = value;
-  }
+        public string? SecondaryCtiAddress { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("secondaryaddress")
+        [XmlRoot("results")]
+        public class PeripheralGatewayList : BaseApiListBean<PeripheralGateway>
+        {
+            public override List<PeripheralGateway>? GetItems() => Items;
 
-  public string? SecondaryCtiAddress
-  {
-      get => secondaryCtiAddress;
-      set => secondaryCtiAddress = value;
-  }
-
-  // Path("secondaryaddress")
-  [XmlRoot("results")]
-  public class PeripheralGatewayList : BaseApiListBean<PeripheralGateway> {    public override List<PeripheralGateway>? GetItems() => items;
-
-    public override void SetItems(List<PeripheralGateway>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<PeripheralGateway>? value) => Items = value;
+        }
+    }
 }

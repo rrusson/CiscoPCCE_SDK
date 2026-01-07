@@ -1,104 +1,42 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("congestioncontrol")
+    [XmlRoot("congestionControl")]
+    public class CongestionControl : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("congestioncontrol")
-[XmlRoot("congestionControl")]
-public class CongestionControl : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private bool? congestionEnabled;
-  private int? congestionTreatmentMode;
-  private string? correlationId;
-  private int? cpsCapacity;
-  private int? cpsCapacityDefault;
-  private ReferenceBean department;
-  private int? deploymentType;
-  private string? idFromRefUrl;
-  private CongestionControlPermissionInfo permissionInfo;
-  private string? systemDefaultLabel;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public bool? CongestionEnabled { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public int? CongestionTreatmentMode { get; set; }
 
-  public bool? CongestionEnabled
-  {
-      get => congestionEnabled;
-      set => congestionEnabled = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public int? CongestionTreatmentMode
-  {
-      get => congestionTreatmentMode;
-      set => congestionTreatmentMode = value;
-  }
+        public int? CpsCapacity { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public int? CpsCapacityDefault { get; set; }
 
-  public int? CpsCapacity
-  {
-      get => cpsCapacity;
-      set => cpsCapacity = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public int? CpsCapacityDefault
-  {
-      get => cpsCapacityDefault;
-      set => cpsCapacityDefault = value;
-  }
+        public int? DeploymentType { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public int? DeploymentType
-  {
-      get => deploymentType;
-      set => deploymentType = value;
-  }
+        public required CongestionControlPermissionInfo PermissionInfo { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public string? SystemDefaultLabel { get; set; }
 
-  public CongestionControlPermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
+        // Path("congestioncontrol")
+        [XmlRoot("results")]
+        public class CongestionControlList : BaseApiListBean<CongestionControl>
+        {
+            public override List<CongestionControl>? GetItems() => Items;
 
-  public string? SystemDefaultLabel
-  {
-      get => systemDefaultLabel;
-      set => systemDefaultLabel = value;
-  }
-
-  // Path("congestioncontrol")
-  [XmlRoot("results")]
-  public class CongestionControlList : BaseApiListBean<CongestionControl> {    public override List<CongestionControl>? GetItems() => items;
-
-    public override void SetItems(List<CongestionControl>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<CongestionControl>? value) => Items = value;
+        }
+    }
 }

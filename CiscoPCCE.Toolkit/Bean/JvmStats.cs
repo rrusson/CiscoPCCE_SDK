@@ -1,10 +1,6 @@
-using System.Xml.Serialization;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-public class JvmStats : BaseApiBean {
-
-}
-
+    public class JvmStats : BaseApiBean
+    {
+    }
 }

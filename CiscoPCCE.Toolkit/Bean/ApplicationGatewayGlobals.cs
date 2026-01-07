@@ -1,62 +1,30 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("applicationgatewayglobalsetting")
+    [XmlRoot("applicationGatewayGlobalSetting")]
+    public class ApplicationGatewayGlobals : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("applicationgatewayglobalsetting")
-[XmlRoot("applicationGatewayGlobalSetting")]
-public class ApplicationGatewayGlobals : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private ConnectionParametersGlobal connectionParameters;
-  private string? correlationId;
-  private ReferenceBean department;
-  private string? idFromRefUrl;
-  private ApplicationGatewayType type;
+        public required ConnectionParametersGlobal ConnectionParameters { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public ConnectionParametersGlobal ConnectionParameters
-  {
-      get => connectionParameters;
-      set => connectionParameters = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public ApplicationGatewayType Type { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        // Path("applicationgatewayglobalsetting")
+        [XmlRoot("results")]
+        public class ApplicationGatewayGlobalsList : BaseApiListBean<ApplicationGatewayGlobals>
+        {
+            public override List<ApplicationGatewayGlobals>? GetItems() => Items;
 
-  public ApplicationGatewayType Type
-  {
-      get => type;
-      set => type = value;
-  }
-
-  // Path("applicationgatewayglobalsetting")
-  [XmlRoot("results")]
-  public class ApplicationGatewayGlobalsList : BaseApiListBean<ApplicationGatewayGlobals> {    public override List<ApplicationGatewayGlobals>? GetItems() => items;
-
-    public override void SetItems(List<ApplicationGatewayGlobals>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ApplicationGatewayGlobals>? value) => Items = value;
+        }
+    }
 }

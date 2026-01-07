@@ -1,10 +1,9 @@
 namespace CiscoPCCE.Toolkit.Bean
 {
-
-public enum Access {
-  ALL,
-  NONE,
-  RESTRICTED
-}
-
+    public enum Access
+    {
+        ALL,
+        NONE,
+        RESTRICTED
+    }
 }

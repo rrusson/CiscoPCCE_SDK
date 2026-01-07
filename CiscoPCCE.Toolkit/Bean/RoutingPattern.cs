@@ -1,118 +1,46 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("routingpattern")
+    [XmlRoot("routingPattern")]
+    public class RoutingPattern : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("routingpattern")
-[XmlRoot("routingPattern")]
-public class RoutingPattern : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private int? changeStamp;
-  private string? configParam;
-  private string? correlationId;
-  private ReferenceBean datacenter;
-  private ReferenceBean department;
-  private string? description;
-  private string? destination;
-  private string? idFromRefUrl;
-  private string? pattern;
-  private int? patternType;
-  private string? refURL;
-  private int? rnaTimeout;
-  private bool? sendToOriginator;
+        public new int? ChangeStamp { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public string? ConfigParam { get; set; }
 
-  public int? ChangeStamp
-  {
-      get => changeStamp;
-      set => changeStamp = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public string? ConfigParam
-  {
-      get => configParam;
-      set => configParam = value;
-  }
+        public required ReferenceBean Datacenter { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public ReferenceBean Datacenter
-  {
-      get => datacenter;
-      set => datacenter = value;
-  }
+        public string? Description { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? Destination { get; set; }
 
-  public string? Description
-  {
-      get => description;
-      set => description = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public string? Destination
-  {
-      get => destination;
-      set => destination = value;
-  }
+        public string? Pattern { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public int? PatternType { get; set; }
 
-  public string? Pattern
-  {
-      get => pattern;
-      set => pattern = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public int? PatternType
-  {
-      get => patternType;
-      set => patternType = value;
-  }
+        public int? RnaTimeout { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public bool? SendToOriginator { get; set; }
 
-  public int? RnaTimeout
-  {
-      get => rnaTimeout;
-      set => rnaTimeout = value;
-  }
+        // Path("routingpattern")
+        [XmlRoot("results")]
+        public class RoutingPatternList : BaseApiListBean<RoutingPattern>
+        {
+            public override List<RoutingPattern>? GetItems() => Items;
 
-  public bool? SendToOriginator
-  {
-      get => sendToOriginator;
-      set => sendToOriginator = value;
-  }
-
-  // Path("routingpattern")
-  [XmlRoot("results")]
-  public class RoutingPatternList : BaseApiListBean<RoutingPattern> {    public override List<RoutingPattern>? GetItems() => items;
-
-    public override void SetItems(List<RoutingPattern>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<RoutingPattern>? value) => Items = value;
+        }
+    }
 }

@@ -1,97 +1,40 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("initialize")
+    [XmlRoot("##default")]
+    public class InitialSettings : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("initialize")
-[XmlRoot("##default")]
-public class InitialSettings : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private ReferenceBean cmSideA;
-  private ReferenceBean cmSideB;
-  private string? correlationId;
-  private ReferenceBean department;
-  private int? hardwareLayoutType;
-  private string? idFromRefUrl;
-  private string? mobileAgentCodec;
-  private string? refURL;
-  private string? serviceAccountPassword;
-  private string? serviceAccountUserName;
+        public required ReferenceBean CmSideA { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public required ReferenceBean CmSideB { get; set; }
 
-  public ReferenceBean CmSideA
-  {
-      get => cmSideA;
-      set => cmSideA = value;
-  }
+        public string? CorrelationId { get; set; }
 
-  public ReferenceBean CmSideB
-  {
-      get => cmSideB;
-      set => cmSideB = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public int? HardwareLayoutType { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public int? HardwareLayoutType
-  {
-      get => hardwareLayoutType;
-      set => hardwareLayoutType = value;
-  }
+        public string? MobileAgentCodec { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? MobileAgentCodec
-  {
-      get => mobileAgentCodec;
-      set => mobileAgentCodec = value;
-  }
+        public string? ServiceAccountPassword { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        public string? ServiceAccountUserName { get; set; }
 
-  public string? ServiceAccountPassword
-  {
-      get => serviceAccountPassword;
-      set => serviceAccountPassword = value;
-  }
+        // Path("initialize")
+        [XmlRoot("results")]
+        public class InitialSettingsList : BaseApiListBean<InitialSettings>
+        {
+            public override List<InitialSettings>? GetItems() => Items;
 
-  public string? ServiceAccountUserName
-  {
-      get => serviceAccountUserName;
-      set => serviceAccountUserName = value;
-  }
-
-  // Path("initialize")
-  [XmlRoot("results")]
-  public class InitialSettingsList : BaseApiListBean<InitialSettings> {    public override List<InitialSettings>? GetItems() => items;
-
-    public override void SetItems(List<InitialSettings>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<InitialSettings>? value) => Items = value;
+        }
+    }
 }

@@ -1,36 +1,24 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("applicationgatewayglobalsetting")
+    [XmlRoot("results")]
+    public class ApplicationGatewayGlobalsList : BaseApiBean
+    {
+        [XmlElement("applicationGatewayGlobalSettings")]
+        [XmlElement("applicationGatewayGlobalSetting")]
+        public List<ApplicationGatewayGlobals>? Items { get; set; }
 
-// Path("applicationgatewayglobalsetting")
-[XmlRoot("results")]
-public class ApplicationGatewayGlobalsList : BaseApiBean {
-  private List<ApplicationGatewayGlobals>? items;
-  private PermissionInfo permissionInfo;
+        public required PermissionInfo PermissionInfo { get; set; }
 
-  [XmlElement("applicationGatewayGlobalSettings")]
-  [XmlElement("applicationGatewayGlobalSetting")]
-  public List<ApplicationGatewayGlobals>? Items
-  {
-      get => items;
-      set => items = value;
-  }
+        // Path("applicationgatewayglobalsetting")
+        [XmlRoot("results")]
+        public class ApplicationGatewayGlobalsListList : BaseApiListBean<ApplicationGatewayGlobalsList>
+        {
+            public override List<ApplicationGatewayGlobalsList>? GetItems() => Items;
 
-  public PermissionInfo PermissionInfo
-  {
-      get => permissionInfo;
-      set => permissionInfo = value;
-  }
-
-  // Path("applicationgatewayglobalsetting")
-  [XmlRoot("results")]
-  public class ApplicationGatewayGlobalsListList : BaseApiListBean<ApplicationGatewayGlobalsList> {    public override List<ApplicationGatewayGlobalsList>? GetItems() => items;
-
-    public override void SetItems(List<ApplicationGatewayGlobalsList>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<ApplicationGatewayGlobalsList>? value) => Items = value;
+        }
+    }
 }

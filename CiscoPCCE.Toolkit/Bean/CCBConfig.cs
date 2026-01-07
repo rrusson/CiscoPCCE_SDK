@@ -1,76 +1,34 @@
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("ccb")
+    [XmlRoot("CCB")]
+    public class CCBConfig : BaseApiBean
+    {
+        public string? BaseUrlfromRefUrl { get; set; }
 
-// Path("ccb")
-[XmlRoot("CCB")]
-public class CCBConfig : BaseApiBean {
-  private string? baseUrlfromRefUrl;
-  private string? correlationId;
-  private ReferenceBean datacenter;
-  private ReferenceBean department;
-  private int? id;
-  private string? idFromRefUrl;
-  private string? refURL;
-  private string? reportingAddress;
+        public string? CorrelationId { get; set; }
 
-  public string? BaseUrlfromRefUrl
-  {
-      get => baseUrlfromRefUrl;
-      set => baseUrlfromRefUrl = value;
-  }
+        public required ReferenceBean Datacenter { get; set; }
 
-  public string? CorrelationId
-  {
-      get => correlationId;
-      set => correlationId = value;
-  }
+        public required ReferenceBean Department { get; set; }
 
-  public ReferenceBean Datacenter
-  {
-      get => datacenter;
-      set => datacenter = value;
-  }
+        public int? Id { get; set; }
 
-  public ReferenceBean Department
-  {
-      get => department;
-      set => department = value;
-  }
+        public string? IdFromRefUrl { get; set; }
 
-  public int? Id
-  {
-      get => id;
-      set => id = value;
-  }
+        public new string? RefURL { get; set; }
 
-  public string? IdFromRefUrl
-  {
-      get => idFromRefUrl;
-      set => idFromRefUrl = value;
-  }
+        public string? ReportingAddress { get; set; }
 
-  public string? RefURL
-  {
-      get => refURL;
-      set => refURL = value;
-  }
+        // Path("ccb")
+        [XmlRoot("results")]
+        public class CCBConfigList : BaseApiListBean<CCBConfig>
+        {
+            public override List<CCBConfig>? GetItems() => Items;
 
-  public string? ReportingAddress
-  {
-      get => reportingAddress;
-      set => reportingAddress = value;
-  }
-
-  // Path("ccb")
-  [XmlRoot("results")]
-  public class CCBConfigList : BaseApiListBean<CCBConfig> {    public override List<CCBConfig>? GetItems() => items;
-
-    public override void SetItems(List<CCBConfig>? value) => items = value;
-
-  }
-}
-
+            public override void SetItems(List<CCBConfig>? value) => Items = value;
+        }
+    }
 }
