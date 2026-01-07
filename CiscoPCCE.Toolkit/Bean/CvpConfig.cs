@@ -1,0 +1,64 @@
+using System.Xml.Serialization;
+
+namespace CiscoPCCE.Toolkit.Bean
+{
+
+
+
+
+
+[XmlRoot("CvpConfig")]
+public class CvpConfig : BaseApiBean {
+  private string? backupServerIPAddress;
+  private string? deviceId;
+  private string? hostName;
+  private string? ipAddress;
+
+  public string? BackupServerIPAddress
+  {
+      get => backupServerIPAddress;
+      set => backupServerIPAddress = value;
+  }
+
+
+  public void setBackupServerIPAddress(String backupServerIPAddress) {
+     this.backupServerIPAddress = backupServerIPAddress;
+  }
+
+  public string? DeviceId
+  {
+      get => deviceId;
+      set => deviceId = value;
+  }
+
+
+  public void setDeviceId(String deviceId) {
+     this.deviceId = deviceId;
+  }
+
+  public string? HostName
+  {
+      get => hostName;
+      set => hostName = value;
+  }
+
+
+  public void setHostName(String hostName) {
+     this.hostName = hostName;
+  }
+
+  public string? IpAddress
+  {
+      get => ipAddress;
+      set => ipAddress = value;
+  }
+
+
+  public void setIpAddress(String ipAddress) {
+     this.ipAddress = ipAddress;
+  }
+
+
+}
+
+}
