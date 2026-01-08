@@ -9,6 +9,7 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("name")]
         public string? Name { get; set; }
 
+        [XmlElement("value")]
         public string? Value { get; set; }
 
         // Path("contactcenterai")
