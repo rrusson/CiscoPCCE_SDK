@@ -6,8 +6,6 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("systemAttribute")]
     public class SystemAttribute : BaseApiBean
     {
-        private Object? value;
-
         [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
@@ -29,11 +27,8 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
-        public Object Value
-        {
-            get => value;
-            set => _ = value;
-        }
+        [XmlElement("value")]
+        public Object? Value { get; set; }
 
         [XmlElement("valueString")]
         public string? ValueString { get; set; }

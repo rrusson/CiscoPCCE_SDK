@@ -6,16 +6,10 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("globalConfig")]
     public class GlobalConfig : BaseApiBean
     {
-        private string? value;
-
         [XmlElement("name")]
         public string? Name { get; set; }
 
-        public string? Value
-        {
-            get => value;
-            set => _ = value;
-        }
+        public string? Value { get; set; }
 
         // Path("contactcenterai")
         [XmlRoot("results")]

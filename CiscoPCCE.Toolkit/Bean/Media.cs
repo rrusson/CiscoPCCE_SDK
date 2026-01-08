@@ -4,10 +4,6 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     public class Media : BaseApiBean
     {
-        private string? codec;
-        private string? mrcpVersion;
-        private bool? overrideSystemPrompt;
-
         [XmlElement("codec")]
         public string? Codec { get; set; }
 
