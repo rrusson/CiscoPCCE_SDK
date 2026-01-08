@@ -6,10 +6,11 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("mockInventory")]
     public class MockInventory : BaseApiBean
     {
+        [XmlElement("enableMockMode")]
         public bool? EnableMockMode { get; set; }
 
-        [XmlElement("machines")]
-        [XmlElement("machine")]
+        [XmlArray("machines")]
+        [XmlArrayItem("machine")]
         public List<VMData>? VmDataList { get; set; }
 
         // Path("machineinventory")

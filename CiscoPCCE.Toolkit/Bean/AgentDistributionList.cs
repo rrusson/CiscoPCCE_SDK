@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class AgentDistributionList : BaseApiBean
     {
-        [XmlElement("agentDistributions")]
-        [XmlElement("agentDistribution")]
+        [XmlArray("agentDistributions")]
+        [XmlArrayItem("agentDistribution")]
         public List<AgentDistribution>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("agentdistribution")

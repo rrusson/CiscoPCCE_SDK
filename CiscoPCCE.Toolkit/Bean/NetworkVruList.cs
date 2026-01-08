@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class NetworkVruList : BaseApiBean
     {
-        [XmlElement("networkVrus")]
-        [XmlElement("networkVru")]
+        [XmlArray("networkVrus")]
+        [XmlArrayItem("networkVru")]
         public List<NetworkVru>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("networkvru")

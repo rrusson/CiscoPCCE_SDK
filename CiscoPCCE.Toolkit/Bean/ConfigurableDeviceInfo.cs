@@ -6,8 +6,8 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("configurableDevices")]
     public class ConfigurableDeviceInfo : BaseApiBean
     {
-        [XmlElement("deviceTypes")]
-        [XmlElement("deviceType")]
+        [XmlArray("deviceTypes")]
+        [XmlArrayItem("deviceType")]
         public List<DeviceInfo>? DeviceInfo { get; set; }
 
         // Path("configurabledeviceinfo")

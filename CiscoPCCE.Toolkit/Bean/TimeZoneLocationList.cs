@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class TimeZoneLocationList : BaseApiBean
     {
-        [XmlElement("timeZones")]
-        [XmlElement("timeZone")]
+        [XmlArray("timeZones")]
+        [XmlArrayItem("timeZone")]
         public List<TimeZoneLocation>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("timezone")

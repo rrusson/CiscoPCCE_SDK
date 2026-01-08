@@ -6,10 +6,13 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("instance")]
     public class WebsetupInstance : BaseApiBean
     {
+        [XmlElement("facilityName")]
         public string? FacilityName { get; set; }
 
+        [XmlElement("instanceName")]
         public string? InstanceName { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
         // Path("instance")

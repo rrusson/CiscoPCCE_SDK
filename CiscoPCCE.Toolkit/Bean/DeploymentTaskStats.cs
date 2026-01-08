@@ -4,8 +4,8 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     public class DeploymentTaskStats : BaseApiBean
     {
-        [XmlElement("deploymentTaskStats")]
-        [XmlElement("deploymentTaskInfo")]
+        [XmlArray("deploymentTaskStats")]
+        [XmlArrayItem("deploymentTaskInfo")]
         public List<DeploymentTaskInfo>? TaskStats { get; set; }
     }
 }

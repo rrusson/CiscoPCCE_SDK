@@ -6,10 +6,11 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("status")]
     public class InventoryStatus : BaseApiBean
     {
-        [XmlElement("alerts")]
-        [XmlElement("alert")]
+        [XmlArray("alerts")]
+        [XmlArrayItem("alert")]
         public List<Alert>? Alerts { get; set; }
 
+        [XmlElement("scanInfo")]
         public required ScanInfo ScanInfo { get; set; }
 
         // Path("machineinventory")

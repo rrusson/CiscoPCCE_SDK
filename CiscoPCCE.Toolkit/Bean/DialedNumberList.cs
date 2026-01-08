@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class DialedNumberList : BaseApiBean
     {
-        [XmlElement("dialedNumbers")]
-        [XmlElement("dialedNumber")]
+        [XmlArray("dialedNumbers")]
+        [XmlArrayItem("dialedNumber")]
         public List<DialedNumber>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("dialednumber")

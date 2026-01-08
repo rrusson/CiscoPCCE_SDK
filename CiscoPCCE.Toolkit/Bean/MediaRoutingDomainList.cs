@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class MediaRoutingDomainList : BaseApiBean
     {
-        [XmlElement("mediaRoutingDomains")]
-        [XmlElement("mediaRoutingDomain")]
+        [XmlArray("mediaRoutingDomains")]
+        [XmlArrayItem("mediaRoutingDomain")]
         public List<MediaRoutingDomain>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("mediaroutingdomain")

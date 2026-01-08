@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class MasterScriptList : BaseApiBean
     {
-        [XmlElement("masterScripts")]
-        [XmlElement("masterScript")]
+        [XmlArray("masterScripts")]
+        [XmlArrayItem("masterScript")]
         public List<MasterScript>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("masterscript")

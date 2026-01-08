@@ -7,8 +7,8 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("cmLabel")]
         public string? CMLabel { get; set; }
 
-        [XmlElement("cvpLabels")]
-        [XmlElement("cvpLabel")]
+        [XmlArray("cvpLabels")]
+        [XmlArrayItem("cvpLabel")]
         public List<CVPLabel>? CVPLabels { get; set; }
 
         [XmlElement("outboundLabel")]

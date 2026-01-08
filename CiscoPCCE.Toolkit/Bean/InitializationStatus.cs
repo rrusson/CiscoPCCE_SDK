@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("initializationStatus")]
     public class InitializationStatus : BaseApiBean
     {
-        [XmlElement("apiErrors")]
-        [XmlElement("apiError")]
+        [XmlArray("apiErrors")]
+        [XmlArrayItem("apiError")]
         public List<ApiError>? ApiErrors { get; set; }
 
+        [XmlElement("state")]
         public StateEnum State { get; set; }
 
+        [XmlElement("stateString")]
         public string? StateString { get; set; }
 
         [XmlElement("name")]

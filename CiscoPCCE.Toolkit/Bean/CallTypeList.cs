@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class CallTypeList : BaseApiBean
     {
-        [XmlElement("callTypes")]
-        [XmlElement("callType")]
+        [XmlArray("callTypes")]
+        [XmlArrayItem("callType")]
         public List<CallType>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("calltype")

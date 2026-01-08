@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class ReasonCodeList : BaseApiBean
     {
-        [XmlElement("reasonCodes")]
-        [XmlElement("reasonCode")]
+        [XmlArray("reasonCodes")]
+        [XmlArrayItem("reasonCode")]
         public List<ReasonCode>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("reasoncode")

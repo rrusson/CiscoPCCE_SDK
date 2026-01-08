@@ -6,6 +6,7 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class TraceLevelsList : BaseApiBean
     {
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         [XmlElement("traceLevels")]

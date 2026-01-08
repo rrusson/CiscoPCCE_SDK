@@ -4,12 +4,14 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     public class Operation : BaseApiBean
     {
+        [XmlElement("changeSet")]
         public required ChangeSet ChangeSet { get; set; }
 
+        [XmlElement("operationType")]
         public OperationType OperationType { get; set; }
 
-        [XmlElement("refURLs")]
-        [XmlElement("refURL")]
+        [XmlArray("refURLs")]
+        [XmlArrayItem("refURL")]
         public List<string?>? RefUrls { get; set; }
     }
 }

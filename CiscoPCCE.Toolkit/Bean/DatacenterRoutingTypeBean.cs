@@ -6,10 +6,13 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("datacenterRoutingType")]
     public class DatacenterRoutingTypeBean : BaseApiBean
     {
+        [XmlElement("datacenter")]
         public required ReferenceBean Datacenter { get; set; }
 
+        [XmlElement("peripheralSet")]
         public required ReferenceBean PeripheralSet { get; set; }
 
+        [XmlElement("routingTypes")]
         public required RoutingTypeBeanList RoutingTypes { get; set; }
 
         // Path("routingtype")

@@ -6,10 +6,13 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("errorDetail")]
     public class ResourceErrorDetail : BaseApiBean
     {
+        [XmlElement("apiErrors")]
         public required ApiErrors ApiErrors { get; set; }
 
+        [XmlElement("changeSetElement")]
         public required ChangeSetElement ChangeSetElement { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
         // Path("operation")

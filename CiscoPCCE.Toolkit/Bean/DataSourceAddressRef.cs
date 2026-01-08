@@ -1,19 +1,28 @@
+using System.Xml.Serialization;
+
 namespace CiscoPCCE.Toolkit.Bean
 {
     public class DataSourceAddressRef : BaseApiBean
     {
+        [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
+        [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
+        [XmlElement("department")]
         public required ReferenceBean Department { get; set; }
 
+        [XmlElement("hostName")]
         public string? HostName { get; set; }
 
+        [XmlElement("id")]
         public int? Id { get; set; }
 
+        [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
     }
 }

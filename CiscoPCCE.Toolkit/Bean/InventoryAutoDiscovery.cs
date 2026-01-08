@@ -6,6 +6,7 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("inventoryautodiscovery")]
     public class InventoryAutoDiscovery : BaseApiBean
     {
+        [XmlElement("disabled")]
         public bool? Disabled { get; set; }
 
         // Path("systemmgmt")

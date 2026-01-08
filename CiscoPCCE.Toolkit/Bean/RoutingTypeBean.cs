@@ -6,10 +6,13 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("routingType")]
     public class RoutingTypeBean : BaseApiBean
     {
+        [XmlElement("machineType")]
         public string? MachineType { get; set; }
 
+        [XmlElement("state")]
         public State State { get; set; }
 
+        [XmlElement("type")]
         public int? Type { get; set; }
 
         // Path("routingtype")

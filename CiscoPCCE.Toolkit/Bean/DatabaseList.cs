@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class DatabaseList : BaseApiBean
     {
-        [XmlElement("databases")]
-        [XmlElement("database")]
+        [XmlArray("databases")]
+        [XmlArrayItem("database")]
         public List<Database>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("database")

@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class SkillGroupList : BaseApiBean
     {
-        [XmlElement("skillGroups")]
-        [XmlElement("skillGroup")]
+        [XmlArray("skillGroups")]
+        [XmlArrayItem("skillGroup")]
         public List<SkillGroupBase>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("skillgroup")

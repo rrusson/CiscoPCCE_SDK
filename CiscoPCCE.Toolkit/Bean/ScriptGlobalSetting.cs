@@ -6,6 +6,7 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("script")]
     public class ScriptGlobalSetting : BaseApiBean
     {
+        [XmlElement("retainScriptVersion")]
         public short? RetainScriptVersion { get; set; }
 
         // Path("globalsetting")

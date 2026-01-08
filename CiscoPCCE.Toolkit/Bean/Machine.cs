@@ -1,13 +1,19 @@
+using System.Xml.Serialization;
+
 namespace CiscoPCCE.Toolkit.Bean
 {
     public class Machine : BaseApiBean
     {
+        [XmlElement("host")]
         public string? Host { get; set; }
 
+        [XmlElement("name")]
         public string? Name { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
+        [XmlElement("type")]
         public MachineType Type { get; set; }
     }
 }

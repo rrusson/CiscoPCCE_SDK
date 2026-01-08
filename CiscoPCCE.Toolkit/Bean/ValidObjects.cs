@@ -6,10 +6,12 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("validObjects")]
     public class ValidObjects : BaseApiBean
     {
+        [XmlElement("access")]
         public Access Access { get; set; }
 
         public List<int?>? Ids { get; set; }
 
+        [XmlElement("type")]
         public string? Type { get; set; }
 
         // Path("validobjects")

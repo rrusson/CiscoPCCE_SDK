@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class PrecisionQueueList : BaseApiBean
     {
-        [XmlElement("precisionQueues")]
-        [XmlElement("precisionQueue")]
+        [XmlArray("precisionQueues")]
+        [XmlArrayItem("precisionQueue")]
         public List<PrecisionQueue>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("precisionqueue")

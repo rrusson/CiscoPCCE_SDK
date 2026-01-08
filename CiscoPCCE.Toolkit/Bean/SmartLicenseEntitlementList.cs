@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class SmartLicenseEntitlementList : BaseApiBean
     {
-        [XmlElement("smartlicenseentitlements")]
-        [XmlElement("smartlicenseentitlement")]
+        [XmlArray("smartlicenseentitlements")]
+        [XmlArrayItem("smartlicenseentitlement")]
         public List<SmartLicenseEntitlement>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("smartlicense")

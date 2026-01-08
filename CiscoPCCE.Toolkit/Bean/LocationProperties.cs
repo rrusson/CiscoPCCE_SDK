@@ -6,6 +6,7 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("locationProperties")]
     public class LocationProperties : BaseApiBean
     {
+        [XmlElement("locationRoutingCodeInsertOption")]
         public string? LocationRoutingCodeInsertOption { get; set; }
 
         // Path("locationproperties")

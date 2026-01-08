@@ -5,8 +5,8 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("capacityInfo")]
     public class CapacityInfo : BaseApiBean
     {
-        [XmlElement("capacityRules")]
-        [XmlElement("capacityRule")]
+        [XmlArray("capacityRules")]
+        [XmlArrayItem("capacityRule")]
         public List<CapacityCheckResult>? CapacityCheckResults { get; set; }
     }
 }

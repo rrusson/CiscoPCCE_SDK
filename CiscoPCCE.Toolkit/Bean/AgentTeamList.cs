@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class AgentTeamList : BaseApiBean
     {
-        [XmlElement("agentTeams")]
-        [XmlElement("agentTeam")]
+        [XmlArray("agentTeams")]
+        [XmlArrayItem("agentTeam")]
         public List<AgentTeamBase>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("/agentteam")

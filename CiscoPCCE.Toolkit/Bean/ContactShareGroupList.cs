@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class ContactShareGroupList : BaseApiBean
     {
-        [XmlElement("contactShareGroups")]
-        [XmlElement("contactShareGroup")]
+        [XmlArray("contactShareGroups")]
+        [XmlArrayItem("contactShareGroup")]
         public List<ContactShareGroup>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("contactsharegroup")

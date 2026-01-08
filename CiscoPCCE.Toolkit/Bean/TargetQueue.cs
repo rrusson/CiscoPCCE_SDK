@@ -6,6 +6,7 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("targetQueue")]
     public class TargetQueue : BaseApiBean
     {
+        [XmlElement("id")]
         public int? Id { get; set; }
 
         // Path("contactsharequeue")

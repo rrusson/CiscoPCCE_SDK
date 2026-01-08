@@ -4,12 +4,14 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     public class Component : BaseApiBean
     {
+        [XmlElement("level")]
         public TraceLevelEnum Level { get; set; }
 
-        [XmlElement("traceMachines")]
-        [XmlElement("traceMachine")]
+        [XmlArray("traceMachines")]
+        [XmlArrayItem("traceMachine")]
         public List<TraceMachine>? TraceMachines { get; set; }
 
+        [XmlElement("type")]
         public ProductEnum Type { get; set; }
     }
 }

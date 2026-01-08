@@ -6,8 +6,10 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("dialedNumberRecord")]
     public class DialedNumberRecord : BaseApiBean
     {
+        [XmlElement("id")]
         public int? Id { get; set; }
 
+        [XmlElement("name")]
         public string? Name { get; set; }
 
         // Path("dialednumber")

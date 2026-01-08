@@ -6,18 +6,23 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("ssoComponentStatus")]
     public class SsoComponentStatus : BaseApiBean
     {
-        [XmlElement("##default")]
-        [XmlElement("apiError")]
+        [XmlArray("##default")]
+        [XmlArrayItem("apiError")]
         public List<ApiError>? ApiErrors { get; set; }
 
+        [XmlElement("modeState")]
         public SsoOperationState ModeState { get; set; }
 
+        [XmlElement("name")]
         public string? Name { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
+        [XmlElement("registrationState")]
         public SsoOperationState RegistrationState { get; set; }
 
+        [XmlElement("ssoTestPath")]
         public string? SsoTestPath { get; set; }
 
         // Path("sso")

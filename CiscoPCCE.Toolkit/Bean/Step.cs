@@ -6,18 +6,23 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("step")]
     public class Step : BaseApiBean
     {
+        [XmlElement("agentCount")]
         public int? AgentCount { get; set; }
 
+        [XmlElement("considerIf")]
         public string? ConsiderIf { get; set; }
 
+        [XmlElement("description")]
         public string? Description { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
-        [XmlElement("terms")]
-        [XmlElement("term")]
+        [XmlArray("terms")]
+        [XmlArrayItem("term")]
         public List<Term>? Terms { get; set; }
 
+        [XmlElement("waitTime")]
         public int? WaitTime { get; set; }
 
         // Path("precisionqueue")

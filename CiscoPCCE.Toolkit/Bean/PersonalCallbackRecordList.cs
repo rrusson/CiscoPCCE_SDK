@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class PersonalCallbackRecordList : BaseApiBean
     {
-        [XmlElement("personalCallbacks")]
-        [XmlElement("personalCallback")]
+        [XmlArray("personalCallbacks")]
+        [XmlArrayItem("personalCallback")]
         public List<PersonalCallbackRecord>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("personalcallback")

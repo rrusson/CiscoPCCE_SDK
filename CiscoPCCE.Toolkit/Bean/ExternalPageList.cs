@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class ExternalPageList : BaseApiBean
     {
-        [XmlElement("externalpages")]
-        [XmlElement("externalpage")]
+        [XmlArray("externalpages")]
+        [XmlArrayItem("externalpage")]
         public List<ExternalPage>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("externalpage")

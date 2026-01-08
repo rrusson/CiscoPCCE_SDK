@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class RoutingClientList : BaseApiBean
     {
-        [XmlElement("routingClients")]
-        [XmlElement("routingClient")]
+        [XmlArray("routingClients")]
+        [XmlArrayItem("routingClient")]
         public List<RoutingClient>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("secondaryaddress")

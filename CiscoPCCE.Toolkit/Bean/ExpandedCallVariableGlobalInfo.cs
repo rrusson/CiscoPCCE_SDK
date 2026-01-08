@@ -6,8 +6,10 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("globalInfo")]
     public class ExpandedCallVariableGlobalInfo : BaseApiBean
     {
+        [XmlElement("totalVariableCtiSize")]
         public int? TotalVariableCtiSize { get; set; }
 
+        [XmlElement("totalVariableSize")]
         public int? TotalVariableSize { get; set; }
 
         // Path("expandedcallvariable")

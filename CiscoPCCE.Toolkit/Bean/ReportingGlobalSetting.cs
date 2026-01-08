@@ -6,6 +6,7 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("reporting")]
     public class ReportingGlobalSetting : BaseApiBean
     {
+        [XmlElement("reportingInterval")]
         public int? ReportingInterval { get; set; }
 
         // Path("globalsetting")

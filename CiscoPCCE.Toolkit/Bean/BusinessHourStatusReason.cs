@@ -6,22 +6,31 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("businessHourStatusReason")]
     public class BusinessHourStatusReason : BaseApiBean
     {
+        [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
+        [XmlElement("category")]
         public string? Category { get; set; }
 
+        [XmlElement("changeStamp")]
         public new int? ChangeStamp { get; set; }
 
+        [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
+        [XmlElement("department")]
         public required ReferenceBean Department { get; set; }
 
+        [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
+        [XmlElement("reasonCode")]
         public int? ReasonCode { get; set; }
 
+        [XmlElement("reasonText")]
         public string? ReasonText { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
         // Path("businesshourstatusreason")

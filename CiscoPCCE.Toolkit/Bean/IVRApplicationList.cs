@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class IVRApplicationList : BaseApiBean
     {
-        [XmlElement("ivrapplications")]
-        [XmlElement("ivrapplication")]
+        [XmlArray("ivrapplications")]
+        [XmlArrayItem("ivrapplication")]
         public List<IVRApplication>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("transferablefiles")

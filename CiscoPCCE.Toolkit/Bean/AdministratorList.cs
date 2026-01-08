@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class AdministratorList : BaseApiBean
     {
-        [XmlElement("administrators")]
-        [XmlElement("administrator")]
+        [XmlArray("administrators")]
+        [XmlArrayItem("administrator")]
         public List<Administrator>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("administrator")

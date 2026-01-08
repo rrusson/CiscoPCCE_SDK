@@ -6,8 +6,10 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("range")]
     public class AgentTargetingRuleRange : BaseApiBean
     {
+        [XmlElement("highExtension")]
         public string? HighExtension { get; set; }
 
+        [XmlElement("lowExtension")]
         public string? LowExtension { get; set; }
 
         // Path("agenttargetingrule")

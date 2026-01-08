@@ -6,6 +6,7 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("idsStatus")]
     public class IdsStatus : BaseApiBean
     {
+        [XmlElement("state")]
         public string? State { get; set; }
 
         // Path("sso")

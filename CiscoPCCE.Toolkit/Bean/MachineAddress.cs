@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("address")]
     public class MachineAddress : BaseApiBean
     {
+        [XmlElement("address")]
         public string? Address { get; set; }
 
-        [XmlElement("services")]
-        [XmlElement("service")]
+        [XmlArray("services")]
+        [XmlArrayItem("service")]
         public List<MachineService>? MachineServices { get; set; }
 
+        [XmlElement("type")]
         public AddressType Type { get; set; }
 
         // Path("machineinventory")

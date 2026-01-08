@@ -6,14 +6,17 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("globalConfigDetail")]
     public class GlobalConfigDetail : BaseApiBean
     {
-        [XmlElement("globalConfigs")]
-        [XmlElement("globalConfig")]
+        [XmlArray("globalConfigs")]
+        [XmlArrayItem("globalConfig")]
         public List<GlobalConfig>? GlobalConfigs { get; set; }
 
+        [XmlElement("lastSyncTime")]
         public DateTime? LastSyncTime { get; set; }
 
+        [XmlElement("nextAutoSyncTime")]
         public DateTime? NextAutoSyncTime { get; set; }
 
+        [XmlElement("status")]
         public required Status Status { get; set; }
 
         // Path("contactcenterai")

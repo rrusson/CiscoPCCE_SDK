@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class BusinessHourList : BaseApiBean
     {
-        [XmlElement("businessHours")]
-        [XmlElement("businessHour")]
+        [XmlArray("businessHours")]
+        [XmlArrayItem("businessHour")]
         public List<BusinessHour>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("businesshour")

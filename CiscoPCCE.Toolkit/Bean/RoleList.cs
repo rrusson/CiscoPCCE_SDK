@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class RoleList : BaseApiBean
     {
-        [XmlElement("roles")]
-        [XmlElement("role")]
+        [XmlArray("roles")]
+        [XmlArrayItem("role")]
         public List<Role>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("role")

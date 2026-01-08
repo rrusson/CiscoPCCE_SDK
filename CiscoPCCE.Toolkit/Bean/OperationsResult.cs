@@ -6,10 +6,13 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("operationsResult")]
     public class OperationsResult : BaseApiBean
     {
+        [XmlElement("apiErrors")]
         public required ApiErrors ApiErrors { get; set; }
 
+        [XmlElement("createdObjects")]
         public required ChangeSet CreatedObjects { get; set; }
 
+        [XmlElement("status")]
         public StatusType Status { get; set; }
 
         // Path("operation")

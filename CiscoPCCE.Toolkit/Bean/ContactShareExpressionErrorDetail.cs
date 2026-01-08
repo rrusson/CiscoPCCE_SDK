@@ -6,8 +6,8 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("errorDetail")]
     public class ContactShareExpressionErrorDetail : BaseApiBean
     {
-        [XmlElement("expressionErrors")]
-        [XmlElement("expressionError")]
+        [XmlArray("expressionErrors")]
+        [XmlArrayItem("expressionError")]
         public List<ContactShareExpressionErrorDetailMessage>? ExpressionErrors { get; set; }
 
         // Path("contactsharerule")

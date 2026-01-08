@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class RoutingPatternList : BaseApiBean
     {
-        [XmlElement("routingPatterns")]
-        [XmlElement("routingPattern")]
+        [XmlArray("routingPatterns")]
+        [XmlArrayItem("routingPattern")]
         public List<RoutingPattern>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("routingpattern")

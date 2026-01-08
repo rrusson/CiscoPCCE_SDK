@@ -9,10 +9,13 @@ namespace CiscoPCCE.Toolkit.Bean
         private string? mRCPVersion;
         private bool? overrideSystemPrompt;
 
+        [XmlElement("codec")]
         public string? Codec { get; set; }
 
+        [XmlElement("mRCPVersion")]
         public string? MRCPVersion { get; set; }
 
+        [XmlElement("overrideSystemPrompt")]
         public bool? OverrideSystemPrompt { get; set; }
     }
 }

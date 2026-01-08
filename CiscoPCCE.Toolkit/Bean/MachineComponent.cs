@@ -6,8 +6,10 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("component")]
     public class MachineComponent : BaseApiBean
     {
+        [XmlElement("name")]
         public string? Name { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
         // Path("machineinventory")

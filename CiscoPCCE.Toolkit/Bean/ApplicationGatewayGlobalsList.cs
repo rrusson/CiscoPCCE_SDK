@@ -6,10 +6,11 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class ApplicationGatewayGlobalsList : BaseApiBean
     {
-        [XmlElement("applicationGatewayGlobalSettings")]
-        [XmlElement("applicationGatewayGlobalSetting")]
+        [XmlArray("applicationGatewayGlobalSettings")]
+        [XmlArrayItem("applicationGatewayGlobalSetting")]
         public List<ApplicationGatewayGlobals>? Items { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("applicationgatewayglobalsetting")

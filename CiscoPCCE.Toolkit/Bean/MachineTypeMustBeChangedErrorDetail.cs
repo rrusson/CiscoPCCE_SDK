@@ -6,10 +6,11 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("errorDetail")]
     public class MachineTypeMustBeChangedErrorDetail : BaseApiBean
     {
+        [XmlElement("type")]
         public MachineType Type { get; set; }
 
-        [XmlElement("validMachineTypes")]
-        [XmlElement("type")]
+        [XmlArray("validMachineTypes")]
+        [XmlArrayItem("type")]
         public List<MachineType>? ValidMachineTypes { get; set; }
 
         // Path("machineinventory")

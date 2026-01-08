@@ -6,8 +6,10 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("sqlUser")]
     public class SqlUser : BaseApiBean
     {
+        [XmlElement("loginName")]
         public string? LoginName { get; set; }
 
+        [XmlElement("password")]
         public string? Password { get; set; }
 
         // Path("sqluser")

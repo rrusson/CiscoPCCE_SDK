@@ -5,12 +5,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("PQAgentCount")]
     public class PQCount : BaseApiBean
     {
+        [XmlElement("agentCount")]
         public int? AgentCount { get; set; }
 
-        [XmlElement("agentNameList")]
-        [XmlElement("agentName")]
+        [XmlArray("agentNameList")]
+        [XmlArrayItem("agentName")]
         public List<AgentName>? AgentNameList { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
     }
 }

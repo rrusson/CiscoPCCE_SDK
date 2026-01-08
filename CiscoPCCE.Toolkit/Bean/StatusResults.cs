@@ -6,8 +6,8 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class StatusResults : BaseApiBean
     {
-        [XmlElement("statuses")]
-        [XmlElement("status")]
+        [XmlArray("statuses")]
+        [XmlArrayItem("status")]
         public List<Status>? Statuses { get; set; }
 
         // Path("status")

@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class DNCList : BaseApiBean
     {
-        [XmlElement("dncs")]
-        [XmlElement("dnc")]
+        [XmlArray("dncs")]
+        [XmlArrayItem("dnc")]
         public List<ImportRule>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("dnc")

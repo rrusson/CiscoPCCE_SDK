@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class BulkJobList : BaseApiBean
     {
-        [XmlElement("bulkJobs")]
-        [XmlElement("bulkJob")]
+        [XmlArray("bulkJobs")]
+        [XmlArrayItem("bulkJob")]
         public List<BulkJob>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("bulkjob")

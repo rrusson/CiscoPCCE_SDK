@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class MachineList : BaseApiBean
     {
-        [XmlElement("machines")]
-        [XmlElement("machine")]
+        [XmlArray("machines")]
+        [XmlArrayItem("machine")]
         public List<MachineHost>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("machineinventory")

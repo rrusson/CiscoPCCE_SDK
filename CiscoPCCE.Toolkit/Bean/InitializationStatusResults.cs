@@ -9,8 +9,8 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("state")]
         public StateEnum State { get; set; }
 
-        [XmlElement("initializationStatuses")]
-        [XmlElement("initializationStatus")]
+        [XmlArray("initializationStatuses")]
+        [XmlArrayItem("initializationStatus")]
         public List<InitializationStatus>? StatusList { get; set; }
 
         // Path("initialize")

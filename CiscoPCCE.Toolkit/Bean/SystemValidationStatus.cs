@@ -8,8 +8,8 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("isValid")]
         public bool? IsValid { get; set; }
 
-        [XmlElement("validationRules")]
-        [XmlElement("validationRule")]
+        [XmlArray("validationRules")]
+        [XmlArrayItem("validationRule")]
         public List<SystemValidationRuleResult>? SystemValidationResult { get; set; }
 
         [XmlElement("vmValidationResult")]

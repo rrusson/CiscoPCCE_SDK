@@ -6,8 +6,10 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("installJtapiClient")]
     public class InstallJtapiClient : BaseApiBean
     {
+        [XmlElement("callManagerPublisherAddress")]
         public string? CallManagerPublisherAddress { get; set; }
 
+        [XmlElement("callManagerPublisherVersion")]
         public string? CallManagerPublisherVersion { get; set; }
 
         // Path("installjtapiclient")

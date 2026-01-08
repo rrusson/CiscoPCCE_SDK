@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class ContactShareQueueList : BaseApiBean
     {
-        [XmlElement("contactShareQueues")]
-        [XmlElement("contactShareQueue")]
+        [XmlArray("contactShareQueues")]
+        [XmlArrayItem("contactShareQueue")]
         public List<ContactShareQueue>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("contactsharequeue")

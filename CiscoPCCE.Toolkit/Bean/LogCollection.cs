@@ -10,17 +10,22 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("component")]
         public required Set Components { get; set; }
 
+        [XmlElement("description")]
         public string? Description { get; set; }
 
+        [XmlElement("endDateTime")]
         public long? EndDateTime { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
         [XmlElement("##default")]
         public required FileRefWithSize ResultsFile { get; set; }
 
+        [XmlElement("startDateTime")]
         public long? StartDateTime { get; set; }
 
+        [XmlElement("status")]
         public required Status Status { get; set; }
 
         // Path("logcollection")

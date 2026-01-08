@@ -6,10 +6,13 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("applicationPathMember")]
     public class ApplicationPathMember : BaseApiBean
     {
+        [XmlElement("applicationPathId")]
         public int? ApplicationPathId { get; set; }
 
+        [XmlElement("mrDomainId")]
         public int? MrDomainId { get; set; }
 
+        [XmlElement("peripheralId")]
         public short? PeripheralId { get; set; }
 
         // Path("applicationpath")

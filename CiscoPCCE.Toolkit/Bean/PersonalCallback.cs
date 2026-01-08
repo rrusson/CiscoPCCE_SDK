@@ -6,10 +6,13 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("personalCallback")]
     public class PersonalCallback : BaseApiBean
     {
+        [XmlElement("delimiter")]
         public string? Delimiter { get; set; }
 
+        [XmlElement("fileContent")]
         public string? FileContent { get; set; }
 
+        [XmlElement("overwriteData")]
         public bool? OverwriteData { get; set; }
 
         // Path("personalcallback")

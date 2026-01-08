@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class CampaignList : BaseApiBean
     {
-        [XmlElement("campaigns")]
-        [XmlElement("campaign")]
+        [XmlArray("campaigns")]
+        [XmlArrayItem("campaign")]
         public List<Campaign>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("campaign")

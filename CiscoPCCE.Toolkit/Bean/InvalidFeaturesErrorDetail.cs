@@ -6,8 +6,8 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("errorDetail")]
     public class InvalidFeaturesErrorDetail : BaseApiBean
     {
-        [XmlElement("invalidFeatures")]
-        [XmlElement("invalidFeature")]
+        [XmlArray("invalidFeatures")]
+        [XmlArrayItem("invalidFeature")]
         public List<Feature>? InvalidFeatures { get; set; }
 
         // Path("role")

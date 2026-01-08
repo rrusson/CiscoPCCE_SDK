@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class SipServerGroupList : BaseApiBean
     {
-        [XmlElement("sipServerGroups")]
-        [XmlElement("sipServerGroup")]
+        [XmlArray("sipServerGroups")]
+        [XmlArrayItem("sipServerGroup")]
         public List<SipServerGroup>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("sipservergroup")

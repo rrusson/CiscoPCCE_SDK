@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class AttributeList : BaseApiBean
     {
-        [XmlElement("attributes")]
-        [XmlElement("attribute")]
+        [XmlArray("attributes")]
+        [XmlArrayItem("attribute")]
         public List<AttributeBase>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("attribute")

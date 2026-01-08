@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class AgentDeskSettingList : BaseApiBean
     {
-        [XmlElement("agentDeskSettings")]
-        [XmlElement("agentDeskSetting")]
+        [XmlArray("agentDeskSettings")]
+        [XmlArrayItem("agentDeskSetting")]
         public List<AgentDeskSetting>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("agentdesksetting")

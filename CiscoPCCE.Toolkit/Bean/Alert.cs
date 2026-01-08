@@ -7,6 +7,7 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("apiErrors")]
         public required ApiErrors Errors { get; set; }
 
+        [XmlElement("machine")]
         public required Machine Machine { get; set; }
     }
 }

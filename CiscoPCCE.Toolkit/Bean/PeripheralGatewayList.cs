@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class PeripheralGatewayList : BaseApiBean
     {
-        [XmlElement("peripheralGateways")]
-        [XmlElement("peripheralGateway")]
+        [XmlArray("peripheralGateways")]
+        [XmlArrayItem("peripheralGateway")]
         public List<PeripheralGateway>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("secondaryaddress")

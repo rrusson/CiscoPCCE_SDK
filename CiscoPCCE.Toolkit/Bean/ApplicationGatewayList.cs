@@ -6,12 +6,14 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class ApplicationGatewayList : BaseApiBean
     {
-        [XmlElement("applicationGateways")]
-        [XmlElement("applicationGateway")]
+        [XmlArray("applicationGateways")]
+        [XmlArrayItem("applicationGateway")]
         public List<ApplicationGateway>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("applicationgateway")

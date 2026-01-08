@@ -6,57 +6,76 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("skillGroup")]
     public class SkillGroup : BaseApiBean
     {
+        [XmlElement("agentCount")]
         public int? AgentCount { get; set; }
 
-        [XmlElement("agents")]
-        [XmlElement("agent")]
+        [XmlArray("agents")]
+        [XmlArrayItem("agent")]
         public List<ReferenceBean>? Agents { get; set; }
 
-        [XmlElement("agentsAdded")]
-        [XmlElement("agent")]
+        [XmlArray("agentsAdded")]
+        [XmlArrayItem("agent")]
         public List<ReferenceBean>? AgentsAdded { get; set; }
 
-        [XmlElement("agentsRemoved")]
-        [XmlElement("agent")]
+        [XmlArray("agentsRemoved")]
+        [XmlArrayItem("agent")]
         public List<ReferenceBean>? AgentsRemoved { get; set; }
 
+        [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
+        [XmlElement("bucketInterval")]
         public required ReferenceBean BucketInterval { get; set; }
 
+        [XmlElement("campaignRef")]
         public required ReferenceBean CampaignRef { get; set; }
 
+        [XmlElement("changeStamp")]
         public new int? ChangeStamp { get; set; }
 
+        [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
+        [XmlElement("datacenter")]
         public required ReferenceBean Datacenter { get; set; }
 
+        [XmlElement("department")]
         public required ReferenceBean Department { get; set; }
 
+        [XmlElement("description")]
         public string? Description { get; set; }
 
+        [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
+        [XmlElement("markDeletable")]
         public bool? MarkDeletable { get; set; }
 
+        [XmlElement("mediaRoutingDomain")]
         public required ReferenceBean MediaRoutingDomain { get; set; }
 
+        [XmlElement("name")]
         public string? Name { get; set; }
 
+        [XmlElement("peripheral")]
         public required PeripheralRef Peripheral { get; set; }
 
+        [XmlElement("peripheralNumber")]
         public int? PeripheralNumber { get; set; }
 
         [XmlElement("peripheralSet")]
         public required ReferenceBean PeripheralSet { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
+        [XmlElement("selectedAgentCount")]
         public int? SelectedAgentCount { get; set; }
 
+        [XmlElement("serviceLevelThreshold")]
         public int? ServiceLevelThreshold { get; set; }
 
+        [XmlElement("serviceLevelType")]
         public int? ServiceLevelType { get; set; }
 
         // Path("skillgroup")

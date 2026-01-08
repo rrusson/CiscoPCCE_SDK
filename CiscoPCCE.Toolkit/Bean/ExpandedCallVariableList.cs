@@ -6,14 +6,17 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class ExpandedCallVariableList : BaseApiBean
     {
+        [XmlElement("globalInfo")]
         public required ExpandedCallVariableGlobalInfo GlobalInfo { get; set; }
 
-        [XmlElement("expandedCallVariables")]
-        [XmlElement("expandedCallVariable")]
+        [XmlArray("expandedCallVariables")]
+        [XmlArrayItem("expandedCallVariable")]
         public List<ExpandedCallVariable>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("expandedcallvariable")

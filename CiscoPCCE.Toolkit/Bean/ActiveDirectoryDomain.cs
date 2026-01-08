@@ -6,8 +6,10 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("activeDirectoryDomain")]
     public class ActiveDirectoryDomain : BaseApiBean
     {
+        [XmlElement("name")]
         public string? Name { get; set; }
 
+        [XmlElement("systemDomain")]
         public bool? SystemDomain { get; set; }
 
         // Path("activedirectorydomain")
