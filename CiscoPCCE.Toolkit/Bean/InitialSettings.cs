@@ -43,6 +43,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class InitialSettingsList : BaseApiListBean<InitialSettings>
         {
+            [XmlArray("##defaults")]
+            [XmlArrayItem("##default")]
+            public new List<InitialSettings>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<InitialSettings>? GetItems() => Items;
 
             public override void SetItems(List<InitialSettings>? value) => Items = value;

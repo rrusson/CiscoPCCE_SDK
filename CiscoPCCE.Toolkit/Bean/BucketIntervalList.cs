@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class BucketIntervalListList : BaseApiListBean<BucketIntervalList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<BucketIntervalList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<BucketIntervalList>? GetItems() => Items;
 
             public override void SetItems(List<BucketIntervalList>? value) => Items = value;

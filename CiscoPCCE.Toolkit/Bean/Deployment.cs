@@ -31,6 +31,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class DeploymentList : BaseApiListBean<Deployment>
         {
+            [XmlArray("deployments")]
+            [XmlArrayItem("deployment")]
+            public new List<Deployment>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<Deployment>? GetItems() => Items;
 
             public override void SetItems(List<Deployment>? value) => Items = value;

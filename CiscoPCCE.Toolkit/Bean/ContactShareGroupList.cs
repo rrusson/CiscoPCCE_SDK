@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class ContactShareGroupListList : BaseApiListBean<ContactShareGroupList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<ContactShareGroupList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ContactShareGroupList>? GetItems() => Items;
 
             public override void SetItems(List<ContactShareGroupList>? value) => Items = value;

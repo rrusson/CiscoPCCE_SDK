@@ -109,6 +109,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class SmartLicenseInfoList : BaseApiListBean<SmartLicenseInfo>
         {
+            [XmlArray("smartlicenseinfos")]
+            [XmlArrayItem("smartlicenseinfo")]
+            public new List<SmartLicenseInfo>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<SmartLicenseInfo>? GetItems() => Items;
 
             public override void SetItems(List<SmartLicenseInfo>? value) => Items = value;

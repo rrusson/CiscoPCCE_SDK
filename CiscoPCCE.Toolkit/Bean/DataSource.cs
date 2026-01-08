@@ -34,6 +34,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class DataSourceList : BaseApiListBean<DataSource>
         {
+            [XmlArray("dataSources")]
+            [XmlArrayItem("dataSource")]
+            public new List<DataSource>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<DataSource>? GetItems() => Items;
 
             public override void SetItems(List<DataSource>? value) => Items = value;

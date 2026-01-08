@@ -55,6 +55,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class SkillGroupSummaryList : BaseApiListBean<SkillGroupSummary>
         {
+            [XmlArray("skillGroupSummarys")]
+            [XmlArrayItem("skillGroupSummary")]
+            public new List<SkillGroupSummary>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<SkillGroupSummary>? GetItems() => Items;
 
             public override void SetItems(List<SkillGroupSummary>? value) => Items = value;

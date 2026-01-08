@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class ApplicationPathListList : BaseApiListBean<ApplicationPathList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<ApplicationPathList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ApplicationPathList>? GetItems() => Items;
 
             public override void SetItems(List<ApplicationPathList>? value) => Items = value;

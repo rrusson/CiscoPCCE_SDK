@@ -17,6 +17,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class MachineTypeMustBeChangedErrorDetailList : BaseApiListBean<MachineTypeMustBeChangedErrorDetail>
         {
+            [XmlArray("errorDetails")]
+            [XmlArrayItem("errorDetail")]
+            public new List<MachineTypeMustBeChangedErrorDetail>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<MachineTypeMustBeChangedErrorDetail>? GetItems() => Items;
 
             public override void SetItems(List<MachineTypeMustBeChangedErrorDetail>? value) => Items = value;

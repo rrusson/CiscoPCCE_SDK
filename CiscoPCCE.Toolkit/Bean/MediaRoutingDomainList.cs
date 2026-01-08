@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class MediaRoutingDomainListList : BaseApiListBean<MediaRoutingDomainList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<MediaRoutingDomainList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<MediaRoutingDomainList>? GetItems() => Items;
 
             public override void SetItems(List<MediaRoutingDomainList>? value) => Items = value;

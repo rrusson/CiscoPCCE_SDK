@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class IVRApplicationListList : BaseApiListBean<IVRApplicationList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<IVRApplicationList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<IVRApplicationList>? GetItems() => Items;
 
             public override void SetItems(List<IVRApplicationList>? value) => Items = value;

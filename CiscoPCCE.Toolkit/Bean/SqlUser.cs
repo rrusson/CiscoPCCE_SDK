@@ -16,6 +16,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class SqlUserList : BaseApiListBean<SqlUser>
         {
+            [XmlArray("sqlUsers")]
+            [XmlArrayItem("sqlUser")]
+            public new List<SqlUser>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<SqlUser>? GetItems() => Items;
 
             public override void SetItems(List<SqlUser>? value) => Items = value;

@@ -88,6 +88,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class CampaignStatusList : BaseApiListBean<CampaignStatus>
         {
+            [XmlArray("runtimeStatuss")]
+            [XmlArrayItem("runtimeStatus")]
+            public new List<CampaignStatus>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<CampaignStatus>? GetItems() => Items;
 
             public override void SetItems(List<CampaignStatus>? value) => Items = value;

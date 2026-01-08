@@ -46,6 +46,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class LogicalInterfaceControllerList : BaseApiListBean<LogicalInterfaceController>
         {
+            [XmlArray("pgs")]
+            [XmlArrayItem("pg")]
+            public new List<LogicalInterfaceController>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<LogicalInterfaceController>? GetItems() => Items;
 
             public override void SetItems(List<LogicalInterfaceController>? value) => Items = value;

@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class CardPositionListList : BaseApiListBean<CardPositionList>
         {
+            [XmlArray("layouts")]
+            [XmlArrayItem("layout")]
+            public new List<CardPositionList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<CardPositionList>? GetItems() => Items;
 
             public override void SetItems(List<CardPositionList>? value) => Items = value;

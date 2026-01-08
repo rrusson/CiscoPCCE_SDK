@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class TimeZoneListList : BaseApiListBean<TimeZoneList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<TimeZoneList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<TimeZoneList>? GetItems() => Items;
 
             public override void SetItems(List<TimeZoneList>? value) => Items = value;

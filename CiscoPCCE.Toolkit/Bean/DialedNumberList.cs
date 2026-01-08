@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class DialedNumberListList : BaseApiListBean<DialedNumberList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<DialedNumberList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<DialedNumberList>? GetItems() => Items;
 
             public override void SetItems(List<DialedNumberList>? value) => Items = value;

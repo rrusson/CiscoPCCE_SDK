@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class BulkJobListList : BaseApiListBean<BulkJobList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<BulkJobList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<BulkJobList>? GetItems() => Items;
 
             public override void SetItems(List<BulkJobList>? value) => Items = value;

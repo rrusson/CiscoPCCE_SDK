@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class MasterScriptListList : BaseApiListBean<MasterScriptList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<MasterScriptList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<MasterScriptList>? GetItems() => Items;
 
             public override void SetItems(List<MasterScriptList>? value) => Items = value;

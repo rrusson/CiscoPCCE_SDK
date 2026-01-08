@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class EnterpriseRouteListList : BaseApiListBean<EnterpriseRouteList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<EnterpriseRouteList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<EnterpriseRouteList>? GetItems() => Items;
 
             public override void SetItems(List<EnterpriseRouteList>? value) => Items = value;

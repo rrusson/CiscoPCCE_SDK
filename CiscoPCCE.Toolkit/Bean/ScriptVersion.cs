@@ -44,6 +44,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class ScriptVersionList : BaseApiListBean<ScriptVersion>
         {
+            [XmlArray("scriptVersions")]
+            [XmlArrayItem("scriptVersion")]
+            public new List<ScriptVersion>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ScriptVersion>? GetItems() => Items;
 
             public override void SetItems(List<ScriptVersion>? value) => Items = value;

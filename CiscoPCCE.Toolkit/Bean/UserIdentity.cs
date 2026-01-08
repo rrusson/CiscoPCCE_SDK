@@ -25,6 +25,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class UserIdentityList : BaseApiListBean<UserIdentity>
         {
+            [XmlArray("userIdentitys")]
+            [XmlArrayItem("userIdentity")]
+            public new List<UserIdentity>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<UserIdentity>? GetItems() => Items;
 
             public override void SetItems(List<UserIdentity>? value) => Items = value;

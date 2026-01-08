@@ -50,6 +50,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class SipServerGroupList : BaseApiListBean<SipServerGroup>
         {
+            [XmlArray("sipServerGroups")]
+            [XmlArrayItem("sipServerGroup")]
+            public new List<SipServerGroup>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<SipServerGroup>? GetItems() => Items;
 
             public override void SetItems(List<SipServerGroup>? value) => Items = value;

@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class DNCListList : BaseApiListBean<DNCList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<DNCList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<DNCList>? GetItems() => Items;
 
             public override void SetItems(List<DNCList>? value) => Items = value;

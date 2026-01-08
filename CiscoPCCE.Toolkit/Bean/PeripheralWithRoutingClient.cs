@@ -76,6 +76,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class PeripheralWithRoutingClientList : BaseApiListBean<PeripheralWithRoutingClient>
         {
+            [XmlArray("peripherals")]
+            [XmlArrayItem("peripheral")]
+            public new List<PeripheralWithRoutingClient>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<PeripheralWithRoutingClient>? GetItems() => Items;
 
             public override void SetItems(List<PeripheralWithRoutingClient>? value) => Items = value;

@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class CampaignListList : BaseApiListBean<CampaignList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<CampaignList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<CampaignList>? GetItems() => Items;
 
             public override void SetItems(List<CampaignList>? value) => Items = value;

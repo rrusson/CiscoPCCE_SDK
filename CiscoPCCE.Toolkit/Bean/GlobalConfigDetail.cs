@@ -23,6 +23,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class GlobalConfigDetailList : BaseApiListBean<GlobalConfigDetail>
         {
+            [XmlArray("globalConfigDetails")]
+            [XmlArrayItem("globalConfigDetail")]
+            public new List<GlobalConfigDetail>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<GlobalConfigDetail>? GetItems() => Items;
 
             public override void SetItems(List<GlobalConfigDetail>? value) => Items = value;

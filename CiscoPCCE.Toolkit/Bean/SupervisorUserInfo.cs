@@ -37,6 +37,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class SupervisorUserInfoList : BaseApiListBean<SupervisorUserInfo>
         {
+            [XmlArray("supervisorUserInfos")]
+            [XmlArrayItem("supervisorUserInfo")]
+            public new List<SupervisorUserInfo>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<SupervisorUserInfo>? GetItems() => Items;
 
             public override void SetItems(List<SupervisorUserInfo>? value) => Items = value;

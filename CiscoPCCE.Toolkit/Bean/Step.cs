@@ -29,6 +29,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class StepList : BaseApiListBean<Step>
         {
+            [XmlArray("steps")]
+            [XmlArrayItem("step")]
+            public new List<Step>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<Step>? GetItems() => Items;
 
             public override void SetItems(List<Step>? value) => Items = value;

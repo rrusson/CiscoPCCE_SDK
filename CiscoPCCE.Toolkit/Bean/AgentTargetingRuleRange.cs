@@ -16,6 +16,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class AgentTargetingRuleRangeList : BaseApiListBean<AgentTargetingRuleRange>
         {
+            [XmlArray("ranges")]
+            [XmlArrayItem("range")]
+            public new List<AgentTargetingRuleRange>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<AgentTargetingRuleRange>? GetItems() => Items;
 
             public override void SetItems(List<AgentTargetingRuleRange>? value) => Items = value;

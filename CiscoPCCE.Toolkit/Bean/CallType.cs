@@ -56,6 +56,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class CallTypeList : BaseApiListBean<CallType>
         {
+            [XmlArray("callTypes")]
+            [XmlArrayItem("callType")]
+            public new List<CallType>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<CallType>? GetItems() => Items;
 
             public override void SetItems(List<CallType>? value) => Items = value;

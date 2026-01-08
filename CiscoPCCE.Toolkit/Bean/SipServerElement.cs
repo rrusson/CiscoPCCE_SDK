@@ -31,6 +31,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class SipServerElementList : BaseApiListBean<SipServerElement>
         {
+            [XmlArray("elements")]
+            [XmlArrayItem("element")]
+            public new List<SipServerElement>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<SipServerElement>? GetItems() => Items;
 
             public override void SetItems(List<SipServerElement>? value) => Items = value;

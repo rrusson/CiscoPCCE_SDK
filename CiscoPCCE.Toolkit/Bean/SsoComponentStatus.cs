@@ -29,6 +29,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class SsoComponentStatusList : BaseApiListBean<SsoComponentStatus>
         {
+            [XmlArray("ssoComponentStatuss")]
+            [XmlArrayItem("ssoComponentStatus")]
+            public new List<SsoComponentStatus>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<SsoComponentStatus>? GetItems() => Items;
 
             public override void SetItems(List<SsoComponentStatus>? value) => Items = value;

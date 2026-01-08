@@ -25,6 +25,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class ContactCenterAITokenList : BaseApiListBean<ContactCenterAIToken>
         {
+            [XmlArray("contactCenterAITokens")]
+            [XmlArrayItem("contactCenterAIToken")]
+            public new List<ContactCenterAIToken>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ContactCenterAIToken>? GetItems() => Items;
 
             public override void SetItems(List<ContactCenterAIToken>? value) => Items = value;

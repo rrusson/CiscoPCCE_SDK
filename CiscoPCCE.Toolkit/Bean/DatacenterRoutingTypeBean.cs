@@ -19,6 +19,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class DatacenterRoutingTypeBeanList : BaseApiListBean<DatacenterRoutingTypeBean>
         {
+            [XmlArray("datacenterRoutingTypes")]
+            [XmlArrayItem("datacenterRoutingType")]
+            public new List<DatacenterRoutingTypeBean>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<DatacenterRoutingTypeBean>? GetItems() => Items;
 
             public override void SetItems(List<DatacenterRoutingTypeBean>? value) => Items = value;

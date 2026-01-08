@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class ECCPayloadListList : BaseApiListBean<ECCPayloadList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<ECCPayloadList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ECCPayloadList>? GetItems() => Items;
 
             public override void SetItems(List<ECCPayloadList>? value) => Items = value;

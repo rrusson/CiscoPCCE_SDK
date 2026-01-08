@@ -40,6 +40,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class UserGroupBaseList : BaseApiListBean<UserGroupBase>
         {
+            [XmlArray("userGroupBases")]
+            [XmlArrayItem("userGroupBase")]
+            public new List<UserGroupBase>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<UserGroupBase>? GetItems() => Items;
 
             public override void SetItems(List<UserGroupBase>? value) => Items = value;

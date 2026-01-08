@@ -12,6 +12,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class SystemDefinedReasonCodeListList : BaseApiListBean<SystemDefinedReasonCodeList>
         {
+            [XmlArray("systemDefinedReasonCodess")]
+            [XmlArrayItem("systemDefinedReasonCodes")]
+            public new List<SystemDefinedReasonCodeList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<SystemDefinedReasonCodeList>? GetItems() => Items;
 
             public override void SetItems(List<SystemDefinedReasonCodeList>? value) => Items = value;

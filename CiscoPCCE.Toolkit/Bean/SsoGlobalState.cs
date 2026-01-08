@@ -34,6 +34,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class SsoGlobalStateList : BaseApiListBean<SsoGlobalState>
         {
+            [XmlArray("ssoStates")]
+            [XmlArrayItem("ssoState")]
+            public new List<SsoGlobalState>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<SsoGlobalState>? GetItems() => Items;
 
             public override void SetItems(List<SsoGlobalState>? value) => Items = value;

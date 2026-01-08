@@ -37,6 +37,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class NetworkVruList : BaseApiListBean<NetworkVru>
         {
+            [XmlArray("networkVrus")]
+            [XmlArrayItem("networkVru")]
+            public new List<NetworkVru>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<NetworkVru>? GetItems() => Items;
 
             public override void SetItems(List<NetworkVru>? value) => Items = value;

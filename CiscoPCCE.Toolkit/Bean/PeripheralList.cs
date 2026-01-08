@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class PeripheralListList : BaseApiListBean<PeripheralList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<PeripheralList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<PeripheralList>? GetItems() => Items;
 
             public override void SetItems(List<PeripheralList>? value) => Items = value;

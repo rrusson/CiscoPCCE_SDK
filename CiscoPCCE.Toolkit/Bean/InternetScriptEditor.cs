@@ -16,6 +16,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class InternetScriptEditorList : BaseApiListBean<InternetScriptEditor>
         {
+            [XmlArray("##defaults")]
+            [XmlArrayItem("##default")]
+            public new List<InternetScriptEditor>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<InternetScriptEditor>? GetItems() => Items;
 
             public override void SetItems(List<InternetScriptEditor>? value) => Items = value;

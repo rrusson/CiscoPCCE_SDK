@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class ConfigurationLimitListList : BaseApiListBean<ConfigurationLimitList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<ConfigurationLimitList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ConfigurationLimitList>? GetItems() => Items;
 
             public override void SetItems(List<ConfigurationLimitList>? value) => Items = value;

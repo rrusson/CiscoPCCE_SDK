@@ -19,6 +19,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class ResourceErrorDetailList : BaseApiListBean<ResourceErrorDetail>
         {
+            [XmlArray("errorDetails")]
+            [XmlArrayItem("errorDetail")]
+            public new List<ResourceErrorDetail>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ResourceErrorDetail>? GetItems() => Items;
 
             public override void SetItems(List<ResourceErrorDetail>? value) => Items = value;

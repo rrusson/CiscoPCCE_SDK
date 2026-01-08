@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class ApplicationGatewayListList : BaseApiListBean<ApplicationGatewayList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<ApplicationGatewayList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ApplicationGatewayList>? GetItems() => Items;
 
             public override void SetItems(List<ApplicationGatewayList>? value) => Items = value;

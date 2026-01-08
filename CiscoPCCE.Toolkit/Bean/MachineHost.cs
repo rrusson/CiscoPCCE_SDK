@@ -59,6 +59,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class MachineHostList : BaseApiListBean<MachineHost>
         {
+            [XmlArray("machines")]
+            [XmlArrayItem("machine")]
+            public new List<MachineHost>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<MachineHost>? GetItems() => Items;
 
             public override void SetItems(List<MachineHost>? value) => Items = value;

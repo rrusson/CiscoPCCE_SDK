@@ -19,6 +19,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class PersonalCallbackList : BaseApiListBean<PersonalCallback>
         {
+            [XmlArray("personalCallbacks")]
+            [XmlArrayItem("personalCallback")]
+            public new List<PersonalCallback>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<PersonalCallback>? GetItems() => Items;
 
             public override void SetItems(List<PersonalCallback>? value) => Items = value;

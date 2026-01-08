@@ -16,6 +16,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class TraceLevelsListList : BaseApiListBean<TraceLevelsList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<TraceLevelsList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<TraceLevelsList>? GetItems() => Items;
 
             public override void SetItems(List<TraceLevelsList>? value) => Items = value;

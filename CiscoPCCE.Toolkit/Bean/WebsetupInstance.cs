@@ -19,6 +19,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class WebsetupInstanceList : BaseApiListBean<WebsetupInstance>
         {
+            [XmlArray("instances")]
+            [XmlArrayItem("instance")]
+            public new List<WebsetupInstance>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<WebsetupInstance>? GetItems() => Items;
 
             public override void SetItems(List<WebsetupInstance>? value) => Items = value;

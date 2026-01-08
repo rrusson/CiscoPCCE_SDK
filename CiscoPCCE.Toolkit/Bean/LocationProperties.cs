@@ -13,6 +13,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class LocationPropertiesList : BaseApiListBean<LocationProperties>
         {
+            [XmlArray("locationPropertiess")]
+            [XmlArrayItem("locationProperties")]
+            public new List<LocationProperties>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<LocationProperties>? GetItems() => Items;
 
             public override void SetItems(List<LocationProperties>? value) => Items = value;

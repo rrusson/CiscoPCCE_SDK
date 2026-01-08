@@ -23,6 +23,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class InitializationStatusList : BaseApiListBean<InitializationStatus>
         {
+            [XmlArray("initializationStatuss")]
+            [XmlArrayItem("initializationStatus")]
+            public new List<InitializationStatus>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<InitializationStatus>? GetItems() => Items;
 
             public override void SetItems(List<InitializationStatus>? value) => Items = value;

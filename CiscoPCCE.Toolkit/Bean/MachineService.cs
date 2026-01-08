@@ -47,6 +47,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class MachineServiceList : BaseApiListBean<MachineService>
         {
+            [XmlArray("services")]
+            [XmlArrayItem("service")]
+            public new List<MachineService>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<MachineService>? GetItems() => Items;
 
             public override void SetItems(List<MachineService>? value) => Items = value;

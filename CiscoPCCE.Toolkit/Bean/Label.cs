@@ -34,6 +34,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class LabelList : BaseApiListBean<Label>
         {
+            [XmlArray("labels")]
+            [XmlArrayItem("label")]
+            public new List<Label>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<Label>? GetItems() => Items;
 
             public override void SetItems(List<Label>? value) => Items = value;

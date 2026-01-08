@@ -31,6 +31,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class CVPLocationPropertiesList : BaseApiListBean<CVPLocationProperties>
         {
+            [XmlArray("CVPs")]
+            [XmlArrayItem("CVP")]
+            public new List<CVPLocationProperties>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<CVPLocationProperties>? GetItems() => Items;
 
             public override void SetItems(List<CVPLocationProperties>? value) => Items = value;

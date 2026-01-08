@@ -61,6 +61,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class ExpandedCallVariableList : BaseApiListBean<ExpandedCallVariable>
         {
+            [XmlArray("expandedCallVariables")]
+            [XmlArrayItem("expandedCallVariable")]
+            public new List<ExpandedCallVariable>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ExpandedCallVariable>? GetItems() => Items;
 
             public override void SetItems(List<ExpandedCallVariable>? value) => Items = value;

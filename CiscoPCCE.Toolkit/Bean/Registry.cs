@@ -66,6 +66,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class RegistryList : BaseApiListBean<Registry>
         {
+            [XmlArray("registrys")]
+            [XmlArrayItem("registry")]
+            public new List<Registry>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<Registry>? GetItems() => Items;
 
             public override void SetItems(List<Registry>? value) => Items = value;

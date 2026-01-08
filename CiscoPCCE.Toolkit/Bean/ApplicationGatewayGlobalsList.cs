@@ -17,6 +17,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class ApplicationGatewayGlobalsListList : BaseApiListBean<ApplicationGatewayGlobalsList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<ApplicationGatewayGlobalsList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ApplicationGatewayGlobalsList>? GetItems() => Items;
 
             public override void SetItems(List<ApplicationGatewayGlobalsList>? value) => Items = value;

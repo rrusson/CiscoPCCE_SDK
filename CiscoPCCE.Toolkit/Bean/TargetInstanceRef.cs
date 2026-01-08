@@ -16,6 +16,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class TargetInstanceRefList : BaseApiListBean<TargetInstanceRef>
         {
+            [XmlArray("targetInstances")]
+            [XmlArrayItem("targetInstance")]
+            public new List<TargetInstanceRef>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<TargetInstanceRef>? GetItems() => Items;
 
             public override void SetItems(List<TargetInstanceRef>? value) => Items = value;

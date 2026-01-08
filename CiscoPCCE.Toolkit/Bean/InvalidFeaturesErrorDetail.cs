@@ -14,6 +14,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class InvalidFeaturesErrorDetailList : BaseApiListBean<InvalidFeaturesErrorDetail>
         {
+            [XmlArray("errorDetails")]
+            [XmlArrayItem("errorDetail")]
+            public new List<InvalidFeaturesErrorDetail>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<InvalidFeaturesErrorDetail>? GetItems() => Items;
 
             public override void SetItems(List<InvalidFeaturesErrorDetail>? value) => Items = value;

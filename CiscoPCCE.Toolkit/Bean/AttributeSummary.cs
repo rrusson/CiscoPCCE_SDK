@@ -49,6 +49,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class AttributeSummaryList : BaseApiListBean<AttributeSummary>
         {
+            [XmlArray("attributeSummarys")]
+            [XmlArrayItem("attributeSummary")]
+            public new List<AttributeSummary>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<AttributeSummary>? GetItems() => Items;
 
             public override void SetItems(List<AttributeSummary>? value) => Items = value;

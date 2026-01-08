@@ -13,6 +13,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class InventoryAutoDiscoveryList : BaseApiListBean<InventoryAutoDiscovery>
         {
+            [XmlArray("inventoryautodiscoverys")]
+            [XmlArrayItem("inventoryautodiscovery")]
+            public new List<InventoryAutoDiscovery>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<InventoryAutoDiscovery>? GetItems() => Items;
 
             public override void SetItems(List<InventoryAutoDiscovery>? value) => Items = value;

@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class PersonListList : BaseApiListBean<PersonList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<PersonList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<PersonList>? GetItems() => Items;
 
             public override void SetItems(List<PersonList>? value) => Items = value;

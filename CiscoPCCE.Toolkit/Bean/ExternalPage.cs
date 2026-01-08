@@ -61,6 +61,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class ExternalPageList : BaseApiListBean<ExternalPage>
         {
+            [XmlArray("externalpages")]
+            [XmlArrayItem("externalpage")]
+            public new List<ExternalPage>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ExternalPage>? GetItems() => Items;
 
             public override void SetItems(List<ExternalPage>? value) => Items = value;

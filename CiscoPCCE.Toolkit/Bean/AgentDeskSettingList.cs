@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class AgentDeskSettingListList : BaseApiListBean<AgentDeskSettingList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<AgentDeskSettingList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<AgentDeskSettingList>? GetItems() => Items;
 
             public override void SetItems(List<AgentDeskSettingList>? value) => Items = value;

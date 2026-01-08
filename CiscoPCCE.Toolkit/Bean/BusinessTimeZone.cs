@@ -34,6 +34,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class BusinessTimeZoneList : BaseApiListBean<BusinessTimeZone>
         {
+            [XmlArray("businesstimezones")]
+            [XmlArrayItem("businesstimezone")]
+            public new List<BusinessTimeZone>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<BusinessTimeZone>? GetItems() => Items;
 
             public override void SetItems(List<BusinessTimeZone>? value) => Items = value;

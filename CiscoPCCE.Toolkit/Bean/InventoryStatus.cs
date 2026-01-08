@@ -17,6 +17,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class InventoryStatusList : BaseApiListBean<InventoryStatus>
         {
+            [XmlArray("statuss")]
+            [XmlArrayItem("status")]
+            public new List<InventoryStatus>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<InventoryStatus>? GetItems() => Items;
 
             public override void SetItems(List<InventoryStatus>? value) => Items = value;

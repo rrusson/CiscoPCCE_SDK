@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class AdministratorListList : BaseApiListBean<AdministratorList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<AdministratorList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<AdministratorList>? GetItems() => Items;
 
             public override void SetItems(List<AdministratorList>? value) => Items = value;

@@ -20,6 +20,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class RoutingClientListList : BaseApiListBean<RoutingClientList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<RoutingClientList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<RoutingClientList>? GetItems() => Items;
 
             public override void SetItems(List<RoutingClientList>? value) => Items = value;
