@@ -7,8 +7,10 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("datacenterRoutingType")]
         public List<DatacenterRoutingTypeBean>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
     }
 }

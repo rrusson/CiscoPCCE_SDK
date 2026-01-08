@@ -6,36 +6,57 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("attributeSummary")]
     public class AttributeSummary : BaseApiBean
     {
+        [XmlElement("agentCount")]
         public int? AgentCount { get; set; }
 
+        [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
+        [XmlElement("changeStamp")]
         public new int? ChangeStamp { get; set; }
 
+        [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
+        [XmlElement("dataType")]
         public int? DataType { get; set; }
 
+        [XmlElement("defaultValue")]
         public string? DefaultValue { get; set; }
 
+        [XmlElement("department")]
         public required ReferenceBean Department { get; set; }
 
+        [XmlElement("description")]
         public string? Description { get; set; }
 
+        [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
+        [XmlElement("markDeletable")]
         public bool? MarkDeletable { get; set; }
 
+        [XmlElement("name")]
         public string? Name { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
+        [XmlElement("selectedAgentCount")]
         public int? SelectedAgentCount { get; set; }
 
         // Path("attribute")
         [XmlRoot("results")]
         public class AttributeSummaryList : BaseApiListBean<AttributeSummary>
         {
+            [XmlArray("attributeSummarys")]
+            [XmlArrayItem("attributeSummary")]
+            public new List<AttributeSummary>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<AttributeSummary>? GetItems() => Items;
 
             public override void SetItems(List<AttributeSummary>? value) => Items = value;

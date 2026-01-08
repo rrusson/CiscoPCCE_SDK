@@ -6,18 +6,28 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class EnterpriseSkillGroupList : BaseApiBean
     {
-        [XmlElement("EnterpriseSkillGroups")]
-        [XmlElement("EnterpriseSkillGroup")]
+        [XmlArray("EnterpriseSkillGroups")]
+        [XmlArrayItem("EnterpriseSkillGroup")]
         public List<EnterpriseSkillGroup>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("enterpriseroute")
         [XmlRoot("results")]
         public class EnterpriseSkillGroupListList : BaseApiListBean<EnterpriseSkillGroupList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<EnterpriseSkillGroupList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<EnterpriseSkillGroupList>? GetItems() => Items;
 
             public override void SetItems(List<EnterpriseSkillGroupList>? value) => Items = value;

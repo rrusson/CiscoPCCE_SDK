@@ -6,42 +6,66 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("bulkJob")]
     public class BulkJob : BaseApiBean
     {
+        [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
+        [XmlElement("changeStamp")]
         public new int? ChangeStamp { get; set; }
 
+        [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
+        [XmlElement("createDateTime")]
         public DateTime? CreateDateTime { get; set; }
 
+        [XmlElement("csvFile")]
         public required FileRef CsvFile { get; set; }
 
+        [XmlElement("department")]
         public required ReferenceBean Department { get; set; }
 
+        [XmlElement("description")]
         public string? Description { get; set; }
 
+        [XmlElement("endDateTime")]
         public DateTime? EndDateTime { get; set; }
 
+        [XmlElement("fileContent")]
         public string? FileContent { get; set; }
 
+        [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
+        [XmlElement("jobHostName")]
         public string? JobHostName { get; set; }
 
+        [XmlElement("jobState")]
         public short? JobState { get; set; }
 
+        [XmlElement("jobType")]
         public short? JobType { get; set; }
 
+        [XmlElement("logFile")]
         public required FileRef LogFile { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
+        [XmlElement("startDateTime")]
         public DateTime? StartDateTime { get; set; }
 
         // Path("bulkjob")
         [XmlRoot("results")]
         public class BulkJobList : BaseApiListBean<BulkJob>
         {
+            [XmlArray("bulkJobs")]
+            [XmlArrayItem("bulkJob")]
+            public new List<BulkJob>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<BulkJob>? GetItems() => Items;
 
             public override void SetItems(List<BulkJob>? value) => Items = value;

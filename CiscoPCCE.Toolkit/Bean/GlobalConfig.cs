@@ -6,20 +6,24 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("globalConfig")]
     public class GlobalConfig : BaseApiBean
     {
-        private string? value;
-
+        [XmlElement("name")]
         public string? Name { get; set; }
 
-        public string? Value
-        {
-            get => value;
-            set => _ = value;
-        }
+        [XmlElement("value")]
+        public string? Value { get; set; }
 
         // Path("contactcenterai")
         [XmlRoot("results")]
         public class GlobalConfigList : BaseApiListBean<GlobalConfig>
         {
+            [XmlArray("globalConfigs")]
+            [XmlArrayItem("globalConfig")]
+            public new List<GlobalConfig>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<GlobalConfig>? GetItems() => Items;
 
             public override void SetItems(List<GlobalConfig>? value) => Items = value;

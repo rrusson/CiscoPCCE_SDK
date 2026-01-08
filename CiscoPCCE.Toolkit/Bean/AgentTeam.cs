@@ -6,51 +6,74 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("agentTeam")]
     public class AgentTeam : BaseApiBean
     {
+        [XmlElement("agentCount")]
         public int? AgentCount { get; set; }
 
-        [XmlElement("agents")]
-        [XmlElement("agent")]
+        [XmlArray("agents")]
+        [XmlArrayItem("agent")]
         public List<ReferenceBean>? Agents { get; set; }
 
+        [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
+        [XmlElement("changeStamp")]
         public new int? ChangeStamp { get; set; }
 
+        [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
+        [XmlElement("datacenter")]
         public required ReferenceBean Datacenter { get; set; }
 
+        [XmlElement("department")]
         public required ReferenceBean Department { get; set; }
 
+        [XmlElement("description")]
         public string? Description { get; set; }
 
+        [XmlElement("dialedNumber")]
         public required ReferenceBean DialedNumber { get; set; }
 
+        [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
+        [XmlElement("name")]
         public string? Name { get; set; }
 
+        [XmlElement("peripheral")]
         public required PeripheralRef Peripheral { get; set; }
 
+        [XmlElement("peripheralId")]
         public int? PeripheralId { get; set; }
 
         [XmlElement("peripheralSet")]
         public required ReferenceBean PeripheralSet { get; set; }
 
+        [XmlElement("primarySupervisor")]
         public required ReferenceBean PrimarySupervisor { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
+        [XmlElement("supervisorCount")]
         public int? SupervisorCount { get; set; }
 
-        [XmlElement("supervisors")]
-        [XmlElement("supervisor")]
+        [XmlArray("supervisors")]
+        [XmlArrayItem("supervisor")]
         public List<ReferenceBean>? Supervisors { get; set; }
 
         // Path("/agentteam")
         [XmlRoot("results")]
         public class AgentTeamList : BaseApiListBean<AgentTeam>
         {
+            [XmlArray("agentTeams")]
+            [XmlArrayItem("agentTeam")]
+            public new List<AgentTeam>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<AgentTeam>? GetItems() => Items;
 
             public override void SetItems(List<AgentTeam>? value) => Items = value;

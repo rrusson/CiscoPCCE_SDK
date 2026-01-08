@@ -4,10 +4,11 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     public class DeviceInfo : BaseApiBean
     {
-        [XmlElement("locations")]
-        [XmlElement("location")]
+        [XmlArray("locations")]
+        [XmlArrayItem("location")]
         public List<string?>? Locations { get; set; }
 
+        [XmlElement("typeName")]
         public string? TypeName { get; set; }
     }
 }

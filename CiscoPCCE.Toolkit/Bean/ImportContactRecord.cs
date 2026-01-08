@@ -5,29 +5,40 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("importContact")]
     public class ImportContactRecord : BaseApiBean
     {
+        [XmlElement("accountNumber")]
         public string? AccountNumber { get; set; }
 
+        [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
+        [XmlElement("callResultOverall")]
         public int CallResultOverall { get; set; }
 
         [XmlElement("callStatus")]
         public CallStatusEnum CallStatusEnum { get; set; }
 
+        [XmlElement("callsMade")]
         public int CallsMade { get; set; }
 
+        [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
+        [XmlElement("department")]
         public required ReferenceBean Department { get; set; }
 
+        [XmlElement("firstName")]
         public string? FirstName { get; set; }
 
+        [XmlElement("id")]
         public int? Id { get; set; }
 
+        [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
+        [XmlElement("importDate")]
         public DateTime? ImportDate { get; set; }
 
+        [XmlElement("lastName")]
         public string? LastName { get; set; }
 
         [XmlElement("phone01")]
@@ -60,12 +71,21 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("phone10")]
         public required PhoneFields Phone10Fields { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
         // Path("import")
         [XmlRoot("results")]
         public class ImportContactRecordList : BaseApiListBean<ImportContactRecord>
         {
+            [XmlArray("importContacts")]
+            [XmlArrayItem("importContact")]
+            public new List<ImportContactRecord>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ImportContactRecord>? GetItems() => Items;
 
             public override void SetItems(List<ImportContactRecord>? value) => Items = value;

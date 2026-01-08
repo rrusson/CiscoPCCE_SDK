@@ -7,8 +7,8 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
-        [XmlElement("traceProcesses")]
-        [XmlElement("traceProcess")]
+        [XmlArray("traceProcesses")]
+        [XmlArrayItem("traceProcess")]
         public List<TraceProcess>? TraceProcesses { get; set; }
     }
 }

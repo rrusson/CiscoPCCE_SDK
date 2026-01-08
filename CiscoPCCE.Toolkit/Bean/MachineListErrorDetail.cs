@@ -5,6 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("errorDetail")]
     public class MachineListErrorDetail : BaseApiBean
     {
+        [XmlElement("errorType")]
         public string? ErrorType { get; set; }
 
         [XmlElement("machines")]

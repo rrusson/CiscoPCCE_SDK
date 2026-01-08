@@ -12,6 +12,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class BusinessHourStatusReasonsList : BaseApiListBean<BusinessHourStatusReasons>
         {
+            [XmlArray("businessHourStatusReasonss")]
+            [XmlArrayItem("businessHourStatusReasons")]
+            public new List<BusinessHourStatusReasons>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<BusinessHourStatusReasons>? GetItems() => Items;
 
             public override void SetItems(List<BusinessHourStatusReasons>? value) => Items = value;

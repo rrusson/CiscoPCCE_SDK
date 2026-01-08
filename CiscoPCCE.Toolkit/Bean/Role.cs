@@ -6,36 +6,53 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("role")]
     public class Role : BaseApiBean
     {
-        [XmlElement("administrators")]
-        [XmlElement("administrator")]
+        [XmlArray("administrators")]
+        [XmlArrayItem("administrator")]
         public List<ReferenceBean>? Administrators { get; set; }
 
+        [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
+        [XmlElement("changeStamp")]
         public new int? ChangeStamp { get; set; }
 
+        [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
+        [XmlElement("department")]
         public required ReferenceBean Department { get; set; }
 
+        [XmlElement("description")]
         public string? Description { get; set; }
 
-        [XmlElement("accessList")]
-        [XmlElement("feature")]
+        [XmlArray("accessList")]
+        [XmlArrayItem("feature")]
         public List<Feature>? Features { get; set; }
 
+        [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
+        [XmlElement("name")]
         public string? Name { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
+        [XmlElement("systemDefined")]
         public bool? SystemDefined { get; set; }
 
         // Path("role")
         [XmlRoot("results")]
         public class RoleList : BaseApiListBean<Role>
         {
+            [XmlArray("roles")]
+            [XmlArrayItem("role")]
+            public new List<Role>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<Role>? GetItems() => Items;
 
             public override void SetItems(List<Role>? value) => Items = value;

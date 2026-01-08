@@ -6,16 +6,25 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("mockInventory")]
     public class MockInventory : BaseApiBean
     {
+        [XmlElement("enableMockMode")]
         public bool? EnableMockMode { get; set; }
 
-        [XmlElement("machines")]
-        [XmlElement("machine")]
+        [XmlArray("machines")]
+        [XmlArrayItem("machine")]
         public List<VMData>? VmDataList { get; set; }
 
         // Path("machineinventory")
         [XmlRoot("results")]
         public class MockInventoryList : BaseApiListBean<MockInventory>
         {
+            [XmlArray("mockInventorys")]
+            [XmlArrayItem("mockInventory")]
+            public new List<MockInventory>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<MockInventory>? GetItems() => Items;
 
             public override void SetItems(List<MockInventory>? value) => Items = value;

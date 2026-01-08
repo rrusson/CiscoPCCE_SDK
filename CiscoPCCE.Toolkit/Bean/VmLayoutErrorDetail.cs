@@ -5,8 +5,8 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("errorDetail")]
     public class VmLayoutErrorDetail : BaseApiBean
     {
-        [XmlElement("vmLayoutResults")]
-        [XmlElement("vmLayoutResult")]
+        [XmlArray("vmLayoutResults")]
+        [XmlArrayItem("vmLayoutResult")]
         public List<VMLayoutResult>? LayoutResults { get; set; }
     }
 }

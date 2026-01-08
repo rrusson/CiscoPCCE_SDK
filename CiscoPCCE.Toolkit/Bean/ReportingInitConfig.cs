@@ -5,10 +5,13 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("reportingConfig")]
     public class ReportingInitConfig : BaseApiBean
     {
+        [XmlElement("deviceId")]
         public string? DeviceId { get; set; }
 
+        [XmlElement("hostName")]
         public string? HostName { get; set; }
 
+        [XmlElement("ipAddress")]
         public string? IpAddress { get; set; }
     }
 }

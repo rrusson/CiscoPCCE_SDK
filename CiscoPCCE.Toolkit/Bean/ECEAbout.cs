@@ -5,14 +5,17 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("about")]
     public class ECEAbout : BaseApiBean
     {
+        [XmlElement("contact")]
         public string? Contact { get; set; }
 
+        [XmlElement("copyrights")]
         public string? Copyrights { get; set; }
 
-        [XmlElement("products")]
-        [XmlElement("product")]
+        [XmlArray("products")]
+        [XmlArrayItem("product")]
         public List<ECEProduct>? Products { get; set; }
 
+        [XmlElement("trademarks")]
         public string? Trademarks { get; set; }
     }
 }

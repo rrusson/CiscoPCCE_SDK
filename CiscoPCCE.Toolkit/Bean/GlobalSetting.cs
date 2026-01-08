@@ -6,38 +6,58 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("globalSettings")]
     public class GlobalSetting : BaseApiBean
     {
+        [XmlElement("agent")]
         public required AgentGlobalSetting Agent { get; set; }
 
+        [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
+        [XmlElement("callReporting")]
         public required CallGlobalSetting CallReporting { get; set; }
 
+        [XmlElement("changeStamp")]
         public new int? ChangeStamp { get; set; }
 
+        [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
-        [XmlElement("datacenterSettings")]
-        [XmlElement("datacenterSetting")]
+        [XmlArray("datacenterSettings")]
+        [XmlArrayItem("datacenterSetting")]
         public List<DataCenterSetting>? DataCenterSettingList { get; set; }
 
+        [XmlElement("department")]
         public required ReferenceBean Department { get; set; }
 
+        [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
+        [XmlElement("labels")]
         public required NetworkLabelGlobalSetting Labels { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
+        [XmlElement("reporting")]
         public required ReportingGlobalSetting Reporting { get; set; }
 
+        [XmlElement("script")]
         public required ScriptGlobalSetting Script { get; set; }
 
         // Path("globalsetting")
         [XmlRoot("results")]
         public class GlobalSettingList : BaseApiListBean<GlobalSetting>
         {
+            [XmlArray("globalSettingss")]
+            [XmlArrayItem("globalSettings")]
+            public new List<GlobalSetting>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<GlobalSetting>? GetItems() => Items;
 
             public override void SetItems(List<GlobalSetting>? value) => Items = value;

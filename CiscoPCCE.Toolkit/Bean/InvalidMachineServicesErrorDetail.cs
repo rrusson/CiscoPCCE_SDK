@@ -6,18 +6,26 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("errorDetail")]
     public class InvalidMachineServicesErrorDetail : BaseApiBean
     {
-        [XmlElement("servicesFound")]
-        [XmlElement("service")]
+        [XmlArray("servicesFound")]
+        [XmlArrayItem("service")]
         public List<MachineService>? ServicesFound { get; set; }
 
-        [XmlElement("servicesRequired")]
-        [XmlElement("service")]
+        [XmlArray("servicesRequired")]
+        [XmlArrayItem("service")]
         public List<MachineService>? ServicesRequired { get; set; }
 
         // Path("machineinventory")
         [XmlRoot("results")]
         public class InvalidMachineServicesErrorDetailList : BaseApiListBean<InvalidMachineServicesErrorDetail>
         {
+            [XmlArray("errorDetails")]
+            [XmlArrayItem("errorDetail")]
+            public new List<InvalidMachineServicesErrorDetail>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<InvalidMachineServicesErrorDetail>? GetItems() => Items;
 
             public override void SetItems(List<InvalidMachineServicesErrorDetail>? value) => Items = value;

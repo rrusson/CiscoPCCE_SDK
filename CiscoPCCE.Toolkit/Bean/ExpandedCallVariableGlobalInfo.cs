@@ -6,14 +6,24 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("globalInfo")]
     public class ExpandedCallVariableGlobalInfo : BaseApiBean
     {
+        [XmlElement("totalVariableCtiSize")]
         public int? TotalVariableCtiSize { get; set; }
 
+        [XmlElement("totalVariableSize")]
         public int? TotalVariableSize { get; set; }
 
         // Path("expandedcallvariable")
         [XmlRoot("results")]
         public class ExpandedCallVariableGlobalInfoList : BaseApiListBean<ExpandedCallVariableGlobalInfo>
         {
+            [XmlArray("globalInfos")]
+            [XmlArrayItem("globalInfo")]
+            public new List<ExpandedCallVariableGlobalInfo>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ExpandedCallVariableGlobalInfo>? GetItems() => Items;
 
             public override void SetItems(List<ExpandedCallVariableGlobalInfo>? value) => Items = value;

@@ -6,18 +6,28 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class ConfigurationLimitList : BaseApiBean
     {
-        [XmlElement("configurationlimits")]
-        [XmlElement("configurationLimit")]
+        [XmlArray("configurationlimits")]
+        [XmlArrayItem("configurationLimit")]
         public List<ConfigurationLimit>? Items { get; set; }
 
+        [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
+        [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("configurationlimit")
         [XmlRoot("results")]
         public class ConfigurationLimitListList : BaseApiListBean<ConfigurationLimitList>
         {
+            [XmlArray("resultss")]
+            [XmlArrayItem("results")]
+            public new List<ConfigurationLimitList>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<ConfigurationLimitList>? GetItems() => Items;
 
             public override void SetItems(List<ConfigurationLimitList>? value) => Items = value;

@@ -8,8 +8,8 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("isValid")]
         public bool? IsValid { get; set; }
 
-        [XmlElement("vmLayoutResults")]
-        [XmlElement("vmLayoutResult")]
+        [XmlArray("vmLayoutResults")]
+        [XmlArrayItem("vmLayoutResult")]
         public List<VMLayoutResult>? LayoutResults { get; set; }
     }
 }

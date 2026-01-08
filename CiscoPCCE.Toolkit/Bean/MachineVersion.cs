@@ -31,6 +31,14 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlRoot("results")]
         public class MachineVersionList : BaseApiListBean<MachineVersion>
         {
+            [XmlArray("versionInfos")]
+            [XmlArrayItem("versionInfo")]
+            public new List<MachineVersion>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<MachineVersion>? GetItems() => Items;
 
             public override void SetItems(List<MachineVersion>? value) => Items = value;

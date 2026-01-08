@@ -6,18 +6,26 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("errorDetail")]
     public class InvalidMachineAddressesErrorDetail : BaseApiBean
     {
-        [XmlElement("networksFound")]
-        [XmlElement("network")]
+        [XmlArray("networksFound")]
+        [XmlArrayItem("network")]
         public List<MachineAddress>? NetworksFound { get; set; }
 
-        [XmlElement("networksRequired")]
-        [XmlElement("network")]
+        [XmlArray("networksRequired")]
+        [XmlArrayItem("network")]
         public List<MachineAddress>? NetworksRequired { get; set; }
 
         // Path("machineinventory")
         [XmlRoot("results")]
         public class InvalidMachineAddressesErrorDetailList : BaseApiListBean<InvalidMachineAddressesErrorDetail>
         {
+            [XmlArray("errorDetails")]
+            [XmlArrayItem("errorDetail")]
+            public new List<InvalidMachineAddressesErrorDetail>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<InvalidMachineAddressesErrorDetail>? GetItems() => Items;
 
             public override void SetItems(List<InvalidMachineAddressesErrorDetail>? value) => Items = value;

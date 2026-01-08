@@ -7,6 +7,7 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         public List<MachineType>? MachineTypes { get; set; }
 
+        [XmlElement("periperhalSetName")]
         public string? PeriperhalSetName { get; set; }
     }
 }

@@ -6,101 +6,133 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("agent")]
     public class Agent : BaseApiBean
     {
+        [XmlElement("agentDeskSettings")]
         public required ReferenceBean AgentDeskSettings { get; set; }
 
+        [XmlElement("agentId")]
         public string? AgentId { get; set; }
 
-        [XmlElement("agentServicesEnabled")]
-        [XmlElement("agentService")]
+        [XmlArray("agentServicesEnabled")]
+        [XmlArrayItem("agentService")]
         public List<AgentServiceEnabled>? AgentServicesEnabled { get; set; }
 
-        [XmlElement("agentServicesToDisable")]
-        [XmlElement("agentService")]
+        [XmlArray("agentServicesToDisable")]
+        [XmlArrayItem("agentService")]
         public List<AgentServiceEnabled>? AgentServicesToDisable { get; set; }
 
-        [XmlElement("agentServicesToEnable")]
-        [XmlElement("agentService")]
+        [XmlArray("agentServicesToEnable")]
+        [XmlArrayItem("agentService")]
         public List<AgentServiceEnabled>? AgentServicesToEnable { get; set; }
 
+        [XmlElement("agentStateTrace")]
         public bool? AgentStateTrace { get; set; }
 
+        [XmlElement("agentTeam")]
         public required ReferenceBean AgentTeam { get; set; }
 
+        [XmlElement("attributeValue")]
         public string? AttributeValue { get; set; }
 
-        [XmlElement("agentAttributes")]
-        [XmlElement("agentAttribute")]
+        [XmlArray("agentAttributes")]
+        [XmlArrayItem("agentAttribute")]
         public List<AttributeValueWithAttribute>? Attributes { get; set; }
 
-        [XmlElement("agentAttributesAdded")]
-        [XmlElement("agentAttribute")]
+        [XmlArray("agentAttributesAdded")]
+        [XmlArrayItem("agentAttribute")]
         public List<AttributeValueWithAttribute>? AttributesAdded { get; set; }
 
-        [XmlElement("agentAttributesRemoved")]
-        [XmlElement("agentAttribute")]
+        [XmlArray("agentAttributesRemoved")]
+        [XmlArrayItem("agentAttribute")]
         public List<AttributeValueWithAttribute>? AttributesRemoved { get; set; }
 
+        [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
+        [XmlElement("canRemove")]
         public bool? CanRemove { get; set; }
 
+        [XmlElement("changeStamp")]
         public new int? ChangeStamp { get; set; }
 
+        [XmlElement("configParam")]
         public string? ConfigParam { get; set; }
 
+        [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
+        [XmlElement("datacenter")]
         public required ReferenceBean Datacenter { get; set; }
 
+        [XmlElement("defaultSkillGroup")]
         public required ReferenceBean DefaultSkillGroup { get; set; }
 
+        [XmlElement("department")]
         public required ReferenceBean Department { get; set; }
 
+        [XmlElement("description")]
         public string? Description { get; set; }
 
+        [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
+        [XmlElement("markDeletable")]
         public bool? MarkDeletable { get; set; }
 
+        [XmlElement("name")]
         public string? Name { get; set; }
 
+        [XmlElement("peripheral")]
         public required PeripheralRef Peripheral { get; set; }
 
+        [XmlElement("peripheralName")]
         public string? PeripheralName { get; set; }
 
         [XmlElement("peripheralSet")]
         public required ReferenceBean PeripheralSet { get; set; }
 
+        [XmlElement("person")]
         public required Person Person { get; set; }
 
+        [XmlElement("refURL")]
         public new string? RefURL { get; set; }
 
+        [XmlElement("selectedAttribute")]
         public bool? SelectedAttribute { get; set; }
 
+        [XmlElement("selectedSkillGroup")]
         public bool? SelectedSkillGroup { get; set; }
 
-        [XmlElement("skillGroups")]
-        [XmlElement("skillGroup")]
+        [XmlArray("skillGroups")]
+        [XmlArrayItem("skillGroup")]
         public List<ReferenceBean>? SkillGroups { get; set; }
 
-        [XmlElement("skillGroupsAdded")]
-        [XmlElement("skillGroup")]
+        [XmlArray("skillGroupsAdded")]
+        [XmlArrayItem("skillGroup")]
         public List<ReferenceBean>? SkillGroupsAdded { get; set; }
 
-        [XmlElement("skillGroupsRemoved")]
-        [XmlElement("skillGroup")]
+        [XmlArray("skillGroupsRemoved")]
+        [XmlArrayItem("skillGroup")]
         public List<ReferenceBean>? SkillGroupsRemoved { get; set; }
 
+        [XmlElement("supervisor")]
         public bool? Supervisor { get; set; }
 
-        [XmlElement("supervisorTeams")]
-        [XmlElement("supervisorTeam")]
+        [XmlArray("supervisorTeams")]
+        [XmlArrayItem("supervisorTeam")]
         public List<ReferenceBean>? SupervisorTeams { get; set; }
 
         // Path("agent")
         [XmlRoot("results")]
         public class AgentList : BaseApiListBean<Agent>
         {
+            [XmlArray("agents")]
+            [XmlArrayItem("agent")]
+            public new List<Agent>? Items
+            {
+                get => base.Items;
+                set => base.Items = value;
+            }
+
             public override List<Agent>? GetItems() => Items;
 
             public override void SetItems(List<Agent>? value) => Items = value;
