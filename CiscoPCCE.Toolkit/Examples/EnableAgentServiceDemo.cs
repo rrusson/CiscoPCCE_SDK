@@ -16,7 +16,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of AW HDS
-            var restClient = new RESTClient(args[0], args[1], args[2]);
+            var restClient = new RestClient(args[0], args[1], args[2]);
             await DemoUtils.CheckPCCEDeploymentTypeAsync(restClient);
 
             try
@@ -29,7 +29,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
         }
 
-        private static async Task EnableAgentServiceDemoAsync(RESTClient restClient)
+        private static async Task EnableAgentServiceDemoAsync(RestClient restClient)
         {
             // Create a new agent with 3 agent services enabled
             // Note: Based on the C# Bean structure, we use MappedServiceType

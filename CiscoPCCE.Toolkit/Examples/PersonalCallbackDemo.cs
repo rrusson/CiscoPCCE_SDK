@@ -7,7 +7,7 @@ namespace CiscoPCCE.Toolkit.Examples
     /// </summary>
     public class PersonalCallbackDemo
     {
-        private static RESTClient? restClient = null;
+        private static RestClient? restClient = null;
         private static Agent? agent = null;
         private static bool agentCreated = false;
 
@@ -30,7 +30,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// 1. Create a PersonalCallback Record
         /// 2. Delete the Agent and Personal Callback records
         /// </summary>
-        private static async Task PersonalCallbackDemoAsync(RESTClient restClient)
+        private static async Task PersonalCallbackDemoAsync(RestClient restClient)
         {
             PersonalCallbackRecord? pcbRecord = null;
 
@@ -62,9 +62,12 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <summary>
         /// Creates a personal callback record.
         /// </summary>
-        private static async Task<PersonalCallbackRecord?> CreatePersonalCallbackRecordAsync(RESTClient restClient, Agent? agent)
+        private static async Task<PersonalCallbackRecord?> CreatePersonalCallbackRecordAsync(RestClient restClient, Agent? agent)
         {
-            if (agent == null) return null;
+            if (agent == null)
+            {
+                return null;
+            }
 
             var callbackDateTime = DateTime.UtcNow.AddYears(2);
 
@@ -119,9 +122,9 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            restClient = new RESTClient(args[0], args[1], args[2]);
+            restClient = new RestClient(args[0], args[1], args[2]);
 
-            var deploymentType = await restClient.GetAsync<Deployment>(RESTClient.BaseUrl + "deployment");
+            var deploymentType = await restClient.GetAsync<Deployment>(RestClient.BaseUrl + "deployment");
             Console.WriteLine($"System is in Deployment Type: {deploymentType?.DeploymentType}");
 
             if (!DemoUtils.IsPCCEDeploymentType(deploymentType) && args.Length < 4)

@@ -7,7 +7,7 @@ namespace CiscoPCCE.Toolkit.Examples
     /// </summary>
     public class EnableDigitalAgentsDemo
     {
-        private static RESTClient? restClient = null;
+        private static RestClient? restClient = null;
 
         public static async Task Main(string[] args)
         {
@@ -18,7 +18,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of AW HDS
-            restClient = new RESTClient(args[0], args[1], args[2]);
+            restClient = new RestClient(args[0], args[1], args[2]);
 
             try
             {

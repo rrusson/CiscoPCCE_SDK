@@ -11,7 +11,7 @@ namespace CiscoPCCE.Toolkit
 
         public void SetPath(string path)
         {
-            RefURL = RESTClient.BaseUrl + path;
+            RefURL = RestClient.BaseUrl + path;
         }
 
         public void InitRefURL()

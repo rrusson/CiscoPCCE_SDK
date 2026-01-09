@@ -7,7 +7,7 @@ namespace CiscoPCCE.Toolkit.Examples
     /// </summary>
     public class AgentSkillGroupDemo
     {
-        private static readonly int UniqueBase = ((int)(DateTimeOffset.UtcNow.ToUnixTimeSeconds())) % 10000;
+        private static readonly int UniqueBase = ((int)DateTimeOffset.UtcNow.ToUnixTimeSeconds()) % 10000;
         private static int count = 1;
 
         public static async Task Main(string[] args)
@@ -19,9 +19,9 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            var restClient = new RESTClient(args[0], args[1], args[2]);
+            var restClient = new RestClient(args[0], args[1], args[2]);
             await DemoUtils.CheckPCCEDeploymentTypeAsync(restClient);
-            
+
             try
             {
                 await AgentSkillGroupDemoAsync(restClient);
@@ -32,7 +32,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
         }
 
-        private static async Task AgentSkillGroupDemoAsync(RESTClient restClient)
+        private static async Task AgentSkillGroupDemoAsync(RestClient restClient)
         {
             // *** Agent and Skill Group Create
             // -- Make a new agent object and associate it with a new person object.
@@ -50,7 +50,7 @@ namespace CiscoPCCE.Toolkit.Examples
             // -- Try and get an agent that doesn't exist
             try
             {
-                await restClient.GetAsync<Agent>(RESTClient.BaseUrl + "agent/12345");
+                _ = await restClient.GetAsync<Agent>(RestClient.BaseUrl + "agent/12345");
             }
             catch (ApiException e)
             {
@@ -76,7 +76,7 @@ namespace CiscoPCCE.Toolkit.Examples
                 CampaignRef = new ReferenceBean(),
                 MediaRoutingDomain = new ReferenceBean()
             };
-            
+
             var skillGroupRefUrl = await restClient.CreateAndGetAsync(skillGroup);
             if (skillGroupRefUrl != null)
             {
@@ -92,12 +92,12 @@ namespace CiscoPCCE.Toolkit.Examples
             newAgent!.SkillGroups = new List<ReferenceBean> { skillRef };
 
             // -- Performing an update which will attach the skillGroup to our agent.
-            await restClient.UpdateAsync(newAgent);
+            _ = await restClient.UpdateAsync(newAgent);
             Console.WriteLine($"SkillGroup {skillGroup?.RefURL} assigned to agent {newAgent.RefURL}");
 
             // *** Show the query params (aka search) functionality
             // -- Create 2 more agents with matching descriptions
-            var newAgent2RefUrl = await restClient.CreateAndGetAsync(PopulateAgentBean(GenerateUniqueString("firstName"), 
+            var newAgent2RefUrl = await restClient.CreateAndGetAsync(PopulateAgentBean(GenerateUniqueString("firstName"),
                 GenerateUniqueString("lastName"), GenerateUniqueString("userName"), "test2"));
             Agent? newAgent2 = null;
             if (newAgent2RefUrl != null)
@@ -106,7 +106,7 @@ namespace CiscoPCCE.Toolkit.Examples
                 Console.WriteLine($"Agent created: {newAgent2?.RefURL}");
             }
 
-            var newAgent3RefUrl = await restClient.CreateAndGetAsync(PopulateAgentBean(GenerateUniqueString("firstName"), 
+            var newAgent3RefUrl = await restClient.CreateAndGetAsync(PopulateAgentBean(GenerateUniqueString("firstName"),
                 GenerateUniqueString("lastName"), GenerateUniqueString("userName"), "test2"));
             Agent? newAgent3 = null;
             if (newAgent3RefUrl != null)
@@ -137,10 +137,25 @@ namespace CiscoPCCE.Toolkit.Examples
 
             // *** Finally Delete everything
             var beansToDelete = new List<BaseApiBean>();
-            if (newAgent != null) beansToDelete.Add(newAgent);
-            if (newAgent2 != null) beansToDelete.Add(newAgent2);
-            if (newAgent3 != null) beansToDelete.Add(newAgent3);
-            if (skillGroup != null) beansToDelete.Add(skillGroup);
+            if (newAgent != null)
+            {
+                beansToDelete.Add(newAgent);
+            }
+
+            if (newAgent2 != null)
+            {
+                beansToDelete.Add(newAgent2);
+            }
+
+            if (newAgent3 != null)
+            {
+                beansToDelete.Add(newAgent3);
+            }
+
+            if (skillGroup != null)
+            {
+                beansToDelete.Add(skillGroup);
+            }
 
             foreach (var bean in beansToDelete)
             {

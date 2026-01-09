@@ -1,15 +1,15 @@
-using System.Collections.Generic;
-using System.Linq;
 using CiscoPCCE.Toolkit.Bean;
 
 namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
-    /// Sample code for how to execute the initialization operations.
-    /// Note: This demo requires configuration values from appsettings.json.
+    /// Sample code for how to execute the initialization operations
+    /// Note: This demo requires an extensive dictionary of configuration values
     /// </summary>
     public class InitializeDemo
     {
+        // TODO: Encapsulate all these values in a configuration DTO to simplify usage
+
         // Configuration keys
         public const string PcceHost = "pcce.host";
         public const string SideAUsername = "side.a.username";
@@ -48,9 +48,9 @@ namespace CiscoPCCE.Toolkit.Examples
         /// </summary>
         public const int SleepTimeMs = 5000;
 
-        private RESTClient restClient = default!;
-        private readonly Dictionary<string, string> props;
-        private Dictionary<MachineType, List<MachineHost>> typeToMachine = new Dictionary<MachineType, List<MachineHost>>();
+        private RestClient _restClient = default!;
+        private readonly Dictionary<string, string> _props;
+        private Dictionary<MachineType, List<MachineHost>> _typeToMachine = new Dictionary<MachineType, List<MachineHost>>();
 
         /// <summary>
         /// The main method.
@@ -60,8 +60,8 @@ namespace CiscoPCCE.Toolkit.Examples
             Console.WriteLine("InitializeDemo - This is a complex demo that requires extensive configuration.");
             Console.WriteLine("Configuration should be loaded from appsettings.json by the calling application.");
             Console.WriteLine("Please ensure you have all necessary configuration values in your appsettings.json file.");
-            
-            // Example usage:
+
+            // Example usage (see Configuration keys section above):
             // var configuration = new ConfigurationBuilder()
             //     .SetBasePath(Directory.GetCurrentDirectory())
             //     .AddJsonFile("appsettings.json", optional: false)
@@ -69,7 +69,7 @@ namespace CiscoPCCE.Toolkit.Examples
             // var props = configuration.GetSection("InitializeSettings").Get<Dictionary<string, string>>();
             // var demo = new InitializeDemo(props);
             // await demo.ExecuteInitializeAsync();
-            
+
             Console.WriteLine("Initialize demo structure ported successfully.");
         }
 
@@ -78,10 +78,10 @@ namespace CiscoPCCE.Toolkit.Examples
         /// </summary>
         public InitializeDemo(Dictionary<string, string> props)
         {
-            this.props = props ?? throw new ArgumentNullException(nameof(props));
+            _props = props ?? throw new ArgumentNullException(nameof(props));
 
             // Create a new RESTClient object with the IP of your DS / AW HDS
-            restClient = new RESTClient(
+            _restClient = new RestClient(
                 props[PcceHost],
                 props[CceDiagUsername],
                 props[CceDiagPassword]
@@ -89,10 +89,10 @@ namespace CiscoPCCE.Toolkit.Examples
         }
 
         // for unit testing
-        public InitializeDemo() 
+        public InitializeDemo()
         {
-            props = new Dictionary<string, string>();
-            restClient = default!;
+            _props = new Dictionary<string, string>();
+            _restClient = default!;
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// </summary>
         public virtual async Task<List<InitializationStatus>> GetStatusListAsync()
         {
-            var status = await restClient.GetAsync<InitializationStatusResults>(RESTClient.BaseUrl + "initialize");
+            var status = await _restClient.GetAsync<InitializationStatusResults>(RestClient.BaseUrl + "initialize");
             return status?.StatusList ?? new List<InitializationStatus>();
         }
 
@@ -254,7 +254,7 @@ namespace CiscoPCCE.Toolkit.Examples
 
             // In C#, we need a different approach for empty body updates
             // This would call the appropriate REST endpoint to start initialization
-            await restClient.UpdateAsync(new WebsetupInstance { RefURL = RESTClient.BaseUrl + "initialize" });
+            _ = await _restClient.UpdateAsync(new WebsetupInstance { RefURL = RestClient.BaseUrl + "initialize" });
         }
 
         /// <summary>
@@ -266,16 +266,16 @@ namespace CiscoPCCE.Toolkit.Examples
 
             var initialSettings = new InitialSettings
             {
-                RefURL = RESTClient.BaseUrl + "initialize/settings",
+                RefURL = RestClient.BaseUrl + "initialize/settings",
                 // possible codecs: "G.711U", "G.711A", "G.729"
-                MobileAgentCodec = props.GetValueOrDefault(SettingsCodec),
+                MobileAgentCodec = _props.GetValueOrDefault(SettingsCodec),
                 CmSideA = new ReferenceBean(),
                 CmSideB = new ReferenceBean(),
                 Department = new ReferenceBean()
             };
 
-            var username = props.GetValueOrDefault(SettingsServiceUsername);
-            var password = props.GetValueOrDefault(SettingsServicePassword);
+            var username = _props.GetValueOrDefault(SettingsServiceUsername);
+            var password = _props.GetValueOrDefault(SettingsServicePassword);
             if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
             {
                 initialSettings.ServiceAccountUserName = username;
@@ -283,7 +283,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // not handling external UCM for now
-            await restClient.UpdateAsync(initialSettings);
+            _ = await _restClient.UpdateAsync(initialSettings);
         }
 
         // Additional helper methods would continue here...
@@ -293,28 +293,31 @@ namespace CiscoPCCE.Toolkit.Examples
         private async Task UpdateFinesseAsync()
         {
             Console.WriteLine("Updating Finesse");
-            await UpdateMachineAsync(MachineType.FINESSE, props[FinesseDiagUsername], props[FinesseDiagPassword]);
+            await UpdateMachineAsync(MachineType.FINESSE, _props[FinesseDiagUsername], _props[FinesseDiagPassword]);
         }
 
         private async Task UpdateCuicAsync()
         {
             Console.WriteLine("Updating CUIC");
-            await UpdateCUICMachineAsync(MachineType.CUIC_PUBLISHER, props[CuicDiagUsername], props[CuicDiagPassword],
-                props[CuicIdsUsername], props[CuicIdsPassword]);
+            await UpdateCUICMachineAsync(MachineType.CUIC_PUBLISHER, _props[CuicDiagUsername], _props[CuicDiagPassword],
+                _props[CuicIdsUsername], _props[CuicIdsPassword]);
         }
 
         private async Task UpdateCceAsync()
         {
             Console.WriteLine("Updating CCE");
-            await UpdateMachineAsync(MachineType.CCE_AW, props[CceDiagUsername], props[CceDiagPassword]);
+            await UpdateMachineAsync(MachineType.CCE_AW, _props[CceDiagUsername], _props[CceDiagPassword]);
         }
 
         private async Task UpdateCvpAsync()
         {
             Console.WriteLine("Updating CVP");
 
-            var machines = typeToMachine.GetValueOrDefault(MachineType.CVP);
-            if (machines == null) return;
+            var machines = _typeToMachine.GetValueOrDefault(MachineType.CVP);
+            if (machines == null)
+            {
+                return;
+            }
 
             var cvpA = FindMachineBySide(MachineType.CVP, "sideA");
             var cvpB = FindMachineBySide(MachineType.CVP, "sideB");
@@ -327,11 +330,11 @@ namespace CiscoPCCE.Toolkit.Examples
                     var svc = new MachineService
                     {
                         Type = ServiceType.CVP_WSM,
-                        UserName = props[CvpAUsername],
-                        Password = props[CvpAPassword]
+                        UserName = _props[CvpAUsername],
+                        Password = _props[CvpAPassword]
                     };
                     address.MachineServices = new List<MachineService> { svc };
-                    await restClient.UpdateAsync(cvpA);
+                    _ = await _restClient.UpdateAsync(cvpA);
                 }
             }
 
@@ -343,11 +346,11 @@ namespace CiscoPCCE.Toolkit.Examples
                     var svc = new MachineService
                     {
                         Type = ServiceType.CVP_WSM,
-                        UserName = props[CvpBUsername],
-                        Password = props[CvpBPassword]
+                        UserName = _props[CvpBUsername],
+                        Password = _props[CvpBPassword]
                     };
                     address.MachineServices = new List<MachineService> { svc };
-                    await restClient.UpdateAsync(cvpB);
+                    _ = await _restClient.UpdateAsync(cvpB);
                 }
             }
         }
@@ -366,11 +369,11 @@ namespace CiscoPCCE.Toolkit.Examples
                     var svc = new MachineService
                     {
                         Type = ServiceType.DIAGNOSTIC_PORTAL,
-                        UserName = props[CvpAUsername],
-                        Password = props[CvpAPassword]
+                        UserName = _props[CvpAUsername],
+                        Password = _props[CvpAPassword]
                     };
                     address.MachineServices = new List<MachineService> { svc };
-                    await restClient.UpdateAsync(cvpReportingB);
+                    _ = await _restClient.UpdateAsync(cvpReportingB);
                 }
             }
         }
@@ -384,7 +387,10 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             var addr = FindAddressByType(machine.Addresses ?? new List<MachineAddress>(), AddressType.PUBLIC);
-            if (addr == null) return;
+            if (addr == null)
+            {
+                return;
+            }
 
             var services = addr.MachineServices != null
                 ? new List<MachineService>(addr.MachineServices)
@@ -392,7 +398,7 @@ namespace CiscoPCCE.Toolkit.Examples
             addr.MachineServices = services;
             UpdateOrCreateMachineService(addr, ServiceType.DIAGNOSTIC_PORTAL, username, password);
 
-            await restClient.UpdateAsync(machine);
+            _ = await _restClient.UpdateAsync(machine);
         }
 
         private async Task UpdateCUICMachineAsync(MachineType machineType, string username, string password,
@@ -405,7 +411,10 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             var addr = FindAddressByType(machine.Addresses ?? new List<MachineAddress>(), AddressType.PUBLIC);
-            if (addr == null) return;
+            if (addr == null)
+            {
+                return;
+            }
 
             var services = addr.MachineServices != null
                 ? new List<MachineService>(addr.MachineServices)
@@ -414,7 +423,7 @@ namespace CiscoPCCE.Toolkit.Examples
             UpdateOrCreateMachineService(addr, ServiceType.DIAGNOSTIC_PORTAL, username, password);
             UpdateOrCreateMachineService(addr, ServiceType.IDS, idsUsername, idsPassword);
 
-            await restClient.UpdateAsync(machine);
+            _ = await _restClient.UpdateAsync(machine);
         }
 
         private void UpdateOrCreateMachineService(MachineAddress addr, ServiceType svcType, string username, string password)
@@ -449,7 +458,7 @@ namespace CiscoPCCE.Toolkit.Examples
         {
             Console.WriteLine("Updating Call Manager");
 
-            var cmPubName = props[CmPubName];
+            var cmPubName = _props[CmPubName];
             var machine = FindMachineByName(MachineType.CM, cmPubName);
 
             if (machine == null)
@@ -471,12 +480,12 @@ namespace CiscoPCCE.Toolkit.Examples
                 var svc = new MachineService
                 {
                     Type = ServiceType.AXL,
-                    UserName = props[CmUsername],
-                    Password = props[CmPassword]
+                    UserName = _props[CmUsername],
+                    Password = _props[CmPassword]
                 };
                 addr.MachineServices = new List<MachineService> { svc };
 
-                await restClient.UpdateAsync(machine);
+                _ = await _restClient.UpdateAsync(machine);
             }
         }
 
@@ -486,11 +495,11 @@ namespace CiscoPCCE.Toolkit.Examples
 
             var deploymentTypeInfo = new DeploymentTypeInfo
             {
-                RefURL = RESTClient.BaseUrl + "deploymenttypeinfo",
+                RefURL = RestClient.BaseUrl + "deploymenttypeinfo",
                 CapacityInfo = new CapacityInfo(),
                 Department = new ReferenceBean(),
                 PermissionInfo = new PermissionInfo(),
-                SystemValidationStatus = new SystemValidationStatus 
+                SystemValidationStatus = new SystemValidationStatus
                 {
                     VmValidationResult = new VMValidationResult()
                 }
@@ -499,23 +508,23 @@ namespace CiscoPCCE.Toolkit.Examples
             var sideAHost = new VMHost
             {
                 Name = "sideA",
-                UserName = props[SideAUsername],
-                Password = props[SideAPassword],
-                Address = props[SideAAddress]
+                UserName = _props[SideAUsername],
+                Password = _props[SideAPassword],
+                Address = _props[SideAAddress]
             };
 
             var sideBHost = new VMHost
             {
                 Name = "sideB",
-                UserName = props[SideBUsername],
-                Password = props[SideBPassword],
-                Address = props[SideBAddress]
+                UserName = _props[SideBUsername],
+                Password = _props[SideBPassword],
+                Address = _props[SideBAddress]
             };
 
             deploymentTypeInfo.DeploymentType = 7;
             deploymentTypeInfo.HardwareLayoutType = HardwareLayoutType.TRC;
             deploymentTypeInfo.VmHosts = new List<VMHost> { sideAHost, sideBHost };
-            await restClient.UpdateAsync(deploymentTypeInfo);
+            _ = await _restClient.UpdateAsync(deploymentTypeInfo);
         }
 
         private async Task CreateInstanceAsync()
@@ -524,7 +533,7 @@ namespace CiscoPCCE.Toolkit.Examples
             WebsetupInstance? instance;
             try
             {
-                instance = await restClient.GetByIdAsync<WebsetupInstance>("1");
+                instance = await _restClient.GetByIdAsync<WebsetupInstance>("1");
             }
             catch (ApiException)
             {
@@ -536,47 +545,46 @@ namespace CiscoPCCE.Toolkit.Examples
             }
             instance = new WebsetupInstance
             {
-                FacilityName = props[Facility],
-                InstanceName = props[Instance]
+                FacilityName = _props[Facility],
+                InstanceName = _props[Instance]
             };
-            await restClient.CreateAsync(instance);
+            _ = await _restClient.CreateAsync(instance);
         }
 
         private async Task DeleteInstanceAsync()
         {
-            await restClient.DeleteByIdAsync<WebsetupInstance>("1");
+            await _restClient.DeleteByIdAsync<WebsetupInstance>("1");
         }
 
         private async Task LoadMachinesAsync()
         {
             Console.WriteLine("Loading inventory");
 
-            var listBean = await restClient.GetListAsync<MachineHostList>();
-            typeToMachine = new Dictionary<MachineType, List<MachineHost>>();
+            var listBean = await _restClient.GetListAsync<MachineHostList>();
+            _typeToMachine = new Dictionary<MachineType, List<MachineHost>>();
 
             int total = 0;
             if (listBean?.Items != null)
             {
                 foreach (var bean in listBean.Items)
                 {
-                    var machine = bean as MachineHost;
-                    if (machine != null)
+                    if (bean is MachineHost machine)
                     {
-                        if (!typeToMachine.ContainsKey(machine.MachineType))
+                        if (!_typeToMachine.ContainsKey(machine.MachineType))
                         {
-                            typeToMachine[machine.MachineType] = new List<MachineHost>();
+                            _typeToMachine[machine.MachineType] = new List<MachineHost>();
                         }
-                        typeToMachine[machine.MachineType].Add(machine);
+                        _typeToMachine[machine.MachineType].Add(machine);
                         total++;
                     }
                 }
             }
 
             Console.WriteLine($"Inventory has been loaded. Total: {total}");
-            foreach (var machineType in typeToMachine.Keys)
+            foreach (var machineType in _typeToMachine.Keys)
             {
                 Console.WriteLine($" Type: > {machineType}");
-                foreach (var machine in typeToMachine[machineType])
+                foreach (var machine in _typeToMachine[machineType])
                 {
                     Console.WriteLine($"     --> {machine.Name} {machine}");
                 }
@@ -590,22 +598,22 @@ namespace CiscoPCCE.Toolkit.Examples
 
         private MachineHost? FindMachineByName(MachineType type, string name)
         {
-            if (!typeToMachine.ContainsKey(type))
+            if (!_typeToMachine.ContainsKey(type))
             {
                 return null;
             }
 
-            return typeToMachine[type].FirstOrDefault(machine => machine.Name == name);
+            return _typeToMachine[type].FirstOrDefault(machine => machine.Name == name);
         }
 
         private MachineHost? FindMachineBySide(MachineType type, string sideName)
         {
-            if (!typeToMachine.ContainsKey(type))
+            if (!_typeToMachine.ContainsKey(type))
             {
                 return null;
             }
 
-            return typeToMachine[type].FirstOrDefault(machine =>
+            return _typeToMachine[type].FirstOrDefault(machine =>
                 machine.VmHostRef?.Name == sideName);
         }
 

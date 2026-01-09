@@ -7,7 +7,7 @@ namespace CiscoPCCE.Toolkit.Examples
     /// </summary>
     public class CampaignDemo
     {
-        private static RESTClient? restClient = null;
+        private static RestClient? restClient = null;
         private static SkillGroup? skillGroup1 = null;
         private static SkillGroup? skillGroup2 = null;
         private static bool skillGroupsCreated = false;
@@ -42,7 +42,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// 5. Delete all the Campaigns and SkillGroups created.
         /// 6. Getting a Campaign with an non-existing CampaignID will result in an error. This shows the format of errors.
         /// </summary>
-        private static async Task CampaignDemoAsync(RESTClient restClient)
+        private static async Task CampaignDemoAsync(RestClient restClient)
         {
             Campaign? campaign1 = null;
             Campaign? campaign2 = null;
@@ -102,19 +102,22 @@ namespace CiscoPCCE.Toolkit.Examples
         /// </summary>
         /// <param name="restClient">Rest Client</param>
         /// <param name="skillGroup">SkillGroup - a SkillGroup is required for creating a Campaign, this skillGroup must not be used in other Campaigns</param>
-        public static async Task<Campaign?> CreateAndGetCampaignAsync(RESTClient restClient, SkillGroup? skillGroup)
+        public static async Task<Campaign?> CreateAndGetCampaignAsync(RestClient restClient, SkillGroup? skillGroup)
         {
-            if (skillGroup == null) return null;
+            if (skillGroup == null)
+            {
+                return null;
+            }
 
             var skillGroupInfos = CreateCampaignSkillGroupInfos(new List<SkillGroup> { skillGroup });
 
             // -- Get UTC timeZone
-            var timeZoneUTC = await restClient.GetAsync<Bean.TimeZone>(RESTClient.BaseUrl + "timezone/UTC");
+            var timeZoneUTC = await restClient.GetAsync<Bean.TimeZone>(RestClient.BaseUrl + "timezone/UTC");
 
             // -- Make a new Campaign object
             var campaign = PopulateCampaignBean(DemoUtils.GenerateUniqueString(CampaignNamePrefix, campaignCount++),
                                                 DialingMode.PREVIEWONLY, skillGroupInfos, timeZoneUTC);
-            
+
             var refUrl = await restClient.CreateAndGetAsync(campaign);
             Campaign? result = null;
             if (refUrl != null)
@@ -128,7 +131,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <summary>
         /// Creates a SkillGroup and returns the created SkillGroup
         /// </summary>
-        public static async Task<SkillGroup?> CreateAndGetSkillGroupAsync(RESTClient restClient)
+        public static async Task<SkillGroup?> CreateAndGetSkillGroupAsync(RestClient restClient)
         {
             var skillGroup = new SkillGroup
             {
@@ -141,7 +144,7 @@ namespace CiscoPCCE.Toolkit.Examples
                 CampaignRef = new ReferenceBean(),
                 MediaRoutingDomain = new ReferenceBean()
             };
-            
+
             var refUrl = await restClient.CreateAndGetAsync(skillGroup);
             SkillGroup? result = null;
             if (refUrl != null)
@@ -156,9 +159,12 @@ namespace CiscoPCCE.Toolkit.Examples
         /// Updates the Campaign by changing the value of abandonEnabled from true to false.
         /// Prints out the value of abandonEnabled before and after update.
         /// </summary>
-        private static async Task UpdateAndVerifyCampaignAsync(RESTClient restClient, Campaign? campaign)
+        private static async Task UpdateAndVerifyCampaignAsync(RestClient restClient, Campaign? campaign)
         {
-            if (campaign == null) return;
+            if (campaign == null)
+            {
+                return;
+            }
 
             Console.WriteLine("Updating Campaign, setting abandonEnabled to false");
             Console.WriteLine($"abandonEnabled before update: {campaign.AbandonEnabled}");
@@ -173,12 +179,12 @@ namespace CiscoPCCE.Toolkit.Examples
         /// This function calls the GET method on a non-existing Campaign i.e. campaign refURL has an invalid id.
         /// Also prints out the Error message received on standard output
         /// </summary>
-        private static async Task CheckingGetOnNonExistingCampaignAsync(RESTClient restClient)
+        private static async Task CheckingGetOnNonExistingCampaignAsync(RestClient restClient)
         {
             Console.WriteLine("Getting a non-existing campaign should return an error");
             try
             {
-                await restClient.GetAsync<Campaign>(RESTClient.BaseUrl + "campaign/12345");
+                _ = await restClient.GetAsync<Campaign>(RestClient.BaseUrl + "campaign/12345");
             }
             catch (ApiException e)
             {
@@ -253,7 +259,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <summary>
         /// Creates SkillGroups and sets them up.
         /// </summary>
-        private static async Task CreateAndSetSkillGroupsAsync(RESTClient restClient)
+        private static async Task CreateAndSetSkillGroupsAsync(RestClient restClient)
         {
             skillGroup1 = await CreateAndGetSkillGroupAsync(restClient);
             skillGroup2 = await CreateAndGetSkillGroupAsync(restClient);
@@ -265,7 +271,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// Looks up the Skill Groups by skill group names and sets them up.
         /// Prints errors to standard output and exits if SkillGroups cannot be created
         /// </summary>
-        private static async Task LookupAndSetSkillGroupsAsync(RESTClient restClient, string skillGroupName1, string skillGroupName2)
+        private static async Task LookupAndSetSkillGroupsAsync(RestClient restClient, string skillGroupName1, string skillGroupName2)
         {
             var skillGroupBase1 = await DemoUtils.LookupSkillGroupAsync(restClient, skillGroupName1);
             var skillGroupBase2 = await DemoUtils.LookupSkillGroupAsync(restClient, skillGroupName2);
@@ -299,9 +305,9 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            restClient = new RESTClient(args[0], args[1], args[2]);
+            restClient = new RestClient(args[0], args[1], args[2]);
 
-            var deploymentType = await restClient.GetAsync<Deployment>(RESTClient.BaseUrl + "deployment");
+            var deploymentType = await restClient.GetAsync<Deployment>(RestClient.BaseUrl + "deployment");
             Console.WriteLine($"System is in Deployment Type: {deploymentType?.DeploymentType}");
 
             if (!DemoUtils.IsPCCEDeploymentType(deploymentType) && args.Length < 5)

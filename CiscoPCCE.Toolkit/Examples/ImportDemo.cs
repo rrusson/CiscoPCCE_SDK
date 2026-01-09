@@ -7,22 +7,22 @@ namespace CiscoPCCE.Toolkit.Examples
     /// </summary>
     public class ImportDemo
     {
-        private static RESTClient? restClient = null;
+        private static RestClient? restClient = null;
         private static SkillGroup? skillGroup = null;
         private static bool skillGroupCreated = false;
 
         private static readonly string CommaSeparatedFileContentMultipleFields =
-            "AccountNumber,FirstName,LastName,Phone01,Phone02" + DemoUtils.NewLine +
-            "ACCOUNT111,Mir,Ali,123456789,987654321" + DemoUtils.NewLine +
-            "ACCOUNT112,Steve,Glovin,123456788,9876543*22" + DemoUtils.NewLine +
-            "ACCOUNT113,Tom,Weissinger,123456787,987654323#" + DemoUtils.NewLine +
+            "AccountNumber,FirstName,LastName,Phone01,Phone02" + Environment.NewLine +
+            "ACCOUNT111,Mir,Ali,123456789,987654321" + Environment.NewLine +
+            "ACCOUNT112,Steve,Glovin,123456788,9876543*22" + Environment.NewLine +
+            "ACCOUNT113,Tom,Weissinger,123456787,987654323#" + Environment.NewLine +
             "ACCOUNT114,Sajith,Kaimal,123456786,9*87654324";
 
         private static readonly string PipeSeparatedFileContentMultipleFields =
-            "AccountNumber|FirstName|LastName|Phone01|Phone02" + DemoUtils.NewLine +
-            "ACCOUNT115|Mark|Rzasa|123456789|987654321" + DemoUtils.NewLine +
-            "ACCOUNT116|Elie|Lalo|123456788|9876543*22" + DemoUtils.NewLine +
-            "ACCOUNT117|Josephine|Zhuang|123456787|987654323#" + DemoUtils.NewLine +
+            "AccountNumber|FirstName|LastName|Phone01|Phone02" + Environment.NewLine +
+            "ACCOUNT115|Mark|Rzasa|123456789|987654321" + Environment.NewLine +
+            "ACCOUNT116|Elie|Lalo|123456788|9876543*22" + Environment.NewLine +
+            "ACCOUNT117|Josephine|Zhuang|123456787|987654323#" + Environment.NewLine +
             "ACCOUNT118|Avinash|Kumar|123456786|9*87654324";
 
         private const string ImportPath = "import";
@@ -48,7 +48,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// 3. Import four more records using pipe-delimited values
         /// 4. Delete the imported records, campaign and skillGroup.
         /// </summary>
-        private static async Task ImportDemoAsync(RESTClient restClient)
+        private static async Task ImportDemoAsync(RestClient restClient)
         {
             Campaign? campaign = null;
 
@@ -62,12 +62,12 @@ namespace CiscoPCCE.Toolkit.Examples
                     var importPath = ConstructImportPath(campaign);
 
                     // -- Create 4 records using comma-delimited file content
-                    await restClient.CreateAsync(PopulateBulkImportBean(DemoUtils.CommaDelimiter, CommaSeparatedFileContentMultipleFields, false),
+                    _ = await restClient.CreateAsync(PopulateBulkImportBean(DemoUtils.CommaDelimiter, CommaSeparatedFileContentMultipleFields, false),
                         importPath);
                     Console.WriteLine("Created Import with 4 records comma-separated");
 
                     // -- Create 4 more records using pipe-delimited file content
-                    await restClient.CreateAsync(PopulateBulkImportBean(DemoUtils.PipeDelimiter, PipeSeparatedFileContentMultipleFields, false),
+                    _ = await restClient.CreateAsync(PopulateBulkImportBean(DemoUtils.PipeDelimiter, PipeSeparatedFileContentMultipleFields, false),
                         importPath);
                     Console.WriteLine("Created Import with 4 more records pipe-separated");
                 }
@@ -99,8 +99,8 @@ namespace CiscoPCCE.Toolkit.Examples
         /// </summary>
         private static string ConstructImportPath(Campaign campaign)
         {
-            var importPath = campaign.RefURL?.Replace(RESTClient.BaseUrl, "") ?? "";
-            importPath += "/" + ImportPath;
+            string importPath = campaign.RefURL?.Replace(RestClient.BaseUrl, "") ?? "";
+            importPath += $"/{ImportPath}";
             return importPath;
         }
 
@@ -135,9 +135,9 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            restClient = new RESTClient(args[0], args[1], args[2]);
+            restClient = new RestClient(args[0], args[1], args[2]);
 
-            var deploymentType = await restClient.GetAsync<Deployment>(RESTClient.BaseUrl + "deployment");
+            var deploymentType = await restClient.GetAsync<Deployment>(RestClient.BaseUrl + "deployment");
             Console.WriteLine($"System is in Deployment Type: {deploymentType?.DeploymentType}");
 
             if (!DemoUtils.IsPCCEDeploymentType(deploymentType) && args.Length < 4)

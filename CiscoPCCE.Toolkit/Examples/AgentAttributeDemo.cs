@@ -7,7 +7,7 @@ namespace CiscoPCCE.Toolkit.Examples
     /// </summary>
     public class AgentAttributeDemo
     {
-        private static readonly int UniqueBase = ((int)(DateTimeOffset.UtcNow.ToUnixTimeSeconds())) % 10000;
+        private static readonly int UniqueBase = ((int)DateTimeOffset.UtcNow.ToUnixTimeSeconds()) % 10000;
         private static int count = 1;
 
         public static async Task Main(string[] args)
@@ -19,9 +19,9 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            var restClient = new RESTClient(args[0], args[1], args[2]);
+            var restClient = new RestClient(args[0], args[1], args[2]);
 
-            var deploymentType = await restClient.GetAsync<Deployment>(RESTClient.BaseUrl + "deployment");
+            var deploymentType = await restClient.GetAsync<Deployment>(RestClient.BaseUrl + "deployment");
 
             Console.WriteLine($"System is in Deployment Type: {deploymentType?.DeploymentType}");
 
@@ -35,11 +35,11 @@ namespace CiscoPCCE.Toolkit.Examples
             }
         }
 
-        private static async Task AgentAttributeDemoAsync(RESTClient restClient, Deployment? deploymentType)
+        private static async Task AgentAttributeDemoAsync(RestClient restClient, Deployment? deploymentType)
         {
             // *** Agent Find (UCCE) or Create (PCCE)
             Agent? agent = null;
-            if (deploymentType?.DeploymentType != 7 && deploymentType?.DeploymentType != 10)
+            if (deploymentType?.DeploymentType is not 7 and not 10)
             {
                 var agents = await restClient.GetListAsync<AgentList>();
 
@@ -120,7 +120,7 @@ namespace CiscoPCCE.Toolkit.Examples
                 Console.WriteLine($"Deleted Attribute: {attribute.RefURL}");
             }
 
-            if ((deploymentType?.DeploymentType == 7 || deploymentType?.DeploymentType == 10) && agent.RefURL != null)
+            if ((deploymentType?.DeploymentType == 7 || deploymentType?.DeploymentType == 10) && agent?.RefURL != null)
             {
                 await restClient.DeleteAsync(agent.RefURL);
                 Console.WriteLine($"Deleted Agent: {agent.RefURL}");

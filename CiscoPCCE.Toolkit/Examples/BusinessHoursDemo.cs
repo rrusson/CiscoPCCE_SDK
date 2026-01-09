@@ -7,7 +7,7 @@ namespace CiscoPCCE.Toolkit.Examples
     /// </summary>
     public class BusinessHoursDemo
     {
-        private static RESTClient? restClient = null;
+        private static RestClient? restClient = null;
         private const string BusinessHourNamePrefix = "DemoBH";
 
         public static async Task Main(string[] args)
@@ -22,15 +22,15 @@ namespace CiscoPCCE.Toolkit.Examples
                 Environment.Exit(0);
             }
 
-            restClient = new RESTClient(args[0], args[1], args[2]);
+            restClient = new RestClient(args[0], args[1], args[2]);
             await DemoBusinessHoursAsync(restClient);
         }
 
-        private static async Task DemoBusinessHoursAsync(RESTClient restClient)
+        private static async Task DemoBusinessHoursAsync(RestClient restClient)
         {
             BusinessHour? businessHour1 = null;
             BusinessHour? businessHour2 = null;
-            
+
             try
             {
                 // -- Create a business hour
@@ -66,7 +66,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
         }
 
-        private static async Task GetBusinessHoursListAsync(RESTClient restClient)
+        private static async Task GetBusinessHoursListAsync(RestClient restClient)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
         }
 
-        private static async Task<BusinessHour?> CreateAndGetBusinessHourConfigAsync(RESTClient restClient, string bhName)
+        private static async Task<BusinessHour?> CreateAndGetBusinessHourConfigAsync(RestClient restClient, string bhName)
         {
             var bean = GetBusinessHourForCreate(bhName);
             var refUrl = await restClient.CreateAndGetAsync(bean);
@@ -159,7 +159,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <summary>
         /// Update a business Hour object and verify that it's updated.
         /// </summary>
-        private static async Task UpdateAndVerifyBusinessHourConfigAsync(RESTClient restClient, BusinessHour bh)
+        private static async Task UpdateAndVerifyBusinessHourConfigAsync(RestClient restClient, BusinessHour bh)
         {
             Console.WriteLine($"Business Hour time zone before update: {bh.Timezone?.RefURL}");
 

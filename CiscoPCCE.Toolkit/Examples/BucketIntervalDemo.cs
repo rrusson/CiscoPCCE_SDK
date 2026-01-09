@@ -16,11 +16,11 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            var restClient = new RESTClient(args[0], args[1], args[2]);
+            var restClient = new RestClient(args[0], args[1], args[2]);
             await BucketIntervalDemoAsync(restClient);
         }
 
-        private static async Task BucketIntervalDemoAsync(RESTClient restClient)
+        private static async Task BucketIntervalDemoAsync(RestClient restClient)
         {
             var bean = new BucketInterval
             {
@@ -28,7 +28,7 @@ namespace CiscoPCCE.Toolkit.Examples
                 UpperBound1 = 123,
                 Department = new ReferenceBean()
             };
-            await restClient.CreateAndGetAsync(bean);
+            _ = await restClient.CreateAndGetAsync(bean);
         }
     }
 }

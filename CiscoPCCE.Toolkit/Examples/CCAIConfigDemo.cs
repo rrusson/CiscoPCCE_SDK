@@ -3,9 +3,9 @@ namespace CiscoPCCE.Toolkit.Examples
     /// <summary>
     /// Example code for retrieving and syncing CCAI config.
     /// </summary>
-    public class CCAIConfigDemo
+    public class CcaiConfigDemo
     {
-        private static RESTClient? restClient = null;
+        private static RestClient? restClient = null;
 
         public static async Task Main(string[] args)
         {
@@ -19,7 +19,7 @@ namespace CiscoPCCE.Toolkit.Examples
                 Environment.Exit(0);
             }
 
-            restClient = new RESTClient(args[0], args[1], args[2]);
+            restClient = new RestClient(args[0], args[1], args[2]);
             await DemoCCAIConfigAsync();
         }
 
