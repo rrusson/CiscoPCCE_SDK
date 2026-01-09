@@ -7,7 +7,7 @@ namespace CiscoPCCE.Toolkit
     /// <summary>
     /// A simple SSL REST Client wrapper to handle CRUD API calls to the webconfig service.
     /// </summary>
-    public class RESTClient
+    public class RestClient
     {
         /// <summary>
         /// Base URL for the Webconfig API
@@ -25,7 +25,7 @@ namespace CiscoPCCE.Toolkit
         /// <param name="hostName">Fully qualified host name or IP</param>
         /// <param name="username">Fully qualified username (with @domain)</param>
         /// <param name="password">User's password</param>
-        public RESTClient(string hostName, string username, string password)
+        public RestClient(string hostName, string username, string password)
         {
             // Create HTTP client handler that accepts all SSL certificates
             var handler = new HttpClientHandler
