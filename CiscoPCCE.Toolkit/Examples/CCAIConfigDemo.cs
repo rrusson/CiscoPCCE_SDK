@@ -68,11 +68,12 @@ namespace CiscoPCCE.Toolkit.Examples
             {
                 Console.WriteLine("****************************************************************************************************");
                 Console.WriteLine("****************************************************************************************************");
-                // For sync operations that don't require a bean, we just need to POST to the endpoint
-                // The simplest approach is to use HttpClient directly for this edge case
-                var httpClient = new System.Net.Http.HttpClient();
-                var response = await httpClient.PostAsync($"{RESTClient.BaseUrl}contactcenterai/globalconfig/sync", null);
-                Console.WriteLine($"CCAI Global Config sync is successful. Response status: {response.StatusCode}");
+                // Note: This would ideally use the RESTClient's HttpClient instance for proper authentication
+                // For sync operations that don't require a bean, the Java version uses a different method
+                // In a production implementation, this should use the authenticated HttpClient from RESTClient
+                Console.WriteLine("CCAI Global Config sync - Note: Implementation requires authenticated HTTP client");
+                Console.WriteLine("This is a placeholder showing the structure. Actual implementation would need");
+                Console.WriteLine("to extend RESTClient to support POST operations without a bean parameter.");
             }
             catch (Exception e)
             {

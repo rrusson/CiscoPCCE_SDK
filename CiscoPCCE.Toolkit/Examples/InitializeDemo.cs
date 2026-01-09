@@ -49,8 +49,8 @@ namespace CiscoPCCE.Toolkit.Examples
         /// </summary>
         public static long SleepTimeMs = 5000;
 
-        private RESTClient restClient;
-        private Dictionary<string, string> props;
+        private RESTClient restClient = default!;
+        private Dictionary<string, string> props = new Dictionary<string, string>();
         private Dictionary<MachineType, List<MachineHost>> typeToMachine = new Dictionary<MachineType, List<MachineHost>>();
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace CiscoPCCE.Toolkit.Examples
         public InitializeDemo() 
         {
             props = new Dictionary<string, string>();
-            restClient = null!;
+            restClient = default!;
         }
 
         /// <summary>
