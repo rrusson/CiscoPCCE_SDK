@@ -4,8 +4,6 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Example code for creating agent with agent service enabled.
-    /// 
-    /// Command line launch: dotnet run EnableAgentServiceDemo hostname username password
     /// </summary>
     public class EnableAgentServiceDemo
     {

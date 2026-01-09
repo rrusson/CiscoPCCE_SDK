@@ -4,8 +4,6 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Example code for Campaign operations.
-    /// 
-    /// Command line launch: dotnet run CampaignDemo hostname username password [skillGroupName1] [skillGroupName2]
     /// </summary>
     public class CampaignDemo
     {

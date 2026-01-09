@@ -4,8 +4,6 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Example code for creating agents, skill groups, and associating them.
-    /// 
-    /// Command line launch: dotnet run AgentSkillGroupDemo hostname username password
     /// </summary>
     public class AgentSkillGroupDemo
     {

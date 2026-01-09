@@ -2,8 +2,6 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Example code for retrieving and syncing CCAI config.
-    /// 
-    /// Command line launch: dotnet run CCAIConfigDemo hostname username password
     /// </summary>
     public class CCAIConfigDemo
     {

@@ -4,8 +4,6 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Example code for creating agents, Attributes, and associating them.
-    /// 
-    /// Command line launch: dotnet run AgentAttributeDemo hostname username password
     /// </summary>
     public class AgentAttributeDemo
     {

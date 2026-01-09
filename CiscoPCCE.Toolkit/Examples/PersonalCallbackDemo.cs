@@ -4,8 +4,6 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Example code for Personal Callback Operations.
-    /// 
-    /// Command line launch: dotnet run PersonalCallbackDemo hostname username password
     /// </summary>
     public class PersonalCallbackDemo
     {

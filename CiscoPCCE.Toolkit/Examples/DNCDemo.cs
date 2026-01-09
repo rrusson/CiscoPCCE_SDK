@@ -4,8 +4,6 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Example code for Do Not Call ImportRule operations.
-    /// 
-    /// Command line launch: dotnet run DNCDemo hostname username password
     /// </summary>
     public class DNCDemo
     {

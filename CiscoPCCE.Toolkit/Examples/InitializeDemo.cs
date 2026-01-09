@@ -6,8 +6,7 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Sample code for how to execute the initialization operations.
-    /// Note: This demo requires configuration values that would typically be in a properties file.
-    /// Command line launch: dotnet run InitializeDemo [config-file-path]
+    /// Note: This demo requires configuration values from appsettings.json.
     /// </summary>
     public class InitializeDemo
     {
@@ -47,10 +46,10 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <summary>
         /// How long to wait between polls of the initialization status API (in milliseconds).
         /// </summary>
-        public static long SleepTimeMs = 5000;
+        public const int SleepTimeMs = 5000;
 
         private RESTClient restClient = default!;
-        private Dictionary<string, string> props = new Dictionary<string, string>();
+        private readonly Dictionary<string, string> props;
         private Dictionary<MachineType, List<MachineHost>> typeToMachine = new Dictionary<MachineType, List<MachineHost>>();
 
         /// <summary>
@@ -58,29 +57,28 @@ namespace CiscoPCCE.Toolkit.Examples
         /// </summary>
         public static async Task Main(string[] args)
         {
-            // For this example, we'd need to load properties from a file
-            // Since C# doesn't have built-in properties files like Java, 
-            // this is a simplified version that shows the structure
             Console.WriteLine("InitializeDemo - This is a complex demo that requires extensive configuration.");
-            Console.WriteLine("Please ensure you have all necessary configuration values.");
+            Console.WriteLine("Configuration should be loaded from appsettings.json by the calling application.");
+            Console.WriteLine("Please ensure you have all necessary configuration values in your appsettings.json file.");
             
-            // In a real implementation, you would load these from appsettings.json or another config source
-            var props = new Dictionary<string, string>();
+            // Example usage:
+            // var configuration = new ConfigurationBuilder()
+            //     .SetBasePath(Directory.GetCurrentDirectory())
+            //     .AddJsonFile("appsettings.json", optional: false)
+            //     .Build();
+            // var props = configuration.GetSection("InitializeSettings").Get<Dictionary<string, string>>();
+            // var demo = new InitializeDemo(props);
+            // await demo.ExecuteInitializeAsync();
             
-            // Example of how to use if you have a config file:
-            // props = LoadPropertiesFromFile(args.Length > 0 ? args[0] : "initialize.properties");
-            
-            // For now, just show that the class structure is complete
             Console.WriteLine("Initialize demo structure ported successfully.");
-            Console.WriteLine("To use this demo, implement configuration loading from appsettings.json or config file.");
         }
 
         /// <summary>
-        /// Constructor with properties dictionary.
+        /// Constructor with properties dictionary loaded from appsettings.json.
         /// </summary>
         public InitializeDemo(Dictionary<string, string> props)
         {
-            this.props = props;
+            this.props = props ?? throw new ArgumentNullException(nameof(props));
 
             // Create a new RESTClient object with the IP of your DS / AW HDS
             restClient = new RESTClient(
@@ -162,7 +160,7 @@ namespace CiscoPCCE.Toolkit.Examples
 
                 if (!IsCompleteOrFailed(statuses))
                 {
-                    await Task.Delay((int)SleepTimeMs);
+                    await Task.Delay(SleepTimeMs);
                 }
                 else
                 {
@@ -382,7 +380,7 @@ namespace CiscoPCCE.Toolkit.Examples
             var machine = FindMachineBySide(machineType, "sideA");
             if (machine == null)
             {
-                throw new Exception($"no machines found for type {machineType} on sideA");
+                throw new InvalidOperationException($"no machines found for type {machineType} on sideA");
             }
 
             var addr = FindAddressByType(machine.Addresses ?? new List<MachineAddress>(), AddressType.PUBLIC);
@@ -403,7 +401,7 @@ namespace CiscoPCCE.Toolkit.Examples
             var machine = FindMachineBySide(machineType, "sideA");
             if (machine == null)
             {
-                throw new Exception($"no machines found for type {machineType} on sideA");
+                throw new InvalidOperationException($"no machines found for type {machineType} on sideA");
             }
 
             var addr = FindAddressByType(machine.Addresses ?? new List<MachineAddress>(), AddressType.PUBLIC);
@@ -459,7 +457,7 @@ namespace CiscoPCCE.Toolkit.Examples
                 machine = FindMachineByName(MachineType.CM_PUBLISHER, cmPubName);
                 if (machine == null)
                 {
-                    throw new Exception($"can't find CM pub with VM name {cmPubName}");
+                    throw new InvalidOperationException($"can't find CM pub with VM name {cmPubName}");
                 }
             }
             else

@@ -4,8 +4,6 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Example code for creating a bucket interval.
-    /// 
-    /// Command line launch: dotnet run BucketIntervalDemo hostname username password
     /// </summary>
     public class BucketIntervalDemo
     {

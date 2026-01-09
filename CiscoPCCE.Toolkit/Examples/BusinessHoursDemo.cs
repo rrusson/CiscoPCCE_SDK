@@ -4,8 +4,6 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Example code for Business Hours operations.
-    /// 
-    /// Command line launch: dotnet run BusinessHoursDemo hostname username password
     /// </summary>
     public class BusinessHoursDemo
     {

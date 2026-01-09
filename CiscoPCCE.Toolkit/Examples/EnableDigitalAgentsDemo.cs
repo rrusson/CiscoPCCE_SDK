@@ -4,8 +4,6 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Example code for creating a digital agent.
-    /// 
-    /// Command line launch: dotnet run EnableDigitalAgentsDemo hostname username password
     /// </summary>
     public class EnableDigitalAgentsDemo
     {

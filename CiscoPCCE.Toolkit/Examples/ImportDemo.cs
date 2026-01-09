@@ -4,8 +4,6 @@ namespace CiscoPCCE.Toolkit.Examples
 {
     /// <summary>
     /// Example code for importing customer contact records for a Campaign.
-    /// 
-    /// Command line launch: dotnet run ImportDemo hostname username password [skillGroupName]
     /// </summary>
     public class ImportDemo
     {
