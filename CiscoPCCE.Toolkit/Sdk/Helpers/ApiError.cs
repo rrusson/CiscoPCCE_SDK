@@ -17,15 +17,18 @@ namespace CiscoPCCE.Toolkit.Sdk.Helpers
 
         public ApiError(string type, string data, string message)
         {
-            ErrorType = type;
             ErrorData = data;
             ErrorMessage = message;
-        }
+			ErrorType = type;
+		}
 
-        public string? ErrorType { get; set; }
+		[XmlElement("errorData")]
+		public string? ErrorData { get; set; }
 
-        public string? ErrorData { get; set; }
-
+        [XmlElement]
         public string? ErrorMessage { get; set; }
-    }
+
+		[XmlElement("errorType")]
+		public string? ErrorType { get; set; }
+	}
 }
