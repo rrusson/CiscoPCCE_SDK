@@ -1,4 +1,4 @@
-namespace CiscoPCCE.Toolkit
+namespace CiscoPCCE.Toolkit.Sdk
 {
     /// <summary>
     /// Base class for all List Beans.

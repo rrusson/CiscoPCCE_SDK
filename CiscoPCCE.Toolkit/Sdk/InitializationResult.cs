@@ -1,6 +1,6 @@
 using CiscoPCCE.Toolkit.Bean;
 
-namespace CiscoPCCE.Toolkit
+namespace CiscoPCCE.Toolkit.Sdk
 {
     public class InitializationResult
     {
