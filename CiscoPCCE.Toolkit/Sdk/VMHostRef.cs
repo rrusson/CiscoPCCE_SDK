@@ -1,4 +1,4 @@
-namespace CiscoPCCE.Toolkit
+namespace CiscoPCCE.Toolkit.Sdk
 {
     public class VMHostRef : BaseApiBean
     {

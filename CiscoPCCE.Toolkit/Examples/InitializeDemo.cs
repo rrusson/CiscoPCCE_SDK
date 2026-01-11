@@ -1,4 +1,6 @@
 using CiscoPCCE.Toolkit.Bean;
+using CiscoPCCE.Toolkit.Sdk;
+using CiscoPCCE.Toolkit.Sdk.Helpers;
 
 namespace CiscoPCCE.Toolkit.Examples
 {

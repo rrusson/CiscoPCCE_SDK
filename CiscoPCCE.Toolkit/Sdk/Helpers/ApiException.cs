@@ -1,4 +1,4 @@
-namespace CiscoPCCE.Toolkit
+namespace CiscoPCCE.Toolkit.Sdk.Helpers
 {
     /// <summary>
     /// Exception class that contains API Errors.
@@ -26,6 +26,7 @@ namespace CiscoPCCE.Toolkit
                 {
                     return System.Text.Json.JsonSerializer.Serialize(Errors);
                 }
+
                 return base.Message;
             }
         }

@@ -1,4 +1,4 @@
-namespace CiscoPCCE.Toolkit
+namespace CiscoPCCE.Toolkit.Sdk
 {
     /// <summary>
     /// Reference Bean for associating one bean type with another.

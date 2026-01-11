@@ -2,7 +2,9 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace CiscoPCCE.Toolkit
+using CiscoPCCE.Toolkit.Sdk.Helpers;
+
+namespace CiscoPCCE.Toolkit.Sdk
 {
     /// <summary>
     /// A simple SSL REST Client wrapper to handle CRUD API calls to the webconfig service.

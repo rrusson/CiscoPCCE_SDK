@@ -1,6 +1,6 @@
 using System.Xml.Serialization;
 
-namespace CiscoPCCE.Toolkit
+namespace CiscoPCCE.Toolkit.Sdk.Helpers
 {
     /// <summary>
     /// This class defines the entity attached to HTTP response in error conditions
