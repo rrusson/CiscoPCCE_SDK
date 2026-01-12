@@ -51,7 +51,7 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 		/// <summary>
 		/// A collection of skill group names associated with the agent
 		/// </summary>
-		/// <remarks>Specify up to 10 skill groups can be specified. The skill group names are fully matched.</remarks>
+		/// <remarks>Specify up to 10 skill groups. The skill group names are fully matched.</remarks>
 		public List<string>? SkillGroups { get; set; }
 
 		/// <summary>

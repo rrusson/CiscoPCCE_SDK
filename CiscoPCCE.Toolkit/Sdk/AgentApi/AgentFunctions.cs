@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 using CiscoPCCE.Toolkit.Bean;
 using CiscoPCCE.Toolkit.Sdk.Interfaces;
 
@@ -17,7 +15,7 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 		/// Initializes a new instance of the AgentFunctions class using the specified REST client
 		/// </summary>
 		/// <param name="restClient">The RestClient instance used to perform HTTP operations for agent-related functionality</param>
-		public AgentFunctions([Required] IRestClient restClient)
+		public AgentFunctions(IRestClient restClient)
 		{
 			_restClient = restClient;
 		}
