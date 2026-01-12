@@ -123,21 +123,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArrayItem("supervisorTeam")]
         public List<ReferenceBean>? SupervisorTeams { get; set; }
 
-        // Path("agent")
-        [XmlRoot("results")]
-        public class AgentList : BaseApiListBean<Agent>
-        {
-            [XmlArray("agents")]
-            [XmlArrayItem("agent")]
-            public new List<Agent>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<Agent>? GetItems() => Items;
-
-            public override void SetItems(List<Agent>? value) => Items = value;
-        }
     }
 }

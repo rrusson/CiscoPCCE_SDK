@@ -139,7 +139,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <param name="restClient">RestClient</param>
         /// <param name="agentUsername">username of the Agent</param>
         /// <returns>Agent or null</returns>
-        public static async Task<AgentBase?> LookupAgentAsync(RestClient restClient, string agentUsername)
+        public static async Task<Agent?> LookupAgentAsync(RestClient restClient, string agentUsername)
         {
             var agents = await restClient.GetListAsync<AgentList>(agentUsername);
 

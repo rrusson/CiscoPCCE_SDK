@@ -26,7 +26,7 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 		/// Retrieves a list of agents
 		/// </summary>
 		/// <returns>A list of agents</returns>
-		public async Task<List<AgentBase>?> GetAgentsAsync()
+		public async Task<List<Agent>?> GetAgentsAsync()
 		{
 			var result = await _restClient.GetListAsync<AgentList>(null, BasePath);
 			return result?.Items;
@@ -37,7 +37,7 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 		/// </summary>
 		/// <param name="criteria">The search criteria</param>
 		/// <returns>A list of agents matching the criteria</returns>
-		public async Task<List<AgentBase>?> GetAgentsAsync(AgentSearchCriteria criteria)
+		public async Task<List<Agent>?> GetAgentsAsync(AgentSearchCriteria criteria)
 		{
 			var queryString = AgentRequestBuilder.BuildQueryString(criteria);
 			var result = await _restClient.GetListAsync<AgentList>(queryString, BasePath);
