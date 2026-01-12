@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CiscoPCCE.Toolkit.Sdk.AgentApi
+﻿namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 {
-	internal class AgentRequestBuilder
+	internal static class AgentRequestBuilder
 	{
+		/// <summary>
+		/// Builds a special query string representation from the specified agent search criteria (not a standard URL query string).
+		/// </summary>
+		/// <param name="criteria">The search criteria used to construct the query string</param>
+		/// <returns>A string containing the query parameters based on the provided criteria. Returns an empty string if no criteria are specified.</returns>
+		/// <remarks>The resulting query string includes only the fields from the criteria that are set. Advanced parameters may also be included if specified in the criteria.</remarks>
 		internal static string BuildQueryString(AgentSearchCriteria criteria)
 		{
 			var parts = new List<string>();
@@ -38,7 +38,13 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 				parts.Add($"person.userName:{criteria.UserName}");
 			}
 
-			// Advanced parameters
+			AddAdvancedParameters(criteria, parts);
+
+			return string.Join(" ", parts);
+		}
+
+		private static void AddAdvancedParameters(AgentSearchCriteria criteria, List<string> parts)
+		{
 			// supervisor: (true/false)
 			if (criteria.Supervisor.HasValue)
 			{
@@ -85,8 +91,6 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 				var psets = string.Join("|", criteria.PeripheralSets);
 				parts.Add($"peripheralsets:({psets})");
 			}
-
-			return string.Join(" ", parts);
 		}
 	}
 }
