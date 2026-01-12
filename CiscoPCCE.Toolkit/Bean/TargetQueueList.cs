@@ -2,16 +2,16 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-// Path("contactsharequeue")
-[XmlRoot("results")]
-public class TargetQueueList : BaseApiList<TargetQueue>
-{
-    [XmlArray("targetQueues")]
-    [XmlArrayItem("targetQueue")]
-    public new List<TargetQueue>? Items
+    // Path("contactsharequeue")
+    [XmlRoot("results")]
+    public class TargetQueueList : BaseApiList<TargetQueue>
     {
-        get => base.Items;
-        set => base.Items = value;
+        [XmlArray("targetQueues")]
+        [XmlArrayItem("targetQueue")]
+        public new List<TargetQueue>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
     }
-}
 }

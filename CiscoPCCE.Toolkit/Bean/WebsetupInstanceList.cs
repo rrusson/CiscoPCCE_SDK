@@ -2,16 +2,16 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-// Path("instance")
-[XmlRoot("results")]
-public class WebsetupInstanceList : BaseApiList<WebsetupInstance>
-{
-    [XmlArray("instances")]
-    [XmlArrayItem("instance")]
-    public new List<WebsetupInstance>? Items
+    // Path("instance")
+    [XmlRoot("results")]
+    public class WebsetupInstanceList : BaseApiList<WebsetupInstance>
     {
-        get => base.Items;
-        set => base.Items = value;
+        [XmlArray("instances")]
+        [XmlArrayItem("instance")]
+        public new List<WebsetupInstance>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
     }
-}
 }

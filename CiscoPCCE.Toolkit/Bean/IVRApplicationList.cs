@@ -2,22 +2,22 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-// Path("transferablefiles")
-[XmlRoot("results")]
-public class IVRApplicationList : BaseApiList<IVRApplication>
-{
-    [XmlArray("IVRApplications")]
-    [XmlArrayItem("IVRApplication")]
-    public new List<IVRApplication>? Items
+    // Path("transferablefiles")
+    [XmlRoot("results")]
+    public class IVRApplicationList : BaseApiList<IVRApplication>
     {
-        get => base.Items;
-        set => base.Items = value;
+        [XmlArray("IVRApplications")]
+        [XmlArrayItem("IVRApplication")]
+        public new List<IVRApplication>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
+
+        [XmlElement("pageInfo")]
+        public required PageInfo PageInfo { get; set; }
+
+        [XmlElement("permissionInfo")]
+        public required PermissionInfo PermissionInfo { get; set; }
     }
-
-    [XmlElement("pageInfo")]
-    public required PageInfo PageInfo { get; set; }
-
-    [XmlElement("permissionInfo")]
-    public required PermissionInfo PermissionInfo { get; set; }
-}
 }

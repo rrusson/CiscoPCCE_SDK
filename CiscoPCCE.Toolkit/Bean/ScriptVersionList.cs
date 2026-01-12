@@ -2,16 +2,16 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-// Path("masterscript")
-[XmlRoot("results")]
-public class ScriptVersionList : BaseApiList<ScriptVersion>
-{
-    [XmlArray("scriptVersions")]
-    [XmlArrayItem("scriptVersion")]
-    public new List<ScriptVersion>? Items
+    // Path("masterscript")
+    [XmlRoot("results")]
+    public class ScriptVersionList : BaseApiList<ScriptVersion>
     {
-        get => base.Items;
-        set => base.Items = value;
+        [XmlArray("scriptVersions")]
+        [XmlArrayItem("scriptVersion")]
+        public new List<ScriptVersion>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
     }
-}
 }

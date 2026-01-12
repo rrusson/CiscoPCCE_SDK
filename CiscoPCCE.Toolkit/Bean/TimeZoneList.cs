@@ -2,22 +2,22 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-// Path("timezone")
-[XmlRoot("results")]
-public class TimeZoneList : BaseApiList<TimeZone>
-{
-    [XmlArray("timeZones")]
-    [XmlArrayItem("timeZone")]
-    public new List<TimeZone>? Items
+    // Path("timezone")
+    [XmlRoot("results")]
+    public class TimeZoneList : BaseApiList<TimeZone>
     {
-        get => base.Items;
-        set => base.Items = value;
+        [XmlArray("timeZones")]
+        [XmlArrayItem("timeZone")]
+        public new List<TimeZone>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
+
+        [XmlElement("pageInfo")]
+        public required PageInfo PageInfo { get; set; }
+
+        [XmlElement("permissionInfo")]
+        public required PermissionInfo PermissionInfo { get; set; }
     }
-
-    [XmlElement("pageInfo")]
-    public required PageInfo PageInfo { get; set; }
-
-    [XmlElement("permissionInfo")]
-    public required PermissionInfo PermissionInfo { get; set; }
-}
 }

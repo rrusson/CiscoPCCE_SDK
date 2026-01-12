@@ -2,22 +2,22 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-// Path("bulkjob")
-[XmlRoot("results")]
-public class BulkJobList : BaseApiList<BulkJob>
-{
-    [XmlArray("bulkJobs")]
-    [XmlArrayItem("bulkJob")]
-    public new List<BulkJob>? Items
+    // Path("bulkjob")
+    [XmlRoot("results")]
+    public class BulkJobList : BaseApiList<BulkJob>
     {
-        get => base.Items;
-        set => base.Items = value;
+        [XmlArray("bulkJobs")]
+        [XmlArrayItem("bulkJob")]
+        public new List<BulkJob>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
+
+        [XmlElement("pageInfo")]
+        public required PageInfo PageInfo { get; set; }
+
+        [XmlElement("permissionInfo")]
+        public required PermissionInfo PermissionInfo { get; set; }
     }
-
-    [XmlElement("pageInfo")]
-    public required PageInfo PageInfo { get; set; }
-
-    [XmlElement("permissionInfo")]
-    public required PermissionInfo PermissionInfo { get; set; }
-}
 }

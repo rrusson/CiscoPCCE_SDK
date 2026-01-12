@@ -2,22 +2,22 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-// Path("database")
-[XmlRoot("results")]
-public class DatabaseList : BaseApiList<Database>
-{
-    [XmlArray("databases")]
-    [XmlArrayItem("database")]
-    public new List<Database>? Items
+    // Path("database")
+    [XmlRoot("results")]
+    public class DatabaseList : BaseApiList<Database>
     {
-        get => base.Items;
-        set => base.Items = value;
+        [XmlArray("databases")]
+        [XmlArrayItem("database")]
+        public new List<Database>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
+
+        [XmlElement("pageInfo")]
+        public required PageInfo PageInfo { get; set; }
+
+        [XmlElement("permissionInfo")]
+        public required PermissionInfo PermissionInfo { get; set; }
     }
-
-    [XmlElement("pageInfo")]
-    public required PageInfo PageInfo { get; set; }
-
-    [XmlElement("permissionInfo")]
-    public required PermissionInfo PermissionInfo { get; set; }
-}
 }

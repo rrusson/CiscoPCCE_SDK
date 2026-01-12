@@ -14,10 +14,10 @@ namespace CiscoPCCE.Toolkit.Bean
             set => base.Items = value;
         }
 
-    [XmlElement("pageInfo")]
-    public required PageInfo PageInfo { get; set; }
+        [XmlElement("pageInfo")]
+        public required PageInfo PageInfo { get; set; }
 
-    [XmlElement("permissionInfo")]
-    public required PermissionInfo PermissionInfo { get; set; }
+        [XmlElement("permissionInfo")]
+        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

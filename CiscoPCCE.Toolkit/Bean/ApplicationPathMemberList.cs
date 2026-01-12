@@ -2,16 +2,16 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-// Path("applicationpath")
-[XmlRoot("results")]
-public class ApplicationPathMemberList : BaseApiList<ApplicationPathMember>
-{
-    [XmlArray("applicationPathMembers")]
-    [XmlArrayItem("applicationPathMember")]
-    public new List<ApplicationPathMember>? Items
+    // Path("applicationpath")
+    [XmlRoot("results")]
+    public class ApplicationPathMemberList : BaseApiList<ApplicationPathMember>
     {
-        get => base.Items;
-        set => base.Items = value;
+        [XmlArray("applicationPathMembers")]
+        [XmlArrayItem("applicationPathMember")]
+        public new List<ApplicationPathMember>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
     }
-}
 }

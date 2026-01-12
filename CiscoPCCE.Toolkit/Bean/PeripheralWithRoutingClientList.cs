@@ -2,16 +2,16 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-// Path("secondaryaddress")
-[XmlRoot("results")]
-public class PeripheralWithRoutingClientList : BaseApiList<PeripheralWithRoutingClient>
-{
-    [XmlArray("peripherals")]
-    [XmlArrayItem("peripheral")]
-    public new List<PeripheralWithRoutingClient>? Items
+    // Path("secondaryaddress")
+    [XmlRoot("results")]
+    public class PeripheralWithRoutingClientList : BaseApiList<PeripheralWithRoutingClient>
     {
-        get => base.Items;
-        set => base.Items = value;
+        [XmlArray("peripherals")]
+        [XmlArrayItem("peripheral")]
+        public new List<PeripheralWithRoutingClient>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
     }
-}
 }

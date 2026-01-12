@@ -2,22 +2,22 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-// Path("expandedcallvariable")
-[XmlRoot("results")]
-public class ExpandedCallVariableList : BaseApiList<ExpandedCallVariable>
-{
-    [XmlArray("expandedCallVariables")]
-    [XmlArrayItem("expandedCallVariable")]
-    public new List<ExpandedCallVariable>? Items
+    // Path("expandedcallvariable")
+    [XmlRoot("results")]
+    public class ExpandedCallVariableList : BaseApiList<ExpandedCallVariable>
     {
-        get => base.Items;
-        set => base.Items = value;
+        [XmlArray("expandedCallVariables")]
+        [XmlArrayItem("expandedCallVariable")]
+        public new List<ExpandedCallVariable>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
+
+        [XmlElement("pageInfo")]
+        public required PageInfo PageInfo { get; set; }
+
+        [XmlElement("permissionInfo")]
+        public required PermissionInfo PermissionInfo { get; set; }
     }
-
-    [XmlElement("pageInfo")]
-    public required PageInfo PageInfo { get; set; }
-
-    [XmlElement("permissionInfo")]
-    public required PermissionInfo PermissionInfo { get; set; }
-}
 }
