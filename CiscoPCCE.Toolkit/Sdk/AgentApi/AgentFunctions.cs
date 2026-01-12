@@ -14,7 +14,7 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 		/// <summary>
 		/// Initializes a new instance of the AgentFunctions class using the specified REST client
 		/// </summary>
-		/// <param name="restClient">The RestClient instance used to perform HTTP operations for agent-related functionality. Cannot be null.</param>
+		/// <param name="restClient">The RestClient instance used to perform HTTP operations for agent-related functionality</param>
 		public AgentFunctions(IRestClient restClient)
 		{
 			_restClient = restClient;
@@ -23,8 +23,8 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 		/// <summary>
 		/// Retrieves a list of agents
 		/// </summary>
-		/// <returns>A list of agents.</returns>
-		public async Task<List<AgentBase>?> GetAgentsAsync()
+		/// <returns>A list of agents</returns>
+		public async Task<List<Agent>?> GetAgentsAsync()
 		{
 			var result = await _restClient.GetListAsync<AgentList>(null, BasePath);
 			return result?.Items;
@@ -33,9 +33,9 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 		/// <summary>
 		/// Retrieves a list of agents matching the search criteria
 		/// </summary>
-		/// <param name="criteria">The search criteria.</param>
-		/// <returns>A list of agents matching the criteria.</returns>
-		public async Task<List<AgentBase>?> GetAgentsAsync(AgentSearchCriteria criteria)
+		/// <param name="criteria">The search criteria</param>
+		/// <returns>A list of agents matching the criteria</returns>
+		public async Task<List<Agent>?> GetAgentsAsync(AgentSearchCriteria criteria)
 		{
 			var queryString = AgentRequestBuilder.BuildQueryString(criteria);
 			var result = await _restClient.GetListAsync<AgentList>(queryString, BasePath);
@@ -64,8 +64,18 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 		/// Updates one agent
 		/// </summary>
 		/// <param name="agent">The agent to update</param>
+		/// <remarks>
+		/// - When you change the team association for an agent or supervisor in Packaged CCE, the same change is updated in the corresponding collection in Unified Intelligence Center.
+		/// - When you change the username and team association for a supervisor's record, the same changes are also updated in the corresponding user account in Unified Intelligence Center.
+		/// - For an existing supervisor's record in Packaged CCE, if the value for the Supervisor parameter is set to false, the corresponding user account is deleted from Unified Intelligence Center.
+		/// </remarks>
 		public async Task UpdateAgentAsync(Agent agent)
 		{
+			if (agent.ChangeStamp is null or < 1)
+			{
+				throw new ArgumentException("Agent ChangeStamp must have a valid value for update operations.", nameof(agent));
+			}
+
 			await _restClient.UpdateAsync(agent);
 		}
 
@@ -74,6 +84,11 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 		/// </summary>
 		public async Task<Agent?> UpdateAndGetAgentAsync(Agent agent)
 		{
+			if (agent.ChangeStamp is null or < 1)
+			{
+				throw new ArgumentException("Agent ChangeStamp must have a valid value for update operations.", nameof(agent));
+			}
+
 			return await _restClient.UpdateAndGetBeanAsync(agent);
 		}
 
