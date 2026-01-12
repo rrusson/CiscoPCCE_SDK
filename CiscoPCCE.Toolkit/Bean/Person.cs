@@ -61,22 +61,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("userName")]
         public string? UserName { get; set; }
-
-        // Path("agent")
-        [XmlRoot("results")]
-        public class PersonList : BaseApiListBean<Person>
-        {
-            [XmlArray("persons")]
-            [XmlArrayItem("person")]
-            public new List<Person>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<Person>? GetItems() => Items;
-
-            public override void SetItems(List<Person>? value) => Items = value;
-        }
+        
     }
 }

@@ -1,41 +1,23 @@
 using System.Xml.Serialization;
 
-using CiscoPCCE.Toolkit.Sdk;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("expandedcallvariable")
-    [XmlRoot("results")]
-    public class ExpandedCallVariableList : BaseApiBean
+// Path("expandedcallvariable")
+[XmlRoot("results")]
+public class ExpandedCallVariableList : BaseApiList<ExpandedCallVariable>
+{
+    [XmlArray("expandedCallVariables")]
+    [XmlArrayItem("expandedCallVariable")]
+    public new List<ExpandedCallVariable>? Items
     {
-        [XmlElement("globalInfo")]
-        public required ExpandedCallVariableGlobalInfo GlobalInfo { get; set; }
-
-        [XmlArray("expandedCallVariables")]
-        [XmlArrayItem("expandedCallVariable")]
-        public List<ExpandedCallVariable>? Items { get; set; }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
-
-        // Path("expandedcallvariable")
-        [XmlRoot("results")]
-        public class ExpandedCallVariableListList : BaseApiListBean<ExpandedCallVariableList>
-        {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<ExpandedCallVariableList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ExpandedCallVariableList>? GetItems() => Items;
-
-            public override void SetItems(List<ExpandedCallVariableList>? value) => Items = value;
-        }
+        get => base.Items;
+        set => base.Items = value;
     }
+
+    [XmlElement("pageInfo")]
+    public required PageInfo PageInfo { get; set; }
+
+    [XmlElement("permissionInfo")]
+    public required PermissionInfo PermissionInfo { get; set; }
+}
 }

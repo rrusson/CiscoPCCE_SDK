@@ -1,38 +1,23 @@
 using System.Xml.Serialization;
 
-using CiscoPCCE.Toolkit.Sdk;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("smartlicense")
-    [XmlRoot("results")]
-    public class SmartLicenseInfoList : BaseApiBean
+// Path("smartlicense")
+[XmlRoot("results")]
+public class SmartLicenseInfoList : BaseApiList<SmartLicenseInfo>
+{
+    [XmlArray("smartlicenseinfos")]
+    [XmlArrayItem("smartlicenseinfo")]
+    public new List<SmartLicenseInfo>? Items
     {
-        [XmlArray("smartlicenseinfos")]
-        [XmlArrayItem("smartlicenseinfo")]
-        public List<SmartLicenseInfo>? Items { get; set; }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
-
-        // Path("smartlicense")
-        [XmlRoot("results")]
-        public class SmartLicenseInfoListList : BaseApiListBean<SmartLicenseInfoList>
-        {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<SmartLicenseInfoList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<SmartLicenseInfoList>? GetItems() => Items;
-
-            public override void SetItems(List<SmartLicenseInfoList>? value) => Items = value;
-        }
+        get => base.Items;
+        set => base.Items = value;
     }
+
+    [XmlElement("pageInfo")]
+    public required PageInfo PageInfo { get; set; }
+
+    [XmlElement("permissionInfo")]
+    public required PermissionInfo PermissionInfo { get; set; }
+}
 }

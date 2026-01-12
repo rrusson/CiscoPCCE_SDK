@@ -1,38 +1,23 @@
 using System.Xml.Serialization;
 
-using CiscoPCCE.Toolkit.Sdk;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("bulkjob")
-    [XmlRoot("results")]
-    public class BulkJobList : BaseApiBean
+// Path("bulkjob")
+[XmlRoot("results")]
+public class BulkJobList : BaseApiList<BulkJob>
+{
+    [XmlArray("bulkJobs")]
+    [XmlArrayItem("bulkJob")]
+    public new List<BulkJob>? Items
     {
-        [XmlArray("bulkJobs")]
-        [XmlArrayItem("bulkJob")]
-        public List<BulkJob>? Items { get; set; }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
-
-        // Path("bulkjob")
-        [XmlRoot("results")]
-        public class BulkJobListList : BaseApiListBean<BulkJobList>
-        {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<BulkJobList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<BulkJobList>? GetItems() => Items;
-
-            public override void SetItems(List<BulkJobList>? value) => Items = value;
-        }
+        get => base.Items;
+        set => base.Items = value;
     }
+
+    [XmlElement("pageInfo")]
+    public required PageInfo PageInfo { get; set; }
+
+    [XmlElement("permissionInfo")]
+    public required PermissionInfo PermissionInfo { get; set; }
+}
 }

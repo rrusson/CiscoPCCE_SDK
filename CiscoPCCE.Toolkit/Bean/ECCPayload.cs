@@ -35,22 +35,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("variables")]
         [XmlArrayItem("variable")]
         public List<ReferenceBean>? Variables { get; set; }
-
-        // Path("/eccpayload")
-        [XmlRoot("results")]
-        public class ECCPayloadList : BaseApiListBean<ECCPayload>
-        {
-            [XmlArray("eccpayloads")]
-            [XmlArrayItem("eccpayload")]
-            public new List<ECCPayload>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ECCPayload>? GetItems() => Items;
-
-            public override void SetItems(List<ECCPayload>? value) => Items = value;
-        }
+        
     }
 }

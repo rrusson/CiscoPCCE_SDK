@@ -28,22 +28,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("step")]
         public required Step Step { get; set; }
-
-        // Path("/pqsteppreview")
-        [XmlRoot("results")]
-        public class PrecisionQueueStepPreviewList : BaseApiListBean<PrecisionQueueStepPreview>
-        {
-            [XmlArray("pqStepPreviews")]
-            [XmlArrayItem("pqStepPreview")]
-            public new List<PrecisionQueueStepPreview>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<PrecisionQueueStepPreview>? GetItems() => Items;
-
-            public override void SetItems(List<PrecisionQueueStepPreview>? value) => Items = value;
-        }
+        
     }
 }

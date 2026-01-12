@@ -49,22 +49,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("timeoutThreshold")]
         public short? TimeoutThreshold { get; set; }
-
-        // Path("secondaryaddress")
-        [XmlRoot("results")]
-        public class RoutingClientList : BaseApiListBean<RoutingClient>
-        {
-            [XmlArray("routingClients")]
-            [XmlArrayItem("routingClient")]
-            public new List<RoutingClient>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<RoutingClient>? GetItems() => Items;
-
-            public override void SetItems(List<RoutingClient>? value) => Items = value;
-        }
+        
     }
 }

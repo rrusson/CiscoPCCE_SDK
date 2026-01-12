@@ -31,22 +31,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
-
-        // Path("enterpriseroute")
-        [XmlRoot("results")]
-        public class EnterpriseRouteList : BaseApiListBean<EnterpriseRoute>
-        {
-            [XmlArray("enterpriseRoutes")]
-            [XmlArrayItem("enterpriseRoute")]
-            public new List<EnterpriseRoute>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<EnterpriseRoute>? GetItems() => Items;
-
-            public override void SetItems(List<EnterpriseRoute>? value) => Items = value;
-        }
+        
     }
 }

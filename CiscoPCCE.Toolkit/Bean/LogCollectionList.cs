@@ -1,31 +1,20 @@
 using System.Xml.Serialization;
 
-using CiscoPCCE.Toolkit.Sdk;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("logcollection")
-    [XmlRoot("results")]
-    public class LogCollectionList : BaseApiBean
+// Path("logcollection")
+[XmlRoot("results")]
+public class LogCollectionList : BaseApiList<LogCollection>
+{
+    [XmlArray("logCollections")]
+    [XmlArrayItem("logCollection")]
+    public new List<LogCollection>? Items
     {
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
-
-        // Path("logcollection")
-        [XmlRoot("results")]
-        public class LogCollectionListList : BaseApiListBean<LogCollectionList>
-        {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<LogCollectionList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<LogCollectionList>? GetItems() => Items;
-
-            public override void SetItems(List<LogCollectionList>? value) => Items = value;
-        }
+        get => base.Items;
+        set => base.Items = value;
     }
+
+    [XmlElement("permissionInfo")]
+    public required PermissionInfo PermissionInfo { get; set; }
+}
 }

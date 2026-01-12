@@ -1,38 +1,23 @@
 using System.Xml.Serialization;
 
-using CiscoPCCE.Toolkit.Sdk;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("precisionqueue")
-    [XmlRoot("results")]
-    public class PrecisionQueueList : BaseApiBean
+// Path("precisionqueue")
+[XmlRoot("results")]
+public class PrecisionQueueList : BaseApiList<PrecisionQueue>
+{
+    [XmlArray("precisionQueues")]
+    [XmlArrayItem("precisionQueue")]
+    public new List<PrecisionQueue>? Items
     {
-        [XmlArray("precisionQueues")]
-        [XmlArrayItem("precisionQueue")]
-        public List<PrecisionQueue>? Items { get; set; }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
-
-        // Path("precisionqueue")
-        [XmlRoot("results")]
-        public class PrecisionQueueListList : BaseApiListBean<PrecisionQueueList>
-        {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<PrecisionQueueList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<PrecisionQueueList>? GetItems() => Items;
-
-            public override void SetItems(List<PrecisionQueueList>? value) => Items = value;
-        }
+        get => base.Items;
+        set => base.Items = value;
     }
+
+    [XmlElement("pageInfo")]
+    public required PageInfo PageInfo { get; set; }
+
+    [XmlElement("permissionInfo")]
+    public required PermissionInfo PermissionInfo { get; set; }
+}
 }

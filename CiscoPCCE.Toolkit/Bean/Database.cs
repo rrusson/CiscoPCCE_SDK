@@ -25,22 +25,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("side")]
         public Side Side { get; set; }
-
-        // Path("database")
-        [XmlRoot("results")]
-        public class DatabaseList : BaseApiListBean<Database>
-        {
-            [XmlArray("databases")]
-            [XmlArrayItem("database")]
-            public new List<Database>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<Database>? GetItems() => Items;
-
-            public override void SetItems(List<Database>? value) => Items = value;
-        }
+        
     }
 }

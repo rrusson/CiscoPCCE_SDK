@@ -62,22 +62,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("routingType")]
         public int? RoutingType { get; set; }
-
-        // Path("dialednumber")
-        [XmlRoot("results")]
-        public class DialedNumberList : BaseApiListBean<DialedNumber>
-        {
-            [XmlArray("dialedNumbers")]
-            [XmlArrayItem("dialedNumber")]
-            public new List<DialedNumber>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<DialedNumber>? GetItems() => Items;
-
-            public override void SetItems(List<DialedNumber>? value) => Items = value;
-        }
+        
     }
 }

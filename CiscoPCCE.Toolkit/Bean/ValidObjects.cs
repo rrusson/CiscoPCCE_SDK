@@ -15,22 +15,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("type")]
         public string? Type { get; set; }
-
-        // Path("validobjects")
-        [XmlRoot("results")]
-        public class ValidObjectsList : BaseApiListBean<ValidObjects>
-        {
-            [XmlArray("validObjectss")]
-            [XmlArrayItem("validObjects")]
-            public new List<ValidObjects>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ValidObjects>? GetItems() => Items;
-
-            public override void SetItems(List<ValidObjects>? value) => Items = value;
-        }
+        
     }
 }

@@ -12,11 +12,11 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArrayItem("smartlicenseserverinfo")]
         public List<SmartLicenseServerInfo>? Items { get; set; }
 
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
+    [XmlElement("pageInfo")]
+    public required PageInfo PageInfo { get; set; }
 
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
+    [XmlElement("permissionInfo")]
+    public required PermissionInfo PermissionInfo { get; set; }
 
         // Path("smartlicense")
         [XmlRoot("results")]

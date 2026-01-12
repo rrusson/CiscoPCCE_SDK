@@ -34,22 +34,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("ruleExpression")]
         public string? RuleExpression { get; set; }
-
-        // Path("contactsharerule")
-        [XmlRoot("results")]
-        public class ContactShareRuleList : BaseApiListBean<ContactShareRule>
-        {
-            [XmlArray("contactShareRules")]
-            [XmlArrayItem("contactShareRule")]
-            public new List<ContactShareRule>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ContactShareRule>? GetItems() => Items;
-
-            public override void SetItems(List<ContactShareRule>? value) => Items = value;
-        }
+        
     }
 }

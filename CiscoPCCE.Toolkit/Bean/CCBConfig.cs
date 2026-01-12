@@ -31,22 +31,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("reportingAddress")]
         public string? ReportingAddress { get; set; }
-
-        // Path("ccb")
-        [XmlRoot("results")]
-        public class CCBConfigList : BaseApiListBean<CCBConfig>
-        {
-            [XmlArray("CCBs")]
-            [XmlArrayItem("CCB")]
-            public new List<CCBConfig>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<CCBConfig>? GetItems() => Items;
-
-            public override void SetItems(List<CCBConfig>? value) => Items = value;
-        }
+        
     }
 }

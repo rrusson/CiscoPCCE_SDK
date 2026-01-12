@@ -31,22 +31,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
-
-        // Path("generalsetting")
-        [XmlRoot("results")]
-        public class GeneralSettingList : BaseApiListBean<GeneralSetting>
-        {
-            [XmlArray("generalSettingss")]
-            [XmlArrayItem("generalSettings")]
-            public new List<GeneralSetting>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<GeneralSetting>? GetItems() => Items;
-
-            public override void SetItems(List<GeneralSetting>? value) => Items = value;
-        }
+        
     }
 }

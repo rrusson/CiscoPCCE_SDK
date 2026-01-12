@@ -46,22 +46,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("text")]
         public string? Text { get; set; }
-
-        // Path("reasoncode")
-        [XmlRoot("results")]
-        public class ReasonCodeList : BaseApiListBean<ReasonCode>
-        {
-            [XmlArray("reasonCodes")]
-            [XmlArrayItem("reasonCode")]
-            public new List<ReasonCode>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ReasonCode>? GetItems() => Items;
-
-            public override void SetItems(List<ReasonCode>? value) => Items = value;
-        }
+        
     }
 }

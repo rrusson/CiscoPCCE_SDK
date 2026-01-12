@@ -32,22 +32,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
-
-        // Path("agentstatetrace")
-        [XmlRoot("results")]
-        public class AgentStateTraceList : BaseApiListBean<AgentStateTrace>
-        {
-            [XmlArray("agentstatetraces")]
-            [XmlArrayItem("agentstatetrace")]
-            public new List<AgentStateTrace>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<AgentStateTrace>? GetItems() => Items;
-
-            public override void SetItems(List<AgentStateTrace>? value) => Items = value;
-        }
+        
     }
 }

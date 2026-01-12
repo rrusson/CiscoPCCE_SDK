@@ -11,10 +11,10 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArrayItem("card")]
         public List<Card>? Items { get; set; }
 
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
+    [XmlElement("pageInfo")]
+    public required PageInfo PageInfo { get; set; }
 
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
+    [XmlElement("permissionInfo")]
+    public required PermissionInfo PermissionInfo { get; set; }
     }
 }

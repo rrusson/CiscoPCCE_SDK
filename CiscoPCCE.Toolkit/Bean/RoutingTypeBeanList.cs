@@ -1,18 +1,23 @@
 using System.Xml.Serialization;
 
-using CiscoPCCE.Toolkit.Sdk;
-
 namespace CiscoPCCE.Toolkit.Bean
 {
-    public class RoutingTypeBeanList : BaseApiBean
+// Path("routingtype")
+[XmlRoot("results")]
+public class RoutingTypeBeanList : BaseApiList<RoutingTypeBean>
+{
+    [XmlArray("routingTypes")]
+    [XmlArrayItem("routingType")]
+    public new List<RoutingTypeBean>? Items
     {
-        [XmlElement("routingType")]
-        public List<RoutingTypeBean>? Items { get; set; }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
+        get => base.Items;
+        set => base.Items = value;
     }
+
+    [XmlElement("pageInfo")]
+    public required PageInfo PageInfo { get; set; }
+
+    [XmlElement("permissionInfo")]
+    public required PermissionInfo PermissionInfo { get; set; }
+}
 }

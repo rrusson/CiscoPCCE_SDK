@@ -13,22 +13,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("name")]
         public string? Name { get; set; }
-
-        // Path("dialednumber")
-        [XmlRoot("results")]
-        public class DialedNumberRecordList : BaseApiListBean<DialedNumberRecord>
-        {
-            [XmlArray("dialedNumberRecords")]
-            [XmlArrayItem("dialedNumberRecord")]
-            public new List<DialedNumberRecord>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<DialedNumberRecord>? GetItems() => Items;
-
-            public override void SetItems(List<DialedNumberRecord>? value) => Items = value;
-        }
+        
     }
 }

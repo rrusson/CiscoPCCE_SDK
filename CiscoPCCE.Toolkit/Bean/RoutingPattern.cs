@@ -49,22 +49,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("sendToOriginator")]
         public bool? SendToOriginator { get; set; }
-
-        // Path("routingpattern")
-        [XmlRoot("results")]
-        public class RoutingPatternList : BaseApiListBean<RoutingPattern>
-        {
-            [XmlArray("routingPatterns")]
-            [XmlArrayItem("routingPattern")]
-            public new List<RoutingPattern>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<RoutingPattern>? GetItems() => Items;
-
-            public override void SetItems(List<RoutingPattern>? value) => Items = value;
-        }
+        
     }
 }

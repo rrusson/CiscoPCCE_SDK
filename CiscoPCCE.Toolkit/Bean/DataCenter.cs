@@ -49,22 +49,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("vruPG")]
         public required VruPG VruPG { get; set; }
-
-        // Path("datacenter")
-        [XmlRoot("results")]
-        public class DataCenterList : BaseApiListBean<DataCenter>
-        {
-            [XmlArray("datacenters")]
-            [XmlArrayItem("datacenter")]
-            public new List<DataCenter>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<DataCenter>? GetItems() => Items;
-
-            public override void SetItems(List<DataCenter>? value) => Items = value;
-        }
+        
     }
 }

@@ -88,22 +88,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("supervisor")]
         public bool? Supervisor { get; set; }
-
-        // Path("agent")
-        [XmlRoot("results")]
-        public class AgentSummaryList : BaseApiListBean<AgentSummary>
-        {
-            [XmlArray("agentSummarys")]
-            [XmlArrayItem("agentSummary")]
-            public new List<AgentSummary>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<AgentSummary>? GetItems() => Items;
-
-            public override void SetItems(List<AgentSummary>? value) => Items = value;
-        }
+        
     }
 }

@@ -28,22 +28,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("sipServerGroupProperties")]
         public required SIPServerGroupProperties SipServerGroupProperties { get; set; }
-
-        // Path("sipservergroupproperties")
-        [XmlRoot("results")]
-        public class CVPSIPServerGroupPropertiesList : BaseApiListBean<CVPSIPServerGroupProperties>
-        {
-            [XmlArray("CVPs")]
-            [XmlArrayItem("CVP")]
-            public new List<CVPSIPServerGroupProperties>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<CVPSIPServerGroupProperties>? GetItems() => Items;
-
-            public override void SetItems(List<CVPSIPServerGroupProperties>? value) => Items = value;
-        }
+        
     }
 }

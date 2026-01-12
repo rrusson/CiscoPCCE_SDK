@@ -8,11 +8,11 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("results")]
     public class DCAwareRoutingTypeBeanList : BaseApiBean
     {
-        [XmlElement("datacenterRoutingTypes")]
-        public required DatacenterRoutingTypeBeanList DatacenterRoutingTypes { get; set; }
+    [XmlElement("datacenterRoutingTypes")]
+    public required DatacenterRoutingTypeBeanList DatacenterRoutingTypes { get; set; }
 
-        [XmlElement("routingTypes")]
-        public required RoutingTypeBeanList RoutingTypes { get; set; }
+    [XmlElement("routingTypes")]
+    public required RoutingTypeBeanList RoutingTypes { get; set; }
 
         // Path("routingtype")
         [XmlRoot("results")]

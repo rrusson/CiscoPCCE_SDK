@@ -81,22 +81,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("steps")]
         [XmlArrayItem("step")]
         public List<Step>? Steps { get; set; }
-
-        // Path("precisionqueue")
-        [XmlRoot("results")]
-        public class PrecisionQueueList : BaseApiListBean<PrecisionQueue>
-        {
-            [XmlArray("precisionQueues")]
-            [XmlArrayItem("precisionQueue")]
-            public new List<PrecisionQueue>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<PrecisionQueue>? GetItems() => Items;
-
-            public override void SetItems(List<PrecisionQueue>? value) => Items = value;
-        }
+        
     }
 }

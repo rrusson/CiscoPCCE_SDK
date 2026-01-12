@@ -38,22 +38,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
-
-        // Path("/department")
-        [XmlRoot("results")]
-        public class DepartmentList : BaseApiListBean<Department>
-        {
-            [XmlArray("departments")]
-            [XmlArrayItem("department")]
-            public new List<Department>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<Department>? GetItems() => Items;
-
-            public override void SetItems(List<Department>? value) => Items = value;
-        }
+        
     }
 }

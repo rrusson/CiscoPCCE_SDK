@@ -43,22 +43,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("targetQueue")]
         public required TargetQueue TargetQueue { get; set; }
-
-        // Path("contactsharequeue")
-        [XmlRoot("results")]
-        public class ContactShareQueueList : BaseApiListBean<ContactShareQueue>
-        {
-            [XmlArray("contactShareQueues")]
-            [XmlArrayItem("contactShareQueue")]
-            public new List<ContactShareQueue>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ContactShareQueue>? GetItems() => Items;
-
-            public override void SetItems(List<ContactShareQueue>? value) => Items = value;
-        }
+        
     }
 }

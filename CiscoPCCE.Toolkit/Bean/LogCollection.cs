@@ -29,22 +29,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("status")]
         public required Status Status { get; set; }
-
-        // Path("logcollection")
-        [XmlRoot("results")]
-        public class LogCollectionList : BaseApiListBean<LogCollection>
-        {
-            [XmlArray("logCollections")]
-            [XmlArrayItem("logCollection")]
-            public new List<LogCollection>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<LogCollection>? GetItems() => Items;
-
-            public override void SetItems(List<LogCollection>? value) => Items = value;
-        }
+        
     }
 }

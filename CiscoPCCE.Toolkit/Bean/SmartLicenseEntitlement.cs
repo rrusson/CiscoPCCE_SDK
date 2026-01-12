@@ -61,22 +61,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("smartLicenseEntitlementsTagID")]
         public int? SmartLicenseEntitlementsTagID { get; set; }
-
-        // Path("smartlicense")
-        [XmlRoot("results")]
-        public class SmartLicenseEntitlementList : BaseApiListBean<SmartLicenseEntitlement>
-        {
-            [XmlArray("smartlicenseentitlements")]
-            [XmlArrayItem("smartlicenseentitlement")]
-            public new List<SmartLicenseEntitlement>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<SmartLicenseEntitlement>? GetItems() => Items;
-
-            public override void SetItems(List<SmartLicenseEntitlement>? value) => Items = value;
-        }
+        
     }
 }

@@ -37,22 +37,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("renameFileAfterImport")]
         public bool? RenameEnabled { get; set; }
-
-        // Path("dnc")
-        [XmlRoot("results")]
-        public class ImportRuleList : BaseApiListBean<ImportRule>
-        {
-            [XmlArray("dncs")]
-            [XmlArrayItem("dnc")]
-            public new List<ImportRule>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ImportRule>? GetItems() => Items;
-
-            public override void SetItems(List<ImportRule>? value) => Items = value;
-        }
+        
     }
 }

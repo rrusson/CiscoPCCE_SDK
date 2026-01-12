@@ -25,22 +25,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("type")]
         public ApplicationGatewayType Type { get; set; }
-
-        // Path("applicationgatewayglobalsetting")
-        [XmlRoot("results")]
-        public class ApplicationGatewayGlobalsList : BaseApiListBean<ApplicationGatewayGlobals>
-        {
-            [XmlArray("applicationGatewayGlobalSettings")]
-            [XmlArrayItem("applicationGatewayGlobalSetting")]
-            public new List<ApplicationGatewayGlobals>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ApplicationGatewayGlobals>? GetItems() => Items;
-
-            public override void SetItems(List<ApplicationGatewayGlobals>? value) => Items = value;
-        }
+        
     }
 }

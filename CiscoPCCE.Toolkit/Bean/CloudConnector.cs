@@ -40,22 +40,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("registrationStatus")]
         public string? RegistrationStatus { get; set; }
-
-        // Path("cloudconnectsettings")
-        [XmlRoot("results")]
-        public class CloudConnectorList : BaseApiListBean<CloudConnector>
-        {
-            [XmlArray("CloudConnectSettingss")]
-            [XmlArrayItem("CloudConnectSettings")]
-            public new List<CloudConnector>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<CloudConnector>? GetItems() => Items;
-
-            public override void SetItems(List<CloudConnector>? value) => Items = value;
-        }
+        
     }
 }

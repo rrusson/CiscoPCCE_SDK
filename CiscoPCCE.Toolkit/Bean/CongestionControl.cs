@@ -43,22 +43,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("systemDefaultLabel")]
         public string? SystemDefaultLabel { get; set; }
-
-        // Path("congestioncontrol")
-        [XmlRoot("results")]
-        public class CongestionControlList : BaseApiListBean<CongestionControl>
-        {
-            [XmlArray("congestionControls")]
-            [XmlArrayItem("congestionControl")]
-            public new List<CongestionControl>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<CongestionControl>? GetItems() => Items;
-
-            public override void SetItems(List<CongestionControl>? value) => Items = value;
-        }
+        
     }
 }

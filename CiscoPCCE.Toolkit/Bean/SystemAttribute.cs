@@ -34,22 +34,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("valueString")]
         public string? ValueString { get; set; }
-
-        // Path("systemattribute")
-        [XmlRoot("results")]
-        public class SystemAttributeList : BaseApiListBean<SystemAttribute>
-        {
-            [XmlArray("systemAttributes")]
-            [XmlArrayItem("systemAttribute")]
-            public new List<SystemAttribute>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<SystemAttribute>? GetItems() => Items;
-
-            public override void SetItems(List<SystemAttribute>? value) => Items = value;
-        }
+        
     }
 }

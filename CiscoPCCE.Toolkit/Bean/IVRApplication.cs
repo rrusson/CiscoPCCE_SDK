@@ -34,22 +34,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("size")]
         public string? Size { get; set; }
-
-        // Path("transferablefiles")
-        [XmlRoot("results")]
-        public class IVRApplicationList : BaseApiListBean<IVRApplication>
-        {
-            [XmlArray("IVRApplications")]
-            [XmlArrayItem("IVRApplication")]
-            public new List<IVRApplication>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<IVRApplication>? GetItems() => Items;
-
-            public override void SetItems(List<IVRApplication>? value) => Items = value;
-        }
+        
     }
 }

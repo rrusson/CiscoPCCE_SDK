@@ -48,22 +48,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("ruleType")]
         public short? RuleType { get; set; }
-
-        // Path("agenttargetingrule")
-        [XmlRoot("results")]
-        public class AgentTargetingRuleList : BaseApiListBean<AgentTargetingRule>
-        {
-            [XmlArray("agentTargetingRules")]
-            [XmlArrayItem("agentTargetingRule")]
-            public new List<AgentTargetingRule>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<AgentTargetingRule>? GetItems() => Items;
-
-            public override void SetItems(List<AgentTargetingRule>? value) => Items = value;
-        }
+        
     }
 }

@@ -17,22 +17,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("type")]
         public AddressType Type { get; set; }
-
-        // Path("machineinventory")
-        [XmlRoot("results")]
-        public class MachineAddressList : BaseApiListBean<MachineAddress>
-        {
-            [XmlArray("addresss")]
-            [XmlArrayItem("address")]
-            public new List<MachineAddress>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<MachineAddress>? GetItems() => Items;
-
-            public override void SetItems(List<MachineAddress>? value) => Items = value;
-        }
+        
     }
 }
