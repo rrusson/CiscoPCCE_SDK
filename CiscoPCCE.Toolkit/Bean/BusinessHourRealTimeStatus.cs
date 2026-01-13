@@ -28,22 +28,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("statusReason")]
         public required ReferenceBean StatusReason { get; set; }
-
-        // Path("businesshour")
-        [XmlRoot("results")]
-        public class BusinessHourRealTimeStatusList : BaseApiListBean<BusinessHourRealTimeStatus>
-        {
-            [XmlArray("realTimeStatuss")]
-            [XmlArrayItem("realTimeStatus")]
-            public new List<BusinessHourRealTimeStatus>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<BusinessHourRealTimeStatus>? GetItems() => Items;
-
-            public override void SetItems(List<BusinessHourRealTimeStatus>? value) => Items = value;
-        }
     }
 }

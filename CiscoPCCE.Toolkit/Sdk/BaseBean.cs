@@ -11,8 +11,8 @@ namespace CiscoPCCE.Toolkit.Sdk
             {
                 WriteIndented = true,
                 PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase,
-				UnknownTypeHandling = System.Text.Json.Serialization.JsonUnknownTypeHandling.JsonElement
-			});
+                UnknownTypeHandling = System.Text.Json.Serialization.JsonUnknownTypeHandling.JsonElement
+            });
         }
     }
 }

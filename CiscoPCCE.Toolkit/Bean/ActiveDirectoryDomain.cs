@@ -13,22 +13,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("systemDomain")]
         public bool? SystemDomain { get; set; }
-
-        // Path("activedirectorydomain")
-        [XmlRoot("results")]
-        public class ActiveDirectoryDomainList : BaseApiListBean<ActiveDirectoryDomain>
-        {
-            [XmlArray("activeDirectoryDomains")]
-            [XmlArrayItem("activeDirectoryDomain")]
-            public new List<ActiveDirectoryDomain>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ActiveDirectoryDomain>? GetItems() => Items;
-
-            public override void SetItems(List<ActiveDirectoryDomain>? value) => Items = value;
-        }
     }
 }

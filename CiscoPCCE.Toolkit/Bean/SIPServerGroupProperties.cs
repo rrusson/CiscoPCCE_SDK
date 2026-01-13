@@ -37,22 +37,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("serverGroupUpInterval")]
         public int? ServerGroupUpInterval { get; set; }
-
-        // Path("sipservergroupproperties")
-        [XmlRoot("results")]
-        public class SIPServerGroupPropertiesList : BaseApiListBean<SIPServerGroupProperties>
-        {
-            [XmlArray("sipServerGroupPropertiess")]
-            [XmlArrayItem("sipServerGroupProperties")]
-            public new List<SIPServerGroupProperties>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<SIPServerGroupProperties>? GetItems() => Items;
-
-            public override void SetItems(List<SIPServerGroupProperties>? value) => Items = value;
-        }
     }
 }

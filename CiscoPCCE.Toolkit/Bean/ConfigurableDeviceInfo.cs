@@ -11,22 +11,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("deviceTypes")]
         [XmlArrayItem("deviceType")]
         public List<DeviceInfo>? DeviceInfo { get; set; }
-
-        // Path("configurabledeviceinfo")
-        [XmlRoot("results")]
-        public class ConfigurableDeviceInfoList : BaseApiListBean<ConfigurableDeviceInfo>
-        {
-            [XmlArray("configurableDevicess")]
-            [XmlArrayItem("configurableDevices")]
-            public new List<ConfigurableDeviceInfo>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ConfigurableDeviceInfo>? GetItems() => Items;
-
-            public override void SetItems(List<ConfigurableDeviceInfo>? value) => Items = value;
-        }
     }
 }

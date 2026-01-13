@@ -53,22 +53,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("secondaryCtiAddress")]
         public string? SecondaryCtiAddress { get; set; }
-
-        // Path("secondaryaddress")
-        [XmlRoot("results")]
-        public class PeripheralGatewayList : BaseApiListBean<PeripheralGateway>
-        {
-            [XmlArray("peripheralGateways")]
-            [XmlArrayItem("peripheralGateway")]
-            public new List<PeripheralGateway>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<PeripheralGateway>? GetItems() => Items;
-
-            public override void SetItems(List<PeripheralGateway>? value) => Items = value;
-        }
     }
 }

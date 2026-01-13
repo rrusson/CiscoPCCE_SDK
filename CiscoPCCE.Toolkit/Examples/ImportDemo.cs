@@ -9,7 +9,7 @@ namespace CiscoPCCE.Toolkit.Examples
     /// </summary>
     public class ImportDemo
     {
-        private static RestClient? restClient = null;
+        private static CiscoRestClient? restClient = null;
         private static SkillGroup? skillGroup = null;
         private static bool skillGroupCreated = false;
 
@@ -50,7 +50,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// 3. Import four more records using pipe-delimited values
         /// 4. Delete the imported records, campaign and skillGroup.
         /// </summary>
-        private static async Task ImportDemoAsync(RestClient restClient)
+        private static async Task ImportDemoAsync(CiscoRestClient restClient)
         {
             Campaign? campaign = null;
 
@@ -101,7 +101,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// </summary>
         private static string ConstructImportPath(Campaign campaign)
         {
-            string importPath = campaign.RefURL?.Replace(RestClient.BaseUrl, "") ?? "";
+            string importPath = campaign.RefURL?.Replace(CiscoRestClient.BaseUrl, "") ?? "";
             importPath += $"/{ImportPath}";
             return importPath;
         }
@@ -137,9 +137,9 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            restClient = new RestClient(args[0], args[1], args[2]);
+            restClient = new CiscoRestClient(args[0], args[1], args[2]);
 
-            var deploymentType = await restClient.GetAsync<Deployment>(RestClient.BaseUrl + "deployment");
+            var deploymentType = await restClient.GetAsync<Deployment>(CiscoRestClient.BaseUrl + "deployment");
             Console.WriteLine($"System is in Deployment Type: {deploymentType?.DeploymentType}");
 
             if (!DemoUtils.IsPCCEDeploymentType(deploymentType) && args.Length < 4)

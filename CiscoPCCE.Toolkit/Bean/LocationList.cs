@@ -1,12 +1,18 @@
 using System.Xml.Serialization;
-
 using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("locations")]
-    public class LocationList : BaseApiBean
+    // Path("location")
+    [XmlRoot("results")]
+    public class LocationList : BaseApiList<Location>
     {
-        public List<Location>? Location { get; set; }
+        [XmlArray("locations")]
+        [XmlArrayItem("location")]
+        public new List<Location>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
     }
 }

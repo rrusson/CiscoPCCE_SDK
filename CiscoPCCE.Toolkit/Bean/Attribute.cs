@@ -58,22 +58,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("selectedAgentCount")]
         public int? SelectedAgentCount { get; set; }
-
-        // Path("attribute")
-        [XmlRoot("results")]
-        public class AttributeList : BaseApiListBean<Attribute>
-        {
-            [XmlArray("attributes")]
-            [XmlArrayItem("attribute")]
-            public new List<Attribute>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<Attribute>? GetItems() => Items;
-
-            public override void SetItems(List<Attribute>? value) => Items = value;
-        }
     }
 }

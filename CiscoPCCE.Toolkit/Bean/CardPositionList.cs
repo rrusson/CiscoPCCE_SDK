@@ -20,7 +20,7 @@ namespace CiscoPCCE.Toolkit.Bean
 
         // Path("layout")
         [XmlRoot("results")]
-        public class CardPositionListList : BaseApiListBean<CardPositionList>
+        public class CardPositionListList : BaseApiList<CardPositionList>
         {
             [XmlArray("layouts")]
             [XmlArrayItem("layout")]
@@ -29,10 +29,6 @@ namespace CiscoPCCE.Toolkit.Bean
                 get => base.Items;
                 set => base.Items = value;
             }
-
-            public override List<CardPositionList>? GetItems() => Items;
-
-            public override void SetItems(List<CardPositionList>? value) => Items = value;
         }
     }
 }

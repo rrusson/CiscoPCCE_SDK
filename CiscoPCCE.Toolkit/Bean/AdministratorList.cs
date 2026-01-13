@@ -1,38 +1,24 @@
 using System.Xml.Serialization;
-
 using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("administrator")
     [XmlRoot("results")]
-    public class AdministratorList : BaseApiBean
+    public class AdministratorList : BaseApiList<Administrator>
     {
         [XmlArray("administrators")]
         [XmlArrayItem("administrator")]
-        public List<Administrator>? Items { get; set; }
+        public new List<Administrator>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
 
         [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
         [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
-
-        // Path("administrator")
-        [XmlRoot("results")]
-        public class AdministratorListList : BaseApiListBean<AdministratorList>
-        {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<AdministratorList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<AdministratorList>? GetItems() => Items;
-
-            public override void SetItems(List<AdministratorList>? value) => Items = value;
-        }
     }
 }

@@ -44,22 +44,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
-
-        // Path("contactsharegroup")
-        [XmlRoot("results")]
-        public class ContactShareGroupList : BaseApiListBean<ContactShareGroup>
-        {
-            [XmlArray("contactShareGroups")]
-            [XmlArrayItem("contactShareGroup")]
-            public new List<ContactShareGroup>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ContactShareGroup>? GetItems() => Items;
-
-            public override void SetItems(List<ContactShareGroup>? value) => Items = value;
-        }
     }
 }

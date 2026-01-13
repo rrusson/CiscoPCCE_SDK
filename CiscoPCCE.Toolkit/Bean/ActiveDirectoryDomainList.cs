@@ -1,28 +1,18 @@
 using System.Xml.Serialization;
-
 using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("activedirectorydomain")
     [XmlRoot("results")]
-    public class ActiveDirectoryDomainList : BaseApiBean
+    public class ActiveDirectoryDomainList : BaseApiList<ActiveDirectoryDomain>
     {
-        // Path("activedirectorydomain")
-        [XmlRoot("results")]
-        public class ActiveDirectoryDomainListList : BaseApiListBean<ActiveDirectoryDomainList>
+        [XmlArray("activeDirectoryDomains")]
+        [XmlArrayItem("activeDirectoryDomain")]
+        public new List<ActiveDirectoryDomain>? Items
         {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<ActiveDirectoryDomainList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ActiveDirectoryDomainList>? GetItems() => Items;
-
-            public override void SetItems(List<ActiveDirectoryDomainList>? value) => Items = value;
+            get => base.Items;
+            set => base.Items = value;
         }
     }
 }

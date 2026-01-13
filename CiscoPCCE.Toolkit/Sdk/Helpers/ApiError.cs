@@ -19,16 +19,16 @@ namespace CiscoPCCE.Toolkit.Sdk.Helpers
         {
             ErrorData = data;
             ErrorMessage = message;
-			ErrorType = type;
-		}
+            ErrorType = type;
+        }
 
-		[XmlElement("errorData")]
-		public string? ErrorData { get; set; }
+        [XmlElement("errorData")]
+        public string? ErrorData { get; set; }
 
         [XmlElement]
         public string? ErrorMessage { get; set; }
 
-		[XmlElement("errorType")]
-		public string? ErrorType { get; set; }
-	}
+        [XmlElement("errorType")]
+        public string? ErrorType { get; set; }
+    }
 }

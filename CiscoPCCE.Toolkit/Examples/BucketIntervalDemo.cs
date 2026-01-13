@@ -17,11 +17,11 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            var restClient = new RestClient(args[0], args[1], args[2]);
+            var restClient = new CiscoRestClient(args[0], args[1], args[2]);
             await BucketIntervalDemoAsync(restClient);
         }
 
-        private static async Task BucketIntervalDemoAsync(RestClient restClient)
+        private static async Task BucketIntervalDemoAsync(CiscoRestClient restClient)
         {
             var bean = new BucketInterval
             {

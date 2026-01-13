@@ -13,22 +13,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("routingTypes")]
         public required RoutingTypeBeanList RoutingTypes { get; set; }
-
-        // Path("routingtype")
-        [XmlRoot("results")]
-        public class DCAwareRoutingTypeBeanListList : BaseApiListBean<DCAwareRoutingTypeBeanList>
-        {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<DCAwareRoutingTypeBeanList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<DCAwareRoutingTypeBeanList>? GetItems() => Items;
-
-            public override void SetItems(List<DCAwareRoutingTypeBeanList>? value) => Items = value;
-        }
     }
 }

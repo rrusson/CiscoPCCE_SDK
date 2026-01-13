@@ -1,15 +1,19 @@
 using System.Xml.Serialization;
-
 using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    // Path("datacenter")
     [XmlRoot("results")]
-    public class DataCenterList : BaseApiBean
+    public class DataCenterList : BaseApiList<DataCenter12k>
     {
         [XmlArray("datacenters")]
         [XmlArrayItem("datacenter")]
-        public List<DataCenter12k>? Items { get; set; }
+        public new List<DataCenter12k>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
 
         [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }

@@ -40,22 +40,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("resource_secret")]
         public string? Resource_secret { get; set; }
-
-        // Path("sso")
-        [XmlRoot("results")]
-        public class SsoConfigBeanList : BaseApiListBean<SsoConfigBean>
-        {
-            [XmlArray("SsoConfigs")]
-            [XmlArrayItem("SsoConfig")]
-            public new List<SsoConfigBean>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<SsoConfigBean>? GetItems() => Items;
-
-            public override void SetItems(List<SsoConfigBean>? value) => Items = value;
-        }
     }
 }

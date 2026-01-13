@@ -34,22 +34,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("timestamp")]
         public long? Timestamp { get; set; }
-
-        // Path("sso")
-        [XmlRoot("results")]
-        public class SsoStateBeanList : BaseApiListBean<SsoStateBean>
-        {
-            [XmlArray("SsoStates")]
-            [XmlArrayItem("SsoState")]
-            public new List<SsoStateBean>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<SsoStateBean>? GetItems() => Items;
-
-            public override void SetItems(List<SsoStateBean>? value) => Items = value;
-        }
     }
 }

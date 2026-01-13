@@ -1,38 +1,24 @@
 using System.Xml.Serialization;
-
 using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("masterscript")
     [XmlRoot("results")]
-    public class MasterScriptList : BaseApiBean
+    public class MasterScriptList : BaseApiList<MasterScript>
     {
         [XmlArray("masterScripts")]
         [XmlArrayItem("masterScript")]
-        public List<MasterScript>? Items { get; set; }
+        public new List<MasterScript>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
 
         [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
         [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
-
-        // Path("masterscript")
-        [XmlRoot("results")]
-        public class MasterScriptListList : BaseApiListBean<MasterScriptList>
-        {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<MasterScriptList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<MasterScriptList>? GetItems() => Items;
-
-            public override void SetItems(List<MasterScriptList>? value) => Items = value;
-        }
     }
 }

@@ -31,22 +31,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
-
-        // Path("enterpriseroute")
-        [XmlRoot("results")]
-        public class EnterpriseSkillGroupList : BaseApiListBean<EnterpriseSkillGroup>
-        {
-            [XmlArray("enterpriseSkillGroups")]
-            [XmlArrayItem("enterpriseSkillGroup")]
-            public new List<EnterpriseSkillGroup>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<EnterpriseSkillGroup>? GetItems() => Items;
-
-            public override void SetItems(List<EnterpriseSkillGroup>? value) => Items = value;
-        }
     }
 }

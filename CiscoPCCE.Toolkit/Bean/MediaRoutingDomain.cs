@@ -58,22 +58,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("type")]
         public MediaRoutingType Type { get; set; }
-
-        // Path("mediaroutingdomain")
-        [XmlRoot("results")]
-        public class MediaRoutingDomainList : BaseApiListBean<MediaRoutingDomain>
-        {
-            [XmlArray("mediaRoutingDomains")]
-            [XmlArrayItem("mediaRoutingDomain")]
-            public new List<MediaRoutingDomain>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<MediaRoutingDomain>? GetItems() => Items;
-
-            public override void SetItems(List<MediaRoutingDomain>? value) => Items = value;
-        }
     }
 }

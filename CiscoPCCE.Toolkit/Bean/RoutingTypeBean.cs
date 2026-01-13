@@ -16,22 +16,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("type")]
         public int? Type { get; set; }
-
-        // Path("routingtype")
-        [XmlRoot("results")]
-        public class RoutingTypeBeanList : BaseApiListBean<RoutingTypeBean>
-        {
-            [XmlArray("routingTypes")]
-            [XmlArrayItem("routingType")]
-            public new List<RoutingTypeBean>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<RoutingTypeBean>? GetItems() => Items;
-
-            public override void SetItems(List<RoutingTypeBean>? value) => Items = value;
-        }
     }
 }

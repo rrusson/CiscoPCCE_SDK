@@ -45,22 +45,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
-
-        // Path("location")
-        [XmlRoot("results")]
-        public class LocationList : BaseApiListBean<Location>
-        {
-            [XmlArray("locations")]
-            [XmlArrayItem("location")]
-            public new List<Location>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<Location>? GetItems() => Items;
-
-            public override void SetItems(List<Location>? value) => Items = value;
-        }
     }
 }

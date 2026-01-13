@@ -44,22 +44,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
-
-        // Path("applicationgateway")
-        [XmlRoot("results")]
-        public class ApplicationGatewayList : BaseApiListBean<ApplicationGateway>
-        {
-            [XmlArray("applicationGateways")]
-            [XmlArrayItem("applicationGateway")]
-            public new List<ApplicationGateway>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ApplicationGateway>? GetItems() => Items;
-
-            public override void SetItems(List<ApplicationGateway>? value) => Items = value;
-        }
     }
 }

@@ -47,22 +47,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("script")]
         public required ScriptGlobalSetting Script { get; set; }
-
-        // Path("globalsetting")
-        [XmlRoot("results")]
-        public class GlobalSettingList : BaseApiListBean<GlobalSetting>
-        {
-            [XmlArray("globalSettingss")]
-            [XmlArrayItem("globalSettings")]
-            public new List<GlobalSetting>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<GlobalSetting>? GetItems() => Items;
-
-            public override void SetItems(List<GlobalSetting>? value) => Items = value;
-        }
     }
 }

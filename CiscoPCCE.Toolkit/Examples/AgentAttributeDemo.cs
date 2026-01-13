@@ -21,9 +21,9 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            var restClient = new RestClient(args[0], args[1], args[2]);
+            var restClient = new CiscoRestClient(args[0], args[1], args[2]);
 
-            var deploymentType = await restClient.GetAsync<Deployment>(RestClient.BaseUrl + "deployment");
+            var deploymentType = await restClient.GetAsync<Deployment>(CiscoRestClient.BaseUrl + "deployment");
 
             Console.WriteLine($"System is in Deployment Type: {deploymentType?.DeploymentType}");
 
@@ -37,7 +37,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
         }
 
-        private static async Task AgentAttributeDemoAsync(RestClient restClient, Deployment? deploymentType)
+        private static async Task AgentAttributeDemoAsync(CiscoRestClient restClient, Deployment? deploymentType)
         {
             // *** Agent Find (UCCE) or Create (PCCE)
             Agent? agent = null;

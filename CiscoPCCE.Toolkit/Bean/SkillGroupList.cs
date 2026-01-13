@@ -1,38 +1,24 @@
 using System.Xml.Serialization;
-
 using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("skillgroup")
     [XmlRoot("results")]
-    public class SkillGroupList : BaseApiBean
+    public class SkillGroupList : BaseApiList<SkillGroupBase>
     {
         [XmlArray("skillGroups")]
         [XmlArrayItem("skillGroup")]
-        public List<SkillGroupBase>? Items { get; set; }
+        public new List<SkillGroupBase>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
 
         [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
         [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
-
-        // Path("skillgroup")
-        [XmlRoot("results")]
-        public class SkillGroupListList : BaseApiListBean<SkillGroupList>
-        {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<SkillGroupList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<SkillGroupList>? GetItems() => Items;
-
-            public override void SetItems(List<SkillGroupList>? value) => Items = value;
-        }
     }
 }

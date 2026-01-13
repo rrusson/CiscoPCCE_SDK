@@ -70,22 +70,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("acdSharedLineUsage")]
         public int? AcdSharedLineUsage { get; set; }
-
-        // Path("agentdesksetting")
-        [XmlRoot("results")]
-        public class AgentDeskSettingList : BaseApiListBean<AgentDeskSetting>
-        {
-            [XmlArray("agentDeskSettings")]
-            [XmlArrayItem("agentDeskSetting")]
-            public new List<AgentDeskSetting>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<AgentDeskSetting>? GetItems() => Items;
-
-            public override void SetItems(List<AgentDeskSetting>? value) => Items = value;
-        }
     }
 }

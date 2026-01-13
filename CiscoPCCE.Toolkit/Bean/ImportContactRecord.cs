@@ -75,22 +75,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
-
-        // Path("import")
-        [XmlRoot("results")]
-        public class ImportContactRecordList : BaseApiListBean<ImportContactRecord>
-        {
-            [XmlArray("importContacts")]
-            [XmlArrayItem("importContact")]
-            public new List<ImportContactRecord>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ImportContactRecord>? GetItems() => Items;
-
-            public override void SetItems(List<ImportContactRecord>? value) => Items = value;
-        }
     }
 }

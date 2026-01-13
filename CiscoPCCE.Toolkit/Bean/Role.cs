@@ -42,22 +42,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("systemDefined")]
         public bool? SystemDefined { get; set; }
-
-        // Path("role")
-        [XmlRoot("results")]
-        public class RoleList : BaseApiListBean<Role>
-        {
-            [XmlArray("roles")]
-            [XmlArrayItem("role")]
-            public new List<Role>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<Role>? GetItems() => Items;
-
-            public override void SetItems(List<Role>? value) => Items = value;
-        }
     }
 }

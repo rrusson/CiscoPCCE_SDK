@@ -44,22 +44,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("##default")]
         [XmlArrayItem("scriptVersion")]
         public List<ReferenceBean>? ScriptVersions { get; set; }
-
-        // Path("masterscript")
-        [XmlRoot("results")]
-        public class MasterScriptList : BaseApiListBean<MasterScript>
-        {
-            [XmlArray("masterScripts")]
-            [XmlArrayItem("masterScript")]
-            public new List<MasterScript>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<MasterScript>? GetItems() => Items;
-
-            public override void SetItems(List<MasterScript>? value) => Items = value;
-        }
     }
 }

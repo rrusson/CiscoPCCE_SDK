@@ -1,28 +1,18 @@
 using System.Xml.Serialization;
-
 using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("instance")
     [XmlRoot("results")]
-    public class WebsetupInstanceList : BaseApiBean
+    public class WebsetupInstanceList : BaseApiList<WebsetupInstance>
     {
-        // Path("instance")
-        [XmlRoot("results")]
-        public class WebsetupInstanceListList : BaseApiListBean<WebsetupInstanceList>
+        [XmlArray("instances")]
+        [XmlArrayItem("instance")]
+        public new List<WebsetupInstance>? Items
         {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<WebsetupInstanceList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<WebsetupInstanceList>? GetItems() => Items;
-
-            public override void SetItems(List<WebsetupInstanceList>? value) => Items = value;
+            get => base.Items;
+            set => base.Items = value;
         }
     }
 }

@@ -8,9 +8,9 @@ namespace CiscoPCCE.Toolkit.Sdk.Helpers
     [XmlRoot("apiErrors")]
     public class ApiErrors : BaseBean
     {
-		[XmlArray("apiErrors")]
-		[XmlArrayItem("apiError")]
-		private List<ApiError> _apiErrors;
+        [XmlArray("apiErrors")]
+        [XmlArrayItem("apiError")]
+        private List<ApiError> _apiErrors;
 
         public ApiErrors()
         {

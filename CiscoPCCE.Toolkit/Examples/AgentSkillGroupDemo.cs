@@ -21,7 +21,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            var restClient = new RestClient(args[0], args[1], args[2]);
+            var restClient = new CiscoRestClient(args[0], args[1], args[2]);
             await DemoUtils.CheckPCCEDeploymentTypeAsync(restClient);
 
             try
@@ -34,7 +34,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
         }
 
-        private static async Task AgentSkillGroupDemoAsync(RestClient restClient)
+        private static async Task AgentSkillGroupDemoAsync(CiscoRestClient restClient)
         {
             // *** Agent and Skill Group Create
             // -- Make a new agent object and associate it with a new person object.
@@ -52,7 +52,7 @@ namespace CiscoPCCE.Toolkit.Examples
             // -- Try and get an agent that doesn't exist
             try
             {
-                _ = await restClient.GetAsync<Agent>(RestClient.BaseUrl + "agent/12345");
+                _ = await restClient.GetAsync<Agent>(CiscoRestClient.BaseUrl + "agent/12345");
             }
             catch (ApiException e)
             {

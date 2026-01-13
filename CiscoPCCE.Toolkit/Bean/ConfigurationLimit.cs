@@ -37,22 +37,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
-
-        // Path("configurationlimit")
-        [XmlRoot("results")]
-        public class ConfigurationLimitList : BaseApiListBean<ConfigurationLimit>
-        {
-            [XmlArray("configurationLimits")]
-            [XmlArrayItem("configurationLimit")]
-            public new List<ConfigurationLimit>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<ConfigurationLimit>? GetItems() => Items;
-
-            public override void SetItems(List<ConfigurationLimit>? value) => Items = value;
-        }
     }
 }

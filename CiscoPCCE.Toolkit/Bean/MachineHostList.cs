@@ -1,38 +1,24 @@
 using System.Xml.Serialization;
-
 using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("machineinventory")
     [XmlRoot("results")]
-    public class MachineHostList : BaseApiBean
+    public class MachineHostList : BaseApiList<MachineHost>
     {
-        [XmlArray("hosts")]
-        [XmlArrayItem("host")]
-        public List<MachineHost>? Items { get; set; }
+        [XmlArray("machines")]
+        [XmlArrayItem("machine")]
+        public new List<MachineHost>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
 
         [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
         [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
-
-        // Path("machineinventory")
-        [XmlRoot("results")]
-        public class MachineHostListList : BaseApiListBean<MachineHostList>
-        {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<MachineHostList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<MachineHostList>? GetItems() => Items;
-
-            public override void SetItems(List<MachineHostList>? value) => Items = value;
-        }
     }
 }

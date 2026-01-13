@@ -58,22 +58,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("upperBound9")]
         public int? UpperBound9 { get; set; }
-
-        // Path("bucketinterval")
-        [XmlRoot("results")]
-        public class BucketIntervalList : BaseApiListBean<BucketInterval>
-        {
-            [XmlArray("bucketIntervals")]
-            [XmlArrayItem("bucketInterval")]
-            public new List<BucketInterval>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<BucketInterval>? GetItems() => Items;
-
-            public override void SetItems(List<BucketInterval>? value) => Items = value;
-        }
     }
 }

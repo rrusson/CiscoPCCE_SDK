@@ -28,22 +28,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("stdName")]
         public string? StdName { get; set; }
-
-        // Path("timezone")
-        [XmlRoot("results")]
-        public class TimeZoneList : BaseApiListBean<TimeZone>
-        {
-            [XmlArray("timeZones")]
-            [XmlArrayItem("timeZone")]
-            public new List<TimeZone>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<TimeZone>? GetItems() => Items;
-
-            public override void SetItems(List<TimeZone>? value) => Items = value;
-        }
     }
 }

@@ -67,22 +67,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("refURL")]
         public new string? RefURL { get; set; }
-
-        // Path("personalcallback")
-        [XmlRoot("results")]
-        public class PersonalCallbackRecordList : BaseApiListBean<PersonalCallbackRecord>
-        {
-            [XmlArray("personalCallbacks")]
-            [XmlArrayItem("personalCallback")]
-            public new List<PersonalCallbackRecord>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<PersonalCallbackRecord>? GetItems() => Items;
-
-            public override void SetItems(List<PersonalCallbackRecord>? value) => Items = value;
-        }
     }
 }

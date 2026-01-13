@@ -33,7 +33,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// </summary>
         /// <param name="restClient">Rest Client</param>
         /// <param name="beans">beans to be deleted</param>
-        public static async Task DeleteAsync(RestClient restClient, List<BaseApiBean> beans)
+        public static async Task DeleteAsync(CiscoRestClient restClient, List<BaseApiBean> beans)
         {
             foreach (var bean in beans)
             {
@@ -51,7 +51,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <param name="userName">agent's username</param>
         /// <param name="description">agent's description</param>
         /// <returns>Created Agent</returns>
-        public static async Task<Agent?> CreateAgentAsync(RestClient restClient, string firstName, string lastName, string userName, string description)
+        public static async Task<Agent?> CreateAgentAsync(CiscoRestClient restClient, string firstName, string lastName, string userName, string description)
         {
             var agent = PopulateAgentBean(firstName, lastName, userName, description);
             var refUrl = await restClient.CreateAndGetAsync(agent);
@@ -104,7 +104,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <param name="restClient">RestClient</param>
         /// <param name="skillGroupName">Name of the SkillGroup</param>
         /// <returns>SkillGroup or null</returns>
-        public static async Task<SkillGroupBase?> LookupSkillGroupAsync(RestClient restClient, string skillGroupName)
+        public static async Task<SkillGroupBase?> LookupSkillGroupAsync(CiscoRestClient restClient, string skillGroupName)
         {
             var skillGroups = await restClient.GetListAsync<SkillGroupList>(skillGroupName);
 
@@ -139,7 +139,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <param name="restClient">RestClient</param>
         /// <param name="agentUsername">username of the Agent</param>
         /// <returns>Agent or null</returns>
-        public static async Task<Agent?> LookupAgentAsync(RestClient restClient, string agentUsername)
+        public static async Task<Agent?> LookupAgentAsync(CiscoRestClient restClient, string agentUsername)
         {
             var agents = await restClient.GetListAsync<AgentList>(agentUsername);
 
@@ -169,9 +169,9 @@ namespace CiscoPCCE.Toolkit.Examples
         /// Check and exit if deployment type is not PCCE
         /// </summary>
         /// <param name="restClient">RestClient</param>
-        public static async Task CheckPCCEDeploymentTypeAsync(RestClient restClient)
+        public static async Task CheckPCCEDeploymentTypeAsync(CiscoRestClient restClient)
         {
-            var deploymentType = await restClient.GetAsync<Deployment>(RestClient.BaseUrl + "deployment");
+            var deploymentType = await restClient.GetAsync<Deployment>(CiscoRestClient.BaseUrl + "deployment");
 
             Console.WriteLine($"System is in Deployment Type: {deploymentType?.DeploymentType}");
 

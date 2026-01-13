@@ -1,38 +1,24 @@
 using System.Xml.Serialization;
-
 using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("database")
     [XmlRoot("results")]
-    public class DatabaseList : BaseApiBean
+    public class DatabaseList : BaseApiList<Database>
     {
         [XmlArray("databases")]
         [XmlArrayItem("database")]
-        public List<Database>? Items { get; set; }
+        public new List<Database>? Items
+        {
+            get => base.Items;
+            set => base.Items = value;
+        }
 
         [XmlElement("pageInfo")]
         public required PageInfo PageInfo { get; set; }
 
         [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
-
-        // Path("database")
-        [XmlRoot("results")]
-        public class DatabaseListList : BaseApiListBean<DatabaseList>
-        {
-            [XmlArray("resultss")]
-            [XmlArrayItem("results")]
-            public new List<DatabaseList>? Items
-            {
-                get => base.Items;
-                set => base.Items = value;
-            }
-
-            public override List<DatabaseList>? GetItems() => Items;
-
-            public override void SetItems(List<DatabaseList>? value) => Items = value;
-        }
     }
 }
