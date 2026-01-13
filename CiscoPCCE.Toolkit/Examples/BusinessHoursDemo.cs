@@ -39,7 +39,7 @@ namespace CiscoPCCE.Toolkit.Examples
                 businessHour1 = await CreateAndGetBusinessHourConfigAsync(restClient, BusinessHourNamePrefix + "1");
 
                 // -- Update the business hour
-                await UpdateAndVerifyBusinessHourConfigAsync(restClient, businessHour1);
+                await UpdateAndVerifyBusinessHourConfigAsync(restClient, businessHour1!);
 
                 // -- Create 1 more business hour
                 businessHour2 = await CreateAndGetBusinessHourConfigAsync(restClient, BusinessHourNamePrefix + "2");

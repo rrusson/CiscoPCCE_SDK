@@ -3,7 +3,10 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("dnc")
+    /// <summary>
+    /// A collection of ImportRules
+    /// </summary>
+    /// <remarks>Duplicates <see cref="DncList"/></remarks>
     [XmlRoot("results")]
     public class ImportRuleList : BaseApiList<ImportRule>
     {

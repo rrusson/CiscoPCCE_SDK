@@ -37,6 +37,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("renameFileAfterImport")]
         public bool? RenameEnabled { get; set; }
-        
     }
 }
