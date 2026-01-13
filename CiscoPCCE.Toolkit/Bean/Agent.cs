@@ -122,6 +122,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("supervisorTeams")]
         [XmlArrayItem("supervisorTeam")]
         public List<ReferenceBean>? SupervisorTeams { get; set; }
-
     }
 }
