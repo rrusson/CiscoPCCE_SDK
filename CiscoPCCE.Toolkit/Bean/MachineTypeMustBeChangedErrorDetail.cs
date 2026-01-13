@@ -14,6 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("validMachineTypes")]
         [XmlArrayItem("type")]
         public List<MachineType>? ValidMachineTypes { get; set; }
-        
     }
 }

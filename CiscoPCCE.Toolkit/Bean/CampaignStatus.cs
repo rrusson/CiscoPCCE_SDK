@@ -85,6 +85,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("wrongNumberCount")]
         public int? WrongNumberCount { get; set; }
-        
     }
 }

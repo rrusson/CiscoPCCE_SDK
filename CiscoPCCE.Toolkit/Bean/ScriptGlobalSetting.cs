@@ -10,6 +10,5 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         [XmlElement("retainScriptVersion")]
         public short? RetainScriptVersion { get; set; }
-        
     }
 }

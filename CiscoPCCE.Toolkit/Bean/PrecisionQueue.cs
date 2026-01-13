@@ -81,6 +81,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("steps")]
         [XmlArrayItem("step")]
         public List<Step>? Steps { get; set; }
-        
     }
 }

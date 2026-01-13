@@ -10,6 +10,5 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         [XmlElement("##default")]
         public string? Status { get; set; }
-        
     }
 }

@@ -49,6 +49,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("sendToOriginator")]
         public bool? SendToOriginator { get; set; }
-        
     }
 }

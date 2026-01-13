@@ -58,6 +58,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("type")]
         public MediaRoutingType Type { get; set; }
-        
     }
 }

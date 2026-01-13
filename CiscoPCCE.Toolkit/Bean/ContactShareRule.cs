@@ -34,6 +34,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("ruleExpression")]
         public string? RuleExpression { get; set; }
-        
     }
 }

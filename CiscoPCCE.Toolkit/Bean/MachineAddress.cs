@@ -17,6 +17,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("type")]
         public AddressType Type { get; set; }
-        
     }
 }

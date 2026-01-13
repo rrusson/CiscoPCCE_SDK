@@ -40,6 +40,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("serviceAccountUserName")]
         public string? ServiceAccountUserName { get; set; }
-        
     }
 }

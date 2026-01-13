@@ -40,6 +40,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("registrationStatus")]
         public string? RegistrationStatus { get; set; }
-        
     }
 }

@@ -28,6 +28,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("statusReason")]
         public required ReferenceBean StatusReason { get; set; }
-        
     }
 }

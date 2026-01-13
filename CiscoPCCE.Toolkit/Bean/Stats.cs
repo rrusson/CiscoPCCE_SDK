@@ -10,6 +10,5 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         [XmlElement("numberOfAgentsLoggedIn")]
         public int NumberOfAgentsLoggedIn { get; set; }
-        
     }
 }

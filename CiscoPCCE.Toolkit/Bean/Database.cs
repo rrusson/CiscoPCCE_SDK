@@ -25,6 +25,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("side")]
         public Side Side { get; set; }
-        
     }
 }

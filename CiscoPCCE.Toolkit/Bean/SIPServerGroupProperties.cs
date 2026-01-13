@@ -37,6 +37,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("serverGroupUpInterval")]
         public int? ServerGroupUpInterval { get; set; }
-        
     }
 }

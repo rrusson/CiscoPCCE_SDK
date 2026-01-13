@@ -28,6 +28,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("weight")]
         public string? Weight { get; set; }
-        
     }
 }

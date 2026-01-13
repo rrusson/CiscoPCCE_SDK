@@ -11,6 +11,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("expressionErrors")]
         [XmlArrayItem("expressionError")]
         public List<ContactShareExpressionErrorDetailMessage>? ExpressionErrors { get; set; }
-        
     }
 }

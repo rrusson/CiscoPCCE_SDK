@@ -61,6 +61,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("smartLicenseEntitlementsTagID")]
         public int? SmartLicenseEntitlementsTagID { get; set; }
-        
     }
 }

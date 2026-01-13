@@ -26,6 +26,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("ssoTestPath")]
         public string? SsoTestPath { get; set; }
-        
     }
 }

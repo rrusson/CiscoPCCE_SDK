@@ -11,6 +11,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("statuses")]
         [XmlArrayItem("status")]
         public List<Status>? Statuses { get; set; }
-        
     }
 }

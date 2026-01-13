@@ -15,6 +15,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("networksRequired")]
         [XmlArrayItem("network")]
         public List<MachineAddress>? NetworksRequired { get; set; }
-        
     }
 }

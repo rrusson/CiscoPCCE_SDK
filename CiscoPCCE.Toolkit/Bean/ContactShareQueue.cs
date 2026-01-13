@@ -43,6 +43,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("targetQueue")]
         public required TargetQueue TargetQueue { get; set; }
-        
     }
 }

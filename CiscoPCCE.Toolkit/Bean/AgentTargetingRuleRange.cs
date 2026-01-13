@@ -13,6 +13,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("lowExtension")]
         public string? LowExtension { get; set; }
-        
     }
 }

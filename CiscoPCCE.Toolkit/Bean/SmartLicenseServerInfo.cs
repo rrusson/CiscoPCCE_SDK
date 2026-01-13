@@ -97,6 +97,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("usageMode")]
         public int? UsageMode { get; set; }
-        
     }
 }

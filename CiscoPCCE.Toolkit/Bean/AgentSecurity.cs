@@ -34,6 +34,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("unsupportedPeripheralGateways")]
         public int? UnsupportedPeripheralGateways { get; set; }
-        
     }
 }

@@ -43,6 +43,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("systemDefaultLabel")]
         public string? SystemDefaultLabel { get; set; }
-        
     }
 }

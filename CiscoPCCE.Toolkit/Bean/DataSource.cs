@@ -31,6 +31,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("sideB")]
         public required DataSourceDetails SideB { get; set; }
-        
     }
 }

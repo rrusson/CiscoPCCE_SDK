@@ -10,6 +10,5 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         [XmlElement("operation")]
         public List<Operation>? OperationList { get; set; }
-        
     }
 }

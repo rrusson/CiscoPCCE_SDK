@@ -28,6 +28,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("sipServerGroupProperties")]
         public required SIPServerGroupProperties SipServerGroupProperties { get; set; }
-        
     }
 }

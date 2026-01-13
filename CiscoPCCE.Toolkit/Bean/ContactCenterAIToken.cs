@@ -22,6 +22,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("u2cHost")]
         public string? U2cHost { get; set; }
-        
     }
 }

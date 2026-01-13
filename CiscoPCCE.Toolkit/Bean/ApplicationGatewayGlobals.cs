@@ -25,6 +25,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("type")]
         public ApplicationGatewayType Type { get; set; }
-        
     }
 }

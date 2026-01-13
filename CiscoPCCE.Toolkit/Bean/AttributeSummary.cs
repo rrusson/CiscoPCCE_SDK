@@ -46,6 +46,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("selectedAgentCount")]
         public int? SelectedAgentCount { get; set; }
-        
     }
 }

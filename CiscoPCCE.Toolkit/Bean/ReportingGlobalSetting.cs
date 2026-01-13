@@ -10,6 +10,5 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         [XmlElement("reportingInterval")]
         public int? ReportingInterval { get; set; }
-        
     }
 }

@@ -7,7 +7,7 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("asrServers")]
     public class AsrServerXMLList : BaseApiBean
     {
-    [XmlElement("asrServer")]
+        [XmlElement("asrServer")]
         public List<AsrServer>? Items { get; set; }
     }
 }

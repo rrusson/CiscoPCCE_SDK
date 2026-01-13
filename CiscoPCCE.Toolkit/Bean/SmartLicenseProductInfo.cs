@@ -46,6 +46,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("smartLicenseProductID")]
         public int? SmartLicenseProductID { get; set; }
-        
     }
 }

@@ -70,6 +70,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("acdSharedLineUsage")]
         public int? AcdSharedLineUsage { get; set; }
-        
     }
 }

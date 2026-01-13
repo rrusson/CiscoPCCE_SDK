@@ -34,6 +34,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("timestamp")]
         public long? Timestamp { get; set; }
-        
     }
 }

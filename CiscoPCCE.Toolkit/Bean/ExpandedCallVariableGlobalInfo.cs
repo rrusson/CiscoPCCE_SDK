@@ -13,6 +13,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("totalVariableSize")]
         public int? TotalVariableSize { get; set; }
-        
     }
 }

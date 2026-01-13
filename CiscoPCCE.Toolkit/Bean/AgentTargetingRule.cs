@@ -48,6 +48,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("ruleType")]
         public short? RuleType { get; set; }
-        
     }
 }

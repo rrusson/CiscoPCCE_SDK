@@ -28,6 +28,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("step")]
         public required Step Step { get; set; }
-        
     }
 }

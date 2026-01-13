@@ -28,6 +28,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("supervisorLoginAllowed")]
         public bool? SupervisorLoginAllowed { get; set; }
-        
     }
 }

@@ -52,6 +52,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("supervisorCount")]
         public int? SupervisorCount { get; set; }
-        
     }
 }

@@ -34,6 +34,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("type")]
         public int Type { get; set; }
-        
     }
 }

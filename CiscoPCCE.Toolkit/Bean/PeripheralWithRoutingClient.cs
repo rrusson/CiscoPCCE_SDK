@@ -73,6 +73,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("routingTypeForMROnDC")]
         public string? RoutingTypeForMROnDC { get; set; }
-        
     }
 }

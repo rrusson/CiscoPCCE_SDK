@@ -41,6 +41,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("version")]
         public int? Version { get; set; }
-        
     }
 }

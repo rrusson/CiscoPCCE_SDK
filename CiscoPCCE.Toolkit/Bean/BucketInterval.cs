@@ -58,6 +58,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("upperBound9")]
         public int? UpperBound9 { get; set; }
-        
     }
 }

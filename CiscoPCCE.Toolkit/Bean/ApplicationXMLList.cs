@@ -7,7 +7,7 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("applications")]
     public class ApplicationXMLList : BaseApiBean
     {
-    [XmlElement("application")]
+        [XmlElement("application")]
         public List<Application>? Items { get; set; }
     }
 }

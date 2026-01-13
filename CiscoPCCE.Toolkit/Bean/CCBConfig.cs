@@ -31,6 +31,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("reportingAddress")]
         public string? ReportingAddress { get; set; }
-        
     }
 }

@@ -13,6 +13,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("enabled")]
         public bool? Enabled { get; set; }
-        
     }
 }

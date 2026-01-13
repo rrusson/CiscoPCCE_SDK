@@ -47,6 +47,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("type")]
         public SipServerType Type { get; set; }
-        
     }
 }

@@ -40,6 +40,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("resource_secret")]
         public string? Resource_secret { get; set; }
-        
     }
 }

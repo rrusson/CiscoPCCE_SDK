@@ -53,6 +53,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("serviceLevelType")]
         public int? ServiceLevelType { get; set; }
-        
     }
 }

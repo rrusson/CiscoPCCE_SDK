@@ -28,6 +28,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("stdName")]
         public string? StdName { get; set; }
-        
     }
 }

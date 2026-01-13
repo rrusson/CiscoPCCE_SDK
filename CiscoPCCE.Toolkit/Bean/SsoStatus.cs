@@ -29,6 +29,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("##default")]
         [XmlArrayItem("ssoComponentStatus")]
         public List<SsoComponentStatus>? SsoComponentStatuses { get; set; }
-        
     }
 }

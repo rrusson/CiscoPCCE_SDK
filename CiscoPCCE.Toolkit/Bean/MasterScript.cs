@@ -44,6 +44,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("##default")]
         [XmlArrayItem("scriptVersion")]
         public List<ReferenceBean>? ScriptVersions { get; set; }
-        
     }
 }

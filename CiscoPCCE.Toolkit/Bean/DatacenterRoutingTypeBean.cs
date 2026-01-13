@@ -16,6 +16,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("routingTypes")]
         public required RoutingTypeBeanList RoutingTypes { get; set; }
-        
     }
 }

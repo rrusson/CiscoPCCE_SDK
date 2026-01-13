@@ -62,6 +62,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("routingType")]
         public int? RoutingType { get; set; }
-        
     }
 }

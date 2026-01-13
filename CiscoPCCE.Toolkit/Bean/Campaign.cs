@@ -127,6 +127,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("timeZone")]
         public required TimeZoneRef TimeZone { get; set; }
-        
     }
 }

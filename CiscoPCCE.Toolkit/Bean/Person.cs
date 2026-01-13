@@ -61,6 +61,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("userName")]
         public string? UserName { get; set; }
-        
     }
 }

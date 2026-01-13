@@ -15,6 +15,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("servicesRequired")]
         [XmlArrayItem("service")]
         public List<MachineService>? ServicesRequired { get; set; }
-        
     }
 }

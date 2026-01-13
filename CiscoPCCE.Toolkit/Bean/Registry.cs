@@ -63,6 +63,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("vruPG")]
         public string? VruPG { get; set; }
-        
     }
 }

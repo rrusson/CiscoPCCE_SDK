@@ -53,6 +53,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("secondaryCtiAddress")]
         public string? SecondaryCtiAddress { get; set; }
-        
     }
 }

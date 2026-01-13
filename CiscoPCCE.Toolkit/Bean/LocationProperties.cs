@@ -10,6 +10,5 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         [XmlElement("locationRoutingCodeInsertOption")]
         public string? LocationRoutingCodeInsertOption { get; set; }
-        
     }
 }

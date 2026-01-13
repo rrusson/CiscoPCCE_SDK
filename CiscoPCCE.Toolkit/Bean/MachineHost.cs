@@ -56,6 +56,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("vmInstanceUuid")]
         public string? VmInstanceUuid { get; set; }
-        
     }
 }

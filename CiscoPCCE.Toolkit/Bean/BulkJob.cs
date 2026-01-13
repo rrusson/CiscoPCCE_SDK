@@ -55,6 +55,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("startDateTime")]
         public DateTime? StartDateTime { get; set; }
-        
     }
 }

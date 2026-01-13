@@ -7,7 +7,7 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlRoot("ttsServers")]
     public class TtsServerXMLList : BaseApiBean
     {
-    [XmlElement("ttsServer")]
+        [XmlElement("ttsServer")]
         public List<TtsServer>? Items { get; set; }
     }
 }

@@ -31,6 +31,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("state")]
         public SsoGlobalEnabledState State { get; set; }
-        
     }
 }

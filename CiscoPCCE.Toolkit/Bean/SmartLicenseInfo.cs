@@ -106,6 +106,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("virtualAccount")]
         public string? VirtualAccount { get; set; }
-        
     }
 }

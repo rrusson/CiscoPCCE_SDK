@@ -9,6 +9,5 @@ namespace CiscoPCCE.Toolkit.Bean
     public class BusinessHourStatusReasons : BaseApiBean
     {
         public List<BusinessHourStatusReason>? BusinessHourStatusReason { get; set; }
-        
     }
 }

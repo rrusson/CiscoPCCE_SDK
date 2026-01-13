@@ -10,6 +10,5 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         [XmlElement("id")]
         public int? Id { get; set; }
-        
     }
 }

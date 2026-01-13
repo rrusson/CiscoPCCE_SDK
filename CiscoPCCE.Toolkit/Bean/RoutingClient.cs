@@ -49,6 +49,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("timeoutThreshold")]
         public short? TimeoutThreshold { get; set; }
-        
     }
 }

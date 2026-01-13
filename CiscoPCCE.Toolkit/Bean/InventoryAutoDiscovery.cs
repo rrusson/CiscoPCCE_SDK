@@ -10,6 +10,5 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         [XmlElement("disabled")]
         public bool? Disabled { get; set; }
-        
     }
 }

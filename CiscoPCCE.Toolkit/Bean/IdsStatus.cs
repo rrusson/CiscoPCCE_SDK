@@ -10,6 +10,5 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         [XmlElement("state")]
         public string? State { get; set; }
-        
     }
 }

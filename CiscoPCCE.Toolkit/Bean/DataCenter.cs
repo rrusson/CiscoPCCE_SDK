@@ -49,6 +49,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("vruPG")]
         public required VruPG VruPG { get; set; }
-        
     }
 }

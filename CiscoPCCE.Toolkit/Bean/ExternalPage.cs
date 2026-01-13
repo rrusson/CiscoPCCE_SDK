@@ -58,6 +58,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("url")]
         public string? Url { get; set; }
-        
     }
 }

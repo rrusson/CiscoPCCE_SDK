@@ -11,6 +11,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("deviceTypes")]
         [XmlArrayItem("deviceType")]
         public List<DeviceInfo>? DeviceInfo { get; set; }
-        
     }
 }

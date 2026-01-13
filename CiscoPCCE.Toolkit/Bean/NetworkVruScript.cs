@@ -46,6 +46,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("vruScriptName")]
         public string? VruScriptName { get; set; }
-        
     }
 }

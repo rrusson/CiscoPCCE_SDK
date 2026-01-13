@@ -54,6 +54,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("weekDaySchedules")]
         [XmlArrayItem("weekDaySchedule")]
         public List<WeekDaySchedule>? WeekDaySchedules { get; set; }
-        
     }
 }

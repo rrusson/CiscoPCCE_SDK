@@ -16,6 +16,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("peripheralId")]
         public short? PeripheralId { get; set; }
-        
     }
 }

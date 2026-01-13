@@ -53,6 +53,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("vmValidationLogURL")]
         public string? VmValidationLogURL { get; set; }
-        
     }
 }

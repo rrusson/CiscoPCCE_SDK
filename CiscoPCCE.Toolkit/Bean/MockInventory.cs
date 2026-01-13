@@ -14,6 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("machines")]
         [XmlArrayItem("machine")]
         public List<VMData>? VmDataList { get; set; }
-        
     }
 }

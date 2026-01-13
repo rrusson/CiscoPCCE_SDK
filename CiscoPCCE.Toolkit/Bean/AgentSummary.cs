@@ -88,6 +88,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("supervisor")]
         public bool? Supervisor { get; set; }
-        
     }
 }

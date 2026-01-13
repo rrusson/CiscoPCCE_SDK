@@ -35,6 +35,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("variables")]
         [XmlArrayItem("variable")]
         public List<ReferenceBean>? Variables { get; set; }
-        
     }
 }

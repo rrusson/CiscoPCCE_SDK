@@ -26,6 +26,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("waitTime")]
         public int? WaitTime { get; set; }
-        
     }
 }

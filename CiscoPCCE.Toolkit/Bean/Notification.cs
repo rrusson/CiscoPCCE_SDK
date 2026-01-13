@@ -13,6 +13,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("count")]
         public int Count { get; set; }
-        
     }
 }

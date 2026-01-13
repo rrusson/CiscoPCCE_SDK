@@ -13,6 +13,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("callManagerPublisherVersion")]
         public string? CallManagerPublisherVersion { get; set; }
-        
     }
 }

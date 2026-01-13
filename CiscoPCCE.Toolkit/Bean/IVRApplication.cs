@@ -34,6 +34,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("size")]
         public string? Size { get; set; }
-        
     }
 }

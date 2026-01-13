@@ -14,6 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("initializationStatuses")]
         [XmlArrayItem("initializationStatus")]
         public List<InitializationStatus>? StatusList { get; set; }
-        
     }
 }

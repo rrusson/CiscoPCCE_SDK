@@ -17,6 +17,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
-
     }
 }

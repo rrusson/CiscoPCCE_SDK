@@ -10,6 +10,5 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         [XmlElement("##default")]
         public double? LastRetrievalKey { get; set; }
-        
     }
 }

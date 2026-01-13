@@ -42,6 +42,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("systemDefined")]
         public bool? SystemDefined { get; set; }
-        
     }
 }

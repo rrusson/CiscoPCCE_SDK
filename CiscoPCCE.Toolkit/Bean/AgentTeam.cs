@@ -63,6 +63,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("supervisors")]
         [XmlArrayItem("supervisor")]
         public List<ReferenceBean>? Supervisors { get; set; }
-        
     }
 }

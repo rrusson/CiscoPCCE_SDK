@@ -29,6 +29,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("status")]
         public required Status Status { get; set; }
-        
     }
 }

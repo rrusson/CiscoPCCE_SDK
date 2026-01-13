@@ -11,6 +11,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("invalidFeatures")]
         [XmlArrayItem("invalidFeature")]
         public List<Feature>? InvalidFeatures { get; set; }
-        
     }
 }

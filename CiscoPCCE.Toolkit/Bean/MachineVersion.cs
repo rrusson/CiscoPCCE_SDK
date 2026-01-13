@@ -28,6 +28,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("version")]
         public string? Version { get; set; }
-        
     }
 }

@@ -16,6 +16,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("overwriteData")]
         public bool? OverwriteData { get; set; }
-        
     }
 }

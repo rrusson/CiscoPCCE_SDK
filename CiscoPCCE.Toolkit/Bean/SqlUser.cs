@@ -13,6 +13,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("password")]
         public string? Password { get; set; }
-        
     }
 }

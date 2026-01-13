@@ -17,6 +17,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArray("refURLs")]
         [XmlArrayItem("refURL")]
         public List<string?>? RefUrls { get; set; }
-        
     }
 }

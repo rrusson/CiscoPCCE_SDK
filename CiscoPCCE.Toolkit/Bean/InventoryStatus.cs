@@ -14,6 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("scanInfo")]
         public required ScanInfo ScanInfo { get; set; }
-        
     }
 }

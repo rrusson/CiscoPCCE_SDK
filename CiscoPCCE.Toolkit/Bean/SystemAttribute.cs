@@ -34,6 +34,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("valueString")]
         public string? ValueString { get; set; }
-        
     }
 }

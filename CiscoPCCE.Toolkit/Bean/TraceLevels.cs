@@ -10,6 +10,5 @@ namespace CiscoPCCE.Toolkit.Bean
     {
         [XmlElement("component")]
         public List<Component>? Components { get; set; }
-        
     }
 }

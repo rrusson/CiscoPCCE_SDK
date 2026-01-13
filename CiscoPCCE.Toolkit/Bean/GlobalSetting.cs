@@ -47,6 +47,5 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("script")]
         public required ScriptGlobalSetting Script { get; set; }
-        
     }
 }
