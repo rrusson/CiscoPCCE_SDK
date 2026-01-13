@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("contactsharequeue")
-    [XmlRoot("targetInstance")]
+    [XmlType("targetInstance")]
     public class TargetInstanceRef : BaseApiBean
     {
         [XmlElement("id")]

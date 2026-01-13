@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("feeds")]
+    [XmlType("feeds")]
     public class FeedList : BaseApiBean
     {
     }

@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("timezone")
-    [XmlRoot("timezone")]
+    [XmlType("timezone")]
     public class TimeZoneLocation : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

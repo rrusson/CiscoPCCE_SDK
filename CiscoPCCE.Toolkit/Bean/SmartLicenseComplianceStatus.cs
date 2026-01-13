@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("smartLicenseComplianceStatus")]
+    [XmlType("smartLicenseComplianceStatus")]
     public class SmartLicenseComplianceStatus : BaseApiBean
     {
         [XmlElement("complianceStatus")]

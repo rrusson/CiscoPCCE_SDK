@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("AgentPQCount")]
+    [XmlType("AgentPQCount")]
     public class AgentPQCount : BaseApiBean
     {
         [XmlElement("refURL")]

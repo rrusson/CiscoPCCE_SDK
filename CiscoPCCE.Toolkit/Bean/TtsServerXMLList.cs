@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("ttsServers")]
+    [XmlType("ttsServers")]
     public class TtsServerXMLList : BaseApiBean
     {
         [XmlElement("ttsServer")]

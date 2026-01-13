@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("cvpDnis")]
+    [XmlType("cvpDnis")]
     public class CvpDnis : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

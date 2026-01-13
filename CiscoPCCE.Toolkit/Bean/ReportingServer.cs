@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("reportingServer")]
+    [XmlType("reportingServer")]
     public class ReportingServer : BaseApiBean
     {
         [XmlElement("ip")]

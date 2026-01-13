@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("operation")
-    [XmlRoot("operation")]
+    [XmlType("operation")]
     public class RootOperation : BaseApiBean
     {
         [XmlElement("changeSet")]

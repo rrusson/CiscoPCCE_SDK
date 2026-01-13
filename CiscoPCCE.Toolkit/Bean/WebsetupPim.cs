@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("pim")]
+    [XmlType("pim")]
     public class WebsetupPim : BaseApiBean
     {
         [XmlElement("address")]

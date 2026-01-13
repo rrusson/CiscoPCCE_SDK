@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("initStatus")]
+    [XmlType("initStatus")]
     public class InitStatus : BaseApiBean
     {
         [XmlElement("state")]

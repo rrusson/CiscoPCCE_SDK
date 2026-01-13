@@ -3,8 +3,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("operation")
-    [XmlRoot("errorDetail")]
+    [XmlType("errorDetail")]
     public class ResourceErrorDetail : BaseApiBean
     {
         [XmlElement("apiErrors")]

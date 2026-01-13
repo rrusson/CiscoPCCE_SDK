@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("routingtype")
-    [XmlRoot("datacenterRoutingType")]
+    [XmlType("datacenterRoutingType")]
     public class DatacenterRoutingTypeBean : BaseApiBean
     {
         [XmlElement("datacenter")]

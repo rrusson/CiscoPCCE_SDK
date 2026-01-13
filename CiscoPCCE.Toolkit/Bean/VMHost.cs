@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("vmHost")]
+    [XmlType("vmHost")]
     public class VMHost : BaseApiBean
     {
         [XmlElement("address")]

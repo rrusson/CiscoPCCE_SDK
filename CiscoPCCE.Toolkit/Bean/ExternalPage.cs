@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("externalpage")
-    [XmlRoot("externalpage")]
+    [XmlType("externalpage")]
     public class ExternalPage : BaseApiBean
     {
         [XmlElement("baseData")]

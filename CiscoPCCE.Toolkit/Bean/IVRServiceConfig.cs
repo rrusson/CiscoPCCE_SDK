@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("ivr")]
+    [XmlType("ivr")]
     public class IVRServiceConfig : BaseApiBean
     {
         [XmlElement("callTimeout")]

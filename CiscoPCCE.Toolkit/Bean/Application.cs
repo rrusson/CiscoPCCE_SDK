@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("application")]
+    [XmlType("application")]
     public class Application : BaseApiBean
     {
         [XmlElement("applicationName")]

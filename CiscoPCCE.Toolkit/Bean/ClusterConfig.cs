@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("ClusterConfig")]
+    [XmlType("ClusterConfig")]
     public class ClusterConfig : BaseApiBean
     {
         [XmlElement("secondaryNode")]

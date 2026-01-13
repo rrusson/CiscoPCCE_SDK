@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("contactsharerule")
-    [XmlRoot("contactShareRule")]
+    [XmlType("contactShareRule")]
     public class ContactShareRule : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

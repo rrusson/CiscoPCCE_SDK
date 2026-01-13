@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("locationproperties")
-    [XmlRoot("locationProperties")]
+    [XmlType("locationProperties")]
     public class LocationProperties : BaseApiBean
     {
         [XmlElement("locationRoutingCodeInsertOption")]

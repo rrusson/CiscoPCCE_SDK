@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("systemValidationStatus")]
+    [XmlType("systemValidationStatus")]
     public class SystemValidationStatus : BaseApiBean
     {
         [XmlElement("isValid")]

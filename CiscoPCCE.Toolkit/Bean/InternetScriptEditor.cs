@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("internetscripteditor")
-    [XmlRoot("##default")]
+    [XmlType("##default")]
     public class InternetScriptEditor : BaseApiBean
     {
         [XmlElement("downloadLink")]

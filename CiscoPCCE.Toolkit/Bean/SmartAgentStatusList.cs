@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("smartAgentStatusList")]
+    [XmlType("smartAgentStatusList")]
     public class SmartAgentStatusList : BaseApiBean
     {
         [XmlElement("smartAgentStatus")]

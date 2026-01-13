@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("nodes")]
+    [XmlType("nodes")]
     public class Nodes : BaseApiBean
     {
         public List<Node>? NodeList { get; set; }

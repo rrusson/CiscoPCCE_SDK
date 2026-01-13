@@ -3,8 +3,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("initialize")
-    [XmlRoot("initializationStatus")]
+    [XmlType("initializationStatus")]
     public class InitializationStatus : BaseApiBean
     {
         [XmlArray("apiErrors")]

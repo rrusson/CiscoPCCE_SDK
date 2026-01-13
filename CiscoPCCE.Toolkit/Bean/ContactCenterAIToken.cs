@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("contactcenterai/token")
-    [XmlRoot("contactCenterAIToken")]
+    [XmlType("contactCenterAIToken")]
     public class ContactCenterAIToken : BaseApiBean
     {
         [XmlElement("accessToken")]

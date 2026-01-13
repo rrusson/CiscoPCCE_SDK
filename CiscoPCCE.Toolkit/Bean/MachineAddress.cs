@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("machineinventory")
-    [XmlRoot("address")]
+    [XmlType("address")]
     public class MachineAddress : BaseApiBean
     {
         [XmlElement("address")]

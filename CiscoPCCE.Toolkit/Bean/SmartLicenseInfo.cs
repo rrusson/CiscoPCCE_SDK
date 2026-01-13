@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("smartlicense")
-    [XmlRoot("smartlicenseinfo")]
+    [XmlType("smartlicenseinfo")]
     public class SmartLicenseInfo : BaseApiBean
     {
         [XmlElement("authorizationExpires")]

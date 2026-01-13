@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("dialednumber")
-    [XmlRoot("dialedNumberRecord")]
+    [XmlType("dialedNumberRecord")]
     public class DialedNumberRecord : BaseApiBean
     {
         [XmlElement("id")]

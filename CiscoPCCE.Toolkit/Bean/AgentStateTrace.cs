@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("agentstatetrace")
-    [XmlRoot("agentstatetrace")]
+    [XmlType("agentstatetrace")]
     public class AgentStateTrace : BaseApiBean
     {
         [XmlArray("agents")]

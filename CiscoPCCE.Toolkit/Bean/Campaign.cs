@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("campaign")
-    [XmlRoot("campaign")]
+    [XmlType("campaign")]
     public class Campaign : BaseApiBean
     {
         [XmlElement("abandonEnabled")]

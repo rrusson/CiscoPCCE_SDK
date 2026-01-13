@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("globalsetting")
-    [XmlRoot("label")]
+    [XmlType("label")]
     public class Label : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

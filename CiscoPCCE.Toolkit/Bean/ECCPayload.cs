@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("/eccpayload")
-    [XmlRoot("eccpayload")]
+    [XmlType("eccpayload")]
     public class ECCPayload : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

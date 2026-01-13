@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("attribute")
-    [XmlRoot("attributeSummary")]
+    [XmlType("attributeSummary")]
     public class AttributeSummary : BaseApiBean
     {
         [XmlElement("agentCount")]

@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("Config")]
+    [XmlType("Config")]
     public class CvpProperties : BaseApiBean
     {
     }

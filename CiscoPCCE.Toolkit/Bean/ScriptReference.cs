@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("reference")]
+    [XmlType("reference")]
     public class ScriptReference : BaseApiBean
     {
         [XmlElement("deleted")]

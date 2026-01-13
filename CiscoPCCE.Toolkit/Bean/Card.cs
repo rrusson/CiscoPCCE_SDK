@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("card")]
+    [XmlType("card")]
     public class Card : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

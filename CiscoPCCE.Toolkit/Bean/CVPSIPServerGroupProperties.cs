@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("sipservergroupproperties")
-    [XmlRoot("CVP")]
+    [XmlType("CVP")]
     public class CVPSIPServerGroupProperties : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

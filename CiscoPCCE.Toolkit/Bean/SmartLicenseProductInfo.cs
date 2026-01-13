@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("smartlicense")
-    [XmlRoot("smartlicenseproductinfo")]
+    [XmlType("smartlicenseproductinfo")]
     public class SmartLicenseProductInfo : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

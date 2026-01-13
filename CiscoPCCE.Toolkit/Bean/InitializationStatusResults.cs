@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("initialize")
-    [XmlRoot("results")]
+    [XmlType("results")]
     public class InitializationStatusResults : BaseApiBean
     {
         [XmlElement("state")]

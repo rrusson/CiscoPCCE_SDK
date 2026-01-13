@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("configurationlimit")
-    [XmlRoot("configurationLimit")]
+    [XmlType("configurationLimit")]
     public class ConfigurationLimit : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

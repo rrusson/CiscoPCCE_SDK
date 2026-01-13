@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("globalsetting")
-    [XmlRoot("pg")]
+    [XmlType("pg")]
     public class LogicalInterfaceController : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

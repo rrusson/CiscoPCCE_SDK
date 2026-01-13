@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("security")]
+    [XmlType("security")]
     public class SecurityConfig : BaseApiBean
     {
         [XmlElement("allowMixedMode")]

@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("initialize")
-    [XmlRoot("##default")]
+    [XmlType("##default")]
     public class InitialSettings : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

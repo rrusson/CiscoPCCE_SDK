@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("inventoryUpdateFile")]
+    [XmlType("inventoryUpdateFile")]
     public class InventoryUpdateFile : BaseApiBean
     {
         [XmlElement("category")]

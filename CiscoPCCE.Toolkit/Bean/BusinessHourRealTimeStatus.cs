@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("businesshour")
-    [XmlRoot("realTimeStatus")]
+    [XmlType("realTimeStatus")]
     public class BusinessHourRealTimeStatus : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("enterpriseroute")
-    [XmlRoot("enterpriseSkillGroup")]
+    [XmlType("enterpriseSkillGroup")]
     public class EnterpriseSkillGroup : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

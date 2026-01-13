@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("useridentity")
-    [XmlRoot("userIdentity")]
+    [XmlType("userIdentity")]
     public class UserIdentity : BaseApiBean
     {
         [XmlElement("displayName")]

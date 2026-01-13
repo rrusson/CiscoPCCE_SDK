@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("expandedcallvariable")
-    [XmlRoot("expandedCallVariable")]
+    [XmlType("expandedCallVariable")]
     public class ExpandedCallVariable : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

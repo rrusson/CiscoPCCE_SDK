@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("layoutprofile")]
+    [XmlType("layoutprofile")]
     public class LayoutProfile : BaseApiBean
     {
         [XmlElement("layoutXml")]

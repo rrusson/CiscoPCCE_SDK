@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("results")]
+    [XmlType("results")]
     public class PeripheralSetList : BaseApiBean
     {
         [XmlArray("peripheralSets")]

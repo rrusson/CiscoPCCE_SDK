@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("department")]
+    [XmlType("department")]
     public class ECEDepartment : BaseApiBean
     {
         [XmlElement("description")]

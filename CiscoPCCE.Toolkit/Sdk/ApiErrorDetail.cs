@@ -2,7 +2,7 @@ using System.Xml.Serialization;
 
 namespace CiscoPCCE.Toolkit.Sdk
 {
-    [XmlRoot("errorDetail")]
+    [XmlType("errorDetail")]
     public class ApiErrorDetail : BaseApiBean
     {
         [XmlElement("min")]

@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("mediaServer")]
+    [XmlType("mediaServer")]
     public class MediaServerConfig : BaseApiBean
     {
         [XmlElement("defaultMediaServer")]

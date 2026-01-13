@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("validobjects")
-    [XmlRoot("validObjects")]
+    [XmlType("validObjects")]
     public class ValidObjects : BaseApiBean
     {
         [XmlElement("access")]

@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("agenttargetingrule")
-    [XmlRoot("range")]
+    [XmlType("range")]
     public class AgentTargetingRuleRange : BaseApiBean
     {
         [XmlElement("highExtension")]

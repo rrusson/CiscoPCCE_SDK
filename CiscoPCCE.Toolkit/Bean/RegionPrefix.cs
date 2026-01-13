@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("regionprefix")]
+    [XmlType("regionprefix")]
     public class RegionPrefix : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

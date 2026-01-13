@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("campaign")
-    [XmlRoot("dnc")]
+    [XmlType("dnc")]
     public class ImportRule : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

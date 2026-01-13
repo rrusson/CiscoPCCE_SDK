@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("machineinventory")
-    [XmlRoot("versionInfo")]
+    [XmlType("versionInfo")]
     public class MachineVersion : BaseApiBean
     {
         [XmlElement("buildDate")]

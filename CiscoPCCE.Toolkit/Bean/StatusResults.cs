@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("status")
-    [XmlRoot("results")]
+    [XmlType("results")]
     public class StatusResults : BaseApiBean
     {
         [XmlArray("statuses")]

@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("CvpConfig")]
+    [XmlType("CvpConfig")]
     public class CvpConfig : BaseApiBean
     {
         [XmlElement("backupServerIPAddress")]

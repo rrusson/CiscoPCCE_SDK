@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("NotificationRule")]
+    [XmlType("NotificationRule")]
     public class NotificationRule : BaseApiBean
     {
         [XmlElement("campaignUrl")]

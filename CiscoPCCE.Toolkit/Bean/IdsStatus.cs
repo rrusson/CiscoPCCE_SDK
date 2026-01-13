@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("sso")
-    [XmlRoot("idsStatus")]
+    [XmlType("idsStatus")]
     public class IdsStatus : BaseApiBean
     {
         [XmlElement("state")]

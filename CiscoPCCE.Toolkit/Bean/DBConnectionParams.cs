@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("##default")]
+    [XmlType("##default")]
     public class DBConnectionParams : BaseApiBean
     {
         [XmlElement("database")]

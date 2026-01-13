@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("secondaryaddress")
-    [XmlRoot("peripheral")]
+    [XmlType("peripheral")]
     public class PeripheralWithRoutingClient : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

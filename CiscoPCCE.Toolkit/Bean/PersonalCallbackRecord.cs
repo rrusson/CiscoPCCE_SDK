@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("personalcallback")
-    [XmlRoot("personalCallback")]
+    [XmlType("personalCallback")]
     public class PersonalCallbackRecord : BaseApiBean
     {
         [XmlElement("accountNumber")]

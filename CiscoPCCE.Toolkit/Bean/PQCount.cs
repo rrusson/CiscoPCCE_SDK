@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("PQAgentCount")]
+    [XmlType("PQAgentCount")]
     public class PQCount : BaseApiBean
     {
         [XmlElement("agentCount")]

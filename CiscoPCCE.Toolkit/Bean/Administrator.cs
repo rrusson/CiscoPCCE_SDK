@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("administrator")
-    [XmlRoot("administrator")]
+    [XmlType("administrator")]
     public class Administrator : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

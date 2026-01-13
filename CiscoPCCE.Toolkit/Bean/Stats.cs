@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("stats")
-    [XmlRoot("stats")]
+    [XmlType("stats")]
     public class Stats : BaseApiBean
     {
         [XmlElement("numberOfAgentsLoggedIn")]

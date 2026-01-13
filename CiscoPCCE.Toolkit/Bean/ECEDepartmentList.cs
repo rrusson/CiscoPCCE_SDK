@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("departments")]
+    [XmlType("departments")]
     public class ECEDepartmentList : BaseApiBean
     {
         public List<ECEDepartment>? Departments { get; set; }

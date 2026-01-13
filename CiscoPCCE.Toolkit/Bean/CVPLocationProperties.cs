@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("locationproperties")
-    [XmlRoot("CVP")]
+    [XmlType("CVP")]
     public class CVPLocationProperties : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

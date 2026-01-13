@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("registry")
-    [XmlRoot("registry")]
+    [XmlType("registry")]
     public class Registry : BaseApiBean
     {
         [XmlElement("appGwEnabled")]

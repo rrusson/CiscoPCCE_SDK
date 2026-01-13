@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("businesshourstatusreason")
-    [XmlRoot("businessHourStatusReason")]
+    [XmlType("businessHourStatusReason")]
     public class BusinessHourStatusReason : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

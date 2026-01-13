@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("sso")
-    [XmlRoot("SsoConfig")]
+    [XmlType("SsoConfig")]
     public class SsoConfigBean : BaseApiBean
     {
         [XmlElement("client_id")]

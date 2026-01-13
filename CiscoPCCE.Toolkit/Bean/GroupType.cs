@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("GroupType")]
+    [XmlType("GroupType")]
     public class GroupType : BaseApiBean
     {
         [XmlElement("machines")]

@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("activedirectorydomain")
-    [XmlRoot("activeDirectoryDomain")]
+    [XmlType("activeDirectoryDomain")]
     public class ActiveDirectoryDomain : BaseApiBean
     {
         [XmlElement("name")]

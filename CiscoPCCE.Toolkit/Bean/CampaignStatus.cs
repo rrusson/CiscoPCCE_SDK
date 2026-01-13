@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("campaign")
-    [XmlRoot("runtimeStatus")]
+    [XmlType("runtimeStatus")]
     public class CampaignStatus : BaseApiBean
     {
         [XmlElement("abandonDetectCount")]

@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("survey")]
+    [XmlType("survey")]
     public class Survey : BaseApiBean
     {
         [XmlElement("application")]

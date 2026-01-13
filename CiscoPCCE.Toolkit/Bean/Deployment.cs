@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("deployment")
-    [XmlRoot("deployment")]
+    [XmlType("deployment")]
     public class Deployment : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

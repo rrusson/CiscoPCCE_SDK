@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("routingpattern")
-    [XmlRoot("routingPattern")]
+    [XmlType("routingPattern")]
     public class RoutingPattern : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

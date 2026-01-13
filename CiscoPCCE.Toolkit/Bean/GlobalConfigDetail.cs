@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("contactcenterai")
-    [XmlRoot("globalConfigDetail")]
+    [XmlType("globalConfigDetail")]
     public class GlobalConfigDetail : BaseApiBean
     {
         [XmlArray("globalConfigs")]

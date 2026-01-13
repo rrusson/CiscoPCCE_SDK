@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("syncStatus")]
+    [XmlType("syncStatus")]
     public class SyncStatus : BaseApiBean
     {
         [XmlElement("currentSyncStatus")]

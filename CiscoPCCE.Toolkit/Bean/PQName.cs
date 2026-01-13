@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("pqName")]
+    [XmlType("pqName")]
     public class PQName : BaseApiBean
     {
         [XmlElement("enterpriseName")]

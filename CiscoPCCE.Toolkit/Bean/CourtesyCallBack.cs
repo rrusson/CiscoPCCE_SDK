@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("courtesyCallBack")]
+    [XmlType("courtesyCallBack")]
     public class CourtesyCallBack : BaseApiBean
     {
         [XmlElement("allowUnmatchedDialedNumbers")]

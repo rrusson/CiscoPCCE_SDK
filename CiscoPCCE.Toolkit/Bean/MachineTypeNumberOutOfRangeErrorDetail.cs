@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("errorDetail")]
+    [XmlType("errorDetail")]
     public class MachineTypeNumberOutOfRangeErrorDetail : BaseApiBean
     {
         [XmlElement("actual")]

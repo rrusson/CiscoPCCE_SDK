@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("tracelevel")
-    [XmlRoot("traceLevels")]
+    [XmlType("traceLevels")]
     public class TraceLevels : BaseApiBean
     {
         [XmlElement("component")]

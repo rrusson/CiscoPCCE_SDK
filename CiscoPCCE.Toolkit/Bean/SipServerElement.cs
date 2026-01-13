@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("sipservergroup")
-    [XmlRoot("element")]
+    [XmlType("element")]
     public class SipServerElement : BaseApiBean
     {
         [XmlElement("address")]

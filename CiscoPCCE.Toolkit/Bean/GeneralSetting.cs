@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("generalsetting")
-    [XmlRoot("generalSettings")]
+    [XmlType("generalSettings")]
     public class GeneralSetting : BaseApiBean
     {
         [XmlElement("agentEventDetailExtended")]

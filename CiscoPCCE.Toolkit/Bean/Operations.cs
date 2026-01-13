@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("operation")
-    [XmlRoot("operations")]
+    [XmlType("operations")]
     public class Operations : BaseApiBean
     {
         [XmlElement("operation")]

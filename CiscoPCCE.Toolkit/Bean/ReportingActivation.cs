@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("activation")]
+    [XmlType("activation")]
     public class ReportingActivation : BaseApiBean
     {
         [XmlElement("messageBusNumber")]

@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("dataSources")]
+    [XmlType("dataSources")]
     public class CuicDataSources : BaseApiBean
     {
         [XmlElement("dataSource")]

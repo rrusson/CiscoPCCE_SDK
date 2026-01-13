@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("bucketinterval")
-    [XmlRoot("bucketInterval")]
+    [XmlType("bucketInterval")]
     public class BucketInterval : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

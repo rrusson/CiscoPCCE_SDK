@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("sipservergroupproperties")
-    [XmlRoot("sipServerGroupProperties")]
+    [XmlType("sipServerGroupProperties")]
     public class SIPServerGroupProperties : BaseApiBean
     {
         [XmlElement("optionsOverrideHost")]

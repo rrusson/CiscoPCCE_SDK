@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("logger")]
+    [XmlType("logger")]
     public class WebsetupLogger : BaseApiBean
     {
         [XmlElement("loggerSideAPrivateAddress")]

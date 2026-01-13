@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("peripheralGateway")]
+    [XmlType("peripheralGateway")]
     public class WebsetupPG : BaseApiBean
     {
         [XmlElement("logicalId")]

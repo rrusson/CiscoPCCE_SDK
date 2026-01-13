@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("routePatternConfigs")]
+    [XmlType("routePatternConfigs")]
     public class RoutePatternConfig : BaseApiBean
     {
         [XmlElement("destinationHostOrIP")]

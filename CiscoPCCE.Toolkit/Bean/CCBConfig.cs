@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("ccb")
-    [XmlRoot("CCB")]
+    [XmlType("CCB")]
     public class CCBConfig : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

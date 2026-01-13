@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("reasoncode")
-    [XmlRoot("systemDefinedReasonCodes")]
+    [XmlType("systemDefinedReasonCodes")]
     public class SystemDefinedReasonCodeList : BaseApiBean
     {
         public List<ReasonCode>? ReasonCode { get; set; }

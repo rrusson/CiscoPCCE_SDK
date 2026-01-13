@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("pageInfo")]
+    [XmlType("pageInfo")]
     public class PageInfo : BaseApiBean
     {
         [XmlElement("firstPage")]

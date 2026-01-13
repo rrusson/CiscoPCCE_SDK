@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("licenseReservation")]
+    [XmlType("licenseReservation")]
     public class LicenseReservationAuthCode : BaseApiBean
     {
         [XmlElement("authorizationCode")]

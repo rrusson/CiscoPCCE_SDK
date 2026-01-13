@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("routePatternCollection")]
+    [XmlType("routePatternCollection")]
     public class RoutePatternCollection : BaseApiBean
     {
         [XmlElement("routePatternConfigs")]

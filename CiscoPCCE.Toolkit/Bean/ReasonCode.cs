@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("reasoncode")
-    [XmlRoot("reasonCode")]
+    [XmlType("reasonCode")]
     public class ReasonCode : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("installjtapiclient")
-    [XmlRoot("installJtapiClient")]
+    [XmlType("installJtapiClient")]
     public class InstallJtapiClient : BaseApiBean
     {
         [XmlElement("callManagerPublisherAddress")]

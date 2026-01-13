@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("networkvruscript")
-    [XmlRoot("networkVruScript")]
+    [XmlType("networkVruScript")]
     public class NetworkVruScript : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

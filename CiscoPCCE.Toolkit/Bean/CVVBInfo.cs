@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("vvbInfo")]
+    [XmlType("vvbInfo")]
     public class CVVBInfo : BaseApiBean
     {
         [XmlElement("vvbStatus")]

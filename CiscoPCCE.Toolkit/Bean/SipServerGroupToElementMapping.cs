@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("SipServerGroupToElementMapping")]
+    [XmlType("SipServerGroupToElementMapping")]
     public class SipServerGroupToElementMapping : BaseApiBean
     {
         public List<GroupType>? GroupTypes { get; set; }

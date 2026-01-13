@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("users")]
+    [XmlType("users")]
     public class ECEUserList : BaseApiBean
     {
         public List<ECEUser>? Users { get; set; }

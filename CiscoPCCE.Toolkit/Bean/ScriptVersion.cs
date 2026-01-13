@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("masterscript")
-    [XmlRoot("scriptVersion")]
+    [XmlType("scriptVersion")]
     public class ScriptVersion : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

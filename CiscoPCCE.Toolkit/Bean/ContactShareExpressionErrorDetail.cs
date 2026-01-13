@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("contactsharerule")
-    [XmlRoot("errorDetail")]
+    [XmlType("errorDetail")]
     public class ContactShareExpressionErrorDetail : BaseApiBean
     {
         [XmlArray("expressionErrors")]

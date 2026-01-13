@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("sipServerGroupWrappers")]
+    [XmlType("sipServerGroupWrappers")]
     public class SIPServerGroupWrapper : BaseApiBean
     {
     }

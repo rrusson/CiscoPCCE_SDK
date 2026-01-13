@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("asrServer")]
+    [XmlType("asrServer")]
     public class AsrServer : BaseApiBean
     {
         [XmlElement("asrServerId")]
