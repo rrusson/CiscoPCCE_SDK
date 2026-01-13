@@ -5,11 +5,11 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("/agentteam")
     [XmlRoot("results")]
-    public class AgentTeamList : BaseApiList<AgentTeam>
+    public class AgentTeamList : BaseApiList<AgentTeamBase>
     {
         [XmlArray("agentTeams")]
         [XmlArrayItem("agentTeam")]
-        public new List<AgentTeam>? Items
+        public new List<AgentTeamBase>? Items
         {
             get => base.Items;
             set => base.Items = value;

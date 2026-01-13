@@ -5,11 +5,11 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("datacenter")
     [XmlRoot("results")]
-    public class DataCenterList : BaseApiList<DataCenter>
+    public class DataCenterList : BaseApiList<DataCenter12k>
     {
         [XmlArray("datacenters")]
         [XmlArrayItem("datacenter")]
-        public new List<DataCenter>? Items
+        public new List<DataCenter12k>? Items
         {
             get => base.Items;
             set => base.Items = value;
