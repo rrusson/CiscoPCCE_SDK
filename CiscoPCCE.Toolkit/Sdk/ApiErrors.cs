@@ -1,31 +1,16 @@
 using System.Xml.Serialization;
 
-namespace CiscoPCCE.Toolkit.Sdk.Helpers
+namespace CiscoPCCE.Toolkit.Sdk
 {
     /// <summary>
     /// This class defines the entity attached to HTTP response in error conditions
     /// </summary>
-    [XmlRoot("apiErrors")]
-    public class ApiErrors : BaseBean
+    [XmlType("apiErrors")]
+    public class ApiErrors : BaseApiBean
     {
         [XmlArray("apiErrors")]
         [XmlArrayItem("apiError")]
-        private List<ApiError> _apiErrors;
-
-        public ApiErrors()
-        {
-            _apiErrors = new List<ApiError>();
-        }
-
-        public ApiErrors(List<ApiError> apiErrors)
-        {
-            this._apiErrors = apiErrors;
-        }
-
-        public List<ApiError> GetApiErrors()
-        {
-            return _apiErrors;
-        }
+        public List<ApiError> Errors { get; set; } = [];
     }
 }
 

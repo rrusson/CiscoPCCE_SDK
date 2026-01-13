@@ -1,7 +1,6 @@
 using System.Net.Http.Headers;
 using System.Text;
 using System.Xml.Serialization;
-
 using CiscoPCCE.Toolkit.Sdk.Helpers;
 using CiscoPCCE.Toolkit.Sdk.Interfaces;
 
@@ -146,7 +145,7 @@ namespace CiscoPCCE.Toolkit.Sdk
 
 				var content = await response.Content.ReadAsStringAsync();
 
-                return DeserializeXml<T>(content);
+				return DeserializeXml<T>(content);
 			}
 			catch (HttpRequestException ex)
 			{
@@ -305,15 +304,5 @@ namespace CiscoPCCE.Toolkit.Sdk
 			using var stringReader = new StringReader(xml);
 			return (T?)serializer.Deserialize(stringReader);
 		}
-
-        //private IEnumerable<T?> DeserializeXmlCollection<T>(string xml) where T : BaseApiBean
-        //{
-        //    var serializer = new XmlSerializer(typeof(ResultWrapper<T>));
-        //    using var stringReader = new StringReader(xml);
-        //    var result = (T?)serializer.Deserialize(stringReader);
-
-        //    return result;
-        //}
-
-    }
+	}
 }

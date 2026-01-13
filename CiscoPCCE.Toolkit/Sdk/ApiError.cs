@@ -1,16 +1,15 @@
 using System.Xml.Serialization;
 
-using CiscoPCCE.Toolkit.Sdk;
-
-namespace CiscoPCCE.Toolkit.Bean
+namespace CiscoPCCE.Toolkit.Sdk
 {
+    [XmlType("apiError")]
     public class ApiError : BaseApiBean
     {
         [XmlElement("errorData")]
         public string? ErrorData { get; set; }
 
         [XmlElement("errorDetail")]
-        public required ApiErrorDetail ErrorDetail { get; set; }
+        public ApiErrorDetail? ErrorDetail { get; set; }
 
         [XmlElement("errorMessage")]
         public string? ErrorMessage { get; set; }
