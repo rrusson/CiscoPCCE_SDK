@@ -9,7 +9,7 @@ namespace CiscoPCCE.Toolkit.Examples
     /// </summary>
     public class BusinessHoursDemo
     {
-        private static RestClient? restClient = null;
+        private static CiscoRestClient? restClient = null;
         private const string BusinessHourNamePrefix = "DemoBH";
 
         public static async Task Main(string[] args)
@@ -24,11 +24,11 @@ namespace CiscoPCCE.Toolkit.Examples
                 Environment.Exit(0);
             }
 
-            restClient = new RestClient(args[0], args[1], args[2]);
+            restClient = new CiscoRestClient(args[0], args[1], args[2]);
             await DemoBusinessHoursAsync(restClient);
         }
 
-        private static async Task DemoBusinessHoursAsync(RestClient restClient)
+        private static async Task DemoBusinessHoursAsync(CiscoRestClient restClient)
         {
             BusinessHour? businessHour1 = null;
             BusinessHour? businessHour2 = null;
@@ -68,7 +68,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
         }
 
-        private static async Task GetBusinessHoursListAsync(RestClient restClient)
+        private static async Task GetBusinessHoursListAsync(CiscoRestClient restClient)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace CiscoPCCE.Toolkit.Examples
             }
         }
 
-        private static async Task<BusinessHour?> CreateAndGetBusinessHourConfigAsync(RestClient restClient, string bhName)
+        private static async Task<BusinessHour?> CreateAndGetBusinessHourConfigAsync(CiscoRestClient restClient, string bhName)
         {
             var bean = GetBusinessHourForCreate(bhName);
             var refUrl = await restClient.CreateAndGetAsync(bean);
@@ -161,7 +161,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <summary>
         /// Update a business Hour object and verify that it's updated.
         /// </summary>
-        private static async Task UpdateAndVerifyBusinessHourConfigAsync(RestClient restClient, BusinessHour bh)
+        private static async Task UpdateAndVerifyBusinessHourConfigAsync(CiscoRestClient restClient, BusinessHour bh)
         {
             Console.WriteLine($"Business Hour time zone before update: {bh.Timezone?.RefURL}");
 

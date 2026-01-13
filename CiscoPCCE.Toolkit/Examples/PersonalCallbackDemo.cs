@@ -9,7 +9,7 @@ namespace CiscoPCCE.Toolkit.Examples
     /// </summary>
     public class PersonalCallbackDemo
     {
-        private static RestClient? restClient = null;
+        private static CiscoRestClient? restClient = null;
         private static Agent? agent = null;
         private static bool agentCreated = false;
 
@@ -32,7 +32,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// 1. Create a PersonalCallback Record
         /// 2. Delete the Agent and Personal Callback records
         /// </summary>
-        private static async Task PersonalCallbackDemoAsync(RestClient restClient)
+        private static async Task PersonalCallbackDemoAsync(CiscoRestClient restClient)
         {
             PersonalCallbackRecord? pcbRecord = null;
 
@@ -64,7 +64,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <summary>
         /// Creates a personal callback record.
         /// </summary>
-        private static async Task<PersonalCallbackRecord?> CreatePersonalCallbackRecordAsync(RestClient restClient, Agent? agent)
+        private static async Task<PersonalCallbackRecord?> CreatePersonalCallbackRecordAsync(CiscoRestClient restClient, Agent? agent)
         {
             if (agent == null)
             {
@@ -124,9 +124,9 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            restClient = new RestClient(args[0], args[1], args[2]);
+            restClient = new CiscoRestClient(args[0], args[1], args[2]);
 
-            var deploymentType = await restClient.GetAsync<Deployment>(RestClient.BaseUrl + "deployment");
+            var deploymentType = await restClient.GetAsync<Deployment>(CiscoRestClient.BaseUrl + "deployment");
             Console.WriteLine($"System is in Deployment Type: {deploymentType?.DeploymentType}");
 
             if (!DemoUtils.IsPCCEDeploymentType(deploymentType) && args.Length < 4)

@@ -8,16 +8,38 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
     /// </summary>
     public class AgentFunctions
     {
-        private readonly IRestClient _restClient;
+        private readonly ICiscoRestClient _restClient;
         private const string BasePath = "agent";
 
         /// <summary>
         /// Initializes a new instance of the AgentFunctions class using the specified REST client
         /// </summary>
         /// <param name="restClient">The RestClient instance used to perform HTTP operations for agent-related functionality</param>
-        public AgentFunctions(IRestClient restClient)
+        public AgentFunctions(ICiscoRestClient restClient)
         {
             _restClient = restClient;
+        }
+
+        /// <summary>
+        /// Returns one Agent matching the <paramref name="agentId"/>
+        /// </summary>
+        /// <returns>The agent with the specified ID</returns>
+        public async Task<Agent?> GetAgentAsync(string agentId)
+        {
+            return await _restClient.GetAsync<Agent>($"{CiscoRestClient.BaseUrl}{BasePath}/{agentId}");
+        }
+
+        /// <summary>
+        /// Searchs for and returns first Agent matching on <paramref name="otherId"/> (e.g. employeeId)
+        /// </summary>
+        /// <returns>The agent with specified <paramref name="otherId"/> (but different from Cisco internal AgentId)</returns>
+        public async Task<Agent?> GetAgentByOtherIdAsync(int otherId)
+        {
+            // Special, undocumented case of search (without normal criteria querystring) to find an Agent based on alternate AgentId (e.g. employeeId)
+            var agentList = await _restClient.GetListAsync<AgentList>($"{otherId}", BasePath);
+
+            // Return first matching agent found (Note: typically marked as AgentId in payload, although different from Cisco's internal PK for AgentId)
+            return agentList?.Items?.FirstOrDefault();
         }
 
         /// <summary>
@@ -40,15 +62,6 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
             var queryString = AgentRequestBuilder.BuildQueryString(criteria);
             var result = await _restClient.GetListAsync<AgentList>(queryString, BasePath);
             return result?.Items;
-        }
-
-        /// <summary>
-        /// Returns one agent matching the <paramref name="id"/>
-        /// </summary>
-        /// <returns>The agent with the specified ID</returns>
-        public async Task<Agent?> GetAgentAsync(string id)
-        {
-            return await _restClient.GetAsync<Agent>($"{RestClient.BaseUrl}{BasePath}/{id}");
         }
 
         /// <summary>
@@ -98,7 +111,7 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
         /// <param name="id">The ID of the agent to delete</param>
         public async Task DeleteAgentAsync(string id)
         {
-            await _restClient.DeleteAsync($"{RestClient.BaseUrl}{BasePath}/{id}");
+            await _restClient.DeleteAsync($"{CiscoRestClient.BaseUrl}{BasePath}/{id}");
         }
 
         /// <summary>

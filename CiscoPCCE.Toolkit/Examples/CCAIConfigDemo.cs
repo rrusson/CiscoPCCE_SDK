@@ -8,7 +8,7 @@ namespace CiscoPCCE.Toolkit.Examples
     /// </summary>
     public class CcaiConfigDemo
     {
-        private static RestClient? restClient = null;
+        private static CiscoRestClient? restClient = null;
 
         public static async Task Main(string[] args)
         {
@@ -22,7 +22,7 @@ namespace CiscoPCCE.Toolkit.Examples
                 Environment.Exit(0);
             }
 
-            restClient = new RestClient(args[0], args[1], args[2]);
+            restClient = new CiscoRestClient(args[0], args[1], args[2]);
             await DemoCCAIConfigAsync();
         }
 

@@ -50,7 +50,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// </summary>
         public const int SleepTimeMs = 5000;
 
-        private RestClient _restClient = default!;
+        private CiscoRestClient _restClient = default!;
         private readonly Dictionary<string, string> _props;
         private Dictionary<MachineType, List<MachineHost>> _typeToMachine = new Dictionary<MachineType, List<MachineHost>>();
 
@@ -83,7 +83,7 @@ namespace CiscoPCCE.Toolkit.Examples
             _props = props ?? throw new ArgumentNullException(nameof(props));
 
             // Create a new RESTClient object with the IP of your DS / AW HDS
-            _restClient = new RestClient(
+            _restClient = new CiscoRestClient(
                 props[PcceHost],
                 props[CceDiagUsername],
                 props[CceDiagPassword]
@@ -212,7 +212,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// </summary>
         public virtual async Task<List<InitializationStatus>> GetStatusListAsync()
         {
-            var status = await _restClient.GetAsync<InitializationStatusResults>(RestClient.BaseUrl + "initialize");
+            var status = await _restClient.GetAsync<InitializationStatusResults>(CiscoRestClient.BaseUrl + "initialize");
             return status?.StatusList ?? new List<InitializationStatus>();
         }
 
@@ -256,7 +256,7 @@ namespace CiscoPCCE.Toolkit.Examples
 
             // In C#, we need a different approach for empty body updates
             // This would call the appropriate REST endpoint to start initialization
-            _ = await _restClient.UpdateAsync(new WebsetupInstance { RefURL = RestClient.BaseUrl + "initialize" });
+            _ = await _restClient.UpdateAsync(new WebsetupInstance { RefURL = CiscoRestClient.BaseUrl + "initialize" });
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace CiscoPCCE.Toolkit.Examples
 
             var initialSettings = new InitialSettings
             {
-                RefURL = RestClient.BaseUrl + "initialize/settings",
+                RefURL = CiscoRestClient.BaseUrl + "initialize/settings",
                 // possible codecs: "G.711U", "G.711A", "G.729"
                 MobileAgentCodec = _props.GetValueOrDefault(SettingsCodec),
                 CmSideA = new ReferenceBean(),
@@ -497,7 +497,7 @@ namespace CiscoPCCE.Toolkit.Examples
 
             var deploymentTypeInfo = new DeploymentTypeInfo
             {
-                RefURL = RestClient.BaseUrl + "deploymenttypeinfo",
+                RefURL = CiscoRestClient.BaseUrl + "deploymenttypeinfo",
                 CapacityInfo = new CapacityInfo(),
                 Department = new ReferenceBean(),
                 PermissionInfo = new PermissionInfo(),

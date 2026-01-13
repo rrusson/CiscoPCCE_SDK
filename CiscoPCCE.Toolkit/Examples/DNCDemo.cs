@@ -24,9 +24,9 @@ namespace CiscoPCCE.Toolkit.Examples
             }
 
             // Create a new RESTClient object with the IP of you DS / AW HDS
-            var restClient = new RestClient(args[0], args[1], args[2]);
+            var restClient = new CiscoRestClient(args[0], args[1], args[2]);
 
-            var deploymentType = await restClient.GetAsync<Deployment>(RestClient.BaseUrl + "deployment");
+            var deploymentType = await restClient.GetAsync<Deployment>(CiscoRestClient.BaseUrl + "deployment");
 
             Console.WriteLine($"System is in Deployment Type: {deploymentType?.DeploymentType}");
 
@@ -47,7 +47,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// 3. Deletes the DNC
         /// The list operation is similar to the Campaign, Please refer to the CampaignDemo
         /// </summary>
-        private static async Task DncDemoAsync(RestClient restClient, string hostname)
+        private static async Task DncDemoAsync(CiscoRestClient restClient, string hostname)
         {
             //Create the new DNC Import Rule
             var dnc1 = await CreateAndGetDNCAsync(restClient, hostname);
@@ -62,7 +62,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <summary>
         /// This function deletes the DNC Import Rule
         /// </summary>
-        private static async void DeleteDNC(RestClient restClient, ImportRule? dnc)
+        private static async void DeleteDNC(CiscoRestClient restClient, ImportRule? dnc)
         {
             if (dnc?.RefURL != null)
             {
@@ -74,7 +74,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <summary>
         /// Creates the DNC Import Rule and returns it
         /// </summary>
-        private static async Task<ImportRule?> CreateAndGetDNCAsync(RestClient restClient, string hostname)
+        private static async Task<ImportRule?> CreateAndGetDNCAsync(CiscoRestClient restClient, string hostname)
         {
             var filePath = $"\\\\{hostname}\\C$\\dnc.txt";
             //Populate the Bean
@@ -113,7 +113,7 @@ namespace CiscoPCCE.Toolkit.Examples
         /// <summary>
         /// This function updates the DNC Import Rule with overwriteEnabled to true
         /// </summary>
-        private static async Task UpdateAndVerifyDNCAsync(RestClient restClient, ImportRule? dnc)
+        private static async Task UpdateAndVerifyDNCAsync(CiscoRestClient restClient, ImportRule? dnc)
         {
             if (dnc == null)
             {
