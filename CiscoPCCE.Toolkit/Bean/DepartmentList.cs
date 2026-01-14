@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("/department")
     [XmlRoot("results")]
-    public class DepartmentList : BaseApiList<Department>
+    public class DepartmentList : BaseApiWrappedList<Department>
     {
         [XmlArray("departments")]
         [XmlArrayItem("department")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("agentdesksetting")
     [XmlRoot("results")]
-    public class AgentDeskSettingList : BaseApiList<AgentDeskSetting>
+    public class AgentDeskSettingList : BaseApiWrappedList<AgentDeskSetting>
     {
         [XmlArray("agentDeskSettings")]
         [XmlArrayItem("agentDeskSetting")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("machineinventory")
     [XmlRoot("results")]
-    public class MachineHostList : BaseApiList<MachineHost>
+    public class MachineHostList : BaseApiWrappedList<MachineHost>
     {
         [XmlArray("machines")]
         [XmlArrayItem("machine")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

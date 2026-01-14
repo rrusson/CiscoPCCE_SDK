@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("bulkjob")
     [XmlRoot("results")]
-    public class BulkJobList : BaseApiList<BulkJob>
+    public class BulkJobList : BaseApiWrappedList<BulkJob>
     {
         [XmlArray("bulkJobs")]
         [XmlArrayItem("bulkJob")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

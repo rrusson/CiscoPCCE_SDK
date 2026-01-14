@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("agent")
     [XmlRoot("results")]
-    public class AgentList : BaseApiList<Agent>
+    public class AgentList : BaseApiWrappedList<Agent>
     {
         [XmlArray("agents")]
         [XmlArrayItem("agent")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

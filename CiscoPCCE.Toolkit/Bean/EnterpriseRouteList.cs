@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("enterpriseroute")
     [XmlRoot("results")]
-    public class EnterpriseRouteList : BaseApiList<EnterpriseRoute>
+    public class EnterpriseRouteList : BaseApiWrappedList<EnterpriseRoute>
     {
         [XmlArray("enterpriseRoutes")]
         [XmlArrayItem("enterpriseRoute")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

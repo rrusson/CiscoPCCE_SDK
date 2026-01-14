@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("applicationpath")
     [XmlRoot("results")]
-    public class ApplicationPathList : BaseApiList<ApplicationPath>
+    public class ApplicationPathList : BaseApiWrappedList<ApplicationPath>
     {
         [XmlArray("applicationPaths")]
         [XmlArrayItem("applicationPath")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

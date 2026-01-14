@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("networkvru")
     [XmlRoot("results")]
-    public class NetworkVruList : BaseApiList<NetworkVru>
+    public class NetworkVruList : BaseApiWrappedList<NetworkVru>
     {
         [XmlArray("networkVrus")]
         [XmlArrayItem("networkVru")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }
