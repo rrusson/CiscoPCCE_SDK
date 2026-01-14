@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("dialednumber")
     [XmlRoot("results")]
-    public class DialedNumberList : BaseApiList<DialedNumber>
+    public class DialedNumberList : BaseApiWrappedList<DialedNumber>
     {
         [XmlArray("dialedNumbers")]
         [XmlArrayItem("dialedNumber")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

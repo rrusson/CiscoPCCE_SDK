@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("role")
-    [XmlRoot("role")]
+    [XmlType("role")]
     public class Role : BaseApiBean
     {
         [XmlArray("administrators")]

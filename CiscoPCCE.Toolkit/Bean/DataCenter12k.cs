@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("datacenter")]
+    [XmlType("datacenter")]
     public class DataCenter12k : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

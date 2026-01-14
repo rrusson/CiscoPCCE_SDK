@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("bulkjob")
-    [XmlRoot("bulkJob")]
+    [XmlType("bulkJob")]
     public class BulkJob : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

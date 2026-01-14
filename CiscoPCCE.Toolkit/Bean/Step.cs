@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("precisionqueue")
-    [XmlRoot("step")]
+    [XmlType("step")]
     public class Step : BaseApiBean
     {
         [XmlElement("agentCount")]

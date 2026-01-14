@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("configurabledeviceinfo")
-    [XmlRoot("configurableDevices")]
+    [XmlType("configurableDevices")]
     public class ConfigurableDeviceInfo : BaseApiBean
     {
         [XmlArray("deviceTypes")]

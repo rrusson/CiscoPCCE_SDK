@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("agent")
-    [XmlRoot("supervisorUserInfo")]
+    [XmlType("supervisorUserInfo")]
     public class SupervisorUserInfo : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("infrastructure")]
+    [XmlType("infrastructure")]
     public class InfrastructureServiceConfig : BaseApiBean
     {
         [XmlElement("maxLogDirectorySize")]

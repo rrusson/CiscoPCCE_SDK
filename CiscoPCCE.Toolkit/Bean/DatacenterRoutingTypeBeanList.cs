@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("routingtype")
     [XmlRoot("results")]
-    public class DatacenterRoutingTypeBeanList : BaseApiList<DatacenterRoutingTypeBean>
+    public class DatacenterRoutingTypeBeanList : BaseApiWrappedList<DatacenterRoutingTypeBean>
     {
         [XmlArray("datacenterRoutingTypes")]
         [XmlArrayItem("datacenterRoutingType")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

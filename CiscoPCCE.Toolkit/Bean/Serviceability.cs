@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("serviceability")]
+    [XmlType("serviceability")]
     public class Serviceability : BaseApiBean
     {
         [XmlElement("apiStats")]

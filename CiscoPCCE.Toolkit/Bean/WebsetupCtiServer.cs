@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("ctiServer")]
+    [XmlType("ctiServer")]
     public class WebsetupCtiServer : BaseApiBean
     {
         [XmlElement("cgId")]

@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("contactsharegroup")
-    [XmlRoot("contactShareGroup")]
+    [XmlType("contactShareGroup")]
     public class ContactShareGroup : BaseApiBean
     {
         [XmlElement("acceptQueueIf")]

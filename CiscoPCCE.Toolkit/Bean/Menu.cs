@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("menu")]
+    [XmlType("menu")]
     public class Menu : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

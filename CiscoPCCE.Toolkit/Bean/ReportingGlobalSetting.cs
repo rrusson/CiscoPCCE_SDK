@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("globalsetting")
-    [XmlRoot("reporting")]
+    [XmlType("reporting")]
     public class ReportingGlobalSetting : BaseApiBean
     {
         [XmlElement("reportingInterval")]

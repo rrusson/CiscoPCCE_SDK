@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("sipTriggers")]
+    [XmlType("sipTriggers")]
     public class SipTriggerXMLList : BaseApiBean
     {
         [XmlElement("sipTrigger")]

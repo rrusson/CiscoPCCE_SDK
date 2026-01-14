@@ -4,23 +4,13 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("layout")
-    [XmlRoot("layout")]
+    [XmlType("layout")]
     public class CardPositionList : BaseApiBean
     {
         [XmlArray("cards")]
         [XmlArrayItem("card")]
-        public List<CardPosition>? Items { get; set; }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
-
-        // Path("layout")
-        [XmlRoot("results")]
-        public class CardPositionListList : BaseApiList<CardPositionList>
+        public List<CardPosition>? Items { get; set; }        [XmlType("results")]
+        public class CardPositionListList : BaseApiWrappedList<CardPositionList>
         {
             [XmlArray("layouts")]
             [XmlArrayItem("layout")]

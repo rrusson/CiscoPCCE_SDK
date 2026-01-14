@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("machineinventory")
-    [XmlRoot("machine")]
+    [XmlType("machine")]
     public class MachineHost : BaseApiBean
     {
         [XmlArray("networks")]

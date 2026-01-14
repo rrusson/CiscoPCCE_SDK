@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("role")
-    [XmlRoot("errorDetail")]
+    [XmlType("errorDetail")]
     public class InvalidFeaturesErrorDetail : BaseApiBean
     {
         [XmlArray("invalidFeatures")]

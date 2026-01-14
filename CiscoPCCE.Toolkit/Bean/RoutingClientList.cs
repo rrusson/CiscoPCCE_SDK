@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("secondaryaddress")
     [XmlRoot("results")]
-    public class RoutingClientList : BaseApiList<RoutingClient>
+    public class RoutingClientList : BaseApiWrappedList<RoutingClient>
     {
         [XmlArray("routingClients")]
         [XmlArrayItem("routingClient")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

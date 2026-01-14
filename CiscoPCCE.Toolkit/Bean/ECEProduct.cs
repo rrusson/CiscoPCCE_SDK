@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("product")]
+    [XmlType("product")]
     public class ECEProduct : BaseApiBean
     {
         [XmlElement("build")]

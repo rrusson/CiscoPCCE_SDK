@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("dialedNumberConfig")]
+    [XmlType("dialedNumberConfig")]
     public class DialedNumberConfig : BaseApiBean
     {
         [XmlElement("dialedNumber")]

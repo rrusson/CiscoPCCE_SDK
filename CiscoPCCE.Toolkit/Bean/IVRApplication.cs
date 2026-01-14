@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("transferablefiles")
-    [XmlRoot("IVRApplication")]
+    [XmlType("IVRApplication")]
     public class IVRApplication : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

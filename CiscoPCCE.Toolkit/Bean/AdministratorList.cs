@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("administrator")
     [XmlRoot("results")]
-    public class AdministratorList : BaseApiList<Administrator>
+    public class AdministratorList : BaseApiWrappedList<Administrator>
     {
         [XmlArray("administrators")]
         [XmlArrayItem("administrator")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

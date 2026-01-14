@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("systemattribute")
-    [XmlRoot("systemAttribute")]
+    [XmlType("systemAttribute")]
     public class SystemAttribute : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

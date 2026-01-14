@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("masterscript")
     [XmlRoot("results")]
-    public class MasterScriptList : BaseApiList<MasterScript>
+    public class MasterScriptList : BaseApiWrappedList<MasterScript>
     {
         [XmlArray("masterScripts")]
         [XmlArrayItem("masterScript")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

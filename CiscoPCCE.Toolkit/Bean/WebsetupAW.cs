@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("aw")]
+    [XmlType("aw")]
     public class WebsetupAW : BaseApiBean
     {
         [XmlElement("loggerSideAPublicAddress")]

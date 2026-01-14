@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("applicationpath")
-    [XmlRoot("applicationPathMember")]
+    [XmlType("applicationPathMember")]
     public class ApplicationPathMember : BaseApiBean
     {
         [XmlElement("applicationPathId")]

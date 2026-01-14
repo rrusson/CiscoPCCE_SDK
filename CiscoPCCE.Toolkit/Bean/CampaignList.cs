@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("campaign")
     [XmlRoot("results")]
-    public class CampaignList : BaseApiList<Campaign>
+    public class CampaignList : BaseApiWrappedList<Campaign>
     {
         [XmlArray("campaigns")]
         [XmlArrayItem("campaign")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

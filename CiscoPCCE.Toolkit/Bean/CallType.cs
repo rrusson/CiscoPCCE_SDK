@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("calltype")
-    [XmlRoot("callType")]
+    [XmlType("callType")]
     public class CallType : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("version")]
+    [XmlType("version")]
     public class VersionInfo : BaseApiBean
     {
         [XmlElement("ucceVersion")]

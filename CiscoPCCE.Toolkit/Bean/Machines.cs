@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("Machines")]
+    [XmlType("Machines")]
     public class Machines : BaseApiBean
     {
     }

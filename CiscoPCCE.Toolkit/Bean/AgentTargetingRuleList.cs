@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("agenttargetingrule")
     [XmlRoot("results")]
-    public class AgentTargetingRuleList : BaseApiList<AgentTargetingRule>
+    public class AgentTargetingRuleList : BaseApiWrappedList<AgentTargetingRule>
     {
         [XmlArray("agentTargetingRules")]
         [XmlArrayItem("agentTargetingRule")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

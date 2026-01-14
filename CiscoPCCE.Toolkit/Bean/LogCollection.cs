@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("logcollection")
-    [XmlRoot("logCollection")]
+    [XmlType("logCollection")]
     public class LogCollection : BaseApiBean
     {
         [XmlElement("components")]

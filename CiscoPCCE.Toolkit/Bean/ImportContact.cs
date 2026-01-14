@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("import")]
+    [XmlType("import")]
     public class ImportContact : BaseApiBean
     {
         [XmlElement("delimiter")]

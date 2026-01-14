@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("expandedcallvariable")
-    [XmlRoot("globalInfo")]
+    [XmlType("globalInfo")]
     public class ExpandedCallVariableGlobalInfo : BaseApiBean
     {
         [XmlElement("totalVariableCtiSize")]

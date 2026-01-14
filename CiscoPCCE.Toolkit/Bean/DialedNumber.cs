@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("dialednumber")
-    [XmlRoot("dialedNumber")]
+    [XmlType("dialedNumber")]
     public class DialedNumber : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

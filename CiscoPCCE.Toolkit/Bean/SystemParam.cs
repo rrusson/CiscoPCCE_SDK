@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("systemParam")]
+    [XmlType("systemParam")]
     public class SystemParam : BaseApiBean
     {
         [XmlElement("media")]

@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("datacenter")
-    [XmlRoot("datacenter")]
+    [XmlType("datacenter")]
     public class DataCenter : BaseApiBean
     {
         [XmlElement("agentPG")]

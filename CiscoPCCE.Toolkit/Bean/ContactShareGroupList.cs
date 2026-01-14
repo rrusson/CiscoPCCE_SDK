@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("contactsharegroup")
     [XmlRoot("results")]
-    public class ContactShareGroupList : BaseApiList<ContactShareGroup>
+    public class ContactShareGroupList : BaseApiWrappedList<ContactShareGroup>
     {
         [XmlArray("contactShareGroups")]
         [XmlArrayItem("contactShareGroup")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

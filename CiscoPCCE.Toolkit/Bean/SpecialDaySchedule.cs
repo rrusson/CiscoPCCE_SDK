@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("specialDaySchedule")]
+    [XmlType("specialDaySchedule")]
     public class SpecialDaySchedule : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("sip")]
+    [XmlType("sip")]
     public class SIPServiceConfig : BaseApiBean
     {
         [XmlElement("commaDuration")]

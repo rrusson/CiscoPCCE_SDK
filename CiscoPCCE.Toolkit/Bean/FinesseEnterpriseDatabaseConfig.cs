@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("EnterpriseDatabaseConfig")]
+    [XmlType("EnterpriseDatabaseConfig")]
     public class FinesseEnterpriseDatabaseConfig : BaseApiBean
     {
         [XmlElement("backupHost")]

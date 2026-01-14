@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("machineinventory")
-    [XmlRoot("mockInventory")]
+    [XmlType("mockInventory")]
     public class MockInventory : BaseApiBean
     {
         [XmlElement("enableMockMode")]

@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("cloudconnectsettings")
-    [XmlRoot("dataSource")]
+    [XmlType("dataSource")]
     public class DataSource : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

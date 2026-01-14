@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("bucketinterval")
     [XmlRoot("results")]
-    public class BucketIntervalList : BaseApiList<BucketInterval>
+    public class BucketIntervalList : BaseApiWrappedList<BucketInterval>
     {
         [XmlArray("bucketIntervals")]
         [XmlArrayItem("bucketInterval")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

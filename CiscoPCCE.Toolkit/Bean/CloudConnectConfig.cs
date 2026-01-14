@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("CloudConnectConfig")]
+    [XmlType("CloudConnectConfig")]
     public class CloudConnectConfig : BaseApiBean
     {
         [XmlElement("password")]

@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("icm")]
+    [XmlType("icm")]
     public class ICMServiceConfig : BaseApiBean
     {
         [XmlElement("enableSecureVRU")]

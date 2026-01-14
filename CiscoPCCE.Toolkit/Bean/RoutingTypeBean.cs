@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("routingtype")
-    [XmlRoot("routingType")]
+    [XmlType("routingType")]
     public class RoutingTypeBean : BaseApiBean
     {
         [XmlElement("machineType")]

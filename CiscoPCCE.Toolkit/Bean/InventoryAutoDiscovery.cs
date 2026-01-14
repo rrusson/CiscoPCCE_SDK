@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("systemmgmt")
-    [XmlRoot("inventoryautodiscovery")]
+    [XmlType("inventoryautodiscovery")]
     public class InventoryAutoDiscovery : BaseApiBean
     {
         [XmlElement("disabled")]

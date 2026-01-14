@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("contactsharequeue")
-    [XmlRoot("contactShareQueue")]
+    [XmlType("contactShareQueue")]
     public class ContactShareQueue : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

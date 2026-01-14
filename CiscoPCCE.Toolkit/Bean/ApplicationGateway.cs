@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("applicationgateway")
-    [XmlRoot("applicationGateway")]
+    [XmlType("applicationGateway")]
     public class ApplicationGateway : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

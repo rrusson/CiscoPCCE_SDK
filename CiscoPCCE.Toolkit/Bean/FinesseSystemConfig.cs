@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("SystemConfig")]
+    [XmlType("SystemConfig")]
     public class FinesseSystemConfig : BaseApiBean
     {
     }

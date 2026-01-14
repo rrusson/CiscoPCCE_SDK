@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("callServers")]
+    [XmlType("callServers")]
     public class CallServers : BaseApiBean
     {
         [XmlArray("servers")]

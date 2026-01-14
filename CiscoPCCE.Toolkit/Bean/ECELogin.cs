@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("Login")]
+    [XmlType("Login")]
     public class ECELogin : BaseApiBean
     {
         [XmlElement("password")]

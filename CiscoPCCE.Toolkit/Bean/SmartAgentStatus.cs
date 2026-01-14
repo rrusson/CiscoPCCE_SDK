@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("smartAgentStatus")]
+    [XmlType("smartAgentStatus")]
     public class SmartAgentStatus : BaseApiBean
     {
         [XmlElement("authorizationStatus")]

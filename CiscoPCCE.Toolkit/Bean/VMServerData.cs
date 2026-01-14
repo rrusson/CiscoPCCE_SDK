@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("serverStatus")]
+    [XmlType("serverStatus")]
     public class VMServerData : BaseApiBean
     {
         [XmlElement("biosValid")]

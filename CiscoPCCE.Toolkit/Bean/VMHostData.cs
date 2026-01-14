@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("vmHostData")]
+    [XmlType("vmHostData")]
     public class VMHostData : BaseApiBean
     {
         [XmlElement("bios")]

@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("patchInfo")]
+    [XmlType("patchInfo")]
     public class PatchInfo : BaseApiBean
     {
     }

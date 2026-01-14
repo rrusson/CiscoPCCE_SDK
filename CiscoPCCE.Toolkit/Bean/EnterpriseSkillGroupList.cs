@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("enterpriseroute")
     [XmlRoot("results")]
-    public class EnterpriseSkillGroupList : BaseApiList<EnterpriseSkillGroup>
+    public class EnterpriseSkillGroupList : BaseApiWrappedList<EnterpriseSkillGroup>
     {
         [XmlArray("enterpriseSkillGroups")]
         [XmlArrayItem("enterpriseSkillGroup")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

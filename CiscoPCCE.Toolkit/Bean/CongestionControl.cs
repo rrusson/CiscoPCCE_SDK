@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("congestioncontrol")
-    [XmlRoot("congestionControl")]
+    [XmlType("congestionControl")]
     public class CongestionControl : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

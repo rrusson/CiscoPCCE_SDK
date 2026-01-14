@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("status")
-    [XmlRoot("SystemInfo")]
+    [XmlType("SystemInfo")]
     public class FinesseSystemInfo : BaseApiBean
     {
         [XmlElement("##default")]

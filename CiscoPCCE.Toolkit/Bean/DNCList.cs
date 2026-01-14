@@ -8,7 +8,7 @@ namespace CiscoPCCE.Toolkit.Bean
     /// </summary>
     /// <remarks>Duplicates <see cref="ImportRuleList"/></remarks>
     [XmlRoot("results")]
-    public class DNCList : BaseApiList<ImportRule>
+    public class DNCList : BaseApiWrappedList<ImportRule>
     {
         [XmlArray("dncs")]
         [XmlArrayItem("dnc")]
@@ -17,11 +17,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

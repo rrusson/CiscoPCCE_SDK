@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("agentdistribution")
-    [XmlRoot("agentDistribution")]
+    [XmlType("agentDistribution")]
     public class AgentDistribution : BaseApiBean
     {
         [XmlElement("agentHistoricalData")]

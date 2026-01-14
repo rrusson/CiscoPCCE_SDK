@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("reportingConfig")]
+    [XmlType("reportingConfig")]
     public class ReportingInitConfig : BaseApiBean
     {
         [XmlElement("deviceId")]

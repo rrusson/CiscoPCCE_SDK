@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("vmValidationResult")]
+    [XmlType("vmValidationResult")]
     public class VMValidationResult : BaseApiBean
     {
         [XmlElement("isValid")]

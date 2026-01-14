@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("ReasonCode")]
+    [XmlType("ReasonCode")]
     public class ReasonCodeConfig : BaseApiBean
     {
         [XmlElement("active")]

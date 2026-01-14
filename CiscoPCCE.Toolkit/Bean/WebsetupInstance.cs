@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("instance")
-    [XmlRoot("instance")]
+    [XmlType("instance")]
     public class WebsetupInstance : BaseApiBean
     {
         [XmlElement("facilityName")]

@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("agentdesksetting")
-    [XmlRoot("agentDeskSetting")]
+    [XmlType("agentDeskSetting")]
     public class AgentDeskSetting : BaseApiBean
     {
         [XmlElement("agentStateAfterRONA")]

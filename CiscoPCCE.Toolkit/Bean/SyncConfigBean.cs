@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("syncConfig")]
+    [XmlType("syncConfig")]
     public class SyncConfigBean : BaseApiBean
     {
         [XmlElement("enabled")]

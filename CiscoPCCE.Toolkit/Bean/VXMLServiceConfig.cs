@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("vxml")]
+    [XmlType("vxml")]
     public class VXMLServiceConfig : BaseApiBean
     {
         [XmlElement("enableAppDetailsReporting")]

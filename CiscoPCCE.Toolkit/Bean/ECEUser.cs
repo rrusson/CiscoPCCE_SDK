@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("user")]
+    [XmlType("user")]
     public class ECEUser : BaseApiBean
     {
         [XmlElement("department")]

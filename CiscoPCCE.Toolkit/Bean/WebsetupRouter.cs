@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("router")]
+    [XmlType("router")]
     public class WebsetupRouter : BaseApiBean
     {
         [XmlElement("enabledPeripheralGateways")]

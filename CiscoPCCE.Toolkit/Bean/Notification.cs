@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("notifications")
-    [XmlRoot("##default")]
+    [XmlType("##default")]
     public class Notification : BaseApiBean
     {
         [XmlElement("category")]

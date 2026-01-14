@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("database")
     [XmlRoot("results")]
-    public class DatabaseList : BaseApiList<Database>
+    public class DatabaseList : BaseApiWrappedList<Database>
     {
         [XmlArray("databases")]
         [XmlArrayItem("database")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

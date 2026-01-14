@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("globalsetting")
-    [XmlRoot("script")]
+    [XmlType("script")]
     public class ScriptGlobalSetting : BaseApiBean
     {
         [XmlElement("retainScriptVersion")]

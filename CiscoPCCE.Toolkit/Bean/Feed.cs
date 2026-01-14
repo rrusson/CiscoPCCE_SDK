@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("Feed")]
+    [XmlType("Feed")]
     public class Feed : BaseApiBean
     {
         [XmlElement("changeStamp")]

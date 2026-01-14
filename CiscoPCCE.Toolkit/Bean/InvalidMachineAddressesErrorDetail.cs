@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("machineinventory")
-    [XmlRoot("errorDetail")]
+    [XmlType("errorDetail")]
     public class InvalidMachineAddressesErrorDetail : BaseApiBean
     {
         [XmlArray("networksFound")]

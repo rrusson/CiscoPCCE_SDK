@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("machineinventory")
-    [XmlRoot("speechConfig")]
+    [XmlType("speechConfig")]
     public class CVAConfigInfo : BaseApiBean
     {
         [XmlElement("version")]

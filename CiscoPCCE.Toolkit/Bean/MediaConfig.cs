@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("media")]
+    [XmlType("media")]
     public class MediaConfig : BaseApiBean
     {
         [XmlElement("codec")]

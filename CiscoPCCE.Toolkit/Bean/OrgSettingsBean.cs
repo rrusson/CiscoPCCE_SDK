@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("OrgSettings")]
+    [XmlType("OrgSettings")]
     public class OrgSettingsBean : BaseApiBean
     {
         [XmlElement("accessToken")]

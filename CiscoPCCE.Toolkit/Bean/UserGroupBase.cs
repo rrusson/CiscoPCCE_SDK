@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("administrator")
-    [XmlRoot("userGroupBase")]
+    [XmlType("userGroupBase")]
     public class UserGroupBase : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

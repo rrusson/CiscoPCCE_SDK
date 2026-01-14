@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("sso")
-    [XmlRoot("ssoStatus")]
+    [XmlType("ssoStatus")]
     public class SsoStatus : BaseApiBean
     {
         [XmlElement("globalSsoState")]

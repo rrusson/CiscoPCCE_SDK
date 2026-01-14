@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("/agentteam")
-    [XmlRoot("agentTeamSummary")]
+    [XmlType("agentTeamSummary")]
     public class AgentTeamSummary : BaseApiBean
     {
         [XmlElement("agentCount")]

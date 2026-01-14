@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("Campaign")]
+    [XmlType("Campaign")]
     public class SocialMinerCampaign : BaseApiBean
     {
         [XmlElement("changeStamp")]

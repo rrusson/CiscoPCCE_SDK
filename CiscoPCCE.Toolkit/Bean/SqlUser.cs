@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("sqluser")
-    [XmlRoot("sqlUser")]
+    [XmlType("sqlUser")]
     public class SqlUser : BaseApiBean
     {
         [XmlElement("loginName")]

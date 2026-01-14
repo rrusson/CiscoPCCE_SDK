@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("agentName")]
+    [XmlType("agentName")]
     public class AgentName : BaseApiBean
     {
         [XmlElement("agentId")]

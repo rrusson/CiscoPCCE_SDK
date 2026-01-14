@@ -3,8 +3,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("sso")
-    [XmlRoot("ssoComponentStatus")]
+    [XmlType("ssoComponentStatus")]
     public class SsoComponentStatus : BaseApiBean
     {
         [XmlArray("##default")]

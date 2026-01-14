@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("peripheralSet")]
+    [XmlType("peripheralSet")]
     public class PeripheralSet : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("vmStatus")]
+    [XmlType("vmStatus")]
     public class VMData : BaseApiBean
     {
         public List<VMDatastoreData>? ActualDatastores { get; set; }

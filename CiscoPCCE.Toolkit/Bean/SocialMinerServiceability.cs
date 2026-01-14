@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("Serviceability")]
+    [XmlType("Serviceability")]
     public class SocialMinerServiceability : BaseApiBean
     {
         [XmlElement("version")]

@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("machineinventory")
-    [XmlRoot("component")]
+    [XmlType("component")]
     public class MachineComponent : BaseApiBean
     {
         [XmlElement("name")]

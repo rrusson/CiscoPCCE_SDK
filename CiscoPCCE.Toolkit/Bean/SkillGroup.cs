@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("skillgroup")
-    [XmlRoot("skillGroup")]
+    [XmlType("skillGroup")]
     public class SkillGroup : BaseApiBean
     {
         [XmlElement("agentCount")]

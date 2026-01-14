@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("/eccpayload")
     [XmlRoot("results")]
-    public class ECCPayloadList : BaseApiList<ECCPayload>
+    public class ECCPayloadList : BaseApiWrappedList<ECCPayload>
     {
         [XmlArray("eccpayloads")]
         [XmlArrayItem("eccpayload")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

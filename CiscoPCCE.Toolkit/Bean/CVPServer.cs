@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("CVP")]
+    [XmlType("CVP")]
     public class CVPServer : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

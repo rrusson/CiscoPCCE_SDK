@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("machineinventory")
-    [XmlRoot("status")]
+    [XmlType("status")]
     public class InventoryStatus : BaseApiBean
     {
         [XmlArray("alerts")]

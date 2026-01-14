@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("agentsecurity")
-    [XmlRoot("agentSecurity")]
+    [XmlType("agentSecurity")]
     public class AgentSecurity : BaseApiBean
     {
         [XmlElement("agentsWithoutAdvancedHashing")]

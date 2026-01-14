@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("inventoryFile")]
+    [XmlType("inventoryFile")]
     public class InventoryFile : BaseApiBean
     {
         [XmlElement("content")]

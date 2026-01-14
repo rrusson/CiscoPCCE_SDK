@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("capacityRule")]
+    [XmlType("capacityRule")]
     public class CapacityCheckResult : BaseApiBean
     {
         [XmlElement("actual")]

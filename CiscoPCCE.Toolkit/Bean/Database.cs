@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("database")
-    [XmlRoot("database")]
+    [XmlType("database")]
     public class Database : BaseApiBean
     {
         [XmlElement("dataFileSizeMB")]

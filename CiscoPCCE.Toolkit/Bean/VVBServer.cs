@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("VVB")]
+    [XmlType("VVB")]
     public class VVBServer : BaseApiBean
     {
         [XmlArray("applications")]

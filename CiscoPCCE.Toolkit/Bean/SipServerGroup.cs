@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("sipservergroup")
-    [XmlRoot("sipServerGroup")]
+    [XmlType("sipServerGroup")]
     public class SipServerGroup : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

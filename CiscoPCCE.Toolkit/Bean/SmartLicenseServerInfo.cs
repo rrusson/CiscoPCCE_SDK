@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("smartlicense")
-    [XmlRoot("smartlicenseserverinfo")]
+    [XmlType("smartlicenseserverinfo")]
     public class SmartLicenseServerInfo : BaseApiBean
     {
         [XmlElement("agentId")]

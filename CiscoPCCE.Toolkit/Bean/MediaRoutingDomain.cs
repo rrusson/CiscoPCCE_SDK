@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("mediaroutingdomain")
-    [XmlRoot("mediaRoutingDomain")]
+    [XmlType("mediaRoutingDomain")]
     public class MediaRoutingDomain : BaseApiBean
     {
         [XmlElement("baseUrlfromRefUrl")]

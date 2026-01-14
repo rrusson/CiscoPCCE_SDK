@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("globalsetting")
-    [XmlRoot("globalSettings")]
+    [XmlType("globalSettings")]
     public class GlobalSetting : BaseApiBean
     {
         [XmlElement("agent")]

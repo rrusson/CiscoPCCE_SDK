@@ -5,7 +5,7 @@ namespace CiscoPCCE.Toolkit.Bean
 {
     // Path("smartlicense")
     [XmlRoot("results")]
-    public class SmartLicenseProductInfoList : BaseApiList<SmartLicenseProductInfo>
+    public class SmartLicenseProductInfoList : BaseApiWrappedList<SmartLicenseProductInfo>
     {
         [XmlArray("smartlicenseproductinfos")]
         [XmlArrayItem("smartlicenseproductinfo")]
@@ -14,11 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
             get => base.Items;
             set => base.Items = value;
         }
-
-        [XmlElement("pageInfo")]
-        public required PageInfo PageInfo { get; set; }
-
-        [XmlElement("permissionInfo")]
-        public required PermissionInfo PermissionInfo { get; set; }
     }
 }

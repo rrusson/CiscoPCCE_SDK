@@ -4,8 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    // Path("/pqsteppreview")
-    [XmlRoot("pqStepPreview")]
+    [XmlType("pqStepPreview")]
     public class PrecisionQueueStepPreview : BaseApiBean
     {
         [XmlElement("agentCount")]

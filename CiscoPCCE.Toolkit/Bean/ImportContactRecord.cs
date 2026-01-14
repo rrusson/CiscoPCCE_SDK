@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("importContact")]
+    [XmlType("importContact")]
     public class ImportContactRecord : BaseApiBean
     {
         [XmlElement("accountNumber")]

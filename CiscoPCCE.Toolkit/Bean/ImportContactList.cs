@@ -4,7 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
-    [XmlRoot("results")]
+    [XmlType("results")]
     public class ImportContactList : BaseApiBean
     {
         [XmlArray("importContacts")]
