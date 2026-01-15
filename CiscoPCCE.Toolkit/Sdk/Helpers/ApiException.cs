@@ -1,3 +1,5 @@
+using CiscoPCCE.Toolkit.Bean;
+
 namespace CiscoPCCE.Toolkit.Sdk.Helpers
 {
     /// <summary>
