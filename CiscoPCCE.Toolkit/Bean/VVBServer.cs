@@ -36,9 +36,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("media")]
         public required MediaConfig Media { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
-
         [XmlElement("security")]
         public required SecurityConfig Security { get; set; }
 

@@ -27,9 +27,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("password")]
         public string? Password { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
-
         [XmlElement("userName")]
         public string? UserName { get; set; }
     }

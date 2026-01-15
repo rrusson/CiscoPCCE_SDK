@@ -13,9 +13,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("capacityInfo")]
         public required CapacityInfo CapacityInfo { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 

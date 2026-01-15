@@ -15,9 +15,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("parenCount")]
         public int? ParenCount { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
-
         [XmlElement("termRelation")]
         public int? TermRelation { get; set; }
 

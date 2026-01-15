@@ -13,9 +13,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("card")]
         public required ReferenceBean Card { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -37,9 +34,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("path")]
         public string? Path { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("systemDefined")]
         public bool? SystemDefined { get; set; }

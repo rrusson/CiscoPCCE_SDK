@@ -16,9 +16,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("callReporting")]
         public required CallGlobalSetting CallReporting { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -37,9 +34,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("permissionInfo")]
         public required PermissionInfo PermissionInfo { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("reporting")]
         public required ReportingGlobalSetting Reporting { get; set; }

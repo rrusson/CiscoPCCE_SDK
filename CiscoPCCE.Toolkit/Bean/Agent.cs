@@ -52,9 +52,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("canRemove")]
         public bool? CanRemove { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("configParam")]
         public string? ConfigParam { get; set; }
 
@@ -93,9 +90,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("person")]
         public required Person Person { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("selectedAttribute")]
         public bool? SelectedAttribute { get; set; }

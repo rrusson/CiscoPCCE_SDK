@@ -22,9 +22,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
-
         [XmlElement("sipServerGroupProperties")]
         public required SIPServerGroupProperties SipServerGroupProperties { get; set; }
     }

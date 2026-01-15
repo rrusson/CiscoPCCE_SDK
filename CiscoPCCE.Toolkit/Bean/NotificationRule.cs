@@ -10,17 +10,11 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("campaignUrl")]
         public string? CampaignUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("description")]
         public string? Description { get; set; }
 
         [XmlElement("name")]
         public string? Name { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlArray("tags")]
         [XmlArrayItem("tag")]

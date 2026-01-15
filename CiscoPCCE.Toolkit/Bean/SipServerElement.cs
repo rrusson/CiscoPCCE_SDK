@@ -19,9 +19,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("priority")]
         public string? Priority { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
-
         [XmlElement("securePort")]
         public string? SecurePort { get; set; }
 

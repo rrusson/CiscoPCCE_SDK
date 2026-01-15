@@ -17,9 +17,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -46,9 +43,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("peripheralSet")]
         public required ReferenceBean PeripheralSet { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("vmHost")]
         public required ReferenceBean VmHostRef { get; set; }

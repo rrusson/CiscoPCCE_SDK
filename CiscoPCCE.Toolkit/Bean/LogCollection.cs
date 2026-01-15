@@ -17,9 +17,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("endDateTime")]
         public long? EndDateTime { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
-
         [XmlElement("##default")]
         public required FileRefWithSize ResultsFile { get; set; }
 

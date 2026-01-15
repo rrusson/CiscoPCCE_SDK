@@ -10,9 +10,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("clientType")]
         public short? ClientType { get; set; }
 
@@ -46,9 +43,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("primaryCtiAddress")]
         public string? PrimaryCtiAddress { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("secondaryCtiAddress")]
         public string? SecondaryCtiAddress { get; set; }

@@ -10,9 +10,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("clientType")]
         public short? ClientType { get; set; }
 
@@ -39,9 +36,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("peripheral")]
         public required PeripheralRef Peripheral { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("timeoutLimit")]
         public short? TimeoutLimit { get; set; }
