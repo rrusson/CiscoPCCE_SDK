@@ -179,7 +179,7 @@ namespace CiscoPCCE.Toolkit.Sdk
             try
             {
                 var xmlContent = SerializeXml(bean);
-                var content = new StringContent(xmlContent, Encoding.UTF8, "application/xml");
+                using var content = new StringContent(xmlContent, Encoding.UTF8, "application/xml");
 
                 var response = await httpClient.PutAsync(bean.RefURL, content);
 
