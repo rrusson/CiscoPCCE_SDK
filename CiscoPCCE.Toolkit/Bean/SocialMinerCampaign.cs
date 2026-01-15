@@ -7,9 +7,6 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlType("Campaign")]
     public class SocialMinerCampaign : BaseApiBean
     {
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("description")]
         public string? Description { get; set; }
 

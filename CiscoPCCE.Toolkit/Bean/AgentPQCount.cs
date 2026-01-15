@@ -7,9 +7,6 @@ namespace CiscoPCCE.Toolkit.Bean
     [XmlType("AgentPQCount")]
     public class AgentPQCount : BaseApiBean
     {
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
-
         [XmlElement("pqCount")]
         public int? pqCount { get; set; }
 
