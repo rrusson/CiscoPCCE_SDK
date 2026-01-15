@@ -11,7 +11,14 @@ namespace CiscoPCCE.Toolkit.Sdk.AgentApi
         private readonly ICiscoRestClient _restClient;
         private const string BasePath = "agent";
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AgentFunctions"/> class.
+        /// </summary>
+        /// <param name="restClient">The REST client used to communicate with the Cisco PCCE Agent API.</param>
+        /// <param name="maxResults">
+        /// The maximum number of results to request from the API for list and search operations.
+        /// Defaults to <c>100</c> when no value is specified.
+        /// </param>
         public AgentFunctions(ICiscoRestClient restClient, int maxResults = 100)
         {
             _restClient = restClient;

@@ -22,6 +22,15 @@ namespace CiscoPCCE.Toolkit.Sdk
         /// </summary>
         public const string BaseUrl = "/unifiedconfig/config/";
 
+        /// <summary>
+        /// Gets or sets the maximum number of results to return from list or paginated API calls.
+        /// </summary>
+        /// <remarks>
+        /// This value controls the page size used when retrieving collections of resources.
+        /// It should be set to a positive integer. When not explicitly specified, instances
+        /// created via the <see cref="CiscoRestClient(string, string, string, int)"/> constructor
+        /// default this property to <c>25</c>.
+        /// </remarks>
         public int MaxResults { get; set; }
 
         /// <summary>
@@ -63,7 +72,7 @@ namespace CiscoPCCE.Toolkit.Sdk
                 }
 
                 var xmlContent = SerializeXml(bean);
-                var content = new StringContent(xmlContent, Encoding.UTF8, "application/xml");
+                using var content = new StringContent(xmlContent, Encoding.UTF8, "application/xml");
 
                 var response = await httpClient.PostAsync($"{BaseUrl}{path}", content);
 
@@ -113,7 +122,7 @@ namespace CiscoPCCE.Toolkit.Sdk
         /// <inheritdoc/>
         public async Task<T?> GetAsync<T>(string refURL) where T : BaseApiBean
         {
-            refURL += (refURL.Contains("?q=") ? "&" : "?") + $"resultsPerPage={MaxResults}";
+            refURL += (refURL.Contains("?") ? "&" : "?") + $"resultsPerPage={MaxResults}";
 
             try
             {
