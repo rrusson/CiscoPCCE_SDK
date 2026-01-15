@@ -1,3 +1,5 @@
+using System.Xml.Serialization;
+
 namespace CiscoPCCE.Toolkit.Sdk
 {
     /// <summary>
@@ -14,8 +16,10 @@ namespace CiscoPCCE.Toolkit.Sdk
             RefURL = refURL;
         }
 
+        [XmlElement("name")]
         public string? Name { get; set; }
 
+        [XmlElement("refURL")]
         public string? RefURL { get; set; }
     }
 }

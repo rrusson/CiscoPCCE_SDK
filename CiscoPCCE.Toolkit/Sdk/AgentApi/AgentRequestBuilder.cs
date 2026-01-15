@@ -1,4 +1,4 @@
-﻿namespace CiscoPCCE.Toolkit.Sdk.AgentApi
+namespace CiscoPCCE.Toolkit.Sdk.AgentApi
 {
     internal static class AgentRequestBuilder
     {
@@ -10,6 +10,11 @@
         /// <remarks>The resulting query string includes only the fields from the criteria that are set. Advanced parameters may also be included if specified in the criteria.</remarks>
         internal static string BuildQueryString(AgentSearchCriteria criteria)
         {
+            if (criteria == null)
+            {
+                return string.Empty;
+            }
+
             var parts = new List<string>();
 
             // Standard search parameters

@@ -4,6 +4,7 @@ using CiscoPCCE.Toolkit.Sdk;
 
 namespace CiscoPCCE.Toolkit.Bean
 {
+    [XmlType("agentAttribute")]
     public class AttributeValueWithAttribute : BaseApiBean
     {
         [XmlElement("attribute")]
