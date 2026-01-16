@@ -10,17 +10,11 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("address")]
         public string? Address { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("name")]
         public string? Name { get; set; }
 
         [XmlElement("password")]
         public string? Password { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("systemDefault")]
         public bool? SystemDefault { get; set; }

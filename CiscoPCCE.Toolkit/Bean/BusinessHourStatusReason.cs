@@ -13,9 +13,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("category")]
         public string? Category { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -31,7 +28,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("reasonText")]
         public string? ReasonText { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

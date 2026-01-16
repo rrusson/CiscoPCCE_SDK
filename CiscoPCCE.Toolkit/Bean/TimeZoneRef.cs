@@ -9,7 +9,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("displayName")]
         public string? DisplayName { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

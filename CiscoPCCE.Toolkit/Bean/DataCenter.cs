@@ -16,9 +16,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("cMPublisherAssociationRequired")]
         public bool? CMPublisherAssociationRequired { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -36,9 +33,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("name")]
         public string? Name { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("sideAPGAddress")]
         public string? SideAPGAddress { get; set; }

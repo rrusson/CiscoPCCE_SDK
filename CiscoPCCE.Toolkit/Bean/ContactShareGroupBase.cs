@@ -13,9 +13,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("contactShareRule")]
         public required ReferenceBean ContactShareRule { get; set; }
 
@@ -37,7 +34,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("queueCount")]
         public int? QueueCount { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

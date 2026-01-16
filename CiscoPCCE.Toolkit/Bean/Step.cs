@@ -16,9 +16,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("description")]
         public string? Description { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
-
         [XmlArray("terms")]
         [XmlArrayItem("term")]
         public List<Term>? Terms { get; set; }

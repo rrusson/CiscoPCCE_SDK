@@ -64,7 +64,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("phone")]
         public string? Phone { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

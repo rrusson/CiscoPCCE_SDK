@@ -16,9 +16,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("callHomeUrl")]
         public string? CallHomeUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -60,9 +57,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("proxyPort")]
         public int? ProxyPort { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("reservationStatus")]
         public string? ReservationStatus { get; set; }

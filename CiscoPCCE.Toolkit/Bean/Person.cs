@@ -10,9 +10,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -48,9 +45,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("password")]
         public string? Password { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("screenName")]
         public string? ScreenName { get; set; }

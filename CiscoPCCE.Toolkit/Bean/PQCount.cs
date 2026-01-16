@@ -14,7 +14,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlArrayItem("agentName")]
         public List<AgentName>? AgentNameList { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

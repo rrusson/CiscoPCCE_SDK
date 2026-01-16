@@ -10,9 +10,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("configuredStatus")]
         public required BusinessHourConfiguredStatus ConfiguredStatus { get; set; }
 
@@ -30,9 +27,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("name")]
         public string? Name { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("runTimeStatus")]
         public int? RunTimeStatus { get; set; }

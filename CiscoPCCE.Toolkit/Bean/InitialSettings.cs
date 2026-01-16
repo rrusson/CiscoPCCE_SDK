@@ -31,9 +31,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("mobileAgentCodec")]
         public string? MobileAgentCodec { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
-
         [XmlElement("serviceAccountPassword")]
         public string? ServiceAccountPassword { get; set; }
 

@@ -25,7 +25,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("locationProperties")]
         public required LocationProperties LocationProperties { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

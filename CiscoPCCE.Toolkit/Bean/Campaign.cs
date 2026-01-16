@@ -25,9 +25,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("campaignPurposeType")]
         public CampaignPurposeTypeEnum CampaignPurposeType { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -93,9 +90,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("predictiveGain")]
         public float? PredictiveGain { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("rescheduleCallbackMode")]
         public RescheduleCallbackModeEnum RescheduleCallbackMode { get; set; }

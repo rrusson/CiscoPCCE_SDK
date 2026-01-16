@@ -12,7 +12,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("changeSetElement")]
         public required ChangeSetElement ChangeSetElement { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

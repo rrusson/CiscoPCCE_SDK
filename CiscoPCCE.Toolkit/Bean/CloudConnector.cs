@@ -10,9 +10,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -33,9 +30,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("proxyAddress")]
         public string? ProxyAddress { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("registrationStatus")]
         public string? RegistrationStatus { get; set; }

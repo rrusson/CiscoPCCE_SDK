@@ -37,9 +37,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("mediaServer")]
         public required MediaServerConfig MediaServer { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
-
         [XmlElement("sip")]
         public required SIPServiceConfig Sip { get; set; }
 

@@ -10,9 +10,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("color")]
         public string? Color { get; set; }
 
@@ -32,9 +29,6 @@ namespace CiscoPCCE.Toolkit.Bean
         public string? IdFromRefUrl { get; set; }
 
         public List<Menu>? Menus { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("systemDefined")]
         public bool? SystemDefined { get; set; }

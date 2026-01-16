@@ -13,9 +13,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("callType")]
         public required ReferenceBean CallType { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -52,9 +49,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("peripheralSet")]
         public required ReferenceBean PeripheralSet { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("ringtoneName")]
         public string? RingtoneName { get; set; }

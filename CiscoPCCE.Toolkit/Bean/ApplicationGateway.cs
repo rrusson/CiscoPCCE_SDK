@@ -10,9 +10,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlArray("connections")]
         [XmlArrayItem("connection")]
         public List<ApplicationGatewayConnection>? Connections { get; set; }
@@ -41,7 +38,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("preferredSide")]
         public ApplicationGatewayPreferredSide PreferredSide { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

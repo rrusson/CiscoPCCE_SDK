@@ -31,9 +31,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("campaignRef")]
         public required ReferenceBean CampaignRef { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -66,9 +63,6 @@ namespace CiscoPCCE.Toolkit.Bean
 
         [XmlElement("peripheralSet")]
         public required ReferenceBean PeripheralSet { get; set; }
-
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
 
         [XmlElement("selectedAgentCount")]
         public int? SelectedAgentCount { get; set; }

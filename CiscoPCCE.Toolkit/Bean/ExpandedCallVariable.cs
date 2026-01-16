@@ -16,9 +16,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("bytesRequiredInCtiServer")]
         public int? BytesRequiredInCtiServer { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("ciscoProvided")]
         public bool? CiscoProvided { get; set; }
 
@@ -55,7 +52,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("persistent")]
         public bool? Persistent { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

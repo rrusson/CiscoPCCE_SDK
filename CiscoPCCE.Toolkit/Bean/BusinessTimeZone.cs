@@ -13,9 +13,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("businesstimezone")]
         public string? BusinessTimeZoneName { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("correlationId")]
         public string? CorrelationId { get; set; }
 
@@ -28,7 +25,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("idFromRefUrl")]
         public string? IdFromRefUrl { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

@@ -13,7 +13,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("instanceName")]
         public string? InstanceName { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

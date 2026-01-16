@@ -19,9 +19,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("logFileSizeMB")]
         public int? LogFileSizeMB { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
-
         [XmlElement("side")]
         public Side Side { get; set; }
     }

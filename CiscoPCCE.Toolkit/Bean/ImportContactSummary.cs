@@ -37,7 +37,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("lastName")]
         public string? LastName { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

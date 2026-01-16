@@ -73,7 +73,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("phone10")]
         public required PhoneFields Phone10Fields { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }

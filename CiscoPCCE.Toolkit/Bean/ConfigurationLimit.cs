@@ -10,9 +10,6 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("baseUrlfromRefUrl")]
         public string? BaseUrlfromRefUrl { get; set; }
 
-        [XmlElement("changeStamp")]
-        public new int? ChangeStamp { get; set; }
-
         [XmlElement("configLimitCurrentValue")]
         public int? ConfigLimitCurrentValue { get; set; }
 
@@ -34,7 +31,5 @@ namespace CiscoPCCE.Toolkit.Bean
         [XmlElement("name")]
         public string? Name { get; set; }
 
-        [XmlElement("refURL")]
-        public new string? RefURL { get; set; }
     }
 }
